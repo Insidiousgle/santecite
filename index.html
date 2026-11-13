@@ -592,6 +592,431 @@ COURS.sp3={id:"sp3",n:3,t:"Fondamentaux de la prévention",lieu:"Réseau « Bien
  ]}
 };
 
+/* ---------- COURS 4 · ÉLÉMENTS DE PSYCHOLOGIE SOCIALE ---------- */
+var B_EMO=[["Anticipatoire","avant"],["Concomitant","pendant"],["Rétrospectif","après"]];
+var B_SOC=[["Socialisation primaire","famille, enfance"],["Socialisation secondaire","groupes, toute la vie"]];
+var B_NORM=[["Norme descriptive","ce qu'on fait"],["Norme injonctive","ce qu'il faut faire"]];
+var B_RES=[["Réactance",""],["Dissonance cognitive",""],["Coûts perçus",""]];
+var B_SDT=[["Autonomie",""],["Compétence",""],["Proximité sociale",""]];
+var B_AJZ=[["Attitude",""],["Normes subjectives",""],["Contrôle perçu",""]];
+var B_MOT=[["Intrinsèque","durable"],["Extrinsèque","moins durable"]];
+COURS.sp4={id:"sp4",n:4,t:"Psychologie sociale",lieu:"Centre de recherche en psychologie nutritionnelle · Lyon",
+ pitch:"Pourquoi une famille au budget serré achète-t-elle des plats préparés tout en connaissant leurs effets ? Depuis 15 ans, le centre suit des familles urbaines défavorisées, des seniors ruraux isolés et des adolescents.",
+ P:{smoreau:{n:"Pr Sylvie Moreau",r:"Psychologue sociale, coordonne les recherches",av:{bg:"#ae8dff",skin:"#f0c8a8",hair:"#9a9a9a",hs:"bun",shirt:"#13303a",glasses:1}},
+    lefevre:{n:"Antoine Lefèvre",r:"Sociologue de l'alimentation, normes sociales",av:{bg:"#5bb8f5",skin:"#e8b896",hair:"#3a2a1e",hs:"short",shirt:"#ff7a59"}},
+    bertrand:{n:"Julie Bertrand",r:"Diététicienne-chercheuse, changement et empowerment",av:{bg:"#3ee6b0",skin:"#c99067",hair:"#2b1b14",hs:"curly",shirt:"#ffc94a"}}},
+ conseil:{who:"bertrand",t:"Toujours : comprendre avant de conseiller, et laisser la personne choisir. Analyser cognition, émotions, habitudes, influences sociales et culturelles, auto-efficacité et contraintes ; valoriser les normes favorables ; nourrir la motivation intrinsèque ; face aux résistances, une approche collaborative avec des choix ; adapter sans exclure."},
+ levels:[
+ {id:"sp4a",t:"L'individu",s:"Fiches 1 à 3 · cognition, émotions, milieu, culture",items:[
+  "Fiche 0 · Le fil rouge",
+  N(Q("Une famille au budget serré achète des plats préparés en connaissant leurs effets. Qu'en conclut le cours ?",["Les connaissances ne déterminent pas directement les comportements","La famille manque d'informations","La famille est de mauvaise foi"],"Il faut tenir compte des facteurs psychologiques, sociaux et culturels."),
+    F("Le centre de {Lyon} étudie depuis {15} ans 3 groupes : familles urbaines défavorisées, seniors ruraux isolés, {adolescents}.","")),
+  "Fiche 1 · Les déterminants individuels",
+  N(Q("Les facteurs cognitifs, ce sont…",["Les processus mentaux (perception, attention, mémoire, raisonnement) qui influencent la décision alimentaire","Les connaissances nutritionnelles seulement","Les émotions liées aux aliments"],"En interaction avec motivations et croyances."),
+    F("Le savoir est {nécessaire|necessaire} mais pas {suffisant} : il faut travailler les représentations, les croyances et l'{auto-efficacité|auto efficacite|autoefficacite}.",""),
+    W("Des personnes parfaitement informées gardent des habitudes défavorables pendant des années. Explique.","Les choix intègrent la perception des risques, l'anticipation des conséquences, les priorités et les contraintes, souvent de façon automatique et inconsciente. Les routines et habitudes maintiennent les choix malgré le savoir ; et l'intention dépend aussi des attitudes, des normes perçues et du contrôle perçu.",["Choix automatiques et inconscients","Routines et habitudes","Attitudes, normes, contrôle perçu"])),
+  N([T(B_EMO,"Le plaisir attendu en pensant au dessert",0,""),T(B_EMO,"La satisfaction immédiate en mangeant",1,""),T(B_EMO,"Le regret après avoir trop mangé",2,"")],
+    S("Comment appelle-t-on un aliment consommé pour se réconforter en cas de stress ou de tristesse ?",["aliment doudou","doudou","aliments doudous","aliment refuge"],"Conditionnements construits dès l'enfance."),
+    CAS("Un salarié mange chaque soir des pâtisseries industrielles malgré leur composition.",W("Comment l'expliquer, et que viser ?","Elles rappellent les goûters d'enfance et le réconfortent face au stress du travail : association aliment-situation construite dès l'enfance (aliment doudou). On vise l'intelligence émotionnelle nutritionnelle : identifier ses émotions, comprendre leur influence, développer des stratégies adaptatives.",["Conditionnement de l'enfance","Réconfort face au stress","Identifier, comprendre, stratégies adaptatives"]))),
+  N(Q("Le sentiment d'auto-efficacité, c'est…",["La confiance en sa capacité à adopter des comportements sains","Le fait de réussir seul","La connaissance des recommandations"],"C'est le meilleur prédicteur du succès du changement."),
+    S("Quel est le meilleur prédicteur du succès d'un changement alimentaire ?",["auto-efficacite","autoefficacite","sentiment d'auto-efficacite","le sentiment d'auto-efficacité","auto efficacite"],""),
+    E(["Le sentiment d'auto-efficacité"," est stable chez une personne :"," il est le même dans tous les contextes."],1,"Il est situationnel : il varie selon les contextes (et dépend des succès, des modèles, du soutien).","")),
+  N(A("Les 4 leviers de l'auto-efficacité : relie.",[["Maîtrise progressive","Découper en étapes accessibles"],["Expérience vicariante","Modèles de réussite similaires"],["Persuasion verbale","Encouragements crédibles"],["Régulation émotionnelle","Gestion du stress et de l'anxiété"]],""),
+    C("Combien de leviers renforcent l'auto-efficacité ?",4,""),
+    E(["L'expérience vicariante,"," c'est apprendre de ses propres réussites passées"," pour prendre confiance."],1,"C'est apprendre en observant quelqu'un de semblable réussir.","Piège d'examen.")),
+  "Fiche 2 · L'influence du milieu social",
+  N([T(B_SOC,"Les rythmes des repas appris enfant",0,""),T(B_SOC,"Les habitudes du groupe de collègues",1,""),T(B_SOC,"Les manières de table transmises par les parents",0,""),T(B_SOC,"L'influence des médias et de la publicité",1,"")],
+    F("La transmission familiale est largement {inconsciente} : imitation, {observation}, intériorisation des normes.",""),
+    W("Pourquoi les normes de plusieurs groupes de socialisation peuvent-elles poser problème ?","Famille d'origine, famille actuelle, pairs, collègues, groupes culturels ou religieux ont des normes qui peuvent se contredire : cela crée des tensions identitaires dont il faut tenir compte dans l'accompagnement.",["Groupes multiples","Normes contradictoires","Tensions identitaires"])),
+  N(Q("Pourquoi se conforme-t-on aux pairs ?",["Pour garder l'appartenance et éviter l'exclusion","Par manque de connaissances","Par goût"],"Très forte chez les adolescents, mais persiste à l'âge adulte."),
+    S("Cite une compétence qui aide à résister à la pression des pairs.",["estime de soi","assertivite","assertivité","soutien social alternatif","soutien social","negociation","négociation"],"Estime de soi, assertivité, soutien social alternatif, négociation."),
+    CAS("Un salarié travaille dans un service où l'on fête tout avec viennoiseries et sodas.",Q("Comment le cours analyse-t-il cette situation ?",["L'influence des pairs peut nuire ; on explore groupes de référence, normes, situations de pression, stratégies de résistance, soutiens","C'est un manque de volonté individuelle","Il faut lui interdire les pots"],"L'influence des pairs peut aussi aider (groupe sportif valorisant l'équilibre)."))),
+  N(Q("Selon le Pr Moreau, quels effets ont les horaires décalés ?",["Repas sautés, grignotage, rythmes désorganisés","Meilleure régularité","Aucun effet notable"],""),
+    null,
+    W("Pourquoi tes conseils doivent-ils intégrer les contraintes de travail réelles ?","Horaires, organisation des pauses, offre de restauration et culture d'entreprise pèsent sur les choix ; le peu de temps pousse vers des solutions rapides. Des conseils qui les ignorent génèrent frustration et sentiment d'échec : il faut développer organisation et planification.",["Horaires, pauses, offre, culture d'entreprise","Sinon frustration et échec","Organisation, planification"])),
+  "Fiche 3 · Les déterminants culturels",
+  N(Q("Une famille d'origine maghrébine garde le couscous du vendredi et adopte le petit-déjeuner continental. C'est…",["Une hybridation culturelle : identité composite à respecter","Une perte d'identité","Un déséquilibre à corriger"],"L'alimentation est un marqueur identitaire qui évolue par métissage."),
+    null,
+    W("Pourquoi un conseil qui menace l'identité culturelle échoue-t-il ?","L'alimentation est un marqueur identitaire (culturel, régional, social, familial) : produits, techniques, rituels, significations. Un changement perçu comme une menace pour l'identité suscite des résistances ; connaître et respecter les pratiques est un préalable pour proposer des adaptations acceptables.",["Marqueur identitaire","Menace → résistance","Respecter avant d'adapter"])),
+  N(Q("Selon Bourdieu (1979), les choix alimentaires sont…",["Des marqueurs de position sociale (distinction)","Purement individuels","Dictés par la physiologie"],"Valorisés : bio, cuisines exotiques ; dévalorisés : industriel, cuisine populaire."),
+    S("En quelle année Bourdieu publie-t-il La Distinction ?",["1979"],""),
+    E(["Pour aider une famille modeste,"," je lui conseille d'acheter bio et des produits raffinés,"," valorisés socialement."],1,"Valoriser des pratiques coûteuses ou socialement marquées exclut les plus modestes : veiller à l'accessibilité sociale.","")),
+  N(A("Relie chaque type de rituel à son exemple.",[["Quotidien","Repas familial"],["Hebdomadaire","Repas dominical"],["Saisonnier","Fêtes"],["Événement de vie","Naissance, mariage, funérailles"]],""),
+    F("Face aux rituels, on propose des {adaptations} qui préservent leurs fonctions sociales, plutôt que leur {suppression}.",""),
+    CAS("Un patient diabétique pratique le Ramadan.",Q("Quelle posture ?",["Adapter les conseils : équilibre du repas nocturne, hydratation","Lui demander de ne pas jeûner","Ignorer le Ramadan"],"Adapter, pas supprimer.")))
+ ]},
+ {id:"sp4b",t:"Le groupe",s:"Fiches 4 à 6 · représentations, normes, influence",items:[
+  "Fiche 4 · Les représentations sociales",
+  N(Q("Les représentations sociales sont…",["Des connaissances, croyances et attitudes socialement construites et partagées qui orientent les comportements","Des opinions personnelles isolées","Des recommandations officielles"],"Souvent inconscientes ; construites par interactions, médias, expériences partagées."),
+    S("Quel auteur a décrit la structure des représentations sociales en 1961 ?",["moscovici","serge moscovici"],"")),
+  N(A("Structure selon Moscovici : relie.",[["Noyau central","Croyances stables, résistantes au changement"],["Éléments périphériques","Flexibles, permettent l'adaptation"]],""),
+    F("« Le pain fait grossir » persiste car c'est une croyance du {noyau} {central}.",""),
+    E(["Pour faire évoluer une représentation,"," ce sont les éléments périphériques qui résistent le plus,"," le noyau central s'adapte vite."],1,"C'est l'inverse : le noyau central résiste, la périphérie est flexible.","Piège d'examen.")),
+  N(A("Selon Julie Bertrand, « manger sain » varie selon les groupes : relie.",[["Naturalité","Authenticité des produits"],["Équilibre","Contrôle calorique"],["Convivialité","Plaisir partagé"]],"Adapter les messages aux représentations dominantes du groupe.")),
+  N(Q("La salade perçue comme « aliment féminin » est un exemple de…",["Stéréotype qui freine sa consommation chez certains hommes","Norme injonctive","Rituel"],"Explique en partie les écarts de consommation de légumes hommes/femmes."),
+    S("Cite un critère de catégorisation des aliments.",["caracteristiques sensorielles","sensoriel","contextes","contexte","modes de preparation","mode de preparation","valeurs symboliques","valeur symbolique"],"Sensoriel, contextes, modes de préparation, valeurs symboliques.")),
+  N(O("Remets dans l'ordre les 3 phases d'évolution d'une représentation.",["Émergence (minorité innovante)","Diffusion (groupes intermédiaires)","Institutionnalisation (normalisation sociale)"],"Un processus lent, sur plusieurs décennies."),
+    S("Cite un moteur actuel de l'évolution des représentations.",["vegetarisme","végétarisme","superfoods","regimes personnalises","régimes personnalisés","preoccupations environnementales","environnement","mondialisation","urbanisation","campagnes de sante publique"],"")),
+  "Fiche 5 · Les normes sociales",
+  N([T(B_NORM,"3,2 portions de fruits et légumes par jour en moyenne (INCA 3)",0,""),T(B_NORM,"5 fruits et légumes par jour recommandés",1,""),T(B_NORM,"80 % des Français prennent un petit-déjeuner quotidien",0,"")],
+    F("Consommation réelle : {3,2|3.2} portions de F&L par jour ; recommandation : {5}.",""),
+    E(["La norme descriptive"," dit ce qu'il faudrait faire"," selon les recommandations."],1,"Descriptive = ce qu'on observe ; injonctive = ce qui est prescrit.","Piège d'examen.")),
+  N(Q("L'écart entre ce que les gens observent et ce qu'on leur prescrit crée…",["Une dissonance normative","Une réactance","Un stéréotype"],""),
+    null,
+    W("Pourquoi valoriser une norme descriptive positive (« 80 % des Français prennent un petit-déjeuner ») ?","Les interventions sont plus efficaces quand elles s'appuient sur ce que fait réellement la majorité : cela normalise le comportement favorable et corrige les fausses perceptions (comme surestimer le fast-food chez les jeunes).",["S'appuyer sur ce que fait la majorité","Corriger les fausses perceptions"])),
+  N(Q("La conformité sélective, c'est…",["Adopter les normes favorables à ses objectifs et résister aux pressions défavorables","Refuser toutes les normes","Suivre le groupe en toutes circonstances"],"Avec assertivité, négociation, communication sur ses choix, soutien social."),
+    S("Comment s'appelle l'objectif : adopter les normes favorables et résister aux défavorables ?",["conformite selective","la conformite selective"],""),
+    CAS("Lors d'un repas d'équipe, un participant de ton atelier se sent obligé de prendre comme les autres.",Q("Que développes-tu avec lui ?",["Assertivité, négociation, communication sur ses choix, soutien social","L'évitement de tous les repas collectifs","Une liste d'aliments interdits"],"Conformité sélective."))),
+  "Fiche 6 · Persuasion, leaders d'opinion, résistances",
+  N(A("Persuasion selon Hovland (1953) : relie.",[["Crédibilité de la source","Compétence, expérience, empathie, témoignages de pairs"],["Qualité des arguments","Preuves, bénéfices attendus, solutions concrètes"],["Congruence avec les valeurs","Message adapté aux valeurs du public"]],""),
+    S("Quel auteur (1953) décrit les mécanismes de la persuasion ?",["hovland","carl hovland"],""),
+    CAS("« Manger Bouger » teste deux slogans.",Q("Lequel est le plus persuasif ?",["« Plus d'énergie au quotidien »","« Éviter le diabète dans 20 ans »","« Les sucres sont dangereux »"],"Bénéfices immédiats plutôt que risques abstraits."))),
+  N(Q("Les leaders d'opinion (Katz et Lazarsfeld, 1955) diffusent les comportements grâce à…",["Leur expertise, statut, charisme ou capacité d'innovation","Leur budget","Une autorisation officielle"],"Enseignants, soignants, personnalités locales, gens respectés pour leur cuisine."),
+    F("Leaders d'opinion : {Katz} et {Lazarsfeld}, {1955}.","")),
+  N([T(B_RES,"Rejet de conseils perçus comme trop directifs",0,""),T(B_RES,"Minimiser une information qui contredit ses pratiques",1,""),T(B_RES,"Renoncer à cause des efforts demandés",2,"")],
+    A("Relie chaque résistance à la réponse adaptée.",[["Réactance psychologique","Approche collaborative, proposer des choix"],["Dissonance cognitive","Explorer sans confronter"],["Coûts perçus","Objectifs progressifs"]],""),
+    W("Pourquoi ne faut-il pas combattre les résistances de front ?","Ce sont des mécanismes normaux de protection (besoin d'autonomie, cohérence avec ses pratiques, coût de l'effort). Les combattre les renforce ; il faut les comprendre et adopter une approche collaborative, d'autant que 40 % des Français se disent perdus face aux conseils contradictoires.",["Mécanismes normaux de protection","Combattre = renforcer","Comprendre, collaborer"])),
+  N(C("Quel pourcentage de Français se sentent « perdus » face aux conseils nutritionnels contradictoires (SpF 2021) ?",40,"D'où méfiance et résistance.","%"))
+ ]},
+ {id:"sp4c",t:"Le changement",s:"Fiches 7 à 10 · motivation, modèles, freins et leviers",items:[
+  "Fiche 7 · La motivation",
+  N([T(B_MOT,"Le plaisir de cuisiner",0,""),T(B_MOT,"La peur de la maladie",1,""),T(B_MOT,"La cohérence avec ses valeurs environnementales",0,""),T(B_MOT,"La pression sociale",1,"")],
+    C("Selon l'Ifop (2023), quel pourcentage de Français disent que le plaisir est leur principal moteur ?",60,"","%"),
+    W("Qu'est-ce que l'internalisation, et pourquoi est-ce la clé ?","C'est transformer des contraintes extérieures en choix personnels, cohérents avec l'identité de la personne. La motivation intrinsèque (plaisir, valeurs, bien-être) est plus durable que l'extrinsèque (récompenses, peur, pression).",["Contraintes → choix personnels","Cohérence avec l'identité","Intrinsèque = durable"])),
+  N(A("Théorie de l'autodétermination : relie chaque besoin à sa pratique.",[["Autonomie","Laisser choisir, éviter les prescriptions directives"],["Compétence","Objectifs accessibles, progrès visibles"],["Proximité sociale","Relation de qualité, groupes de pairs"]],""),
+    F("Théorie de l'autodétermination : {Deci} et {Ryan}, {1985}.",""),
+    [T(B_SDT,"Proposer plusieurs options de petit-déjeuner",0,""),T(B_SDT,"Rendre visibles les progrès culinaires",1,""),T(B_SDT,"Créer un atelier collectif entre pairs",2,"")]),
+  N(Q("Plaisir contre santé, convivialité contre contrôle du poids : c'est…",["L'ambivalence motivationnelle, normale, à explorer","Un manque de volonté","Une résistance à combattre"],"Près de la moitié des Français veulent réduire certains aliments mais hésitent (Ifop 2023)."),
+    null,
+    CAS("Une patiente veut manger moins de viande pour l'environnement, mais adore les grillades du dimanche.",Q("Ta posture ?",["L'aider à identifier elle-même ses priorités et des solutions qui intègrent les deux","Choisir pour elle la motivation environnementale","Lui dire que la santé passe avant"],"Ne pas prendre parti pour une motivation contre une autre."))),
+  "Fiche 8 · Les modèles du changement",
+  N(O("Remets dans l'ordre les étapes de Prochaska.",["Précontemplation","Contemplation","Préparation","Action","Maintien"],"Avec possibles rechutes."),
+    A("Relie chaque étape à ta stratégie.",[["Précontemplation","Sensibilisation, prise de conscience"],["Contemplation","Explorer l'ambivalence"],["Préparation","Planification concrète"],["Action","Soutien technique"],["Maintien","Prévention des rechutes"]],""),
+    E(["Le patient n'a aucune intention de changer :"," je lui donne un plan alimentaire détaillé"," pour la semaine."],1,"En précontemplation, inutile de donner un plan : il faut sensibiliser.","Piège d'examen.")),
+  N(Q("Une rechute, dans le modèle de Prochaska, c'est…",["Normal : une occasion d'apprendre et d'ajuster","Un échec qui oblige à tout recommencer","La preuve que la personne n'est pas motivée"],"Le changement est long et non linéaire."),
+    CAS("Après 2 mois d'efforts, M. T. a repris ses sodas pendant les vacances.",Q("Que fais-tu ?",["Normaliser la rechute, analyser la situation à risque, ajuster","Lui rappeler les risques du sucre","Arrêter l'accompagnement"],""))),
+  N(A("Comportement planifié (Ajzen, 1991) : relie chaque facteur à son sens.",[["Attitude","Avantages et inconvénients perçus"],["Normes subjectives","Pression et approbation sociale perçue"],["Contrôle perçu","Confiance en sa capacité"]],"Les 3 déterminants de l'intention."),
+    F("Selon {Ajzen} ({1991}), l'intention dépend de l'attitude, des normes {subjectives} et du {contrôle} perçu.",""),
+    [T(B_AJZ,"Corriger une croyance erronée sur le pain",0,""),T(B_AJZ,"Identifier des soutiens dans l'entourage",1,""),T(B_AJZ,"Expérimenter une recette simple pour prendre confiance",2,"")]),
+  N(Q("À quoi le contrôle perçu d'Ajzen est-il proche ?",["Au sentiment d'auto-efficacité","À la norme injonctive","À la réactance"],"Lien avec la fiche 1.")),
+  "Fiche 9 · Freins, leviers et maintien",
+  N(A("Relie chaque type d'obstacle à son exemple.",[["Contraintes pratiques","Temps, budget, équipements"],["Compétences limitées","Techniques culinaires, planification"],["Environnement défavorable","Offre locale, entourage"],["Habitudes ancrées","Automatismes"],["Contraintes situationnelles","Horaires, famille, accès géographique"]],""),
+    S("Cite un élément à analyser pour individualiser l'accompagnement.",["tentatives passees","tentatives passées","situations a risque","situations à risque","ressources","competences","compétences","environnement","priorisation des obstacles"],"Tentatives passées, situations à risque, ressources et compétences, environnement, priorisation.")),
+  N(Q("Quelles stratégies de dépassement privilégier ?",["Celles qui s'appuient sur les ressources existantes de la personne","Des ressources externes qu'elle ne maîtrise pas","Un programme standard identique pour tous"],"Pour l'autonomie et la durabilité."),
+    null,
+    CAS("Une mère seule dit n'avoir ni le temps ni les compétences pour cuisiner.",W("Quelles stratégies proposes-tu ?","Développer des compétences techniques (recettes rapides, lecture d'étiquettes), organisationnelles (menus, budget) et sociales ; aménager l'environnement ; mobiliser le soutien social ; fixer des objectifs progressifs et réalisables, en partant de ses ressources.",["Compétences techniques, organisationnelles, sociales","Environnement, soutien","Objectifs progressifs, ses ressources"]))),
+  N(Q("Le maintien des changements passe par…",["L'automatisation : répéter dans des contextes stables jusqu'à ne plus demander d'effort","La volonté seule","Le contrôle permanent"],""),
+    F("Pour le maintien : {anticiper} les situations à risque, {normaliser} les rechutes, repérer les signaux d'{alerte}.","")),
+  "Fiche 10 · Méthodes",
+  N(Q("Le fil commun des conseils pro du cours ?",["Comprendre avant de conseiller, et laisser la personne choisir","Informer le plus possible","Prescrire un plan précis"],""),
+    A("Relie chaque situation à un réflexe.",[["Analyser les déterminants","Cognitif, émotionnel, social, culturel, auto-efficacité"],["Intégrer les normes sociales","Valoriser les normes favorables"],["Soutenir la motivation","Autonomie, compétence, proximité"],["Gérer les résistances","Approche collaborative, choix et options"],["S'adapter aux cultures","Respecter l'identité, éviter l'exclusion"]],""))
+ ]}
+ ],
+ mission:{id:"sp4m",t:"Le panel lyonnais",items:[
+  CH("smoreau","Une famille du panel achète des plats préparés alors qu'elle connaît leurs effets. L'équipe veut lancer une action. Par quoi commences-tu ?",[
+    ["Une conférence sur la composition des plats préparés",0,[0,-6,-3],"Ils savent déjà : le savoir ne suffit pas."],
+    ["Analyser leurs déterminants : habitudes, émotions, contraintes de temps et de budget, auto-efficacité",2,[6,10,-2],"Comprendre avant de conseiller : c'est la base de tout le cours."],
+    ["Leur donner un menu-type à suivre",1,[2,-3,-1],"Concret, mais sans tenir compte de leurs contraintes réelles."]],
+   "Fiches 1 et 10."),
+  BY("bertrand",A("Pour cette mère qui doute d'elle, quels leviers d'auto-efficacité ?",[["Maîtrise progressive","Une recette en 15 minutes la 1re semaine"],["Expérience vicariante","Témoignage d'une maman du quartier"],["Persuasion verbale","Encouragements crédibles"],["Régulation émotionnelle","Gérer le stress du soir"]],"Fiche 1.")),
+  CH("lefevre","Chez les adolescents du panel, beaucoup croient que « tout le monde mange au fast-food après les cours ». Quel message ?",[
+    ["« Le fast-food, c'est mauvais pour la santé. »",0,[0,-6,0],"Message injonctif : réactance probable chez les ados."],
+    ["Montrer la norme réelle : la majorité des élèves du lycée rentrent goûter chez eux",2,[6,8,-1],"Valoriser une norme descriptive positive corrige la fausse perception."],
+    ["Interdire la sortie à midi",0,[1,-12,0],"Contraindre renforce les résistances."]],
+   "Fiche 5."),
+  CH("lefevre","Dans un groupe de seniors ruraux, on veut promouvoir les légumineuses. Qui associer ?",[
+    ["Mme Roche, respectée de tous pour sa cuisine",2,[5,10,0],"Une leader d'opinion : son adhésion facilite l'appropriation et le relais."],
+    ["Personne : un dépliant suffit",0,[0,-5,-1],"L'information seule passe mal."],
+    ["Un influenceur national",1,[1,0,-5],"Peu crédible pour ce public : la source doit être proche."]],
+   "Fiche 6 : Katz et Lazarsfeld."),
+  BY("smoreau",T(B_RES,"« Encore une diététicienne qui va me dire quoi manger ! »",0,"Réponse : approche collaborative, proposer des choix.")),
+  CH("bertrand","M. Karim dit : « Je sais que je devrais manger moins salé, mais pour l'instant ce n'est pas le moment. » Quelle stratégie ?",[
+    ["Lui remettre un plan hyposodé détaillé",0,[0,-8,0],"Trop tôt : il n'est pas en préparation."],
+    ["Explorer son ambivalence : ce qu'il gagnerait, ce qui le retient",2,[5,10,0],"Il est en contemplation : on explore l'ambivalence."],
+    ["Attendre qu'il revienne de lui-même",1,[0,0,0],"Respectueux, mais on peut l'accompagner dès maintenant."]],
+   "Fiche 8 : Prochaska."),
+  CH("bertrand","Une famille d'origine sénégalaise participe à l'atelier. Le thieboudienne du dimanche est très riche. Que proposes-tu ?",[
+    ["Le supprimer du menu",0,[0,-14,0],"Menace identitaire : résistance et abandon."],
+    ["Garder le plat et ses fonctions sociales, en adaptant (plus de légumes, moins d'huile)",2,[6,10,0],"Adapter, pas supprimer : on respecte le rituel."],
+    ["Le remplacer par du poisson vapeur",0,[2,-8,-1],"Inacceptable culturellement."]],
+   "Fiche 3."),
+  BY("smoreau",W("Rédige pour le conseil scientifique, en quelques phrases : comment accompagner durablement un changement alimentaire ?","Le savoir ne suffit pas : il faut analyser les déterminants individuels (cognition, émotions, auto-efficacité), sociaux (normes, pairs) et culturels. On adapte la stratégie à l'étape de Prochaska, on nourrit la motivation intrinsèque (autonomie, compétence, proximité), on gère les résistances par une approche collaborative et on vise le maintien par l'automatisation, en normalisant les rechutes.",["Savoir ≠ faire, déterminants","Étape du changement","Motivation intrinsèque","Résistances, maintien"]))
+ ]}
+};
+
+/* ---------- COURS 5 · PRATIQUES ET COMPORTEMENTS ALIMENTAIRES ---------- */
+var B_PROF=[["Optimisateurs",""],["Improvisateurs",""],["Délégateurs",""]];
+var B_TER=[["Milieu urbain",""],["Milieu rural",""]];
+var B_VEG=[["Végétarien","sans chair animale"],["Végan","aucun produit animal"]];
+var B_BIAIS=[["Sous-déclaration",""],["Surévaluation",""],["Désirabilité sociale",""],["Mémoire",""]];
+var B_DATA=[["Déclaratif",""],["Observation / mesure",""],["Données secondaires",""]];
+COURS.sp5={id:"sp5",n:5,t:"Pratiques et comportements alimentaires",lieu:"Observatoire national des pratiques alimentaires · Tours",
+ pitch:"Une ado de 15 ans mange debout devant TikTok, une mère célibataire réchauffe un plat préparé, un retraité cuisine la soupe de son potager. Depuis 10 ans, l'observatoire part des pratiques réelles.",
+ P:{delorme:{n:"Dr Catherine Delorme",r:"Épidémiologiste, coordonne les enquêtes nationales",av:{bg:"#55d6cf",skin:"#f0c8a8",hair:"#7a4a2a",hs:"bun",shirt:"#13303a",glasses:1}},
+    santini:{n:"Marc Santini",r:"Sociologue, pratiques urbaines et numérique",av:{bg:"#ffc94a",skin:"#d9a587",hair:"#1f1410",hs:"short",shirt:"#5bb8f5"}},
+    morvan:{n:"Léa Morvan",r:"Diététicienne enquêtrice, méthodes de diagnostic",av:{bg:"#ff7a59",skin:"#f0c8a8",hair:"#c26a2e",hs:"long",shirt:"#0e9f8e"}}},
+ conseil:{who:"morvan",t:"Toujours : méthodes mixtes, respect des choix, sans jugement. Diagnostic rapide : données secondaires + sondages courts, 6 à 8 entretiens ciblés, observations aux heures clés, indicateurs simples. Pour les ados : formats courts, autonomie et plaisir, pairs relais. Végans : B12, fer, calcium, oméga-3 dès le 1er bilan. Applis : éducation et plaisir, pas que le comptage."},
+ levels:[
+ {id:"sp5a",t:"Les groupes",s:"Fiches 1 à 3 · âge, milieu, territoire, genre, familles",items:[
+  "Fiche 0 · Le fil rouge",
+  N(C("Quel pourcentage maximum d'adolescents atteignent les recommandations en fruits et légumes (SpF 2022) ?",40,"Moins de 40 %.","%"),
+    F("L'observatoire de {Tours} analyse depuis {10} ans les comportements des Français.","")),
+  "Fiche 1 · Les pratiques selon l'âge",
+  N(Q("Quelles caractéristiques chez les adolescents ?",["Produits sucrés en collation, grignotage, influence des pairs et des réseaux","Rythmes réguliers et cuisine maison","Repas sautés par manque de temps au travail"],"Recherche d'autonomie et image corporelle : normal, mais risque de déséquilibre."),
+    C("Selon INCA3, plus de quel pourcentage d'ados mangent chaque jour des snacks hors repas ?",40,"","%"),
+    CAS("Un lycéen devient végétarien après des vidéos TikTok, mais garde les snacks industriels.",Q("Quel est ton rôle ?",["Respecter sa quête d'autonomie : valoriser ses choix sains, l'aider à planifier ses collations","Lui interdire TikTok","Lui dire que le végétarisme est dangereux"],"Deux registres : éthique environnementale et contraintes pratiques."))),
+  N(Q("Selon le Dr Delorme, quels effets ont les écrans chez les jeunes ?",["Désynchronisation des rythmes familiaux, exposition à des messages non conformes","Aucun effet","Une meilleure information nutritionnelle"],""),
+    S("Cite un facteur qui influence l'alimentation des ados.",["argent de poche","points de vente","contraintes scolaires","medias","médias","pairs","reseaux sociaux","réseaux sociaux"],"Argent de poche, points de vente proches, contraintes scolaires, médias.")),
+  N(C("Selon le Baromètre Santé 2022, environ quel pourcentage d'actifs sautent un repas ou mangent vite par manque de temps ?",60,"","%"),
+    F("La livraison de repas a progressé de {35} % en 2022 ; {78} % des adultes prennent un petit-déjeuner (INCA3).","")),
+  N([T(B_PROF,"Prépare ses repas de la semaine le dimanche",0,""),T(B_PROF,"Décide le soir même selon ce qu'il trouve",1,""),T(B_PROF,"Commande des repas livrés",2,"")],
+    S("Quel sociologue décrit les profils optimisateurs, improvisateurs, délégateurs ?",["santini","marc santini"],""),
+    W("Pourquoi les contraintes de temps ne sont-elles pas des « excuses » ?","Ce sont des réalités objectives (travail, trajets, enfants). Les ignorer rend les conseils inapplicables. Il faut partir du profil de la personne (optimisateur, improvisateur, délégateur) et proposer des réponses adaptées : produits prêts à consommer enrichis, meal prep, livraison équilibrée.",["Réalités objectives","Sinon conseils inapplicables","Réponses adaptées au profil"])),
+  N(Q("Quels défis chez les seniors ?",["Isolement, approvisionnement, mastication, motricité, baisse du goût et de l'odorat","Grignotage devant les réseaux","Repas sautés par manque de temps"],"Habitudes traditionnelles : rythmes réguliers, cuisine maison."),
+    C("Quel pourcentage des plus de 75 ans sont à risque de dénutrition (SpF 2022) ?",12,"","%"),
+    CAS("Un retraité veuf cuisine de moins en moins et mange toujours la même chose.",Q("Quelles adaptations ?",["Textures adaptées, saveurs intensifiées, préparations simples, lien social (portage, repas partagés)","Un régime hypocalorique","Des compléments sans évaluation"],"L'isolement réduit la motivation à cuisiner seul."))),
+  "Fiche 2 · Milieux socio-économiques et territoires",
+  N(A("INCA3 : fruits et légumes chaque jour, relie.",[["Cadres","50 %"],["Ouvriers et employés","28 %"]],""),
+    F("INSEE 2022 : près de {40} % des foyers à bas revenu ont du mal à acheter des fruits et légumes frais.",""),
+    E(["Les inégalités alimentaires se réduisent depuis 10 ans,"," et une bonne information"," suffit à les corriger."],1,"Elles persistent voire se creusent (SpF 2022) : il faut des interventions structurelles, pas seulement de l'information.","")),
+  N(A("Relie chaque contrainte à son effet.",[["Budgétaire","Produits moins chers, souvent ultra-transformés"],["Temporelle","Emplois précaires ou multiples, moins de temps pour cuisiner"],["Géographique","Peu de commerces de produits frais"]],""),
+    C("Selon le Baromètre Santé 2023, plus de quel pourcentage des habitants des zones prioritaires mangent moins de 3 portions de F&L par jour ?",30,"","%")),
+  N([T(B_TER,"Diversité et produits internationaux",0,""),T(B_TER,"Circuits courts et fruits de saison",1,""),T(B_TER,"Panier bio + 30 % (2023)",0,""),T(B_TER,"Accès limité aux produits bio ou vegan",1,"")],
+    S("Cite une politique territoriale qui influence les pratiques.",["marches locaux","marchés locaux","circuits courts","amenagement commercial","aménagement commercial","actions de promotion localisees"],"")),
+  "Fiche 3 · Genre, familles et transmission",
+  N(Q("Selon INCA3, les femmes mangent…",["20 % de fruits et légumes en plus, et plus de produits allégés","Plus de viande et d'alcool","Autant que les hommes"],"Les hommes : plus de viande et d'alcool."),
+    null,
+    W("Pourquoi ne faut-il pas essentialiser les différences de genre ?","Elles s'expliquent par des facteurs physiologiques, psychologiques et surtout sociologiques (normes de genre) ; ce sont des constructions sociales évolutives, qui s'atténuent chez les jeunes. Les essentialiser renforcerait les stéréotypes.",["Constructions sociales","Évolutives, s'atténuent","Ne pas renforcer les stéréotypes"])),
+  N(Q("Dans les couples, quel déséquilibre persiste malgré plus de cuisine masculine ?",["La charge mentale féminine de la planification","Le budget","Le choix du supermarché"],"Accompagner les deux partenaires.")),
+  N(A("Relie chaque configuration familiale à sa caractéristique.",[["Familles monoparentales","45 % de repas préparés"],["Couples bi-actifs","Mutualisation, mais manque de temps"],["Couples sans enfants","Pratiques flexibles, centrées sur le plaisir"],["Familles recomposées","38 % de difficultés à négocier"]],""),
+    F("Repas préparés : {45} % chez les monoparentales contre {28} % chez les couples bi-actifs.","")),
+  N(Q("Face à la transmission des habitudes, quelle posture ?",["Valoriser les compétences parentales existantes plutôt que pointer les manques","Corriger les erreurs des parents","Passer par l'école uniquement"],"Adhésion et estime de soi parentale."),
+    null,
+    W("Pourquoi la transmission familiale reproduit-elle les inégalités ?","Elle dépend du temps pour cuisiner avec les enfants, de la valeur donnée à la cuisine et de la cohérence entre discours et pratiques, qui varient selon les milieux sociaux : les écarts se transmettent d'une génération à l'autre.",["Temps, valeur de la cuisine, cohérence","Varient selon les milieux","Reproduction entre générations"]))
+ ]},
+ {id:"sp5b",t:"Les tendances",s:"Fiches 4 à 6 · nouvelles approches, numérique, rythmes",items:[
+  "Fiche 4 · Nouvelles approches nutritionnelles",
+  N(Q("L'alimentation intuitive consiste à…",["Écouter ses signaux internes (faim, satiété, envies) plutôt que des règles externes","Manger ce qu'on veut sans limite","Suivre un régime à l'instinct"],"L'individu redevient expert de ses besoins."),
+    C("Quel pourcentage de Françaises de 18-35 ans pratiquent l'alimentation intuitive (Ifop 2022) ?",27,"","%"),
+    W("Quelle est la limite de l'alimentation intuitive ?","Elle demande des compétences de régulation interne que tout le monde n'a pas : il faut un apprentissage progressif, parfois un accompagnement spécialisé.",["Compétences de régulation interne","Apprentissage progressif","Accompagnement spécialisé"])),
+  N([T(B_VEG,"Exclut viande et poisson, mais mange œufs et laitages",0,""),T(B_VEG,"Exclut aussi le miel, les œufs et le lait",1,"")],
+    F("Ifop 2023 : {8} % de végétariens et {3} % de végans en France.",""),
+    E(["Un végan ne mange pas de chair animale"," mais peut consommer œufs et produits laitiers"," sans problème."],1,"Ça, c'est le végétarien ; le végan exclut tous les produits animaux (œufs, lait, miel compris).","Piège d'examen.")),
+  N(S("Cite un nutriment à surveiller chez les végans.",["b12","vitamine b12","fer","zinc","calcium","omega-3","oméga-3","omega 3"],"B12, fer, zinc, calcium, oméga-3."),
+    null,
+    CAS("Une jeune patiente végane depuis 1 an se dit fatiguée.",Q("Que fais-tu ?",["Bilan ciblé B12, fer, calcium, oméga-3 ; bilan sanguin et supplémentation via le médecin ; respecter son choix","Lui conseiller de remanger de la viande","Ignorer, c'est son choix"],"Sans position dogmatique : l'objectif est l'équilibre."))),
+  N(Q("L'orthorexie, c'est…",["L'obsession de l'alimentation « pure »","Un régime végétarien","Une allergie alimentaire"],"Risque associé à certaines pratiques et aux applis.")),
+  N(C("Selon le CRÉDOC (2023), quel pourcentage de Français ont adopté un régime restrictif sans avis médical ?",15,"","%"),
+    S("Cite une motivation des régimes d'exclusion.",["bien-etre","bien-être","symptomes diffus","personnalites mediatiques","influenceurs","controle","contrôle","appartenance","communaute"],""),
+    CAS("Un patient a arrêté le gluten contre sa fatigue après des témoignages, sans diagnostic.",W("Comment l'accompagner ?","Évaluer bénéfices et risques : le bénéfice est subjectif, mais le régime peut masquer une autre cause et entraîner des carences (fibres, vitamines B, minéraux). Accompagner s'il maintient son choix, et orienter vers un bilan médical si les symptômes le justifient.",["Bénéfices / risques","Masquer une cause, carences","Accompagner, orienter vers le médecin"]))),
+  "Fiche 5 · L'impact du numérique",
+  N(A("Applis de suivi : bénéfice ou risque ?",[["Prise de conscience des apports réels","Bénéfice"],["Comportements obsessionnels","Risque"]],""),
+    C("Environ quel pourcentage des jeunes utilisateurs d'applis sont proches de l'orthorexie (SFN 2022) ?",10,"","%"),
+    W("Les applis de suivi remplacent-elles le diététicien ?","Non : elles favorisent la prise de conscience, l'apprentissage et la motivation (gamification), mais exposent à l'obsession, à la focalisation sur les chiffres au détriment du plaisir, à la dépendance et à des risques de confidentialité. Elles sont à évaluer selon la personne et ses objectifs.",["Bénéfices : conscience, apprentissage, gamification","Risques : obsession, chiffres, dépendance, données","À évaluer selon la personne"])),
+  N(C("Quel pourcentage des 15-24 ans se disent influencés par des contenus nutrition sur TikTok (Kantar 2023) ?",58,"","%"),
+    S("Quelle agence a pointé TikTok en 2022 pour des régimes drastiques ?",["anses"],"")),
+  N(O("Remets dans l'ordre ton rôle face aux réseaux sociaux.",["Développer l'esprit critique","Aider à identifier les sources fiables","Proposer des alternatives professionnelles"],""),
+    null,
+    CAS("Une ado suit un régime « détox » vu chez une influenceuse.",Q("Quelle réponse ?",["Analyser avec elle la vidéo (source, preuves, intérêts) et proposer une alternative fiable","Lui dire que les influenceurs mentent tous","Ne rien dire"],"Esprit critique, sans dénigrer."))),
+  "Fiche 6 · Rythmes, lieux et commensalité",
+  N(Q("Qu'est-ce qui remet en cause le modèle « 3 repas à heures fixes » ?",["Horaires flexibles, offre 24 h/24, collations qui remplacent des repas, désynchronisation familiale","Les recommandations du PNNS","La restauration collective"],""),
+    F("Les repas après {21} h sont associés à + {12} % de risque d'obésité chez les jeunes actifs.",""),
+    W("Comment concilier flexibilité et chronobiologie ?","Les rythmes circadiens comptent pour le métabolisme : on vise la qualité quelle que soit l'heure, une planification malgré l'irrégularité, et on préserve des moments de convivialité.",["Rythmes circadiens","Qualité quelle que soit l'heure","Planifier, préserver la convivialité"])),
+  N(A("Relie chaque lieu à sa limite.",[["Food trucks","Qualité nutritionnelle, hygiène"],["Dark kitchens","Individualisation, perte du repas social"],["Coworking, transports","Fin du repas structuré dans un lieu dédié"]],""),
+    S("Comment appelle-t-on une cuisine « fantôme » dédiée à la livraison ?",["dark kitchen","dark kitchens","cuisine fantome","cuisine fantôme","ghost kitchen"],"Marché + 25 % entre 2020 et 2022.")),
+  N(Q("La commensalité, c'est…",["Le fait de partager le repas","Manger seul devant un écran","Un régime collectif"],""),
+    A("Bénéfices de la commensalité : complète.",[["Transmission","des modèles alimentaires"],["Régulation","naturelle des prises"],["Liens","sociaux renforcés"],["Plaisir","alimentaire"]],""),
+    CAS("Dans une famille, chacun a un régime différent et les horaires divergent.",Q("Que proposes-tu ?",["Un repas partagé même si les contenus diffèrent, cuisiner ensemble, rituels du week-end","Imposer le même menu à tous","Laisser chacun manger seul"],"La commensalité peut prendre des formes renouvelées.")))
+ ]},
+ {id:"sp5c",t:"Le diagnostic",s:"Fiches 7 à 9 · enquêtes, qualitatif, triangulation",items:[
+  "Fiche 7 · Les enquêtes quantitatives",
+  N(Q("Que signifie INCA ?",["Enquête Individuelle Nationale des Consommations Alimentaires","Institut National de la Consommation Alimentaire","Indice National de Carence Alimentaire"],"Menée par l'ANSES."),
+    S("Quelle agence mène les enquêtes INCA ?",["anses"],""),
+    F("Méthode INCA : {carnets} alimentaires sur plusieurs jours consécutifs + {questionnaires}.","")),
+  N(C("INCA3 : quel pourcentage d'ados tirent plus de 15 % de leurs calories des boissons sucrées ?",30,"","%"),
+    null,
+    W("Comment bien utiliser les données INCA ?","Choisir les sous-populations pertinentes et les indicateurs prioritaires, suivre les évolutions dans le temps, faire des comparaisons sociales ou géographiques, connaître les limites méthodologiques ; cela demande des compétences statistiques et un complément qualitatif.",["Sous-populations, indicateurs","Évolutions, comparaisons","Limites, compléter par le qualitatif"])),
+  N([T(B_BIAIS,"Oublier de noter les biscuits « interdits »",0,""),T(B_BIAIS,"Noter plus de légumes qu'en réalité",1,""),T(B_BIAIS,"Répondre ce qui est bien vu par l'enquêteur",2,""),T(B_BIAIS,"Ne plus se rappeler le repas d'avant-hier",3,"")],
+    S("Comment appelle-t-on le fait de répondre ce qui est bien vu plutôt que la réalité ?",["desirabilite sociale","désirabilité sociale","biais de desirabilite sociale"],"Piège d'examen."),
+    E(["Les données déclaratives"," donnent des mesures précises des apports,"," à condition d'avoir des carnets sur plusieurs jours."],1,"Elles donnent des tendances, pas des mesures précises : on les complète par l'observation, les achats, les biomarqueurs, le qualitatif.","")),
+  N(A("Chez qui les biais sont-ils plus marqués ?",[["Personnes en surpoids","Sous-déclarent les calories"],["Femmes","Surévaluent les fruits et légumes"],["Personnes très diplômées","S'adaptent aux attentes supposées"]],"D'après Léa Morvan.")),
+  N(Q("Les données secondaires (panels de distributeurs, INSEE, statistiques agricoles)…",["Contournent en partie les biais déclaratifs","Sont plus biaisées que les carnets","Remplacent les entretiens"],"Saisonnalité, effet prix, disparités territoriales."),
+    null,
+    CAS("Les ventes de bio varient fortement d'une région à l'autre.",Q("Que peuvent révéler ces données secondaires ?",["Des différences d'offre locale, de revenus et de sensibilité environnementale","Rien, ce sont des ventes","Les apports en nutriments de chaque habitant"],""))),
+  "Fiche 8 · Qualitatif, outils innovants, triangulation",
+  N(Q("Que permettent de saisir les entretiens et récits de pratiques ?",["Motivations, contraintes, contextes, stratégies d'adaptation","Les apports caloriques exacts","La représentativité nationale"],""),
+    S("Cite une compétence pour mener un entretien qualitatif.",["climat de confiance","confiance","ecoute active","écoute active","questionnement non directif","non directif","analyse qualitative"],""),
+    CAS("Focus group d'ados (Paris, 2023).",C("Quel pourcentage des collations industrielles sont dues au manque de temps, et pas au goût ?",70,"","%"))),
+  N(Q("L'écart entre ce que la personne pense devoir faire et ce qu'elle fait révèle…",["Ses obstacles et ses ressources","Sa mauvaise foi","Un biais de mémoire"],"Normes intériorisées vs pratiques."),
+    F("Lyon 2022 : {40} % des parents d'un quartier prioritaire adaptent leurs achats aux {promotions}.","")),
+  N(Q("L'observation ethnographique sert à…",["Comparer le réel et le déclaré, dans leur contexte","Remplacer les enquêtes nationales","Mesurer les biomarqueurs"],"À domicile, cantine, restaurant ; distanciation et confidentialité."),
+    CAS("Dans 10 collèges franciliens (2023), des élèves disent manger un fruit à chaque repas.",C("En réalité, ils en prennent quel pourcentage du temps ?",45,"","%"))),
+  N(A("Outils innovants : relie.",[["Capteurs connectés","Horaires, durée des repas, liens avec sommeil et stress"],["Big data","Analyse massive, questions éthiques (RGPD)"],["Traces numériques","Achats en ligne, navigation : surtout en recherche"]],""),
+    C("Capteurs : chez quel pourcentage d'ados urbains repère-t-on des collations entre 22 h et 23 h ?",35,"","%"),
+    E(["Les capteurs connectés et le big data"," remplacent désormais"," l'analyse clinique et l'écoute."],1,"Ils complètent, mais ne remplacent pas l'analyse clinique et l'écoute.","")),
+  N(Q("La triangulation, c'est…",["Croiser plusieurs méthodes (quanti/quali, déclaratif/observation, individuel/collectif) pour valider le diagnostic","Interroger trois personnes","Faire trois enquêtes identiques"],""),
+    [T(B_DATA,"Carnet alimentaire de 3 jours",0,""),T(B_DATA,"Capteur de durée des repas",1,""),T(B_DATA,"Ventes d'un supermarché",2,"")],
+    W("Pourquoi un diagnostic ne peut-il pas reposer sur une seule méthode ?","Chaque méthode a ses biais : le déclaratif est biaisé, l'observation est limitée, les données secondaires manquent de contexte. Les croiser valide les informations et révèle des contradictions instructives (Lille 2023 : 60 % des calories hors repas viennent de collations industrielles).",["Chaque méthode a ses biais","Croiser = valider","Contradictions révélatrices"])),
+  "Fiche 9 · Méthodes",
+  N(O("Diagnostic territorial (25 000 €, 6 mois) : remets les étapes dans l'ordre.",["Recherche documentaire","Échantillonnage","Collecte quantitative","Collecte qualitative","Restitution intermédiaire aux élus"],""),
+    A("Relie chaque situation au bon réflexe.",[["Diagnostic rapide d'un quartier","6 à 8 entretiens ciblés + observations aux heures clés"],["Ados et réseaux","Formats courts, pairs relais, autonomie et plaisir"],["Végans","B12, fer, calcium, oméga-3 dès le 1er bilan"],["Numérique","Applis centrées éducation et plaisir"]],""))
+ ]}
+ ],
+ mission:{id:"sp5m",t:"Le diagnostic du quartier mixte",items:[
+  CH("delorme","La ville de Tours nous demande un diagnostic rapide des pratiques d'un quartier mixte. Quelle méthode ?",[
+    ["Un grand questionnaire en ligne, et c'est tout",0,[1,-4,-3],"Déclaratif seul : biais de désirabilité sociale, et les publics éloignés ne répondent pas."],
+    ["Données secondaires + sondages courts, 6 à 8 entretiens ciblés, observations au marché et à la cantine",2,[8,6,-5],"Méthodes mixtes : c'est la triangulation."],
+    ["Uniquement des capteurs connectés chez 50 familles",1,[3,-2,-10],"Riche, mais cher et sans le sens que donnent les entretiens."]],
+   "Fiches 8 et 9.",{t:"Fruits et légumes chaque jour (INCA3)",rows:[["Cadres",50],["Ouvriers et employés",28]]}),
+  BY("morvan",T(B_BIAIS,"Les familles déclarent 5 portions de légumes par jour ; l'observation en montre 2",1,"Surévaluation des aliments valorisés.")),
+  CH("santini","Les ados du quartier passent beaucoup de temps sur TikTok et grignotent. Quel message construire ?",[
+    ["Une affiche « Les snacks font grossir »",0,[0,-8,-2],"Injonctif et culpabilisant : rejeté."],
+    ["Des vidéos courtes avec des pairs relais formés : snacks maison rapides, plaisir et autonomie",2,[6,10,-4],"On reprend les codes des réseaux, sans interdire."],
+    ["Demander aux parents de confisquer les téléphones",0,[0,-10,0],"Conflit garanti, sans effet sur les pratiques."]],
+   "Fiches 1, 5 et 9."),
+  CH("morvan","Une mère célibataire achète beaucoup de plats préparés. Comment l'aborder en entretien ?",[
+    ["Lui expliquer que c'est mauvais pour ses enfants",0,[0,-12,0],"Elle se sent jugée : tu perds l'information et sa confiance."],
+    ["Climat de confiance, questions ouvertes non directives, valoriser ce qu'elle réussit déjà",2,[5,10,0],"Tu découvres ses contraintes (temps, budget) et ses ressources."],
+    ["Lui faire remplir un carnet alimentaire de 7 jours",1,[2,-2,-1],"Utile, mais lourd pour elle, et biaisé sans entretien."]],
+   "Fiches 3 et 8."),
+  BY("delorme",C("Repas préparés : 45 % chez les familles monoparentales contre 28 % chez les couples bi-actifs. Quel est l'écart, en points ?",17,"45 − 28 = 17 points.","points")),
+  CH("santini","Un retraité isolé cuisine de moins en moins. La mairie propose un dépliant. Ton avis ?",[
+    ["Le dépliant suffit",0,[0,-4,-1],"Le problème est l'isolement, pas l'information."],
+    ["Portage de repas et repas partagés au foyer-logement, textures et saveurs adaptées",2,[8,8,-6],"On agit sur l'isolement et la commensalité."],
+    ["Lui conseiller des compléments nutritionnels",1,[3,0,-3],"Peut-être utile un jour, mais il faut d'abord évaluer et rompre l'isolement."]],
+   "Fiches 1 et 6."),
+  CH("morvan","Une jeune du quartier est végane et ne prend aucun supplément.",[
+    ["Lui dire de remanger des produits animaux",0,[0,-12,0],"Position dogmatique : elle ne reviendra pas."],
+    ["Respecter son choix, faire le point sur B12, fer, calcium, oméga-3, orienter vers le médecin pour un bilan",2,[8,8,-1],"Sans jugement, avec un vrai suivi des risques."]],
+   "Fiches 4 et 9."),
+  BY("delorme",W("Rédige la conclusion du diagnostic pour les élus.","Les pratiques varient selon l'âge, le milieu, le territoire et la configuration familiale ; les écarts sociaux persistent (contraintes de budget, de temps, de géographie). Le diagnostic croise données secondaires, enquêtes, entretiens et observations, car le déclaratif seul est biaisé. Il faut partir des pratiques réelles et proposer des actions structurelles et adaptées à chaque groupe, sans jugement.",["Pratiques selon les groupes","Inégalités et contraintes","Triangulation des méthodes","Actions adaptées et structurelles"]))
+ ]}
+};
+
+/* ---------- COURS 6 · LITTÉRATIE EN SANTÉ ---------- */
+var B_LIT=[["Fonctionnelle","lire, calculer"],["Interactive","questionner, échanger"],["Critique","analyser, comparer"]];
+var B_DIM=[["Cognitive",""],["Sociale",""],["Critique",""]];
+var B_BAR=[["Linguistique","mots, codes"],["Complexité","jargon, chiffres"],["Contexte","stress, temps"]];
+var B_FEU=[["Vert","conseillé"],["Orange","modéré"],["Rouge","déconseillé"]];
+COURS.sp6={id:"sp6",n:6,t:"Littératie en santé",lieu:"Maison de santé pluriprofessionnelle · Toulouse",
+ pitch:"11 % des adultes ont de grandes difficultés à comprendre l'information de santé, bien plus chez les plus de 75 ans. À la maison de santé, Sophie, Fatou et Lucas veulent que chaque patient comprenne et applique les conseils.",
+ P:{garnier:{n:"Sophie Garnier",r:"Diététicienne, référente littératie",av:{bg:"#0e9f8e",skin:"#f0c8a8",hair:"#d9a441",hs:"long",shirt:"#13303a"}},
+    diallo:{n:"Fatou Diallo",r:"Médiatrice santé, relais des communautés",av:{bg:"#ffc94a",skin:"#7a4a30",hair:"#1f1410",hs:"curly",shirt:"#ff7a59"}},
+    lucas:{n:"Lucas Ferrand",r:"Concepteur de supports accessibles",av:{bg:"#5bb8f5",skin:"#e8b896",hair:"#5a4a3a",hs:"short",shirt:"#ae8dff",glasses:1}}},
+ conseil:{who:"garnier",t:"Toujours : repérer sans stigmatiser, simplifier sans trahir, vérifier sans humilier. Observer hésitations et évitements ; mots simples, phrases courtes, pyramide inversée ; images réelles et pictogrammes testés avec le public ; teach-back, rythme adapté, entourage et médiateurs."},
+ levels:[
+ {id:"sp6a",t:"Comprendre",s:"Fiches 1 et 2 · définition, niveaux, littératie nutritionnelle",items:[
+  "Fiche 0 · Le constat",
+  N(C("Quel pourcentage des adultes ont des difficultés importantes à comprendre l'information de santé en France ?",11,"Beaucoup plus chez les plus de 75 ans.","%"),
+    null,
+    W("Pourquoi la littératie est-elle une responsabilité professionnelle du diététicien ?","Un conseil non compris ne peut pas être appliqué : la faible littératie réduit l'efficacité des interventions et creuse les inégalités sociales de santé. Repérer les publics vulnérables et adapter ses messages garantit l'équité d'accès à l'information nutritionnelle.",["Non compris = non appliqué","Inégalités sociales de santé","Repérer, adapter, équité"])),
+  "Fiche 1 · Définition et 3 niveaux",
+  N(Q("La littératie en santé, c'est…",["La capacité d'obtenir, traiter et comprendre l'information de santé pour prendre des décisions éclairées","Savoir lire et écrire","Connaître le vocabulaire médical"],"D'après l'OMS."),
+    F("Littératie en santé : {obtenir}, traiter et {comprendre} l'information pour prendre des {décisions|decisions} éclairées.",""),
+    E(["Ce patient lit couramment le journal :"," il a donc forcément"," une bonne littératie en santé."],1,"Littératie ≠ alphabétisation : on peut savoir lire sans comprendre ce qu'implique une glycémie.","Piège d'examen.")),
+  N([T(B_DIM,"Comprendre et mémoriser un conseil",0,""),T(B_DIM,"Échanger avec le soignant",1,""),T(B_DIM,"Évaluer la fiabilité d'une information",2,"")],
+    S("Cite les 3 dimensions de la littératie en santé (une suffit).",["cognitive","sociale","critique"],"Cognitive, sociale, critique.")),
+  N(Q("Par honte de ne pas comprendre, un patient peut…",["Développer des stratégies d'évitement","Poser plus de questions","Changer de médecin systématiquement"],"La littératie pèse sur la relation.")),
+  N(O("Classe les 3 niveaux de littératie, du plus simple au plus avancé.",["Fonctionnelle","Interactive","Critique"],""),
+    [T(B_LIT,"Lit une étiquette et calcule une portion simple",0,""),T(B_LIT,"Pose des questions et échange avec d'autres patients",1,""),T(B_LIT,"Repère un conflit d'intérêts dans un article",2,"")],
+    A("Relie chaque niveau à ton adaptation pédagogique.",[["Fonctionnelle","Informations factuelles"],["Interactive","Échanges interactifs"],["Critique","Discussions nuancées"]],"Identifier le niveau permet d'adapter ta pédagogie.")),
+  "Fiche 2 · Littératie nutritionnelle et déterminants",
+  N(A("Les compétences de la littératie nutritionnelle : relie.",[["Étiquetage","Tableaux nutritionnels, % d'apports, ingrédients"],["Calculs","Grammes en équivalences visuelles"],["Numérique","Applis, infos fiables en ligne"],["Application","Traduire les conseils en achats et en repas"]],""),
+    S("Quelle est la compétence la plus difficile de la littératie nutritionnelle ?",["analyse critique","l'analyse critique","esprit critique","analyse critique d'informations contradictoires"],"Super-aliments, régimes miracles, dangers alimentaires."),
+    W("Pourquoi lire une étiquette est-il plus complexe qu'il n'y paraît ?","Il faut à la fois lire (vocabulaire technique), calculer (pourcentages, portions) et analyser (comparer, hiérarchiser) : trois compétences en même temps, et les compétences en maths sont souvent surestimées.",["Lire + calculer + analyser","En même temps","Maths surestimées"])),
+  N(Q("Comment évaluer les compétences cognitives d'un patient ?",["Observer sa lecture, le faire reformuler, proposer des calculs simples, vérifier la mémorisation d'une séance à l'autre","Lui faire passer un test de QI","Lui demander son diplôme"],""),
+    S("Cite une compétence cognitive mobilisée par la littératie.",["lecture","calcul","memorisation","mémorisation","synthese","synthèse","prise de decision","prise de décision"],"")),
+  N(Q("Certaines cultures valorisent la corpulence comme signe de santé. Conséquence ?",["Une résistance involontaire aux conseils de perte de poids","Aucune","Un refus de consulter"],"Autre exemple : le riz blanc jugé plus « pur »."),
+    null,
+    CAS("Une patiente acquiesce à tout sans poser de question, par respect pour le soignant.",W("Que faut-il comprendre, et que faire ?","Par respect de l'autorité médicale, certains ne posent aucune question même sans avoir compris : codes non verbaux culturels. Il faut vérifier la compréhension autrement (faire reformuler) et créer un climat qui autorise les questions.",["Respect de l'autorité, codes non verbaux","Silence ≠ compréhension","Faire reformuler"]))),
+  N(Q("Comment la précarité réduit-elle la littératie ?",["Accès limité aux ressources et stress chronique qui réduit les capacités cognitives","Elle n'a pas d'effet","Par manque de motivation"],"L'environnement informationnel diffère aussi selon les milieux."))
+ ]},
+ {id:"sp6b",t:"Repérer",s:"Fiches 3 et 4 · signaux, populations, barrières",items:[
+  "Fiche 3 · Repérer une faible littératie",
+  N(A("Les 4 signaux comportementaux : relie.",[["Difficultés avec les formulaires","Hésitations, demandes d'aide répétées"],["Évitement des rendez-vous","Reports, absences"],["Questions répétitives","Incompréhension persistante"],["Non-observance inexpliquée","Motivé mais n'applique pas"]],""),
+    C("Combien de signaux comportementaux principaux le cours décrit-il ?",4,""),
+    E(["M. B. dit « oui » à tout et semble motivé,"," mais n'applique jamais les conseils :"," il manque sûrement de volonté."],2,"La non-observance inexpliquée d'un patient motivé est un signal de faible littératie masquée.","Piège d'examen.")),
+  N(Q("Lequel est un signe d'évitement de l'écrit ?",["Lunettes « oubliées » systématiquement","Prendre des notes","Demander un document à emporter"],"Aussi : lecture déléguée à l'accompagnant, agitation devant un document."),
+    S("Cite une stratégie d'évitement de l'écrit.",["lunettes oubliees","oubli des lunettes","lunettes","lecture deleguee","lecture déléguée","faire lire l'accompagnant","agitation"],"")),
+  N(A("Les 5 populations à risque : relie à la raison.",[["Plus de 75 ans","Difficultés cognitives liées à l'âge"],["Faible niveau d'éducation","Peu de stratégies d'apprentissage scolaires"],["Précarité","Les urgences passent avant la prévention"],["Origine étrangère","Langue + représentations culturelles"],["Maladies chroniques","Multiplicité des contraintes thérapeutiques"]],""),
+    C("Combien de populations à risque le cours identifie-t-il ?",5,""),
+    W("Faut-il considérer toute personne âgée comme ayant une faible littératie ?","Non : ces groupes sont statistiquement plus exposés et à repérer en priorité, mais chaque personne doit être évaluée individuellement, sans stigmatiser.",["Statistiquement à risque","Évaluation individuelle","Sans stigmatiser"])),
+  "Fiche 4 · Les barrières à la compréhension",
+  N(Q("Un patient comprend « lipides » comme…",["« Liquides »","« Légumes »","« Lentilles »"],"Et « glucides » comme « glucose uniquement » : toute la compréhension est faussée."),
+    F("Confusions fréquentes : « lipides » compris « {liquides} », « glucides » compris « {glucose} ».","")),
+  N([T(B_BAR,"Un patient acquiesce par politesse",0,""),T(B_BAR,"Index glycémique, antioxydants, oméga-3",1,""),T(B_BAR,"Le stress de la consultation",2,""),T(B_BAR,"Grammes, milligrammes et pourcentages mélangés",1,""),T(B_BAR,"S'inquiéter du loyer",2,"")],
+    S("Cite un facteur contextuel qui nuit à la compréhension.",["stress","surcharge","surcharge d'informations","manque de temps","temps","conditions de vie precaires","precarite","précarité"],"")),
+  N(Q("Qui sous-estime souvent la complexité des informations nutritionnelles ?",["Les professionnels","Les patients","Les médias"],"Jargon, unités, contradictions, formats denses."),
+    null,
+    W("« Une faible compréhension n'est pas toujours un problème de la personne. » Explique.","Le message (jargon, chiffres, formats denses, recommandations contradictoires) et le contexte (stress de la consultation, surcharge, manque de temps, précarité) comptent autant : le stress réduit les capacités même chez des personnes compétentes.",["Message trop complexe","Contexte défavorable","Même chez des personnes compétentes"]))
+ ]},
+ {id:"sp6c",t:"Adapter",s:"Fiches 5 à 8 · clarté, supports, accompagnement",items:[
+  "Fiche 5 · Communication claire",
+  N(C("Combien de mots maximum par phrase recommande le cours ?",20,"15 à 20 mots.","mots"),
+    A("Remplace le jargon : relie.",[["Lipides","Graisses"],["Glucides","Sucres"],["Apport calorique","Énergie des aliments"]],""),
+    E(["Pour un patient en difficulté :"," « Votre apport lipidique doit diminuer de 30 % »"," est une formulation adaptée."],1,"Jargon + pourcentage : on dit « mangez moins de graisses », avec des exemples concrets.","")),
+  N(F("Règles de lisibilité : phrases courtes, une {idée|idee} par phrase, vocabulaire {courant}, style {actif}.",""),
+    S("Dis plus simplement « glucides ».",["sucres","les sucres","sucre"],"")),
+  N(O("Remets dans l'ordre la pyramide inversée.",["L'essentiel","Les détails explicatifs","Les compléments facultatifs"],"Si la personne arrête de lire, elle n'a rien perdu d'essentiel."),
+    S("Comment s'appelle la règle « l'essentiel d'abord, puis les détails, puis le facultatif » ?",["pyramide inversee","la pyramide inversee","pyramide inversée"],""),
+    CAS("Lucas rédige une fiche « diabète et petit-déjeuner ». Il commence par l'histoire de l'insuline.",Q("Ton conseil ?",["Mettre d'abord le message clé (quoi manger le matin), puis les explications","Garder l'ordre chronologique, c'est plus logique","Ajouter plus de détails scientifiques"],"Pyramide inversée."))),
+  N(Q("Simplifier le vocabulaire, c'est…",["Rendre accessible sans dénaturer le message scientifique","Trahir la science","Infantiliser le patient"],""),
+    F("Ordre logique : du {problème|probleme} à la {solution}, du simple au complexe.","")),
+  "Fiche 6 · Supports visuels, numériques et tests",
+  N(Q("Quels visuels privilégier ?",["Des images de vrais aliments et des portions réelles","Des symboles abstraits","Des tableaux de grammages"],"Pictogrammes universels, schémas simples, couleurs codées."),
+    [T(B_FEU,"Aliment à privilégier",0,""),T(B_FEU,"Aliment à consommer avec modération",1,""),T(B_FEU,"Aliment à éviter",2,"")]),
+  N(A("L'assiette équilibrée du cours : relie.",[["Légumes et fruits","½ de l'assiette"],["Protéines","¼ de l'assiette"],["Féculents","Dernier ¼"]],""),
+    F("Assiette : la {moitié|moitie} en légumes, un {quart} de protéines, un quart de féculents.","")),
+  N(Q("Pourquoi des interfaces modulables (police, contraste) ?",["Pour être accessibles sans stigmatiser","Pour faire joli","Pour réduire les coûts"],"Aussi : synthèse vocale, contenus interactifs, parcours personnalisés."),
+    S("Quel outil numérique permet d'écouter au lieu de lire ?",["synthese vocale","synthèse vocale","lecture vocale","audio"],"")),
+  N(O("Remets dans l'ordre la validation d'un support.",["Tests de compréhension avec le public cible","Évaluer utilisabilité et acceptabilité","Ajustements itératifs","Comparer avec les supports classiques"],""),
+    null,
+    W("Pourquoi tester un support avec le public cible ?","Les tests révèlent des obstacles invisibles pour les experts ; on évalue utilisabilité et acceptabilité, on ajuste selon les retours, et la comparaison avec les supports classiques démontre objectivement les bénéfices et guide les investissements.",["Obstacles invisibles pour les experts","Utilisabilité, ajustements","Démontrer les bénéfices"])),
+  "Fiche 7 · Accompagnement personnalisé",
+  N(Q("Le teach-back, c'est…",["Faire réexpliquer le conseil avec les mots du patient","Répéter le conseil deux fois","Donner un document à emporter"],"L'outil le plus fiable pour vérifier la compréhension."),
+    S("Quelle question ouverte poser pour vérifier la compréhension ?",["que retenez-vous de nos echanges","que retenez-vous","qu'avez-vous retenu","que retenez vous de nos echanges"],"Pas « Avez-vous compris ? »."),
+    E(["En fin de consultation,"," je demande « Avez-vous bien compris ? »"," pour vérifier la compréhension."],1,"Question fermée : la réponse est presque toujours « oui ». Préférer « Que retenez-vous de nos échanges ? ».","Piège d'examen.")),
+  N(A("Mobiliser l'entourage et les réseaux : relie.",[["Entourage familial","Réexplique, rappelle, soutient"],["Médiateurs culturels","Traduisent le message dans les codes du groupe"],["Leaders d'opinion locaux","Réseaux de confiance existants"],["Groupes de pairs","Apprentissage mutuel"]],""),
+    S("Comment appelle-t-on un relais issu de la communauté qui adapte le message à ses codes ?",["mediateur culturel","médiateur culturel","ambassadeur sante","ambassadeur santé","mediatrice sante","médiateur santé","mediateur sante"],"")),
+  N(A("Adapter le dispositif : relie.",[["Sessions courtes et fréquentes","Pas de surcharge"],["Répéter sous différentes formes","Mémorisation"],["Supports à emporter","Révision à domicile"],["Suivi renforcé","Progression réelle"]],""),
+    null,
+    W("« Adapter, ce n'est pas simplifier à l'excès. » Explique.","Adapter, c'est rendre le conseil applicable par cette personne-là : vérifier la compréhension, ajuster le rythme, répéter sous différentes formes, s'appuyer sur l'entourage, sans infantiliser ni appauvrir le message.",["Applicable par cette personne","Rythme, répétition, entourage","Sans infantiliser"])),
+  "Fiche 8 · Méthodes",
+  N(Q("Le fil commun des conseils pro ?",["Repérer sans stigmatiser, simplifier sans trahir, vérifier sans humilier","Informer vite, beaucoup, souvent","Déléguer aux médiateurs"],""),
+    A("Relie chaque situation au réflexe.",[["Identifier une faible littératie","Observer hésitations et évitements"],["Adapter les messages","Pyramide inversée, mots simples"],["Concevoir des supports","Tester avec le public cible"],["Accompagner","Teach-back, rythme adapté"],["Barrières culturelles","Médiateurs, codes non verbaux"]],""))
+ ]}
+ ],
+ mission:{id:"sp6m",t:"La maison de santé accessible",items:[
+  CH("garnier","Mme Petit, 78 ans, diabétique, revient pour la 3e fois avec la même glycémie. Elle « oublie » toujours ses lunettes et fait lire sa fille. Ton analyse ?",[
+    ["Elle manque de motivation",0,[0,-8,0],"Non : non-observance inexpliquée et évitement de l'écrit sont des signaux de faible littératie."],
+    ["Signaux d'une faible littératie : je vérifie sa compréhension sans la mettre en difficulté",2,[6,10,0],"Repérer sans stigmatiser."],
+    ["Elle a besoin de nouvelles lunettes",1,[1,0,0],"Possible, mais ce n'est pas l'essentiel : c'est un évitement classique."]],
+   "Fiche 3."),
+  BY("garnier",A("Adapte les mots de la fiche de Mme Petit.",[["Lipides","Graisses"],["Glucides","Sucres"],["Apport calorique","Énergie des aliments"]],"Fiche 5.")),
+  CH("garnier","Comment vérifier ce que Mme Petit a retenu ?",[
+    ["« Avez-vous bien compris ? »",0,[0,-3,0],"Elle répondra « oui » par politesse."],
+    ["« Racontez-moi ce que vous allez manger demain matin. »",2,[6,8,0],"Teach-back : elle réexplique avec ses mots."],
+    ["Lui faire relire la fiche à voix haute",0,[0,-10,0],"Tu risques de l'humilier."]],
+   "Fiche 7."),
+  CH("lucas","Je prépare une affiche pour la salle d'attente. Laquelle ?",[
+    ["Un tableau des apports en grammes de chaque nutriment",0,[0,-4,-2],"Illisible pour beaucoup."],
+    ["Photos de vrais aliments, assiette ½ légumes, ¼ protéines, ¼ féculents, feux tricolores, phrases courtes",2,[6,6,-3],"Visuels réels et pictogrammes universels."],
+    ["Un long texte bien expliqué",1,[1,0,-1],"Juste, mais la pyramide inversée et les visuels manquent."]],
+   "Fiche 6."),
+  CH("lucas","L'affiche est prête. On l'imprime en 500 exemplaires ?",[
+    ["Oui, elle est validée par l'équipe",0,[0,-3,-8],"Les experts ne voient pas les obstacles du public."],
+    ["D'abord la tester avec des patients, l'ajuster, puis comparer avec l'ancienne",2,[4,6,-2],"Test → ajustements itératifs → comparaison."]],
+   "Fiche 6."),
+  CH("diallo","Plusieurs familles comoriennes viennent peu et posent peu de questions. Comment faire ?",[
+    ["Leur envoyer un courrier de convocation",0,[0,-8,-1],"Barrière de l'écrit et de la langue : peu d'effet."],
+    ["M'associer comme médiatrice, adapter le vocabulaire et les supports, respecter les codes non verbaux",2,[8,12,-3],"Légitimité et messages dans les codes du groupe."],
+    ["Faire traduire la brochure actuelle mot à mot",1,[3,2,-3],"Utile, mais sans tenir compte des représentations culturelles."]],
+   "Fiches 4, 7 et 8."),
+  BY("diallo",T(B_BAR,"Une maman s'inquiète de son loyer et retient peu de la consultation",2,"Les conditions de vie précaires saturent l'attention.")),
+  BY("garnier",W("Présente à l'équipe ta stratégie pour une maison de santé accessible à tous.","Repérer la faible littératie (signaux, populations à risque) sans stigmatiser ; lever les barrières (vocabulaire, jargon, chiffres, stress) ; communiquer clairement (phrases courtes, pyramide inversée, visuels réels testés avec le public) ; vérifier par le teach-back, adapter le rythme et mobiliser l'entourage et les médiateurs.",["Repérer sans stigmatiser","Lever les barrières","Communication claire, supports testés","Teach-back, entourage, médiateurs"]))
+ ]}
+};
+
 (function(){
 var TITLE="Santé & Cité",PLAYER="Rym";
 /* =============== ÉTAT =============== */
@@ -993,7 +1418,6 @@ function nextIn(m){var d=m.s;if(d<1)return "moins d'un jour";if(d<1.5)return "1 
 function secTable(items,res){var order=[],m={};items.forEach(function(it,i){var k=it.sec||"";if(!m[k]){m[k]=[0,0];order.push(k);}m[k][1]++;if(res[i])m[k][0]++;});
   return '<div class="sectab">'+order.map(function(k){var v=m[k],ok=v[0]===v[1];return '<div class="secrow"><span>'+esc(k)+'</span><b class="'+(ok?"g":"r")+'">'+v[0]+' / '+v[1]+'</b></div>'}).join("")+'</div>';}
 
-/* ---------- JEU : assemble le diholoside ---------- */
 
 /* =============== MON CERVEAU =============== */
 function memRow(ns,label,strong){var r=pct(avgR(ns)),r7=pct(avgR(ns,Date.now()+7*DAY));
