@@ -1017,6 +1017,381 @@ COURS.sp6={id:"sp6",n:6,t:"Littératie en santé",lieu:"Maison de santé pluripr
  ]}
 };
 
+/* ---------- COURS 7 · TECHNIQUES DE COMMUNICATION POUR LA SANTÉ PUBLIQUE ---------- */
+var B_4C=[["Émetteur","qui transmet"],["Message","contenu"],["Canal","moyen"],["Récepteur","public"]];
+var B_GRAPH=[["Camembert","proportions"],["Barres","comparaisons"],["Pictogrammes","quantités"]];
+var B_IND=[["Diffusion","combien l'ont vu ?"],["Compréhension","l'ont-ils compris ?"],["Comportement","ont-ils changé ?"]];
+var B_TEST=[["Pré-test","compréhension avant diffusion"],["Test A/B","comparer 2 versions"],["Monitoring","suivi en temps réel"]];
+COURS.sp7={id:"sp7",n:7,t:"Techniques de communication",lieu:"Cellule communication de l'ARS · Marseille",
+ pitch:"« Manger Bouger », le Nutri-Score : la communication transforme la science en messages qui touchent des millions de personnes. L'ARS prépare une campagne fruits et légumes : à toi d'en faire une campagne qui change vraiment les comportements.",
+ P:{rousseau:{n:"Camille Rousseau",r:"Chargée de campagne, ARS",av:{bg:"#ff7a59",skin:"#f0c8a8",hair:"#2b1b14",hs:"bun",shirt:"#13303a"}},
+    yanis:{n:"Yanis Belkacem",r:"Designer et community manager",av:{bg:"#ae8dff",skin:"#c99067",hair:"#1f1410",hs:"short",shirt:"#ffc94a"}},
+    fontaine:{n:"Dr Claire Fontaine",r:"Évaluatrice, études d'impact",av:{bg:"#5bb8f5",skin:"#e8b896",hair:"#9a9a9a",hs:"long",shirt:"#0e9f8e",glasses:1}}},
+ conseil:{who:"rousseau",t:"Toujours : un message, le bon canal, une mesure. Crédibilité : sources et affiliations dès le début, relais locaux, incertitudes reconnues. Message : une idée, une consigne précise (quantité, moment, fréquence), un bénéfice personnel. Segmenter, pré-tester, combiner numérique et proximité, suivre un tableau de bord."},
+ levels:[
+ {id:"sp7a",t:"Je cible",s:"Fiches 1 à 3 · modèle, message, segmentation",items:[
+  "Fiche 0 · Le constat",
+  N(Q("Pourquoi la communication en santé publique n'est-elle pas une simple vulgarisation ?",["Il faut segmenter les publics, adapter les messages, choisir les canaux et évaluer l'impact sur les comportements","Parce qu'elle utilise des mots savants","Parce qu'elle est réservée aux médecins"],"Exemples : « Manger Bouger », le Nutri-Score."),
+    S("Cite une campagne ou un outil de communication nutritionnelle nationale.",["manger bouger","nutri-score","nutriscore","nutri score"],"")),
+  "Fiche 1 · Le modèle de communication et l'émetteur",
+  N(O("Remets dans l'ordre les 4 composantes du modèle de communication.",["Émetteur","Message","Canal","Récepteur"],""),
+    [T(B_4C,"Le diététicien de la mairie",0,""),T(B_4C,"« Une portion de légumes à chaque repas »",1,""),T(B_4C,"Une vidéo TikTok",2,""),T(B_4C,"Les lycéens du quartier",3,"")],
+    W("Une campagne échoue. Où peut se situer le problème ?","C'est un système : l'échec peut venir d'un émetteur non crédible, d'un message inadapté, d'un canal inapproprié ou d'une mauvaise connaissance du récepteur (âge, culture, littératie, motivations). Il faut vérifier chaque composante.",["Système de 4 composantes","Émetteur, message, canal, récepteur","Connaître le récepteur"])),
+  N(A("Relie chaque source de crédibilité à son exemple.",[["Légitimité institutionnelle","Santé publique France, ANSES"],["Expertise professionnelle","Le diététicien, sachant technique"],["Relais locaux","Médecins, pharmaciens, associations de quartier"],["Neutralité perçue","Aucun intérêt commercial ou politique"]],""),
+    S("Cite un moyen de construire sa légitimité d'émetteur.",["transparence sur ses sources","transparence","reconnaitre l'incertitude","reconnaître l'incertitude","coherence","cohérence","coherence entre messages et pratique"],"Transparence sur ses sources, reconnaître l'incertitude, cohérence."),
+    E(["Mon titre de diététicien suffit à ma crédibilité,"," même si un fabricant de céréales finance mon intervention,"," puisque mon message est scientifiquement juste."],2,"Un soupçon de conflit d'intérêts ruine un message même scientifiquement juste : la neutralité perçue compte.","Piège d'examen.")),
+  N(Q("Quel canal pour quel public ?",["Réseaux sociaux pour les jeunes, affichage public pour les seniors, médias communautaires pour des populations spécifiques","Le même canal pour tous","La télévision uniquement"],"Le canal s'adapte aux habitudes du public.")),
+  "Fiche 2 · Construire le message central",
+  N(A("Les 4 qualités d'un message efficace : relie.",[["Unique","Une idée forte, pas de dilution"],["Clair et simple","Adapté à la littératie, sans dénaturer"],["Actionnable","Se traduit en comportement concret"],["Cohérent avec les valeurs","Résonance émotionnelle, adhésion"]],""),
+    C("Combien de qualités doit avoir un message efficace ?",4,"")),
+  N(Q("Lequel est un message actionnable ?",["« Ajoutez une portion de légumes à chaque repas »","« Mangez plus de légumes »","« Les légumes, c'est la santé »"],"Quantité, moment, fréquence."),
+    F("Un message actionnable précise la {quantité|quantite}, le {moment} et la {fréquence|frequence}.",""),
+    E(["Le message « Mangez plus de légumes »"," est actionnable"," car il propose un comportement."],1,"On ne sait ni combien ni quand : ce n'est pas actionnable.","Piège d'examen.")),
+  N(O("Remets dans l'ordre la structure d'un message efficace.",["Accroche","Bénéfice personnel","Action concrète","Preuve sociale ou scientifique","Rappel motivant"],""),
+    null,
+    CAS("Camille veut un message sur l'eau pour les collégiens.",W("Construis-le selon la structure du cours.","Accroche (« Fatigué en cours ? ») ; bénéfice personnel (plus d'énergie et de concentration) ; action concrète (une gourde d'eau sur la table à chaque cours) ; preuve brève (une donnée ou un témoignage d'élève) ; rappel motivant final.",["Accroche","Bénéfice personnel","Action concrète","Preuve","Rappel"]))),
+  "Fiche 3 · Segmentation, personnalisation, leaders",
+  N(Q("Quels critères de segmentation sont les plus prédictifs de la réceptivité ?",["Comportements alimentaires actuels et stades de changement","Âge et sexe seulement","Le code postal"],"Le socio-démographique reste la base."),
+    S("Cite un critère de segmentation.",["socio-demographique","âge","age","sexe","education","csp","comportements","stade de changement","facteurs de risque","canaux preferes","pathologies"],"")),
+  N(A("Fruits et légumes : relie chaque segment à ses leviers.",[["Jeunes urbains","Réseaux sociaux, praticité, esthétique"],["Familles populaires","Économie, facilité, goût des enfants"],["Seniors ruraux","Tradition, santé, circuits courts"]],""),
+    null,
+    CAS("Tu adaptes une campagne pour de jeunes actifs sportifs.",Q("Quel argument mettre en avant ?",["La performance sportive","Les économies","La prévention du vieillissement"],"Économies pour les familles modestes, vieillissement pour les seniors."))),
+  N(Q("Le « tone of voice », c'est…",["Le ton de la communication, adapté aux codes culturels et générationnels","La voix off d'une vidéo","Le volume sonore d'une annonce"],"La personnalisation va au-delà de la traduction."),
+    S("Comment appelle-t-on le ton d'une communication adapté aux codes du public ? (en anglais)",["tone of voice","ton","tone"],"")),
+  N(A("Relie chaque relais à son atout.",[["Professionnels de proximité","Crédibilité et contact régulier"],["Personnalités publiques","Visibilité, si leur image est cohérente"],["Leaders communautaires","Influence de proximité sous-estimée"],["Pairs reconnus","Identification"]],"Privilégier les témoignages authentiques."))
+ ]},
+ {id:"sp7b",t:"Je diffuse",s:"Fiches 4 à 6 · visuels, numérique, proximité, cadre",items:[
+  "Fiche 4 · Supports visuels",
+  N(O("Remets dans l'ordre la hiérarchie visuelle d'un support.",["Titre percutant","Message principal","Éléments de preuve","Appel à l'action"],""),
+    S("Quel type de police privilégier pour l'affichage ?",["sans-serif","sans serif","sans empattement","police sans empattement"],"La lisibilité avant l'esthétique.")),
+  N(C("En combien de secondes maximum une affiche doit-elle être comprise ?",5,"Règle des 3-5 secondes.","s"),
+    E(["Pour une affiche dans le métro,"," je détaille les 10 repères du PNNS en petits caractères,"," pour être complète."],1,"Une affiche n'est pas une brochure : elle doit être comprise en 3-5 secondes.","Piège d'examen.")),
+  N([T(B_GRAPH,"Part des repas pris hors domicile",0,""),T(B_GRAPH,"Consommation de légumes cadres / ouvriers",1,""),T(B_GRAPH,"Nombre de morceaux de sucre dans un soda",2,"")],
+    S("Quelle référence commune rend concret le sucre caché ?",["cuilleres de sucre","cuillères de sucre","morceaux de sucre","sucres","cuillere"],""),
+    Q("La « progressive disclosure », c'est…",["L'essentiel visible d'emblée, les détails accessibles ensuite","Tout montrer dès le début","Cacher les sources"],"")),
+  N(Q("Pour les couleurs, il faut penser…",["Aux codes intuitifs (vert = sain, rouge = alerte), au contraste et au daltonisme","À la couleur préférée du public","Aux couleurs de la marque sponsor"],"")),
+  "Fiche 5 · Supports numériques et réseaux sociaux",
+  N(Q("Que garantissent les standards WCAG ?",["L'accessibilité du web : contrastes, textes alternatifs, navigation au clavier","Le référencement naturel","La sécurité des données"],"Web Content Accessibility Guidelines."),
+    S("Quel sigle désigne les standards d'accessibilité du web ?",["wcag"],""),
+    E(["Pour bien référencer le site,"," il suffit d'un beau design,"," le contenu peut rester figé."],1,"Le SEO repose sur les mots-clés dans les titres, des descriptions méta, un contenu mis à jour et des liens internes.","")),
+  N(A("Relie chaque fonctionnalité d'appli à son intérêt.",[["Calculateurs personnalisés","Recommandations adaptées au profil"],["Scanners de produits","Analyse nutritionnelle immédiate"],["Gamification","Points, défis, badges : motivation"],["Communautés","Entraide, normalisation des difficultés"]],"")),
+  N(A("Un format par réseau : relie.",[["Instagram","Stories éphémères"],["TikTok","Vidéos courtes"],["LinkedIn","Infographies"],["X (Twitter)","Discussions"]],""),
+    null,
+    W("Pourquoi la présence sur les réseaux sociaux demande-t-elle une gestion de communauté ?","Les réseaux sont participatifs : les récepteurs deviennent des relais (partages, hashtags). Il faut une présence régulière : répondre, modérer, animer, et être réactif face aux polémiques.",["Communication participative","Répondre, modérer, animer","Réactivité face aux polémiques"])),
+  "Fiche 6 · Proximité, cadre réglementaire, éthique",
+  N(Q("Pour quels publics le face-à-face est-il particulièrement efficace ?",["Les publics peu connectés ou à littératie limitée","Les jeunes urbains connectés","Les professionnels de santé"],"Adaptation en temps réel, interactivité, confiance."),
+    A("Relie chaque action de proximité à son atout.",[["Stands, ateliers culinaires","Expérience concrète et mémorable"],["Interventions en milieu scolaire ou professionnel","Publics captifs dans leur quotidien"],["Partenariats locaux","Plus de points de contact, confiance préexistante"]],"")),
+  N(Q("Quel règlement européen encadre les allégations nutritionnelles ?",["Le règlement UE n° 1924/2006","Le RGPD","La Charte d'Ottawa"],""),
+    F("Les allégations nutritionnelles sont encadrées par le règlement UE n° {1924}/{2006}.",""),
+    CAS("Yanis veut illustrer l'affiche avec la photo d'une maman trouvée sur un réseau social.",Q("Est-ce possible ?",["Non sans autorisation : atteinte au droit à l'image, même pour une bonne cause","Oui, c'est pour la santé publique","Oui si on floute le logo"],"Propriété intellectuelle : droit d'auteur, licences, droit à l'image."))),
+  N(Q("Quelle responsabilité éthique dès la conception ?",["Éviter la culpabilisation, respecter la diversité corporelle et culturelle, rester neutre commercialement","Maximiser l'impact par la peur","Valoriser un produit partenaire"],"Crédibilité garantie, contentieux évités."),
+    S("Que faut-il respecter du PNNS sur les supports publics ?",["logos","logos et chartes","chartes graphiques","mentions obligatoires","charte graphique"],"Mentions obligatoires, logos et chartes graphiques."))
+ ]},
+ {id:"sp7c",t:"Je mesure",s:"Fiches 7 à 10 · indicateurs, évaluation, ajustements",items:[
+  "Fiche 7 · Mesurer la diffusion et la compréhension",
+  N(A("Relie chaque indicateur de diffusion à ce qu'il mesure.",[["Impressions, vues","Diffusion brute"],["Taux de clics, d'engagement","Intérêt suscité"],["Portée géographique et démographique","Publics touchés vs cibles visées"],["Fréquence d'exposition","Mémoriser sans lassitude"]],""),
+    S("Cite un indicateur d'un tableau de bord de diffusion.",["impressions","portee unique","portée","taux d'engagement","engagement","cout par contact","coût par contact","repartition demographique"],"")),
+  N(Q("Le rappel spontané, c'est…",["Se souvenir du message sans aide","Reconnaître le message quand on le montre","Cliquer sur le message"],"Rappel assisté = on montre ou cite le message."),
+    E(["Pour mesurer le rappel spontané,"," on montre l'affiche au passant"," et on lui demande s'il la reconnaît."],1,"Montrer l'affiche, c'est du rappel assisté (ou de la reconnaissance) ; le spontané se fait sans indice.","Piège d'examen."),
+    W("« Une campagne très vue mais mal comprise est un échec. » Explique.","Les chiffres de diffusion (impressions, vues) ne disent pas si le message a été compris ni retenu. Il faut aussi mesurer la compréhension : rappel spontané et assisté, tests d'interprétation, reconnaissance des visuels, reformulation.",["Diffusion ≠ compréhension","Rappel, tests, reconnaissance, reformulation"])),
+  "Fiche 8 · Méthodes d'évaluation et impact",
+  N(Q("À quoi sert un groupe témoin ?",["Isoler l'effet propre de la campagne des autres influences","Tester le design","Recruter des relais"],""),
+    S("Comment appelle-t-on une étude qui suit les mêmes personnes dans le temps ?",["longitudinale","etude longitudinale","étude longitudinale","cohorte"],""),
+    Q("Pour un sondage quantitatif fiable, il faut…",["Un échantillon représentatif avec quotas et des questionnaires validés","Interroger ses collègues","Un focus group"],"")),
+  N(A("Relie chaque méthode qualitative à ce qu'elle révèle.",[["Entretiens individuels","Processus de changement, freins personnels"],["Focus groups","Dynamiques et résistances collectives"],["Observation ethnographique","Changements réels en contexte"],["Analyse des réseaux sociaux","Opinions spontanées"]],"")),
+  N(O("Classe les mesures d'impact, des plus immédiates aux plus lointaines.",["Achats (panels)","Pratiques culinaires","Consultations de professionnels","Prévalence de l'obésité, des carences"],"L'évaluation ultime porte sur les comportements, puis la santé."),
+    [T(B_IND,"Nombre d'impressions sur Instagram",0,""),T(B_IND,"Rappel assisté du slogan",1,""),T(B_IND,"Hausse des achats de légumes (panel)",2,"")]),
+  "Fiche 9 · Amélioration continue",
+  N(A("Facteurs de succès : relie à la question à se poser.",[["Adéquation du message","Répond-il aux préoccupations réelles ?"],["Pertinence des canaux","Touche-t-on vraiment les cibles ?"],["Timing","Cohérent avec la saison et le contexte ?"],["Cohérence","En accord avec les autres messages de santé publique ?"]],""),
+    CAS("Une campagne « soupes maison » est lancée en juillet.",Q("Quel facteur d'échec ?",["Le timing","La crédibilité de l'émetteur","Le format"],"Soupes en hiver, fruits d'été en saison."))),
+  N([T(B_TEST,"Vérifier sur 30 personnes que l'affiche est comprise avant impression",0,""),T(B_TEST,"Diffuser deux versions du visuel et garder la plus performante",1,""),T(B_TEST,"Suivre chaque jour l'engagement et réallouer le budget",2,"")],
+    O("Remets dans l'ordre : tester avant de lancer.",["Pré-tests sur échantillon","Tests A/B","Validation par des experts","Ajustements itératifs"],""),
+    E(["Un test A/B"," vérifie la compréhension d'un support"," avant sa diffusion."],1,"Ça, c'est le pré-test ; le test A/B compare deux versions d'un même support.","Piège d'examen.")),
+  N(Q("En temps réel, que fait-on ?",["Monitoring, adaptation du message, réallocation du budget, réactivité face à l'actualité","On attend la fin de la campagne","On double le budget partout"],"Tableaux de bord automatisés avec alertes.")),
+  "Fiche 10 · Méthodes",
+  N(Q("Le fil commun des conseils pro ?",["Un message, le bon canal, une mesure","Beaucoup de messages, tous les canaux","Le plus beau visuel possible"],""),
+    A("Relie chaque situation à un réflexe.",[["Crédibilité locale","Sources et affiliations dès le début"],["Message actionnable","Consigne précise : quantité, moment, fréquence"],["Segmenter","Croiser socio-démo, comportements, stade de changement"],["Choisir les supports","Cartographier les habitudes médiatiques"],["Évaluer une campagne numérique","Tableau de bord quotidien"]],""))
+ ]}
+ ],
+ mission:{id:"sp7m",t:"La campagne fruits et légumes",items:[
+  CH("rousseau","L'ARS veut une campagne fruits et légumes. Quel message central ?",[
+    ["« Mangez plus de fruits et légumes, c'est bon pour la santé ! »",0,[1,-3,-2],"Vague, non actionnable, sans bénéfice personnel."],
+    ["« Une portion de légumes à chaque repas : plus d'énergie au quotidien »",2,[8,6,-2],"Unique, clair, actionnable, avec un bénéfice personnel."],
+    ["Les 10 repères du PNNS sur une même affiche",0,[0,-5,-3],"Message dilué : on ne retient rien."]],
+   "Fiche 2."),
+  CH("rousseau","Le budget permet trois déclinaisons. Comment segmenter ?",[
+    ["Une seule version pour tous",0,[1,-4,1],"Les leviers diffèrent selon les publics."],
+    ["Jeunes urbains (réseaux, praticité), familles populaires (économie, goût des enfants), seniors ruraux (tradition, circuits courts)",2,[8,8,-4],"Segmentation et leviers adaptés."],
+    ["Trois versions selon le sexe des destinataires",1,[2,-2,-4],"Critère trop pauvre : comportements et stades de changement sont plus prédictifs."]],
+   "Fiche 3."),
+  BY("yanis",A("Je décline la campagne : quel format pour quel réseau ?",[["Instagram","Stories éphémères"],["TikTok","Vidéos courtes"],["LinkedIn","Infographies pour les pros"]],"Fiche 5.")),
+  CH("yanis","Mon affiche pour les abribus contient un tableau des apports et 4 paragraphes. Ça te va ?",[
+    ["Oui, c'est complet",0,[0,-4,-3],"Personne ne lit un tableau en passant : règle des 3-5 secondes."],
+    ["Titre percutant, une image, le message principal, la source en petit : compris en 3-5 secondes",2,[6,4,-2],"Hiérarchie visuelle et règle des 3-5 secondes."]],
+   "Fiche 4."),
+  CH("rousseau","Un fabricant de jus de fruits propose de financer la campagne en échange de son logo.",[
+    ["On accepte, ça double le budget",0,[-2,-14,10],"Conflit d'intérêts : la crédibilité de tout le message s'effondre."],
+    ["On refuse et on cherche des relais neutres : médecins, pharmaciens, associations",2,[4,10,-3],"Neutralité perçue et alliances locales."],
+    ["On accepte sans afficher le logo",0,[0,-10,8],"Financement caché : pire encore pour la transparence."]],
+   "Fiches 1 et 6."),
+  CH("fontaine","Avant d'imprimer 20 000 affiches, que fait-on ?",[
+    ["On imprime, on verra bien",0,[0,-3,-8],"Une incompréhension découverte après coup coûte cher."],
+    ["Un pré-test sur un échantillon représentatif, puis un test A/B des deux visuels",2,[5,5,-2],"On repère les incompréhensions et on garde la version la plus performante."]],
+   "Fiche 9."),
+  BY("fontaine",T(B_IND,"Après 2 mois, 40 % des personnes interrogées citent le slogan sans aide",1,"Rappel spontané : compréhension et mémorisation.")),
+  CH("fontaine","La campagne a fait 2 millions de vues. Peut-on dire qu'elle a réussi ?",[
+    ["Oui, 2 millions de vues, c'est énorme",0,[0,-4,0],"Diffusion n'est pas compréhension, ni changement."],
+    ["Pas encore : compréhension (rappel), puis comportements (panels d'achats) avec un groupe témoin",2,[6,6,-3],"L'évaluation ultime porte sur les comportements, puis la santé."],
+    ["Il faut regarder le taux d'engagement",1,[2,0,0],"Utile, mais ça reste de la diffusion."]],
+   "Fiches 7 et 8."),
+  BY("rousseau",W("Rédige pour la directrice de l'ARS la synthèse de ta stratégie de campagne.","Un émetteur crédible et neutre, appuyé sur des relais locaux ; un message unique et actionnable avec un bénéfice personnel ; des publics segmentés avec des leviers et des canaux adaptés (réseaux, affichage 3-5 s, proximité) ; le respect du cadre (PNNS, règlement 1924/2006, droit à l'image) ; des pré-tests et tests A/B ; une évaluation de la diffusion, de la compréhension et des comportements.",["Émetteur crédible, neutre","Message actionnable","Segmentation, canaux","Cadre légal et éthique","Tester et mesurer"]))
+ ]}
+};
+
+/* ---------- COURS 8 · POSTURE PROFESSIONNELLE ET COMMUNICATION INTERDISCIPLINAIRE ---------- */
+var B_MOD=[["Modèle prescriptif",""],["Modèle d'accompagnement",""]];
+var B_INST=[["Comité de pilotage","orientations"],["Coordination opérationnelle","ajuster"],["Groupe thématique","approfondir"]];
+var B_PRO=[["Médecin",""],["Infirmier",""],["Psychologue",""],["Pharmacien",""]];
+var B_CONF=[["Chevauchement de compétences",""],["Approches différentes",""],["Contraintes organisationnelles",""],["Inégalités de statut",""]];
+COURS.sp8={id:"sp8",n:8,t:"Posture pro et communication interdisciplinaire",lieu:"Contrat local de santé · Grenoble",
+ pitch:"Soignants, travailleurs sociaux, éducateurs, élus, associations : le Contrat local de santé réunit tout le monde autour de l'alimentation. Un atout pour une approche globale, un défi de coordination entre cultures professionnelles.",
+ P:{marchand:{n:"Élodie Marchand",r:"Coordinatrice du Contrat local de santé",av:{bg:"#55d6cf",skin:"#f0c8a8",hair:"#6b3f24",hs:"bun",shirt:"#ff7a59"}},
+    haddad:{n:"Karim Haddad",r:"Assistant social, CCAS",av:{bg:"#ffc94a",skin:"#b07a55",hair:"#1f1410",hs:"short",shirt:"#2f5a60"}},
+    lemaire:{n:"Dr Paul Lemaire",r:"Médecin généraliste, maison de santé",av:{bg:"#5bb8f5",skin:"#e8b896",hair:"#e8e8e8",hs:"bald",shirt:"#13303a",glasses:1}}},
+ conseil:{who:"marchand",t:"Toujours : écouter, clarifier, orienter. Valider le vécu avant de conseiller ; mots simples sans infantiliser ; cartographier les acteurs et séparer pilotage et coordination ; en cas de conflit, clarifier les missions, chercher l'intérêt commun, documenter ; repérer précarité et TCA, orienter et coordonner."},
+ levels:[
+ {id:"sp8a",t:"J'accompagne",s:"Fiches 1 à 4 · éthique, cadre, écoute, vulnérabilités",items:[
+  "Fiche 1 · Du prescripteur à l'accompagnant",
+  N(A("Relie chaque principe éthique à son sens.",[["Dignité","Respect inconditionnel, quels que soient les choix"],["Non-jugement","Accompagner sans condamner"],["Autonomie","L'expertise ne devient pas une imposition"],["Bientraitance","Un partenariat plutôt qu'une hiérarchie"]],""),
+    S("Comment appelle-t-on l'expertise de la personne sur son vécu et ses contraintes ?",["savoirs experientiels","savoirs expérientiels","savoir experientiel","expertise d'usage"],""),
+    E(["Respecter l'autonomie du patient,"," c'est ne rien lui dire"," et le laisser faire."],1,"Tu informes et proposes, mais tu n'imposes pas.","Piège d'examen.")),
+  N([T(B_MOD,"Le professionnel sait et prescrit",0,""),T(B_MOD,"Les objectifs sont co-construits",1,""),T(B_MOD,"Les rechutes sont des échecs",0,""),T(B_MOD,"La personne apporte ses savoirs expérientiels",1,"")],
+    F("La {co-construction|coconstruction} prend plus de temps mais donne une meilleure {adhésion|adhesion} et une meilleure durabilité.",""),
+    W("Quels réflexes professionnels le modèle d'accompagnement remet-il en cause ?","Vouloir corriger tout de suite les erreurs, l'urgence de transmettre, la frustration face aux résistances. Il faut respecter les rythmes individuels et accepter l'ambivalence comme une étape normale, ce qui libère de la pression du résultat immédiat.",["Corriger vite, transmettre vite","Frustration","Respecter les rythmes, accepter l'ambivalence"])),
+  "Fiche 2 · Cadre réglementaire et réalités de vie",
+  N(A("Relie chaque texte à ce qu'il encadre.",[["Code de la santé publique","Tes compétences et responsabilités"],["Code de déontologie","Tes obligations éthiques"],["RGPD","Les données personnelles de santé"]],""),
+    O("Remets dans l'ordre la chaîne d'acteurs qui fixe tes marges d'action.",["L'ARS définit les orientations","Les réseaux de santé coordonnent","Les collectivités financent"],""),
+    E(["En équipe pluridisciplinaire,"," le secret professionnel ne s'applique plus"," entre collègues."],1,"Le secret s'applique même en équipe ; seul un partage encadré est possible.","")),
+  N(A("Recommandations et réalités : relie chaque contrainte à sa tension.",[["Budget","5 F&L/jour à une famille précaire : culpabilité"],["Temps","Cuisine maison et horaires décalés"],["Culture","Préférences différentes, pas moins légitimes"],["Pathologies","Adaptations qui contredisent les messages généraux"]],""),
+    null,
+    CAS("Une mère seule aux horaires décalés ne cuisine jamais.",Q("Quel est ton rôle ?",["Adapter tes recommandations à ses contraintes, pas les combattre","Lui rappeler l'importance de la cuisine maison","Lui conseiller de changer de travail"],""))),
+  "Fiche 3 · Communication respectueuse",
+  N(O("Remets dans l'ordre les 5 techniques de l'écoute active, comme dans ta fiche.",["Reformuler les émotions","Poser des questions ouvertes","Accepter les silences","Valider les efforts","Pas de conseil prématuré"],""),
+    A("Remplace la formule maladroite : relie.",[["« Il ne faut pas vous inquiéter »","« Je comprends que cette situation vous préoccupe »"],["« Appliquez-vous mes conseils ? »","« Comment vivez-vous ces recommandations au quotidien ? »"]],""),
+    CAS("Une patiente dit : « Je n'y arriverai jamais, j'ai encore craqué. »",Q("Ta première réponse ?",["« Vous vous sentez découragée… Qu'est-ce qui s'est passé ? »","« Il faut être plus forte. »","« Je vais vous redonner le plan. »"],"Reformuler l'émotion, question ouverte, pas de conseil prématuré."))),
+  N(Q("Les interdits religieux et culturels sont…",["Des données objectives, pas des obstacles","Des obstacles à contourner","À ignorer"],"Ex. : alternatives halal, horaires du ramadan."),
+    S("Comment appelle-t-on le fait d'imposer ses références culturelles comme normes universelles ?",["ethnocentrisme","ethnocentrisme nutritionnel"],""),
+    W("Comment adapter tes conseils à une famille musulmane qui fait le ramadan ?","Respecter les interdits comme des données : proposer des alternatives halal pour les protéines, adapter aux horaires du ramadan, valoriser les traditions méditerranéennes. Éviter l'ethnocentrisme nutritionnel occidental : il existe plusieurs modèles alimentaires sains.",["Interdits = données","Halal, horaires du ramadan","Éviter l'ethnocentrisme"])),
+  N(Q("Simplifier son langage, c'est…",["Parler simplement sans infantiliser, en gardant la précision","Parler comme à un enfant","Supprimer les explications"],"« Votre estomac a la taille de votre poing »."),
+    F("On dit « {graisses} » plutôt que « lipides » et « {sucres} » plutôt que « glucides ».","")),
+  "Fiche 4 · Les situations de vulnérabilité",
+  N(C("Selon le CRÉDOC (novembre 2022), quel pourcentage de la population est en précarité alimentaire ?",16,"Surtout par manque d'argent, aggravé par l'inflation.","%"),
+    F("Les ménages consacrent en moyenne environ {15} % de leur budget à l'alimentation.",""),
+    CAS("Une famille n'a presque plus rien à manger en fin de mois.",Q("Ta priorité ?",["La sécurité alimentaire (quantité) avant l'équilibre : orienter vers banque alimentaire, épicerie sociale, bons municipaux","Un plan équilibré à 5 F&L par jour","Un atelier de lecture d'étiquettes"],"Mieux vaut déséquilibré mais suffisant que sous-alimenté."))),
+  N(Q("Face à des signaux de TCA, le diététicien…",["Repère et oriente (psychiatre, psychologue, centre spécialisé), sans interférer avec le traitement","Traite seul le TCA","Ignore les signes"],"Vigilance particulière chez les adolescents."),
+    S("Cite un signal d'alerte de TCA.",["restriction extreme","restriction","compulsions","preoccupations obsedantes du poids","obsession du poids"],""),
+    E(["Un diététicien qui repère une anorexie"," la prend en charge seul"," pour ne pas inquiéter la famille."],1,"Il repère et oriente, avec des protocoles de liaison ; il ne traite pas seul un TCA.","Piège d'examen.")),
+  N(A("Relie chaque situation à ta réponse.",[["Maltraitance nutritionnelle","Obligation de signalement"],["Négligence ou incapacité","Distinguer les deux, accompagner"],["Isolement social","Vigilance, orientation vers les services sociaux"]],""))
+ ]},
+ {id:"sp8b",t:"Je coordonne",s:"Fiches 5 à 7 · acteurs, coordination, projets",items:[
+  "Fiche 5 · Les acteurs du territoire",
+  N(A("Relie chaque secteur à sa logique.",[["Établissements de santé","Biomédicale, protocoles standardisés"],["Services sociaux","Urgence sociale, réponses immédiates"],["Établissements scolaires","Mission éducative, programmes contraints"],["Associations","Participation, empowerment"],["Collectivités","Logiques démocratiques et budgétaires"]],""),
+    null,
+    W("Pourquoi comprendre la culture de chaque partenaire ?","Leurs logiques sont complémentaires mais parfois contradictoires (urgence sociale vs prévention, protocoles vs participation). Les comprendre évite malentendus et jugements hâtifs, et permet de collaborer.",["Logiques complémentaires et contradictoires","Éviter malentendus et jugements"])),
+  N(O("Remets dans l'ordre les éléments de la cartographie des acteurs.",["Missions","Contraintes organisationnelles","Financements","Publics cibles","Modalités de collaboration"],""),
+    C("Combien d'éléments recenser pour chaque partenaire dans la cartographie ?",5,"")),
+  "Fiche 6 · Coordination et secret partagé",
+  N([T(B_INST,"Décider des grandes orientations et du budget",0,""),T(B_INST,"Ajuster les actions selon le terrain",1,""),T(B_INST,"Approfondir la précarité alimentaire",2,"")],
+    S("Comment appelle-t-on l'instance des décideurs qui fixe les orientations ?",["comite de pilotage","copil","comité de pilotage"],"")),
+  N(A("Relie chaque outil de coordination à son intérêt.",[["Fiches de liaison","Structurer les transmissions"],["Plannings coordonnés","Éviter les doublons"],["Tableaux de bord communs","Indicateurs consensuels"],["Systèmes d'information partagés","Concilier transparence et confidentialité"]],"")),
+  N(O("Remets dans l'ordre les règles du secret partagé.",["Accord explicite de la personne","Seulement le nécessaire à la mission du destinataire","Circuits sécurisés, outils certifiés","Respect du secret de chaque profession"],""),
+    E(["Puisque nous travaillons ensemble,"," je transmets tout le dossier nutritionnel"," à l'éducatrice, sans en parler à la famille."],1,"On partage avec accord, et seulement ce qui est utile à l'autre.","Piège d'examen."),
+    CAS("L'assistant social te demande « tout ce que tu sais » sur une famille suivie.",Q("Que fais-tu ?",["Je demande l'accord de la famille et je ne partage que ce qui sert sa mission, par un circuit sécurisé","Je transmets tout, c'est un collègue","Je refuse tout échange"],"Ces règles compliquent la coordination mais protègent les droits."))),
+  "Fiche 7 · Projets territoriaux collaboratifs",
+  N(A("Diagnostic territorial partagé : qui apporte quoi ?",[["Diététicien","Données épidémiologiques nutritionnelles"],["Travailleurs sociaux","Analyse sociale"],["Éducateurs, associatifs","Observations de terrain"],["Habitants","Besoins exprimés, réalités vécues"],["Gestionnaires et élus","Contraintes budgétaires"]],""),
+    null,
+    W("Pourquoi la tension entre idéalisme professionnel et réalisme budgétaire est-elle « créatrice » ?","Croiser l'ambition des professionnels avec les contraintes des élus et gestionnaires oblige à prioriser et à trouver des solutions réalistes : cela optimise l'efficacité du projet.",["Ambition + contraintes","Prioriser, solutions réalistes","Efficacité"])),
+  N(A("Relie chaque financement à sa caractéristique.",[["ARS, DREETS, DRAC","Suivent les priorités politiques centrales"],["FEDER, FSE","Procédures complexes, montants importants"],["Fondations, mécénat","Flexibles, mais questionnent l'indépendance"],["Budgets participatifs","Priorités citoyennes"]],""),
+    S("Cite un fonds européen mobilisable.",["feder","fse"],"")),
+  N(S("Cite un indicateur consensuel d'évaluation collaborative.",["personnes touchees","nombre de personnes touchées","evolution des comportements","satisfaction","impact sur les inegalites","inégalités","durabilite","durabilité"],"Personnes touchées, comportements, satisfaction, inégalités, durabilité."),
+    C("Combien d'indicateurs partagés le cours propose-t-il ?",5,""))
+ ]},
+ {id:"sp8c",t:"Je collabore",s:"Fiches 8 à 11 · langages, positionnement, conflits",items:[
+  "Fiche 8 · Langages et représentations",
+  N(A("Relie chaque profession à son langage.",[["Soignants","Terminologie médicale"],["Travailleurs sociaux","Empowerment, capabilités, déterminants"],["Éducateurs","Compétences transversales, différenciation"],["Élus, services publics","Vocabulaire administratif et politique"]],""),
+    O("Remets dans l'ordre les 4 règles pour se comprendre.",["Utiliser le vocabulaire de tes interlocuteurs","Expliciter ton jargon","Demander la clarification","Créer un glossaire commun"],"")),
+  N(A("Relie chaque acteur à son préjugé fréquent.",[["Travailleurs sociaux","Méfiance envers la médicalisation"],["Soignants","Incompréhension des lenteurs administratives"],["Associations","Scepticisme face aux contraintes institutionnelles"],["Élus","Résistance aux complications techniques"]],""),
+    null,
+    CAS("En réunion, l'élu s'impatiente : « Encore une étude ? On veut des résultats avant les élections ! »",Q("Ta réponse ?",["Reconnaître son besoin de résultats visibles et proposer des indicateurs intermédiaires rapides","Lui expliquer que la science prend du temps","Quitter le projet"],"Connaître les représentations permet d'anticiper les malentendus."))),
+  "Fiche 9 · Le positionnement du diététicien",
+  N(A("Positionnement : relie l'écueil à ce qu'il faut rechercher.",[["Dilution dans le groupe","Valoriser ton expertise spécifique"],["Technicisme excessif","Traduire pour que les autres relaient"],["Sur-spécialisation","Approche globale des déterminants"]],"")),
+  N([T(B_PRO,"Pose le diagnostic de diabète",0,""),T(B_PRO,"Éduque à l'auto-surveillance",1,""),T(B_PRO,"Aide à gérer le stress alimentaire",2,""),T(B_PRO,"Repère les interactions aliments-médicaments",3,"")],
+    F("Diabète : le {médecin|medecin} diagnostique, l'{infirmier} éduque à l'auto-surveillance, le diététicien fait l'adaptation {nutritionnelle} personnalisée.",""),
+    W("Pourquoi clarifier les rôles avec chaque profession ?","Chaque profession a son champ (diagnostic, ETP, émotions, interactions médicamenteuses, adaptation nutritionnelle). Clarifier évite les conflits de compétences, respecte le champ de chacun et rend la prise en charge complémentaire.",["Champs de chacun","Éviter les conflits","Complémentarité"])),
+  N(A("Avec le social et l'éducation : relie.",[["Travailleurs sociaux","Contextualiser selon les réalités socio-économiques"],["Enseignants","Démarche pédagogique globale"],["Éducateurs spécialisés","Nutrition et accompagnement des familles"],["Élus et techniciens","Politiques locales"]],"")),
+  "Fiche 10 · Conflits, légitimité, posture",
+  N([T(B_CONF,"Qui anime l'éducation nutritionnelle : diététicien, infirmier ou éducateur ?",0,""),T(B_CONF,"Vision biomédicale contre vision psychosociale",1,""),T(B_CONF,"Temps médical contre temps social",2,""),T(B_CONF,"Différences de rémunération et de reconnaissance",3,"")],
+    O("Remets dans l'ordre les stratégies de résolution.",["Chercher les intérêts communs","Médiation par un tiers neutre","Compromis préservant les missions","Solutions créatives collectives"],""),
+    CAS("L'infirmière et toi revendiquez toutes deux l'animation des ateliers nutrition.",W("Comment résoudre ce conflit ?","Chercher l'intérêt commun au-delà des positions (la santé des patients) ; clarifier les missions et limites de chacune ; si besoin, médiation par un tiers neutre ; compromis qui préserve les missions (co-animation : ETP par l'infirmière, adaptation nutritionnelle par toi) ; documenter les accords.",["Intérêt commun","Clarifier les missions","Médiation, compromis","Documenter"]))),
+  N(Q("Comment construire sa légitimité en équipe ?",["Résultats concrets, formation continue, présence dans les instances, partage d'expériences","Rappeler son diplôme","Travailler seul"],""),
+    S("Cite un outil d'auto-évaluation de sa posture.",["grille d'observation","grilles d'observation","feedback entre pairs","feedback","analyse de situations","plan d'action personnel"],"")),
+  "Fiche 11 · Méthodes",
+  N(Q("Le fil commun des conseils pro ?",["Écouter, clarifier, orienter","Prescrire, contrôler, sanctionner","Informer, répéter, insister"],""),
+    A("Relie chaque situation au réflexe.",[["Posture bientraitante","Valider le vécu avant de conseiller"],["Littératie","Mots simples, faire reformuler"],["Projet territorial","Cartographie, pilotage et coordination distincts"],["Conflit interprofessionnel","Clarifier missions, documenter les accords"],["Précarité, TCA","Orienter et coordonner le suivi"]],""))
+ ]}
+ ],
+ mission:{id:"sp8m",t:"Le Contrat local de santé",items:[
+  CH("marchand","Premier comité du Contrat local de santé alimentation. Par quoi commences-tu ?",[
+    ["Présenter mon plan d'action nutritionnel déjà rédigé",0,[1,-10,0],"Les partenaires se sentent mis devant le fait accompli."],
+    ["Cartographier les acteurs (missions, contraintes, financements, publics, modalités) et lancer un diagnostic partagé",2,[6,10,-2],"Chacun apporte son expertise, habitants compris."],
+    ["Demander à chacun ce qu'il fait déjà, sans méthode",1,[2,3,0],"Bon réflexe, mais sans grille, on oublie des éléments."]],
+   "Fiches 5 et 7."),
+  CH("haddad","Une famille suivie au CCAS n'a plus de quoi manger en fin de mois. On me demande un « plan équilibré ».",[
+    ["Un plan à 5 fruits et légumes par jour",0,[-4,-10,0],"Inapplicable : culpabilité et sentiment d'échec."],
+    ["D'abord la quantité : épicerie sociale, banque alimentaire, bons municipaux ; puis des conseils compatibles avec leur budget",2,[10,8,-3],"Sécurité alimentaire avant équilibre optimal."]],
+   "Fiche 4."),
+  CH("haddad","Je voudrais le détail du suivi nutritionnel de cette famille pour mon rapport.",[
+    ["Je t'envoie tout le dossier par mail",0,[0,-12,0],"Violation du secret : ni accord, ni nécessité, ni circuit sécurisé."],
+    ["Avec l'accord de la famille, je te transmets par fiche de liaison sécurisée ce qui sert ta mission",2,[3,8,0],"Secret partagé : accord, nécessaire, sécurisé."],
+    ["Je refuse tout échange",1,[0,-4,0],"Le secret est respecté, mais la coordination en souffre."]],
+   "Fiche 6."),
+  BY("lemaire",T(B_PRO,"Qui repère qu'un patient sous AVK doit être vigilant sur la vitamine K des légumes verts ?",3,"Le pharmacien : interactions aliments-médicaments ; toi, tu adaptes l'alimentation.")),
+  CH("lemaire","Une adolescente de 15 ans a beaucoup maigri et s'inquiète sans cesse de son poids. Sa mère te l'adresse.",[
+    ["Je lui fais un programme pour reprendre du poids, seule",0,[-6,-6,0],"Tu dépasses ton champ : un TCA se prend en charge en équipe spécialisée."],
+    ["Je repère les signaux, j'oriente vers le médecin et un centre spécialisé, je reste en lien pour le volet préventif",2,[8,8,-1],"Repérer, orienter, coordonner."]],
+   "Fiche 4."),
+  CH("marchand","L'infirmière du centre de santé estime que les ateliers nutrition sont « son » domaine. La tension monte.",[
+    ["Je rappelle que la nutrition, c'est mon métier",0,[0,-10,0],"Défense de position : escalade."],
+    ["On clarifie les missions, on part de l'intérêt commun et on propose une co-animation, documentée",2,[6,10,0],"Intérêts communs, compromis qui préservent les missions."],
+    ["Je la laisse faire pour éviter le conflit",1,[-2,2,0],"Le conflit s'apaise, mais ton expertise se dilue."]],
+   "Fiches 9 et 10."),
+  BY("marchand",A("Je prépare le dossier de financement : relie chaque source à sa caractéristique.",[["ARS","Priorités politiques centrales"],["FEDER","Fonds européen, montants importants"],["Fondation privée","Flexible, mais indépendance à surveiller"],["Budget participatif","Priorités citoyennes"]],"Fiche 7.")),
+  BY("marchand",W("En fin d'année, l'élu te demande ce qui fait la réussite du Contrat local de santé. Réponds.","Une posture bientraitante et non-jugeante avec les habitants ; un réseau cartographié avec des instances distinctes (pilotage, coordination) et des outils partagés (fiches de liaison, tableau de bord) ; le secret partagé respecté ; un langage commun entre professions et des rôles clarifiés ; des conflits résolus par l'intérêt commun ; une évaluation collaborative avec des indicateurs consensuels.",["Posture bientraitante","Coordination et outils","Secret partagé","Rôles clarifiés, conflits gérés","Évaluation partagée"]))
+ ]}
+};
+
+/* ---------- COURS 9 · CHOIX ET CONCEPTION D'OUTILS PÉDAGOGIQUES ---------- */
+var B_BLOOM=[["Se souvenir",""],["Comprendre",""],["Appliquer",""],["Analyser",""],["Évaluer",""],["Créer",""]];
+var B_GRILLE=[["Contenu",""],["Accessibilité",""],["Utilisation",""],["Implication",""],["Apprentissages",""]];
+var B_UT=[["Compréhension",""],["Utilisabilité",""],["Adhésion émotionnelle",""]];
+var B_OUT=[["Ludique / manipulable",""],["Visuel / multimédia",""],["Numérique interactif",""]];
+COURS.sp9={id:"sp9",n:9,t:"Outils pédagogiques",lieu:"Atelier de conception de l'IREPS · Rennes",
+ pitch:"Créer un outil d'éducation nutritionnelle, ce n'est pas que vulgariser : il faut une méthode, de l'analyse des besoins à la validation sur le terrain. À l'IREPS, Manon, Théo et Josiane conçoivent un kit « équilibre à petit budget » pour les centres sociaux.",
+ P:{legoff:{n:"Manon Le Goff",r:"Chargée de projet IREPS, pédagogie",av:{bg:"#ffc94a",skin:"#f0c8a8",hair:"#c26a2e",hs:"long",shirt:"#13303a",glasses:1}},
+    theo:{n:"Théo Kerjean",r:"Designer graphique",av:{bg:"#ae8dff",skin:"#e8b896",hair:"#2b1b14",hs:"curly",shirt:"#3ee6b0"}},
+    josiane:{n:"Josiane Le Bihan",r:"Animatrice de centre social, co-créatrice",av:{bg:"#ff7a59",skin:"#f0c8a8",hair:"#d9d9d9",hs:"short",shirt:"#5bb8f5"}}},
+ conseil:{who:"legoff",t:"Toujours : simple, testé, validé, suivi. Faible littératie : une idée par support, pictogrammes, gros texte, test en réel, sans infantiliser. Petit budget : réplicable, modulaire, partenariats, prototypes low-cost. Validation : experts externes, sources datées, pas de biais commercial, traçabilité. Co-construire avec des prototypes tangibles ; indicateurs définis avant diffusion."},
+ levels:[
+ {id:"sp9a",t:"J'explore",s:"Fiches 1 à 3 · ludique, visuel, numérique, besoins spécifiques",items:[
+  "Fiche 0 · Le fil rouge",
+  N(O("Remets dans l'ordre la démarche de création d'un outil.",["Analyse des besoins","Choix","Conception","Test","Diffusion"],""),
+    Q("Que doit concilier un bon outil pédagogique ?",["Rigueur scientifique et accessibilité pédagogique","Esthétique et coût","Rapidité et quantité"],"Il conditionne l'efficacité de tes interventions et ta crédibilité.")),
+  "Fiche 1 · Outils ludiques, manipulables, ateliers",
+  N(Q("Un jeu éducatif utilise…",["Des mécaniques ludiques (règles, objectifs, récompenses) pour faciliter l'apprentissage","Uniquement des quiz","Des récompenses financières"],"Engagement spontané, mémorisation durable, moins de résistances."),
+    F("Un jeu éducatif repose sur des {règles|regles}, des {objectifs} et des {récompenses|recompenses}.",""),
+    W("Pourquoi les jeux sont-ils efficaces en éducation nutritionnelle ?","Ils suscitent un engagement spontané et une mémorisation durable, réduisent les résistances aux messages préventifs, rendent accessibles des notions complexes, et la motivation intrinsèque pousse à rejouer : répétition sans lassitude.",["Engagement, mémorisation","Moins de résistances","Rejouer = répéter sans lassitude"])),
+  N(A("Relie chaque support manipulable à son intérêt.",[["Jeux de plateau","Explorer les choix et leurs conséquences"],["Cartes éducatives","Mémoriser par association visuelle"],["Puzzles des groupes d'aliments","Apprendre à classer"]],""),
+    S("Comment appelle-t-on l'apprentissage par la manipulation ?",["kinesthesique","kinesthésique","apprentissage kinesthesique","apprentissage kinesthésique"],"Approche constructiviste."),
+    O("Remets dans l'ordre la méthode pour concevoir un support manipulable.",["Fixer un objectif précis","Choisir la métaphore ou les règles","Tester la manipulation avec le public","Simplifier jusqu'à une prise en main intuitive"],"")),
+  N(Q("Le « learning by doing », c'est…",["Apprendre en faisant : gestes et techniques transférables au quotidien","Apprendre par cœur","Regarder une démonstration"],"Cuisine, jardinage pédagogique, dégustation."),
+    null,
+    CAS("Un groupe pense que les légumineuses « c'est fade et long à cuisiner ».",Q("Quel outil choisir ?",["Un atelier dégustation de légumineuses bien préparées","Une affiche sur les protéines végétales","Un quiz"],"La découverte gustative casse les préjugés mieux qu'un discours."))),
+  "Fiche 2 · Supports visuels, multimédias, numériques",
+  N(Q("Quel est le risque d'une infographie trop simplifiée ?",["Des données déformées qui induisent de mauvais comportements","Elle coûte trop cher","Elle est trop longue à lire"],"Équilibre entre simplification et précision."),
+    S("Cite une représentation schématique qui aide à mémoriser l'équilibre.",["pyramide alimentaire","pyramide","cercle de l'equilibre","cercles de l'équilibre","assiette"],"")),
+  N(A("Relie chaque apport des vidéos à son exemple.",[["Démontrer des gestes","Techniques culinaires"],["Standardiser la qualité","Indépendamment de l'animateur local"],["Humaniser","Témoignages → identification"],["Illustrer l'abstrait","Animation des mécanismes nutritionnels"]],"")),
+  N([T(B_OUT,"Puzzle des groupes d'aliments",0,""),T(B_OUT,"Vidéo de démonstration culinaire",1,""),T(B_OUT,"Quiz adaptatif en ligne",2,""),T(B_OUT,"Jeu de cartes des nutriments",0,""),T(B_OUT,"Journal alimentaire numérique",2,"")],
+    S("Quelle limite majeure des outils numériques ?",["fracture numerique","fracture numérique","exclusion numerique"],"Piège d'examen : le numérique n'est pas universel."),
+    E(["Pour toucher tous les publics du centre social,"," je remplace tous les supports papier par une application,"," plus moderne."],1,"Le numérique exclut les personnes en fracture numérique : il ne remplace pas tout.","")),
+  "Fiche 3 · Besoins spécifiques",
+  N(Q("Pour des personnes avec troubles cognitifs, on prévoit…",["Gros caractères, contrastes, manipulation simplifiée, stimulation sensorielle, séquences courtes","Un support pour enfants","Des textes plus longs et détaillés"],"Adapter n'est pas infantiliser."),
+    null,
+    W("« Adapter n'est pas infantiliser. » Explique pour un public âgé avec troubles cognitifs.","On adapte la forme (gros caractères, contrastes, manipulation simple, textures et odeurs, séquences courtes contre la fatigue cognitive) tout en respectant la dignité et l'intelligence des participants : ni ton enfantin, ni contenu appauvri.",["Adaptations de forme","Séquences courtes","Respect de la dignité"])),
+  N(Q("Adapter un outil à une culture, c'est…",["Changer les modalités d'application, pas les principes scientifiques","Changer la science selon la culture","Traduire mot à mot"],"Sans relativisme nutritionnel."),
+    S("Comment appelle-t-on l'abandon des principes scientifiques au nom de la culture ?",["relativisme nutritionnel","relativisme"],""),
+    E(["Pour respecter la culture du groupe,"," j'enlève du support les repères scientifiques"," qui ne correspondent pas à leurs habitudes."],1,"Seules les modalités s'adaptent ; les principes scientifiques restent universels.","Piège d'examen.")),
+  N(A("Précarité : relie chaque exigence à sa raison.",[["Coût réduit","Accessibilité économique"],["Robustesse","Durer dans des conditions difficiles"],["Conseils petit budget","Réalistes, sans culpabiliser"],["Valoriser les compétences","Plutôt que souligner les manques"]],""))
+ ]},
+ {id:"sp9b",t:"J'adapte",s:"Fiches 4 à 7 · public, Bloom, contraintes, grille qualité",items:[
+  "Fiche 4 · Analyser le public et le terrain",
+  N(A("Grille d'analyse du public : complète.",[["Caractéristiques","démographiques"],["Niveaux","de formation"],["Équipements","disponibles"],["Contraintes","organisationnelles"],["Motivations","et freins identifiés"],["Expériences","pédagogiques antérieures"]],""),
+    C("Combien d'éléments compte la grille d'analyse du public ?",6,""),
+    W("Pourquoi analyser le public avant de concevoir ?","Sans cette analyse, on crée des outils que personne n'utilisera : trop complexe = découragement, trop simple = ennui. Il faut connaître le public, sa littératie et les équipements disponibles.",["Outils inutilisés sinon","Trop complexe / trop simple","Littératie, équipements"])),
+  N(Q("Pour un public à littératie limitée…",["Une idée par support, progression linéaire, répétitions stratégiques, visuels compensatoires","Beaucoup de texte pour tout expliquer","Un support différent pour stigmatiser moins"],"Les visuels aident ceux qui lisent mal et enrichissent pour tous."),
+    null,
+    CAS("Les animateurs du centre social sont peu formés en nutrition, l'espace est petit et la séance dure 45 minutes.",Q("Conséquences sur l'outil ?",["Support compact, guide d'utilisation détaillé, durée calée sur 45 minutes","Un outil expert sans guide","Un grand jeu de plateau de 2 heures"],"Espace, animateurs, temps."))),
+  "Fiche 5 · Bloom et progression",
+  N(O("Remets dans l'ordre les 6 niveaux de Bloom.",["Se souvenir","Comprendre","Appliquer","Analyser","Évaluer","Créer"],"Du plus simple au plus complexe."),
+    [T(B_BLOOM,"Quiz, listes de faits",0,""),T(B_BLOOM,"Schémas, résumés",1,""),T(B_BLOOM,"Ateliers, exercices concrets",2,""),T(B_BLOOM,"Études de cas, comparaisons",3,""),T(B_BLOOM,"Débats, critiques, auto-évaluation",4,""),T(B_BLOOM,"Projets, compositions",5,"")],
+    E(["Pour vérifier que les parents savent composer un repas équilibré,"," un quiz sur les groupes d'aliments"," suffit."],1,"Un quiz vérifie « se souvenir » ; pour l'application pratique, il faut un atelier (composer un vrai repas).","Piège d'examen.")),
+  N(Q("L'alignement pédagogique, c'est…",["La cohérence entre objectif, méthode et évaluation","Aligner les tables de l'atelier","Suivre le programme officiel"],""),
+    O("Remets dans l'ordre l'alignement pédagogique.",["Objectif","Méthode / outil","Évaluation"],""),
+    CAS("Objectif : que les participants sachent lire une étiquette au supermarché.",W("Aligne méthode et évaluation.","Méthode : atelier pratique avec de vrais emballages (expérimentation). Évaluation : mesurer la mise en pratique effective, par exemple choisir le produit le moins sucré parmi trois en situation réelle.",["Objectif d'application","Méthode d'expérimentation","Évaluation de la pratique"]))),
+  N(O("Remets dans l'ordre la progression des supports.",["Accroche","Approfondissement","Application","Évaluation"],""),
+    F("Chaque outil prépare le suivant, en complexité {croissante}, sans {redondance} mais en renforçant les messages clés.","")),
+  N(Q("Comment régler la complexité cognitive d'un outil ?",["La tester avec des représentants du public","Se fier à son intuition d'expert","Prendre le niveau le plus élevé"],"Ce qui te semble simple peut être complexe pour eux.")),
+  "Fiche 6 · Contraintes techniques et organisationnelles",
+  N(A("Plastifié ou papier ?",[["Support plastifié","Plus cher, mais réutilisable"],["Support papier","Économique, mais fragile"]],"Analyse coût / bénéfice."),
+    S("Qu'est-ce qui conditionne une diffusion large d'un outil ?",["facilite de reproduction","facilité de reproduction","reproductibilite","reproductibilité","reproduction"],"")),
+  N(Q("Pourquoi un guide d'animation ?",["Les professionnels de terrain sont souvent peu formés à la pédagogie : modalités, écueils, adaptations","Pour faire joli","Pour remplacer la formation scientifique"],"La professionnalisation des usages conditionne l'efficacité."),
+    S("Cite une façon de rendre un outil évolutif.",["contenus modulaires","modulaire","supports numeriques","date de validite","date de validité","version datée","mises a jour"],"Contenus modulaires, numérique actualisable, date de validité.")),
+  "Fiche 7 · La grille de qualité",
+  N(O("Remets dans l'ordre les 5 dimensions de la grille de qualité.",["Contenu","Accessibilité","Utilisation","Implication","Apprentissages"],""),
+    [T(B_GRILLE,"Les sources sont-elles identifiées ?",0,""),T(B_GRILLE,"Est-il utilisable quel que soit le niveau de littératie ?",1,""),T(B_GRILLE,"Y a-t-il un guide d'utilisation clair ?",2,""),T(B_GRILLE,"Favorise-t-il les échanges dans le groupe ?",3,""),T(B_GRILLE,"Aide-t-il à mémoriser et à appliquer ?",4,"")]),
+  N(A("Relie chaque dimension à un critère.",[["Contenu","Validation scientifique, pas de conflit d'intérêts"],["Accessibilité","Adaptation culturelle et linguistique"],["Utilisation","Utilisable en tout ou en partie"],["Implication","Collective et individuelle"],["Apprentissages","Construction de savoirs, ancrage"]],""),
+    null,
+    W("À quoi sert la grille de qualité ?","Elle sert à choisir un outil existant comme à vérifier le sien avant diffusion, sur 5 dimensions : contenu, accessibilité, utilisation, implication, apprentissages.",["Choisir un outil existant","Vérifier le sien","5 dimensions"]))
+ ]},
+ {id:"sp9c",t:"Je conçois",s:"Fiches 8 à 10 · co-construction, tests, diffusion",items:[
+  "Fiche 8 · Concevoir en collaboration",
+  N(Q("Pourquoi co-construire avec le public cible ?",["Révéler ses vrais besoins, éviter les outils rejetés, favoriser l'appropriation","Gagner du temps","Faire baisser les coûts"],"Les participants deviennent co-créateurs ; on respecte leur expertise d'usage."),
+    null,
+    W("La co-construction prend du temps : pourquoi vaut-elle le coup ?","Elle révèle les vrais besoins, souvent différents de ce qu'on imaginait ; elle évite de produire un outil rejeté ; les participants, devenus co-créateurs, s'approprient l'outil, l'utilisent et le recommandent à leurs pairs.",["Vrais besoins","Pas d'outil rejeté","Appropriation, recommandation"])),
+  N(A("Relie chaque expertise à son apport.",[["Nutrition","Justesse scientifique"],["Pédagogie","Structurer l'apprentissage"],["Design","Impact visuel, utilisabilité"],["Retours terrain","Contraintes pratiques d'usage"]],"")),
+  N(O("Remets dans l'ordre le cycle itératif.",["Conception initiale","Test sur un petit échantillon","Analyse des retours","Nouvelle version","Validation élargie","Finalisation"],""),
+    E(["Mieux vaut concevoir un outil parfait sur le papier"," et le diffuser directement,"," plutôt que de multiplier les petites versions."],0,"Plusieurs petites améliorations valent mieux qu'une conception parfaite sur le papier mais inadaptée.","")),
+  "Fiche 9 · Tester, finaliser, diffuser",
+  N([T(B_UT,"Les participants ont-ils compris le message ?",0,""),T(B_UT,"Combien de temps pour prendre en main le jeu ?",1,""),T(B_UT,"Les participants ont-ils aimé et veulent-ils l'utiliser ?",2,"")],
+    A("Relie chaque indicateur à sa méthode.",[["Compréhension des messages","Tests de rappel, reformulation"],["Facilité d'utilisation","Temps de prise en main, taux d'erreur"],["Intention de changement","Échelles d'attitude"]],"")),
+  N(Q("Comment analyser les verbatims d'un test ?",["Par catégories : difficultés, suggestions, réactions émotionnelles, intention d'usage","En comptant les mots","En gardant seulement les compliments"],"→ ajustements prioritaires.")),
+  N(A("Finaliser : relie chaque standard à son intérêt.",[["Charte graphique","Identification, crédibilité"],["Mentions légales","Sources, droits d'usage, contacts"],["Validation scientifique","Légitimité auprès des institutions"],["Guide d'utilisation","Usage par d'autres professionnels"]],"")),
+  N(S("Cite un réseau qui diffuse les outils dans les territoires.",["afdn","ars","ireps"],"AFDN, ARS, IREPS."),
+    Q("La formation de formateurs permet…",["De démultiplier l'animation de l'outil","De remplacer l'outil","D'éviter les tests"],""),
+    W("Pourquoi évaluer un outil après sa diffusion ?","Pour savoir s'il est utilisé et efficace, améliorer les prochaines versions et prouver la valeur du travail : plus un outil est utilisé, plus l'impact en santé publique est grand.",["Utilisé ? efficace ?","Améliorer","Prouver la valeur"])),
+  "Fiche 10 · Méthodes",
+  N(Q("Le fil commun des conseils pro ?",["Simple, testé, validé, suivi","Beau, cher, complet","Rapide, numérique, unique"],""),
+    A("Relie chaque situation au réflexe.",[["Faible littératie","Une idée par support, pictogrammes"],["Petit budget","Réplicable, modulaire, prototypes low-cost"],["Validation","Relecture par des experts externes"],["Co-construction","Prototypes tangibles, retours structurés"],["Impact","Indicateurs définis avant diffusion"]],""))
+ ]}
+ ],
+ mission:{id:"sp9m",t:"Le kit « équilibre à petit budget »",items:[
+  CH("legoff","On nous commande un kit pour les centres sociaux. Par quoi commences-tu ?",[
+    ["Choisir tout de suite un beau jeu de plateau",0,[0,-6,-6],"Sans analyse du public, l'outil risque de rester au placard."],
+    ["Analyser le public et le terrain : démographie, littératie, équipements, contraintes, motivations, expériences",2,[6,8,-1],"La grille d'analyse du public d'abord."],
+    ["Faire une appli, c'est plus moderne",0,[0,-6,-5],"Fracture numérique : une partie du public serait exclue."]],
+   "Fiche 4."),
+  BY("legoff",T(B_BLOOM,"Objectif : que les familles composent elles-mêmes un menu de la semaine à petit budget",5,"Créer : on vise un projet, une composition.")),
+  CH("josiane","Au centre social, les parents lisent peu, l'espace est petit et les animateurs ne sont pas diététiciens.",[
+    ["Une brochure détaillée de 12 pages",0,[0,-8,-2],"Trop de texte pour ce public."],
+    ["Des cartes-aliments illustrées et plastifiées, une idée par carte, un guide d'animation pas à pas",2,[6,8,-3],"Compact, visuel, robuste, avec un guide pour les animateurs."],
+    ["Une vidéo projetée",1,[2,2,-3],"Visuelle, mais il n'y a pas toujours de vidéoprojecteur, et c'est peu manipulable."]],
+   "Fiches 3, 4 et 6."),
+  CH("theo","Pour aller vite, je finalise les 40 cartes et j'imprime tout. OK ?",[
+    ["Oui, on gagne du temps",0,[0,-4,-8],"Si une carte n'est pas comprise, tout est à refaire."],
+    ["D'abord un prototype low-cost testé avec quelques parents, puis on ajuste",2,[4,8,-1],"Démarche itérative : petites versions testées."]],
+   "Fiche 8."),
+  CH("josiane","Les parents testeurs disent que les photos de saumon et de quinoa « ne sont pas pour nous ».",[
+    ["Garder les photos, ce sont de bons aliments",0,[0,-10,0],"Message excluant : coûteux et socialement marqué."],
+    ["Remplacer par des aliments accessibles (sardines, lentilles, œufs) et valoriser ce qu'ils savent déjà cuisiner",2,[6,10,0],"Conseils réalistes à petit budget, compétences valorisées."]],
+   "Fiche 3."),
+  BY("theo",A("Je relis le kit avec la grille de qualité : relie chaque question à sa dimension.",[["Les sources sont-elles citées ?","Contenu"],["Lisible quel que soit le niveau de lecture ?","Accessibilité"],["Le guide est-il clair ?","Utilisation"],["Favorise-t-il les échanges ?","Implication"],["Aide-t-il à appliquer chez soi ?","Apprentissages"]],"Fiche 7.")),
+  CH("legoff","Une enseigne de supermarché propose d'imprimer le kit gratuitement avec son logo sur chaque carte.",[
+    ["On accepte, ça règle le budget",0,[-2,-10,8],"Biais commercial : critère « éthique, pas de conflit d'intérêts » non respecté."],
+    ["On refuse et on cherche des partenariats locaux neutres pour mutualiser les coûts",2,[3,8,-2],"Neutralité préservée, coûts partagés."]],
+   "Fiches 7 et 10."),
+  BY("legoff",W("Présente au comité de l'IREPS comment le kit a été conçu et comment il sera évalué.","Analyse du public et du terrain ; objectifs alignés sur Bloom (jusqu'à composer un menu) avec méthodes et évaluation cohérentes ; co-construction avec les parents et les animateurs ; prototypes testés (compréhension, utilisabilité, adhésion) puis ajustés ; vérification par la grille de qualité et des experts externes ; finalisation (charte, mentions légales, guide) ; diffusion via l'IREPS et l'ARS avec des indicateurs définis à l'avance et un suivi post-diffusion.",["Analyse du public","Bloom et alignement","Co-construction, itérations","Grille qualité, validation","Diffusion et suivi"]))
+ ]}
+};
+
 (function(){
 var TITLE="Santé & Cité",PLAYER="Rym";
 /* =============== ÉTAT =============== */
