@@ -1,0 +1,1084 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0e9f8e"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Santé &amp; Cité"><meta name="apple-mobile-web-app-status-bar-style" content="default"><title>Santé &amp; Cité</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap">
+<style>
+:root{--bg:#e6f2ef;--card:#ffffff;--soft:#f4f9f8;--line:#d3e6e2;--ink:#13303a;--mut:#4b6b73;--teal:#0e9f8e;--tealD:#0b7f72;--tealL:#d9f5ef;
+ --coral:#ff7a59;--coralD:#c4462a;--coralL:#ffe3da;--yel:#ffc94a;--yelL:#fff1cc;--sky:#5bb8f5;--skyL:#dcefff;--vio:#ae8dff;--vioL:#ece4ff;--mint:#3ee6b0;
+ --ok:#0e9f8e;--okL:#d9f5ef;--ko:#e0533a;--koL:#ffe3da;--navy:#13303a;--onNavy:#ffffff;--display:Fredoka,Nunito,system-ui,sans-serif;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f2229;--card:#173540;--soft:#12303a;--line:#24505c;--ink:#e9f6f4;--mut:#9cbcc2;--tealD:#55d6cf;--tealL:#123f3f;--coralL:#4a2a22;--yelL:#4a3d17;--skyL:#173a52;--vioL:#2f2850;--okL:#123f3f;--koL:#4a2422;--navy:#0a1a20;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f2229;--card:#173540;--soft:#12303a;--line:#24505c;--ink:#e9f6f4;--mut:#9cbcc2;--tealD:#55d6cf;--tealL:#123f3f;--coralL:#4a2a22;--yelL:#4a3d17;--skyL:#173a52;--vioL:#2f2850;--okL:#123f3f;--koL:#4a2422;--navy:#0a1a20;color-scheme:dark}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Nunito,system-ui,sans-serif;font-size:15px;line-height:1.45;-webkit-text-size-adjust:100%}
+button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;line-height:1.2}
+.app{max-width:560px;margin:0 auto;padding:16px 16px 96px;min-height:100vh}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--tealD)}
+.mut{color:var(--mut)}.small{font-size:13px}
+.card{background:var(--card);border-radius:20px;padding:14px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{min-height:48px;padding:0 18px;border-radius:16px;border:0;background:var(--navy);color:var(--onNavy);font-family:var(--display);font-weight:600;font-size:16px}
+.btn.small{min-height:42px;font-size:15px;padding:0 14px}
+.btn.ghost{background:var(--card);color:var(--ink);border:2px solid var(--line)}
+.btn.teal{background:var(--teal);color:#fff}.btn.coral{background:var(--coral);color:#2a0f08}
+.btn:disabled{opacity:.45;cursor:default}
+.back{background:none;border:0;padding:6px 0;font-weight:800;color:var(--tealD);min-height:40px}
+/* barre du bas */
+.nav{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);display:flex;justify-content:center;z-index:20;padding-bottom:env(safe-area-inset-bottom)}
+.nav .in{display:grid;grid-template-columns:repeat(4,1fr);width:100%;max-width:560px}
+.nav button{background:none;border:0;min-height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:11.5px;font-weight:800;color:var(--mut);position:relative}
+.nav button svg{width:24px;height:24px}
+.nav button.on{color:var(--tealD)}
+.nav .badge{position:absolute;top:6px;left:calc(50% + 6px);background:var(--coral);color:#2a0f08;border-radius:999px;font-size:10.5px;padding:0 6px;min-width:18px;line-height:18px}
+/* accueil */
+.me{display:flex;gap:12px;align-items:center}
+.me .who{flex:1;min-width:0}
+.me h1{font-size:26px}
+.xpbar{height:10px;border-radius:6px;background:var(--line);overflow:hidden;margin-top:6px}.xpbar i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--mint));border-radius:6px}
+.flame{display:flex;flex-direction:column;align-items:center;font-family:var(--display);font-weight:700;font-size:18px;color:var(--coralD)}
+.flame small{font-family:Nunito;font-size:10.5px;font-weight:800;color:var(--mut)}
+.due{display:flex;align-items:center;gap:12px;background:var(--navy);color:#fff;border-radius:20px;padding:14px;border:0;width:100%;text-align:left}
+.due b{font-family:var(--display);font-size:18px;font-weight:600;display:block}.due span{font-size:13px;color:#c7dde0}
+.due .go{margin-left:auto;background:var(--yel);color:#4a3300;border-radius:12px;padding:8px 12px;font-weight:800;white-space:nowrap}
+.quests{display:flex;flex-direction:column;gap:8px}
+.quest{display:flex;gap:10px;align-items:center;background:var(--card);border-radius:16px;padding:10px 12px}
+.quest .qi{width:34px;height:34px;border-radius:10px;background:var(--yelL);display:grid;place-items:center;font-weight:800;color:#8a6200;flex:none}
+.quest.done .qi{background:var(--okL);color:var(--tealD)}
+.quest .qt{flex:1;font-weight:700;font-size:14px}.quest .qt small{display:block;font-weight:600;color:var(--mut);font-size:12px}
+.qbar{height:6px;border-radius:4px;background:var(--line);margin-top:4px;overflow:hidden}.qbar i{display:block;height:100%;background:var(--yel)}
+.claim{min-height:36px;padding:0 10px;border-radius:10px;border:0;background:var(--yel);color:#4a3300;font-weight:800;font-size:13px}
+.qz{display:grid;gap:12px}
+.qzc{position:relative;border:0;border-radius:24px;overflow:hidden;text-align:left;padding:0;background:var(--card);display:flex;flex-direction:column}
+.qzc svg{display:block;width:100%;height:auto}
+.qzc .t{padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.qzc .t b{font-family:var(--display);font-size:20px;font-weight:600}
+.pill{display:inline-block;font-size:11.5px;font-weight:800;padding:3px 9px;border-radius:999px;background:var(--tealL);color:var(--tealD)}
+.pill.coral{background:var(--coralL);color:var(--coralD)}.pill.grey{background:var(--soft);color:var(--mut)}
+.qzc.lock{opacity:.75}
+/* quartier */
+.secs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sec{border:0;border-radius:20px;padding:14px;text-align:left;min-height:130px;display:flex;flex-direction:column;gap:4px;color:#13303a}
+.sec b{font-family:var(--display);font-size:17px;font-weight:600;line-height:1.15}
+.sec small{font-weight:700;font-size:12px;opacity:.85}
+.sec .bl{margin-top:auto;display:flex;gap:4px}.sec .bl i{width:14px;height:18px;border-radius:3px;background:rgba(255,255,255,.55)}.sec .bl i.on{background:#13303a}
+.sec.wide{grid-column:span 2;min-height:90px}
+.memline{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;color:var(--mut)}
+.memline .mb{flex:1;height:8px;border-radius:5px;background:var(--line);overflow:hidden}.memline .mb i{display:block;height:100%;background:var(--teal)}
+/* secteur : liste des cours */
+.clist{display:flex;flex-direction:column;gap:10px}
+.crow{display:flex;gap:12px;align-items:center;background:var(--card);border:0;border-radius:18px;padding:12px;text-align:left;width:100%}
+.crow .n{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:18px;background:var(--soft);color:var(--mut);flex:none}
+.crow .tx{flex:1;min-width:0}.crow .tx b{display:block;font-size:15px}.crow .tx small{color:var(--mut);font-size:12.5px}
+.stars{color:var(--yel);font-size:14px;letter-spacing:1px;white-space:nowrap}.stars .off{color:var(--line)}
+.crow.soon{background:var(--soft);color:var(--mut)}
+/* cours */
+.hero{border-radius:24px;overflow:hidden;background:var(--card)}
+.hero .top{padding:16px;background:var(--tealL)}
+.hero h1{font-size:24px}
+.cast{display:flex;gap:10px;padding:12px 16px;overflow-x:auto}
+.cast .p{display:flex;flex-direction:column;align-items:center;gap:3px;width:84px;flex:none;text-align:center;font-size:11.5px;font-weight:700;line-height:1.2}
+.lvls{display:flex;flex-direction:column;gap:10px}
+.lvl{display:flex;gap:12px;align-items:center;background:var(--card);border:0;border-radius:18px;padding:12px;text-align:left;width:100%}
+.lvl .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:20px;flex:none;background:var(--tealL);color:var(--tealD)}
+.lvl.lock{opacity:.6}.lvl.lock .ic{background:var(--soft);color:var(--mut)}
+.lvl.mis .ic{background:var(--coralL);color:var(--coralD)}
+.lvl .tx{flex:1;min-width:0}.lvl .tx b{display:block}.lvl .tx small{color:var(--mut);font-size:12.5px;display:block}
+.stbar{display:flex;height:6px;border-radius:4px;overflow:hidden;background:var(--line);margin-top:6px}.stbar i{display:block;height:100%}
+.st0{background:var(--line)}.st1{background:var(--yel)}.st2{background:var(--sky)}.st3{background:var(--teal)}
+.conseil{background:var(--navy);color:#fff;border-radius:20px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
+.conseil .lb{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--yel)}
+.conseil p{margin:4px 0 0;font-size:14px;line-height:1.45}
+/* personnages */
+.team{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tm{background:var(--card);border:0;border-radius:18px;padding:12px;display:flex;flex-direction:column;gap:5px;text-align:left}
+.tm b{font-size:14px;line-height:1.2}.tm small{font-size:11.5px;color:var(--mut)}.tm em{font-style:normal;font-size:11px;font-weight:800;color:var(--tealD)}
+.tm.unk{background:var(--soft);color:var(--mut)}
+.tm .q{width:52px;height:52px;border-radius:50%;background:var(--line);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:22px}
+/* jeu */
+.gtop{position:sticky;top:0;z-index:10;background:var(--bg);padding:8px 0 10px;display:flex;flex-direction:column;gap:8px}
+.gtop .r1{display:flex;align-items:center;gap:10px}
+.gtop .r1 h2{flex:1;font-size:17px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.score{font-family:var(--display);font-weight:700;color:var(--tealD);white-space:nowrap}
+#gProg{display:flex;gap:3px}#gProg i{flex:1;height:7px;border-radius:4px;background:var(--line)}#gProg i.cur{background:var(--sky)}#gProg i.ok{background:var(--teal)}#gProg i.ko{background:var(--coral)}
+.gauges{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.gauge{font-size:11px;font-weight:800;color:var(--mut)}.gauge .gb{height:8px;border-radius:5px;background:var(--line);overflow:hidden;margin-top:3px}.gauge .gb i{display:block;height:100%;transition:width .5s}
+.gauge .d{font-weight:800;margin-left:4px}.gauge .d.p{color:var(--tealD)}.gauge .d.m{color:var(--coralD)}
+.qcard{background:var(--card);border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.qcard h3{font-size:19px}
+.where{font-size:12px;font-weight:800;color:var(--mut)}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags span{font-size:11.5px;font-weight:800;padding:3px 9px;border-radius:999px;background:var(--soft);color:var(--mut)}
+.tierb.t1{background:var(--skyL)!important;color:#1d5f8f!important}.tierb.t2{background:var(--yelL)!important;color:#8a6200!important}.tierb.t3{background:var(--coralL)!important;color:var(--coralD)!important}
+:root[data-theme="dark"] .tierb.t1,:root[data-theme="dark"] .tierb.t2{color:var(--ink)!important}
+.stb.s1{background:var(--yelL)!important}.stb.s2{background:var(--skyL)!important}.stb.s3{background:var(--okL)!important;color:var(--tealD)!important}
+.ctx{background:var(--soft);border-left:4px solid var(--sky);border-radius:10px;padding:10px 12px;font-size:14px}
+.spk{display:flex;gap:10px;align-items:flex-start}
+.spk .bub{background:var(--soft);border-radius:4px 16px 16px 16px;padding:10px 12px;flex:1}
+.spk .bub small{display:block;font-size:11.5px;font-weight:800;color:var(--tealD);margin-bottom:2px}
+.spk .bub h3{font-size:17px;font-family:Nunito;font-weight:700}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{text-align:left;min-height:50px;padding:10px 14px;border-radius:16px;background:var(--card);border:2px solid var(--line);font-weight:700}
+.opt.sel{border-color:var(--sky);background:var(--skyL)}
+.opt.ok{border-color:var(--ok);background:var(--okL)}.opt.ko{border-color:var(--ko);background:var(--koL)}
+.opt .rx{display:block;font-weight:600;font-size:13px;margin-top:4px;color:var(--mut)}
+.lbl{font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.calc{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+#cin{flex:1;min-width:140px;min-height:50px;border-radius:14px;border:2px solid var(--line);padding:0 14px;font-size:17px;background:var(--card);color:var(--ink)}
+#cin.ok,.blank.ok{border-color:var(--ok);background:var(--okL)}#cin.ko,.blank.ko{border-color:var(--ko);background:var(--koL)}
+.u{font-weight:800;color:var(--mut)}
+.cloze{font-size:16px;line-height:2.3;margin:0}
+.blank{width:118px;min-height:36px;border-radius:10px;border:2px solid var(--line);padding:0 8px;font-size:15px;background:var(--card);color:var(--ink);vertical-align:middle}
+.fix{display:inline-block;font-size:12.5px;font-weight:800;color:var(--tealD);background:var(--okL);border-radius:8px;padding:0 6px;margin-left:4px;line-height:1.6}
+.big{font-family:var(--display);font-size:20px;font-weight:600;text-align:center;background:var(--soft);border-radius:16px;padding:16px}
+.big-sub{text-align:center;color:var(--mut);font-size:13px}
+.bins{display:grid;gap:8px}
+.bin{min-height:72px;border-radius:16px;border:2px dashed var(--line);background:var(--card);padding:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center}
+.bin b{font-size:14px}.bin small{font-size:11.5px;color:var(--mut)}
+.bin.sel{border-style:solid;border-color:var(--sky);background:var(--skyL)}.bin.ok{border-style:solid;border-color:var(--ok);background:var(--okL)}.bin.ko{border-style:solid;border-color:var(--ko);background:var(--koL)}
+.hint{margin:0;font-size:13px;color:var(--mut)}
+.assoc{display:grid;grid-template-columns:1fr 1fr;gap:8px}.assoc .col{display:flex;flex-direction:column;gap:8px}
+.as{min-height:48px;padding:8px 10px;border-radius:14px;border:2px solid var(--line);background:var(--card);font-weight:700;font-size:13.5px;text-align:left;position:relative}
+.as.sel{border-color:var(--sky);background:var(--skyL)}.as.done{border-color:var(--ok);background:var(--okL)}
+.tagn{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--teal);color:#fff;font-size:11px;margin-right:6px}
+.shake{animation:sh .35s}@keyframes sh{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.seq,.pool,.slots{display:flex;flex-direction:column;gap:6px}
+.pool{flex-direction:row;flex-wrap:wrap}
+.slot,.slot2{min-height:44px;border-radius:12px;border:2px dashed var(--line);background:var(--soft);padding:8px 10px;display:flex;gap:8px;align-items:center;text-align:left;font-weight:700;font-size:14px;color:var(--mut)}
+.slot b,.slot2 b{width:22px;height:22px;border-radius:50%;background:var(--line);display:grid;place-items:center;font-size:12px;flex:none;color:var(--ink)}
+.slot.fill,.slot2.fill{border-style:solid;background:var(--card);color:var(--ink)}
+.slot2.act{border-color:var(--sky)}
+.slot.ok,.slot2.ok{border-color:var(--ok);background:var(--okL)}.slot.ko,.slot2.ko{border-color:var(--ko);background:var(--koL)}
+.chipb{min-height:42px;padding:6px 12px;border-radius:12px;border:2px solid var(--line);background:var(--card);font-weight:700;font-size:13.5px;text-align:left}
+.segs{margin:0;font-size:16px;line-height:1.9}
+.seg{border:0;background:var(--soft);border-radius:8px;padding:3px 6px;font-size:15.5px;text-align:left;margin:2px 0}
+.seg.sel{background:var(--skyL);outline:2px solid var(--sky)}.seg.ko-mark{background:var(--koL);outline:2px solid var(--ko)}
+textarea{width:100%;border-radius:14px;border:2px solid var(--line);padding:10px 12px;font:inherit;background:var(--card);color:var(--ink);resize:vertical}
+.modelbox{background:var(--soft);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:8px}.modelbox p{margin:0}.modelbox ul{margin:0;padding-left:18px}
+.conf{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:10px}
+.confb{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.cb{min-height:48px;border-radius:14px;border:0;font-weight:800;font-size:14px}
+.c-s{background:var(--teal);color:#fff}.c-h{background:var(--yel);color:#4a3300}.c-g{background:var(--line);color:var(--ink)}
+.cb:disabled{opacity:.4;cursor:default}
+.idk{background:none;border:0;color:var(--mut);font-weight:800;text-decoration:underline;min-height:40px;align-self:center}
+.fb{border-radius:16px;padding:12px 14px;background:var(--okL);display:flex;flex-direction:column;gap:6px;font-size:14px}
+.fb.ko{background:var(--koL)}.fb strong{font-size:15px}.fb .ref{font-size:11.5px;color:var(--mut);font-weight:700}
+.memfb{display:flex;flex-direction:column;gap:2px;font-size:12.5px}.memfb .up{color:var(--tealD);font-weight:800}.memfb .down{color:var(--coralD);font-weight:800}
+.typed{font-size:13px;color:var(--mut)}
+.end{align-items:center;text-align:center}
+.stars-big{font-size:38px;color:var(--yel);letter-spacing:4px}.stars-big .off{color:var(--line)}
+.endbody{width:100%}
+.sectab{display:flex;flex-direction:column;gap:4px;text-align:left;margin-top:8px}
+.secrow{display:flex;justify-content:space-between;gap:10px;font-size:13px;background:var(--soft);border-radius:10px;padding:6px 10px}.secrow b.g{color:var(--tealD)}.secrow b.r{color:var(--coralD)}
+.databox{background:var(--soft);border-radius:14px;padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+.drow{display:grid;grid-template-columns:110px 1fr 46px;gap:8px;align-items:center;font-size:12.5px;font-weight:700}
+.drow .db{height:12px;border-radius:6px;background:var(--line);overflow:hidden}.drow .db i{display:block;height:100%;background:var(--coral)}
+.pop{animation:pop .25s ease-out}@keyframes pop{from{transform:scale(.97);opacity:.4}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion: reduce){.pop,.shake{animation:none}}
+/* cerveau */
+.memrow{display:grid;grid-template-columns:minmax(0,1fr) 90px 44px;gap:8px;align-items:center;font-size:13px;padding:6px 0;border-bottom:1px solid var(--line)}
+.memrow.strong{font-weight:800}
+.membar{position:relative;height:10px;border-radius:6px;background:var(--line)}.membar i{display:block;height:100%;border-radius:6px;background:var(--teal)}.membar em{position:absolute;top:-3px;width:3px;height:16px;background:var(--coral);border-radius:2px}
+.memrow small{grid-column:1/-1;color:var(--mut);font-size:11.5px;margin-top:-4px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kpi{background:var(--card);border-radius:16px;padding:10px;text-align:center}.kpi b{display:block;font-family:var(--display);font-size:24px;font-weight:600;color:var(--tealD)}.kpi small{font-size:11.5px;color:var(--mut);font-weight:700}
+.carnet{display:flex;flex-direction:column;gap:6px}.carnet .it{background:var(--soft);border-radius:12px;padding:8px 10px;font-size:13px}.carnet .it b{display:block}
+input[type=date]{min-height:44px;border-radius:12px;border:2px solid var(--line);padding:0 10px;font:inherit;background:var(--card);color:var(--ink)}
+details{background:var(--card);border-radius:16px;padding:12px 14px}details summary{font-weight:800;cursor:pointer}
+.code{width:100%;font-family:ui-monospace,monospace;font-size:12px}
+.stack{display:flex;flex-direction:column;gap:14px}
+.toast{position:fixed;left:50%;top:14px;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 16px;border-radius:14px;font-weight:800;z-index:50;box-shadow:0 6px 20px rgba(0,0,0,.2);max-width:92vw;text-align:center}
+</style></head><body>
+<div class="app">
+ <section id="home" class="stack"></section>
+ <section id="quartier" class="stack" hidden></section>
+ <section id="secteur" class="stack" hidden></section>
+ <section id="cours" class="stack" hidden></section>
+ <section id="team" class="stack" hidden></section>
+ <section id="brain" class="stack" hidden></section>
+ <section id="game" hidden>
+  <div class="gtop">
+   <div class="r1"><button class="back" id="quitGame" type="button">✕ Quitter</button><h2 id="gTitle"></h2><span class="score"><span id="gScore">0</span> XP</span></div>
+   <div id="gGauges" class="gauges" hidden></div>
+   <div id="gProg"></div>
+  </div>
+  <div id="gStage"></div>
+ </section>
+</div>
+<nav class="nav" id="nav"><div class="in">
+ <button type="button" data-nav="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 21V10l5-3v14M8 21V5l6-3v19M14 21V9l7 3v9M2 21h20"/></svg>Ville</button>
+ <button type="button" data-nav="due"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v5h-5"/></svg>Révisions<span class="badge dueN" hidden></span></button>
+ <button type="button" data-nav="team"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.3-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14.5c2.4 0 4 1.5 4.6 4"/></svg>Personnages</button>
+ <button type="button" data-nav="brain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 6 1V5a2.5 2.5 0 0 0-3-1zM15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-6 1"/></svg>Mon cerveau</button>
+</div></nav>
+<script src="config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script><script>
+/* ===== CONTENU (tiré des fiches de Rym) ===== */
+function Q(q,o,e){return {k:"qcm",q:q,o:o,e:e}}
+function C(q,a,e,u,tol){return {k:"calc",q:q,a:a,u:u||"",tol:tol||0,e:e}}
+function T(b,n,k,e,sub){return {k:"tri",b:b,n:n,ans:k,e:e,sub:sub||""}}
+function A(q,p,e){return {k:"assoc",q:q,p:p,e:e}}
+function O(q,s,e){return {k:"ordre",q:q,s:s,e:e}}
+function S(q,ans,e){return {k:"saisie",q:q,ans:ans,e:e}}
+function F(t,e){return {k:"trous",t:t,e:e}}
+function W(q,model,pts){return {k:"pourquoi",q:q,model:model,pts:pts||[]}}
+function E(segs,bad,fix,e){return {k:"erreur",segs:segs,bad:bad,fix:fix,e:e}}
+function CAS(ctx,f){f.ctx=ctx;return f}
+function BY(who,f){f.who=who;return f}
+/* scène à choix : options [texte, qualité 2 = meilleure / 1 = partielle / 0 = mauvaise, [santé, confiance, budget], réaction] */
+function CH(who,q,opts,e,data){return {k:"choix",who:who,q:q,opts:opts,e:e,data:data||null}}
+function arr(x){return x?(Array.isArray(x)?x:[x]):null}
+function N(r,p,a){return {nt:true,f:[null,arr(r),arr(p),arr(a)]}}
+var COURS={};
+
+/* ---------- COURS 1 · ENJEUX DE SANTÉ PUBLIQUE ---------- */
+var B_PREV=[["Prévention primaire","éviter"],["Prévention secondaire","dépister"],["Prévention tertiaire","limiter les complications"]];
+var B_DZ=[["Désert alimentaire",""],["Food swamp",""]];
+COURS.sp1={id:"sp1",n:1,t:"Enjeux de santé publique",lieu:"Observatoire de la nutrition · Hauts-de-France",
+ pitch:"L'ARS compare la métropole lilloise, le bassin minier et les zones rurales : écarts d'obésité, de diabète et d'accès aux soins nutritionnels.",
+ P:{moreau:{n:"Isabelle Moreau",r:"Sociologue, spécialiste des inégalités",av:{bg:"#ae8dff",skin:"#e8b896",hair:"#6b3f24",hs:"long",shirt:"#2f5a60"}},
+    mehdi:{n:"Mehdi",r:"Cartographie des environnements alimentaires",av:{bg:"#5bb8f5",skin:"#b07a55",hair:"#1f1410",hs:"short",shirt:"#ffc94a"}},
+    dumont:{n:"Dr Dumont",r:"Médecin de santé publique, universalisme proportionné",av:{bg:"#55d6cf",skin:"#c4875f",hair:"#e8e8e8",hs:"bald",shirt:"#5bb8f5",glasses:1}}},
+ conseil:{who:"dumont",t:"Toujours : diagnostiquer, co-construire, adapter, mesurer les écarts. Universalisme proportionné : actions universelles + soutien renforcé pour les publics à risque, offres ouvertes et modulables, suivi différentiel des écarts."},
+ levels:[
+ {id:"sp1a",t:"Je comprends",s:"Fiches 1 à 4 · concepts",items:[
+  "Fiche 1 · De la santé à la santé publique",
+  N(Q("Selon l'OMS (1946), la santé, c'est…",["Un état de complet bien-être physique, mental et social, pas seulement l'absence de maladie","L'absence de maladie ou d'infirmité","Un bon équilibre alimentaire"],"Passage d'une vision biomédicale à une approche globale."),
+    F("OMS {1946} : la santé est un état de complet bien-être {physique}, {mental} et {social}.",""),
+    E(["Selon l'OMS (1946),"," la santé se définit comme l'absence de maladie"," ou d'infirmité."],1,"La santé est un complet bien-être physique, mental et social, pas seulement l'absence de maladie.","")),
+  N(A("Approche biomédicale ou globale ?",[["Approche biomédicale","Agit sur les symptômes (soin curatif)"],["Approche globale","Agit sur les déterminants (prévention)"]],""),
+    null,
+    W("Pourquoi les consultations individuelles ne suffisent-elles pas à résoudre l'obésité liée à la précarité ?","Les déterminants sociaux (logement, éducation, revenus, cohésion sociale) et l'environnement (déserts alimentaires) conditionnent les comportements et l'accès à une bonne alimentation. Une consultation agit sur l'individu, pas sur ces déterminants : il faut une action collective.",["Déterminants sociaux","Environnement alimentaire","Action collective nécessaire"])),
+  N(Q("« La science et l'art de prévenir la maladie, de prolonger la vie et d'améliorer la santé par l'action collective organisée » : c'est la définition de…",["La santé publique (Winslow, 1920)","La promotion de la santé (Ottawa, 1986)","La santé (OMS, 1946)"],""),
+    F("Santé publique ({Winslow}, {1920}) : prévenir, prolonger la vie et améliorer la santé par l'action {collective} organisée.","")),
+  N(A("Relie chaque champ de la santé publique à son rôle.",[["Surveillance épidémiologique","Collecter et analyser les données"],["Prévention","3 niveaux : primaire, secondaire, tertiaire"],["Promotion de la santé","Donner les moyens d'agir sur ses déterminants"],["Organisation des soins","Accessibilité et qualité des services"],["Éducation pour la santé","Compétences individuelles et collectives"],["Planification et évaluation","Efficacité et adaptation aux besoins"]],"Les 6 champs d'intervention."),
+    C("Combien de champs d'intervention compte la santé publique ?",6,"")),
+  N(Q("Quelles nouvelles compétences la santé publique demande-t-elle au diététicien ?",["Animation de groupes, communication communautaire, évaluation d'impact","Uniquement la consultation individuelle","La prescription de médicaments"],"Vision systémique individu – communauté – environnement.")),
+  "Fiche 2 · Promotion de la santé et Charte d'Ottawa",
+  N(Q("La promotion de la santé, c'est…",["Donner aux personnes et aux communautés les moyens d'agir sur leur santé et ses déterminants","Éviter l'apparition d'une maladie","Soigner les malades chroniques"],"Elle va au-delà de la prévention."),
+    E(["La promotion de la santé"," cherche à éviter l'apparition d'une maladie précise"," en informant la population."],1,"Ça, c'est la prévention ; la promotion donne les moyens d'agir sur sa santé et ses déterminants.",""),
+    W("Quelle différence entre prévention et promotion de la santé ? (piège d'examen)","La prévention vise à éviter une maladie (ou à la dépister, à limiter ses complications). La promotion de la santé donne aux personnes les moyens d'agir sur leur santé et ses déterminants, avec elles et sur leur environnement.",["Prévention : éviter une maladie","Promotion : moyens d'agir sur sa santé et ses déterminants"])),
+  N(A("Relie chaque axe de la Charte d'Ottawa (1986) à son sens.",[["Politiques publiques saines","Intégrer la santé dans toutes les politiques"],["Environnements favorables","Conditions de vie et de travail qui soutiennent la santé"],["Action communautaire","Participation citoyenne, empowerment"],["Compétences individuelles","Éducation et information adaptées"],["Réorientation des services","Vers la prévention et la promotion"]],""),
+    [S("En quelle année a été signée la Charte d'Ottawa ?",["1986"],""),F("Les 5 axes d'Ottawa : politiques publiques {saines}, environnements {favorables}, action {communautaire}, compétences {individuelles}, {réorientation} des services de santé.","")],
+    CAS("Une mairie aménage une cuisine collective dans un nouveau quartier.",Q("Quel axe d'Ottawa ?",["Créer des environnements favorables","Réorienter les services de santé","Développer les compétences individuelles"],"Et c'est un exemple d'approche multisectorielle (avec les urbanistes)."))),
+  N(Q("Pourquoi l'approche multisectorielle est-elle indispensable ?",["La santé se crée dans les milieux de vie : urbanisme, école, associations agissent aussi","Pour réduire le coût des consultations","Parce que l'ARS l'impose"],"Exemples : cuisines collectives, éducation au goût, ateliers culinaires.")),
+  "Fiche 3 · Le modèle de Dahlgren et Whitehead",
+  N(O("Classe les 5 cercles de Dahlgren et Whitehead, du centre vers l'extérieur.",["Âge, sexe, hérédité","Modes de vie individuels","Réseaux sociaux et communautaires","Conditions de vie et de travail","Conditions socio-économiques, culturelles et environnementales"],"1991."),
+    F("Cercle 1 : facteurs {individuels} · 2 : modes de vie · 3 : réseaux {sociaux} · 4 : conditions de vie et de {travail} · 5 : conditions globales.",""),
+    CAS("Obésité infantile.",A("Place chaque facteur dans son cercle.",[["Prédisposition génétique","Cercle 1"],["Habitudes alimentaires familiales","Cercle 2"],["Influence des pairs à l'école","Cercle 3"],["Restauration scolaire, équipements sportifs","Cercle 4"],["Taxation des produits sucrés","Cercle 5"]],"Exemple de ta fiche."))),
+  N(Q("Quel cercle contient des facteurs non modifiables ?",["Le cercle 1 (âge, sexe, hérédité)","Le cercle 5","Le cercle 3"],""),
+    null,
+    W("Pourquoi une intervention efficace doit-elle agir sur plusieurs cercles ?","Les comportements (cercle 2) dépendent des réseaux sociaux, des conditions de vie et des politiques. Isabelle Moreau le dit : promouvoir les fruits et légumes est inefficace là où l'offre est inexistante ou trop chère.",["Comportements influencés par les autres cercles","Exemple de l'offre absente ou chère"])),
+  "Fiche 4 · Les 3 niveaux de prévention",
+  N([T(B_PREV,"Éducation alimentaire en population générale",0,""),T(B_PREV,"Dépistage de la dénutrition du sujet âgé",1,""),T(B_PREV,"Prise en charge d'un diabète de type 2",2,"Piège : c'est du tertiaire, pas du secondaire."),T(B_PREV,"Promotion de l'allaitement maternel",0,"")],
+    F("Primaire : {éviter|eviter} · secondaire : {dépister|depister} · tertiaire : {limiter} les complications.",""),
+    E(["Prendre en charge un diabète de type 2 déjà déclaré"," relève de la prévention secondaire,"," car on agit tôt sur la maladie."],1,"C'est de la prévention tertiaire : la maladie est déclarée, on limite les complications.","")),
+  N(Q("Où le diététicien intervient-il surtout ?",["En prévention primaire et secondaire, et il contribue à la tertiaire","Uniquement en tertiaire","Jamais en prévention"],""),
+    null,
+    W("Pourquoi dépister ?","Le dépistage permet une prise en charge précoce, avant les complications métaboliques ou fonctionnelles.",["Prise en charge précoce","Avant les complications"]))
+ ]},
+ {id:"sp1b",t:"Je priorise",s:"Fiches 5 à 7 · enjeux nutritionnels",items:[
+  "Fiche 5 · PNNS et Stratégie nationale de santé",
+  N(Q("Depuis quand le PNNS existe-t-il ?",["2001","1986","2019"],"Programme National Nutrition Santé."),
+    F("Le PNNS a été lancé en {2001} ; sa 4e version couvre {2019}-2023.","")),
+  N(A("Relie chaque PNNS à sa priorité.",[["PNNS 1 (2001-2005)","Information et sensibilisation du grand public"],["PNNS 2 (2006-2010)","Populations vulnérables, surveillance nutritionnelle"],["PNNS 3 (2011-2015)","Inégalités socio-économiques, milieu scolaire"],["PNNS 4 (2019-2023)","Approche systémique : environnement alimentaire, littératie"]],""),
+    S("Quel PNNS introduit l'approche systémique et la littératie nutritionnelle ?",["4","pnns 4","le pnns 4"],"")),
+  N(Q("Quels ministères sont impliqués dans le PNNS ?",["Santé, Agriculture, Éducation nationale, Sports","Santé seulement","Économie et Intérieur"],"Programme intersectoriel.")),
+  N(A("PNNS 4 : augmenter ou réduire ?",[["Légumineuses, fruits à coque, fruits et légumes","Augmenter"],["Viande hors volaille, charcuterie, sel, produits sucrés","Réduire"]],""),
+    S("Cite un aliment dont le PNNS 4 veut augmenter la consommation.",["legumineuses","légumineuses","fruits a coque","fruits à coque","fruits et legumes","fruits et légumes","fruits","legumes","légumes"],"")),
+  N(Q("La Stratégie nationale de santé 2018-2022 intègre quels ODD de l'ONU ?",["ODD 2 (faim zéro) et ODD 3 (bonne santé et bien-être)","ODD 1 et ODD 5","ODD 13 seulement"],"Piège : 2 = faim zéro, 3 = bonne santé."),
+    F("ODD {2} : faim zéro · ODD {3} : bonne santé et bien-être.","")),
+  N(Q("« Les priorités sont nationales, mais l'action est… »",["locale : il faut territorialiser","européenne","individuelle"],""),
+    null,
+    CAS("Tu dois décliner le PNNS dans le bassin minier.",W("Que signifie territorialiser, concrètement ?","Adapter les messages aux habitudes alimentaires locales, à l'offre commerciale du territoire et aux contraintes socio-économiques, en ciblant les populations vulnérables.",["Habitudes locales","Offre commerciale","Contraintes socio-économiques, publics vulnérables"]))),
+  "Fiche 6 · Obésité, dénutrition, TCA",
+  N(C("Quel pourcentage d'adultes sont obèses (ObEpi 2020) ?",17,"En hausse depuis 30 ans.","%"),
+    F("Dans l'observatoire, l'obésité va de {12} % (métropole lilloise) à {22} % (bassin minier).","")),
+  N(Q("Un environnement « obésogène », c'est…",["Un environnement où les choix sains sont plus difficiles et plus coûteux","Un environnement sans fast-food","Un régime trop calorique"],""),
+    null,
+    W("Pourquoi faut-il dépasser la responsabilisation individuelle face à l'obésité ?","L'obésité dépend aussi de facteurs environnementaux (fast-foods, équipements sportifs, urbanisme, normes sociales) et du territoire. Culpabiliser l'individu stigmatise sans agir sur ces déterminants structurels.",["Déterminants environnementaux et structurels","Éviter la stigmatisation"])),
+  N(A("Dénutrition des personnes âgées (HAS) : relie.",[["À domicile","4 à 10 %"],["En institution","15 à 40 %"]],""),
+    S("Cite un facteur de risque de dénutrition chez la personne âgée.",["isolement","depression","dépression","polymedication","polymédication","polypathologies","troubles de la mastication","troubles de la deglutition","troubles de la déglutition"],"Isolement, dépression, polypathologies, polymédication, mastication, déglutition.")),
+  N(Q("Quel trouble psychiatrique a le taux de mortalité le plus élevé ?",["L'anorexie mentale","La boulimie","L'hyperphagie boulimique"],""),
+    null,
+    CAS("Un collège veut une action de prévention des TCA.",Q("Quel message privilégier ?",["Une relation positive à l'alimentation et au corps, sans messages culpabilisants, avec la diversité corporelle","« Attention aux kilos en trop »","Une liste d'aliments interdits"],"Facteurs émergents : réseaux sociaux, pression esthétique."))),
+  "Fiche 7 · Alimentation durable, sécurité alimentaire, littératie",
+  N(C("L'alimentation représente environ quel pourcentage de l'empreinte carbone des Français (ADEME) ?",25,"","%"),
+    F("Viande rouge : au maximum {500} g par semaine (environ {70} g par jour).","")),
+  N(Q("Pourquoi les légumineuses ont-elles un double bénéfice ?",["Santé (fibres, protéines végétales) et climat (moins d'émissions liées à l'élevage)","Elles sont moins chères et plus sucrées","Elles remplacent les fruits"],""),
+    S("Combien de personnes ont recours à l'aide alimentaire en France ? (en millions)",["8","8 millions","huit"],"")),
+  N(A("Relie chaque dispositif d'aide à sa limite ou son atout.",[["Épiceries sociales et solidaires","Accès digne, mais insuffisantes sur certains territoires"],["Chèques alimentaires","Liberté de choix, mais besoin d'un accompagnement éducatif"],["Jardins d'insertion","Compétences pro, légumes frais et lien social"]],""),
+    null,
+    W("La sécurité alimentaire, ce n'est pas seulement la quantité disponible. Explique.","C'est aussi l'accès physique et économique à une alimentation nutritionnellement adéquate. La précarité alimentaire touche aussi des classes moyennes fragilisées.",["Accès physique et économique","Qualité nutritionnelle","Concerne aussi les classes moyennes"])),
+  N(Q("La littératie nutritionnelle, c'est…",["Savoir + savoir-faire : faire des choix éclairés (étiquettes, budget, cuisiner des produits bruts)","Lire des livres de nutrition","Connaître le PNNS par cœur"],""))
+ ]},
+ {id:"sp1c",t:"J'analyse et j'agis",s:"Fiches 8 à 10 · inégalités et stratégies",items:[
+  "Fiche 8 · Gradient social et précarité",
+  N(Q("Le gradient social de santé, c'est…",["Un lien continu et progressif entre position sociale et santé, à tous les niveaux","Une opposition entre riches et pauvres seulement","Une différence entre régions"],"Effet dose-réponse."),
+    E(["Le gradient social de santé"," oppose les riches aux pauvres :"," seuls les plus défavorisés sont touchés."],1,"Il concerne tous les niveaux de l'échelle sociale (effet dose-réponse).","")),
+  N(A("Portions de fruits et légumes par jour : relie.",[["Cadres supérieurs","4,2"],["Catégories populaires","2,1"]],""),
+    S("Quel sociologue est cité pour le capital culturel ?",["bourdieu","pierre bourdieu"],""),
+    W("Pourquoi les catégories populaires mangent-elles moins de fruits et légumes ?","Pas seulement à cause du budget : les normes sociales, le capital culturel (Bourdieu), le manque de temps et de compétences culinaires jouent aussi. Ce sont des contraintes structurelles, pas des choix libres.",["Budget","Normes sociales, capital culturel","Temps et compétences : contraintes"])),
+  N(Q("La précarité alimentaire, c'est…",["L'impossibilité d'accéder à une alimentation suffisante, diversifiée et de qualité faute de ressources","Manger trop de produits transformés","Un régime pauvre en calories"],""),
+    F("INCA3 : {11} % des adultes en insécurité alimentaire ({7} % modérée, {4} % sévère).","")),
+  N(A("Relie chaque indicateur de précarité alimentaire à un exemple.",[["Recours à l'aide alimentaire","Banques alimentaires, Restos du Cœur, CCAS"],["Budget alimentaire des ménages","Part du revenu consacrée à l'alimentation"],["Indice de privation matérielle","Eurostat"]],""),
+    S("Quelle enquête de Santé publique France surveille l'insécurité nutritionnelle ?",["esteban"],"")),
+  N(Q("Le « paradoxe nutritionnel » de la précarité, c'est…",["Surpoids et carences en même temps","Maigrir en mangeant plus","Manger bio sans argent"],"Aliments bon marché, riches en calories, pauvres en nutriments."),
+    null,
+    CAS("Une mère seule saute des repas pour nourrir ses enfants et a pris du poids.",W("Comment expliques-tu ce paradoxe à ton équipe, sans la culpabiliser ?","Les stratégies d'adaptation à la précarité (aliments bon marché, riches en calories et pauvres en nutriments, repas sautés) entraînent à la fois surpoids et carences, avec une alternance restriction/surconsommation. Ce sont des contraintes, pas des choix.",["Stratégies d'adaptation","Surpoids + carences","Contraintes, pas des choix"]))),
+  "Fiche 9 · Disparités territoriales",
+  N([T(B_DZ,"Accès limité à une alimentation fraîche et abordable, surtout en zone rurale",0,""),T(B_DZ,"Quartier urbain saturé de fast-foods",1,"")],
+    S("Comment appelle-t-on une zone urbaine saturée de fast-foods ?",["food swamp","foodswamp","un food swamp","marais alimentaire"],""),
+    E(["Un désert alimentaire est un quartier urbain"," saturé de fast-foods"," et de commerces peu diversifiés."],0,"Ça, c'est un food swamp ; le désert alimentaire est surtout rural, sans offre fraîche abordable.","")),
+  N(Q("Dans l'Aisne, quelle distance faut-il parfois parcourir pour un commerce diversifié ?",["Plus de 15 km","2 km","50 m"],""),
+    CAS("À Vervins, des personnes âgées isolées n'ont plus de commerce.",Q("Quelle solution a été mise en place ?",["Livraisons solidaires : épicier local + association d'insertion + transport à la demande","Un dépliant PNNS distribué par courrier","Un fast-food en centre-ville"],"Isolement alimentaire réduit pour 150 personnes âgées."))),
+  N(A("Relie chaque dispositif à son niveau.",[["CLS","Contrats Locaux de Santé"],["PRS","Programmes Régionaux de Santé (ARS)"]],"Ils financent des actions locales."),
+    F("CRÉDOC : 65 ans et plus en insuffisance alimentaire qualitative : {36} % en 2021, {52} % en 2023.","")),
+  N(Q("L'environnement alimentaire, c'est…",["Tous les facteurs contextuels qui influencent les choix : disponibilité, accessibilité, acceptabilité, qualité de l'offre","Le contenu du réfrigérateur","Les recommandations du PNNS"],""),
+    null,
+    CAS("Mehdi a cartographié la métropole.",A("Relie chaque zone à l'action proposée.",[["Désert alimentaire","Développement commercial"],["Zone de restauration rapide","Régulation"],["Territoire à atouts","Valorisation"]],"")))
+  ,"Fiche 10 · Réduire les inégalités",
+  N(Q("L'universalisme proportionné, c'est…",["Des actions pour tous, d'intensité proportionnelle aux besoins des groupes","Des actions uniquement pour les plus pauvres","La même action pour tous"],""),
+    F("Universalisme proportionné : des actions {universelles} dont l'{intensité} est proportionnelle aux besoins.",""),
+    E(["Pour réduire les inégalités,"," il vaut mieux cibler uniquement les plus pauvres,"," sans offre pour le reste de la population."],1,"Cibler uniquement les plus pauvres stigmatise ; on garde une offre ouverte à tous, renforcée selon les besoins.","")),
+  N(A("Les 3 niveaux du Dr Dumont : relie.",[["Universel (toute la population)","Information générale"],["Renforcé (populations précaires)","Ateliers collectifs + suivi individualisé"],["Spécialisé (grande vulnérabilité)","Interventions spécialisées, coordination médico-sociale"]],""),
+    S("Quel niveau d'intervention concerne la grande vulnérabilité ?",["specialise","spécialisé","niveau specialise"],"")),
+  N(Q("Les pairs-aidants issus des communautés apportent…",["Légitimité et messages adaptés aux codes culturels","Un financement","Un diagnostic médical"],"Avec les groupes de parole et les ateliers de cuisine collaborative."),
+    CAS("« Cuisines du monde » à Roubaix.",F("Le projet a créé {15} emplois en insertion et réduit l'isolement de {200} familles.",""))),
+  N(Q("Pour évaluer l'impact sur les inégalités, on mesure…",["L'évolution des écarts entre quartiers et catégories sociales, pas seulement la moyenne","Le nombre de dépliants distribués","La moyenne régionale seule"],"Évaluation différentielle, analyse géolocalisée."),
+    null,
+    W("Pourquoi parle-t-on de « système apprenant » ?","On mesure en continu l'évolution des inégalités (quantitatif et qualitatif) et on ajuste les actions selon les résultats : le dispositif s'améliore au fil du temps.",["Mesure continue","Ajustement selon les résultats"]))
+ ]}
+ ],
+ mission:{id:"sp1m",t:"L'observatoire des Hauts-de-France",items:[
+  CH("moreau","Bienvenue à l'observatoire. 48 % des décès avant 75 ans chez les hommes sont évitables, et l'obésité atteint 22,1 % chez nous contre 14,2 % en Île-de-France. Comment lis-tu ces écarts ?",[
+    ["Ce sont surtout de mauvais choix individuels",0,[-5,-10,0],"Attention : culpabiliser les habitants, c'est oublier les contraintes qu'ils subissent."],
+    ["Ils viennent des déterminants sociaux et du territoire : revenus, éducation, offre alimentaire",2,[5,10,0],"Exactement. Le gradient social et l'environnement pèsent autant que les choix individuels."],
+    ["C'est une question de génétique régionale",0,[-5,-5,0],"La génétique est un facteur, mais elle n'explique pas des écarts aussi liés au territoire et au milieu social."]],
+   "Fiches 3, 8 et 9 : déterminants, gradient social, disparités territoriales.",{t:"Obésité de la population (ORS)",rows:[["Hauts-de-France",22.1],["Île-de-France",14.2]]}),
+  BY("mehdi",S("Sur ma carte, certains quartiers de Lille sont saturés de fast-foods. Comment appelle-t-on ce type de zone ?",["food swamp","foodswamp","un food swamp","marais alimentaire"],"À ne pas confondre avec le désert alimentaire, surtout rural.")),
+  CH("mehdi","À Vervins, dans l'Aisne, des personnes âgées n'ont plus de commerce à moins de 15 km. Que proposes-tu ?",[
+    ["Leur envoyer un dépliant sur les repères du PNNS",0,[0,-5,-2],"Elles connaissent peut-être les repères… le problème, c'est l'accès aux aliments."],
+    ["Des livraisons solidaires avec l'épicier local, une association d'insertion et le transport à la demande",2,[10,8,-6],"C'est ce qui a été fait : 150 personnes âgées moins isolées, et l'économie locale soutenue."],
+    ["Leur conseiller de se faire aider par leur famille",1,[2,-3,0],"Ça peut aider, mais beaucoup sont isolées : il faut une solution collective."]],
+   "Fiche 9 : désert alimentaire, mobilité, livraisons solidaires."),
+  BY("moreau",A("Pour l'obésité infantile, aide-moi à placer chaque facteur dans les cercles de Dahlgren et Whitehead.",[["Prédisposition génétique","Cercle 1 · individu"],["Habitudes familiales","Cercle 2 · modes de vie"],["Influence des pairs","Cercle 3 · réseaux sociaux"],["Restauration scolaire","Cercle 4 · conditions de vie"],["Taxe sur les produits sucrés","Cercle 5 · politiques"]],"Une action efficace agit sur plusieurs cercles à la fois.")),
+  CH("dumont","On lance une action nutrition dans le bassin minier. Comment s'y prendre sans stigmatiser les habitants ?",[
+    ["Cibler uniquement les quartiers les plus touchés",0,[4,-15,-2],"Les familles se sentent pointées du doigt : la confiance chute."],
+    ["La même campagne pour tout le monde",1,[3,2,-4],"Personne n'est stigmatisé, mais les écarts ne se réduisent pas."],
+    ["Une action pour tous, renforcée là où les besoins sont plus grands",2,[12,8,-5],"C'est l'universalisme proportionné : offre ouverte à tous, intensité adaptée."]],
+   "Fiche 10 : universalisme proportionné."),
+  CH("moreau","Comment faire participer les habitants du bassin minier ?",[
+    ["Organiser des conférences d'experts à la mairie",0,[0,-5,-3],"Information descendante : peu de participation."],
+    ["Groupes de parole, ateliers de cuisine collaborative et pairs-aidants issus du quartier",2,[8,12,-4],"Comme à Roubaix : lien social, légitimité, messages adaptés."],
+    ["Distribuer des paniers de légumes sans accompagnement",1,[4,2,-8],"Utile, mais sans co-construction, l'appropriation reste faible."]],
+   "Fiche 10 : approche communautaire."),
+  CH("dumont","Dans un an, comment saura-t-on si l'action a réduit les inégalités ?",[
+    ["En comptant les dépliants distribués",0,[0,-3,0],"C'est un indicateur de processus : il ne dit rien de l'impact."],
+    ["En comparant la moyenne régionale avant et après",1,[2,0,0],"La moyenne peut s'améliorer sans que les écarts se réduisent."],
+    ["En suivant les écarts par quartier et catégorie sociale, avec des données qualitatives",2,[6,6,-2],"C'est l'évaluation différentielle, avec une analyse géolocalisée."]],
+   "Fiche 10 : évaluer l'impact sur les inégalités."),
+  BY("dumont",W("Rédige pour l'ARS, en quelques phrases : pourquoi faut-il une approche populationnelle de la nutrition ici ?","Les comportements alimentaires sont façonnés par l'environnement, le territoire et la position sociale (gradient social, déserts alimentaires, food swamps). Les consultations individuelles ne suffisent pas : il faut agir collectivement sur les déterminants, avec l'universalisme proportionné et la participation des habitants, en mesurant l'évolution des écarts.",["Déterminants sociaux et territoriaux","Limites de l'approche individuelle","Universalisme proportionné, participation","Mesure des écarts"]))
+ ]}
+};
+
+/* ---------- COURS 2 · CADRE RÉGLEMENTAIRE DES INTERVENTIONS EN SP ---------- */
+var B_AUT=[["Autonome","sans prescription"],["Sur prescription","médicale"],["Orienter","vers le médecin"]];
+COURS.sp2={id:"sp2",n:2,t:"Cadre réglementaire",lieu:"Centre de prévention du Rhône",
+ pitch:"Marine lance un programme dans les écoles. Maître Vernet veille à ce que chaque étape soit légale : statut, autorisations, secret, RGPD, éthique.",
+ P:{vernet:{n:"Maître Julie Vernet",r:"Juriste en droit de la santé",av:{bg:"#5bb8f5",skin:"#f0c8a8",hair:"#2b1b14",hs:"bun",shirt:"#13303a",glasses:1}},
+    marine:{n:"Marine",r:"Diététicienne, programmes de prévention",av:{bg:"#3ee6b0",skin:"#e8b896",hair:"#c26a2e",hs:"long",shirt:"#ff7a59"}},
+    philippe:{n:"Philippe",r:"Diététicien, centre de prévention",av:{bg:"#ffc94a",skin:"#d9a587",hair:"#5a4a3a",hs:"short",shirt:"#2f5a60"}}},
+ conseil:{who:"vernet",t:"Toujours : écrit, anticipé, tracé. Accords écrits avant de démarrer (≥ 2 mois), un consentement par finalité, partage du strict nécessaire, et en cas de pathologie : orienter vers le médecin."},
+ levels:[
+ {id:"sp2a",t:"Mon statut",s:"Fiches 1 à 3 · lois, statut, autorisations",items:[
+  "Fiche 1 · Les textes fondateurs",
+  N(A("Relie chaque loi à ce qu'elle apporte.",[["Loi du 4 mars 2002","Droits des malades : information, consentement éclairé, accès au dossier"],["Loi de 2016 (loi Touraine)","Prévention renforcée, parcours éducatif de santé, DMP"]],""),
+    F("Loi du {4} mars {2002} : droit à l'{information}, consentement {éclairé|eclaire}, accès au {dossier} médical.",""),
+    E(["Le consentement d'un participant,"," une fois signé,"," l'engage jusqu'à la fin du programme."],2,"Le consentement est révocable : le participant peut se retirer à tout moment.","Piège d'examen.")),
+  N(Q("Quel est l'apport de la loi Touraine (2016) pour le diététicien ?",["Elle reconnaît la prévention primaire et collective, ce qui légitime ses interventions","Elle crée le titre de diététicien","Elle supprime le secret professionnel"],"Mais aussi : responsabilités accrues, obligation d'évaluer."),
+    S("Quel dossier numérique partagé la loi de 2016 a-t-elle institué ? (sigle)",["dmp","dossier medical partage","dossier médical partagé"],"")),
+  "Fiche 2 · Ton statut et tes limites",
+  N([T(B_AUT,"Atelier d'éducation nutritionnelle collective",0,""),T(B_AUT,"Régime thérapeutique pour un diabète avéré",1,""),T(B_AUT,"Participante avec des symptômes évoquant un trouble thyroïdien",2,"Conseils généraux en attendant, décision consignée."),T(B_AUT,"Programme de prévention primaire en population générale",0,"")],
+    S("Quel article du Code de la santé publique définit le diététicien ?",["l4371-1","l 4371-1","l.4371-1","4371-1"],""),
+    CAS("Dans un atelier, une participante présente des signes de TCA.",Q("Que fais-tu ?",["Je l'oriente vers un médecin (référencement médical)","Je lui propose un suivi diététique de TCA sans avis médical","Je l'ignore pour ne pas la gêner"],"Le suivi des TCA se fait sur prescription ; le diagnostic n'est pas ton rôle."))),
+  N(Q("L'usurpation du titre de diététicien est punie de…",["Jusqu'à 15 000 € d'amende et de prison","Un simple avertissement","45 000 € d'amende"],"Art. L4371-2 CSP."),
+    null,
+    W("Pourquoi savoir repérer ce qui relève de la pathologie est-il essentiel ?","Poser un diagnostic ou prendre en charge une pathologie sans prescription relève de l'exercice illégal de la médecine (délit). Repérer et orienter protège l'usager, ta responsabilité, et justifie tes interventions.",["Exercice illégal de la médecine","Protège l'usager et ta responsabilité"])),
+  "Fiche 3 · Autorisations, partenariats, responsabilités",
+  N(A("Quelles autorisations selon le lieu ?",[["École","Autorisation rectorale + services de santé scolaire"],["Établissement de santé","Comité d'éthique + direction des soins"]],""),
+    C("Combien de mois minimum faut-il prévoir pour solliciter les autorisations ?",2,"","mois"),
+    E(["L'accord oral de la directrice est obtenu :"," Marine peut lancer l'atelier dès demain"," et enverra le dossier ensuite."],1,"On ne démarre jamais sans accords écrits, même avec un accord oral.","Piège d'examen.")),
+  N(O("Remets dans l'ordre les étapes pour obtenir les autorisations.",["Identifier les autorités compétentes","Constituer le dossier","Solliciter dans les délais","Obtenir les accords écrits","Informer de tout changement","Transmettre les bilans"],"")),
+  N(Q("Les 3 principes d'un partenariat public-privé ?",["Prévenir les conflits d'intérêts, transparence des financements, indépendance des messages","Exclusivité, rentabilité, confidentialité","Publicité, échantillons, logo"],"Charte de l'expertise sanitaire (2013)."),
+    S("Quelle charte de 2013 impose la déclaration publique d'intérêts ?",["charte de l'expertise sanitaire","expertise sanitaire","charte de l expertise sanitaire"],"")),
+  N(A("Responsabilité civile ou pénale ?",[["Civile","Dommages causés à des tiers, couverts par la RCP"],["Pénale","Faute caractérisée, négligence grave, défaut de signalement (art. 223-6)"]],""))
+ ]},
+ {id:"sp2b",t:"Secret et données",s:"Fiches 4 à 6 · secret, RGPD, éthique",items:[
+  "Fiche 4 · Le secret professionnel",
+  N(Q("Quel article du Code pénal sanctionne la violation du secret professionnel ?",["226-13","226-14","L1110-4"],"226-14 = exception de signalement."),
+    F("Secret : art. {226-13} · signalement de maltraitance : art. {226-14} · partage entre pros : art. L{1110-4}.","")),
+  N(Q("Le secret couvre-t-il les échanges informels et les discussions d'équipe ?",["Oui : données de santé, infos familiales, observations, échanges informels","Non, seulement le dossier médical","Seulement ce que le patient demande de taire"],""),
+    CAS("Un diététicien municipal partage sur un groupe WhatsApp d'enseignants le nom et le surpoids d'un enfant.",Q("Conséquence ?",["Violation du secret : la structure est sanctionnée par l'ARS, le diététicien mis en demeure","Aucune, ce sont des professionnels","C'est autorisé car c'est pour aider l'enfant"],"Contre-exemple de ta fiche."))),
+  N(A("Les 3 exceptions légales au secret : relie.",[["Maltraitance","Signalement (art. 226-14 CP)"],["Maladie à déclaration obligatoire","Art. L3113-1 CSP"],["Danger imminent","Information des autorités sanitaires"]],""),
+    S("À quelle cellule signale-t-on une information préoccupante concernant un enfant ? (sigle)",["crip"],"Cellule de Recueil des Informations Préoccupantes.")),
+  N(Q("Partager entre professionnels (L1110-4) : quelle règle ?",["Seulement le strict nécessaire, patient informé, par un canal formalisé","Tout partager pour mieux coordonner","Ne jamais rien partager"],"En cas de doute : on ne partage pas, ou le minimum.")),
+  "Fiche 5 · Le RGPD",
+  N(A("Les 3 bases légales : relie à l'exemple de Marine.",[["Consentement explicite","Programme de prévention volontaire"],["Mission d'intérêt public","Action mandatée par l'ARS"],["Obligation légale","Selon la nature de l'intervention"]],""),
+    F("Un consentement valide est {libre}, {éclairé|eclaire}, {spécifique|specifique} et {révocable|revocable}.",""),
+    E(["Marine fait cocher une seule case"," « j'accepte tout » pour la pesée, les photos et la newsletter :"," son consentement est conforme."],2,"Spécifique = un consentement par finalité ; un « oui » global ne suffit pas.","")),
+  N(Q("Une donnée de santé, c'est…",["Toute info sur l'état de santé physique ou mental, y compris habitudes alimentaires et mesures","Uniquement un diagnostic médical","Seulement les résultats d'analyses"],"Même un journal alimentaire."),
+    C("Combien d'étapes compte le recueil d'un consentement conforme ?",7,"Identité, finalités, données, destinataires, durée, droits, consentement explicite.")),
+  "Fiche 6 · Éthique et déontologie",
+  N(A("Relie chaque principe éthique à son sens.",[["Bienfaisance","Agir pour le bien des personnes"],["Non-malfaisance","Ne pas nuire"],["Autonomie","Respecter les choix individuels"],["Justice","Équité d'accès à la prévention"],["Prudence","Guider la décision en cas d'incertitude"]],""),
+    CAS("Une famille refuse tes conseils pour son enfant en surpoids.",Q("Quelle posture ?",["Respecter l'autonomie parentale, garder une proposition non contraignante, écouter","Insister jusqu'à ce qu'elle accepte","Signaler la famille"],"Bienfaisance et autonomie en tension : une approche prescriptive risque la rupture.")),
+    W("Pourquoi l'éthique dépasse-t-elle le cadre légal ?","La loi ne tranche pas tout : l'éthique repose sur des valeurs (bienfaisance, non-malfaisance, autonomie, justice, prudence), le respect des recommandations scientifiques et la responsabilité sociétale. Elle protège la confiance des usagers et ta crédibilité.",["Valeurs au-delà de la loi","Principes éthiques","Confiance et crédibilité"])),
+  N(Q("Un conflit d'intérêts peut être…",["Financier, intellectuel ou personnel","Seulement financier","Seulement lié à l'industrie"],"Piège d'examen."))
+ ]},
+ {id:"sp2c",t:"Missions et cas limites",s:"Fiches 7 à 10 · missions, traçabilité, situations",items:[
+  "Fiche 7 · Tes missions",
+  N(Q("Sur quoi repose ton champ de compétences ?",["Code de la santé publique, décret du diplôme, recommandations du Ministère","Le règlement intérieur de ta structure","Les demandes des patients"],""),
+    null,
+    W("« Autonomie = responsabilité de résultats. » Explique.","En prévention primaire, tu agis sans prescription ; en contrepartie, tu dois prouver l'efficacité : indicateurs, données fiables, analyse d'impact et ajustements.",["Autonomie en prévention primaire","Indicateurs et analyse d'impact"])),
+  N(Q("La collaboration interprofessionnelle est…",["Une obligation déontologique et une nécessité pratique","Facultative","Réservée à l'hôpital"],"Médecins, infirmiers, psychologues, travailleurs sociaux, éducateurs.")),
+  "Fiche 8 · Formation, traçabilité, évaluation",
+  N(C("Combien d'heures minimum d'actualisation scientifique par an ?",20,"","h"),
+    S("Quelle enquête SpF + Anses (juin 2025) porte sur alimentation, biosurveillance, santé, nutrition, environnement ?",["albane"],"")),
+  N(A("Indicateur quantitatif ou qualitatif ?",[["Quantitatif","Nombre de participants, taux de complétion"],["Qualitatif","Satisfaction, pertinence des contenus"]],""),
+    null,
+    W("À quoi sert la traçabilité ?","Documenter objectifs, méthodes, populations, résultats et difficultés permet de justifier ses choix, d'améliorer ses pratiques, d'assurer la continuité entre intervenants et de se protéger en cas de mise en cause.",["Justifier et améliorer","Continuité","Protection juridique"])),
+  "Fiche 9 · Situations particulières",
+  N(O("Signaler une maltraitance nutritionnelle : remets les étapes dans l'ordre.",["Observer et collecter","Analyser","Consulter l'équipe","Signaler (CRIP ou Procureur)","Accompagner","Documenter"],"Le signalement ne t'exonère pas d'accompagner."),
+    null,
+    CAS("Un adolescent perd vite du poids : restriction sévère imposée par ses parents.",Q("Après avoir signalé, ton rôle s'arrête-t-il ?",["Non : suivi nutritionnel sécurisé, soutien psychologique, documentation","Oui, la CRIP prend le relais","Oui, il faut couper le contact"],""))),
+  N(Q("À l'école, qu'est-ce qui demande une autorisation parentale ?",["Toute collecte de données individuelles, comme une pesée","L'atelier collectif d'éducation nutritionnelle","Une affiche dans le couloir"],"Piège d'examen."),
+    E(["Pour l'atelier collectif sur le petit-déjeuner,"," Marine doit obtenir une autorisation parentale"," pour chaque élève."],1,"L'éducation collective relève de la mission de l'école ; seule la collecte de données individuelles exige l'autorisation.","")),
+  N(Q("Le télésoin (L6316-2) : quelle limite ?",["Conseils sans observation directe : garder la possibilité du présentiel","Il est interdit aux diététiciens","Il dispense du secret"],"")),
+  "Fiche 10 · Méthodes",
+  N(Q("Le fil commun des « conseils pro » de Maître Vernet ?",["Écrit, anticipé, tracé","Rapide, oral, souple","Gratuit, ouvert, public"],""),
+    CAS("Des parents refusent la pesée de leur enfant.",Q("Que proposes-tu ?",["Des alternatives non stigmatisantes (atelier sans pesée, mesures groupées anonymisées), refus respecté et documenté","Peser l'enfant quand même, c'est pour son bien","Exclure l'enfant du programme"],"")))
+ ]}
+ ],
+ mission:{id:"sp2m",t:"Le programme des écoles",items:[
+  CH("marine","Je veux lancer un programme « petit-déjeuner » dans 3 écoles en septembre. La directrice m'a dit oui au téléphone. On commence lundi ?",[
+    ["Oui, l'accord oral suffit",0,[0,-10,0],"Maître Vernet fronce les sourcils : sans accords écrits, le programme peut être bloqué."],
+    ["Non : rectorat + santé scolaire, dossier complet ≥ 2 mois avant, accords écrits",2,[5,10,-3],"C'est comme ça que Maître Vernet a évité tout blocage pour l'obésité infantile."],
+    ["Il suffit de prévenir l'ARS par mail",1,[0,-3,0],"L'ARS peut être un partenaire, mais à l'école il faut le rectorat et la santé scolaire."]],
+   "Fiches 3 et 10 : autorisations préalables."),
+  CH("vernet","Une marque de céréales propose de financer le programme et de fournir les petits-déjeuners. Tu réponds…",[
+    ["Oui, on met leur logo sur les fiches des enfants",0,[-5,-12,8],"Conflit d'intérêts et influence commerciale sur des enfants : la confiance s'effondre."],
+    ["Oui, avec une charte écrite, la transparence sur le financement et des messages validés PNNS sans influence",2,[3,6,6],"Partenariat encadré : rôles, neutralité, information des familles."],
+    ["Non, jamais de partenaire privé",1,[0,2,-4],"C'est prudent, mais un partenariat encadré reste possible."]],
+   "Fiche 3 : partenariats public-privé."),
+  CH("marine","Je fais signer aux parents une seule case : « J'accepte la pesée, les photos et l'envoi de la newsletter. » Ça va ?",[
+    ["Oui, c'est plus simple",0,[0,-8,0],"Non conforme : un « oui » global ne vaut pas consentement."],
+    ["Non : un consentement par finalité, libre, éclairé et révocable",2,[2,8,-1],"Spécifique = une case par usage. Et le retrait reste possible à tout moment."]],
+   "Fiche 5 : RGPD."),
+  BY("vernet",A("Avant de lancer, vérifions qui peut faire quoi.",[["Atelier collectif petit-déjeuner","Autonome"],["Élève diabétique : adapter son régime","Sur prescription"],["Élève avec signes de TCA","Orienter vers le médecin"]],"Article L4371-1.")),
+  CH("philippe","Un enseignant me demande le nom des élèves en surpoids pour « les encourager ». Je lui transmets ?",[
+    ["Oui, il est professionnel",0,[-3,-12,0],"Violation du secret (226-13) : c'est exactement le contre-exemple du groupe WhatsApp."],
+    ["Non : je partage seulement le strict nécessaire, avec l'information des familles, par un canal formalisé",2,[2,8,0],"L1110-4 : en cas de doute, on ne partage pas, ou le minimum."]],
+   "Fiche 4 : secret professionnel."),
+  CH("marine","Des parents refusent la pesée de leur fils. Il fait partie du public ciblé.",[
+    ["On le pèse discrètement",0,[0,-15,0],"Sans autorisation : faute grave."],
+    ["On respecte le refus, on le documente, on propose un atelier sans pesée",2,[3,8,-1],"Alternative non stigmatisante, l'enfant reste inclus."],
+    ["On l'exclut du programme",0,[-4,-6,0],"L'enfant perd l'accès à la prévention : contraire au principe de justice."]],
+   "Fiches 9 et 10 : mineurs, refus partiels."),
+  BY("vernet",O("Un élève présente des signes de restriction sévère imposée par ses parents. Ordonne ta démarche.",["Observer et collecter","Analyser","Consulter l'équipe","Signaler (CRIP ou Procureur)","Accompagner","Documenter"],"Fiche 9.")),
+  BY("vernet",W("En fin d'année, l'ARS te demande comment tu as sécurisé le programme. Résume.","Accords écrits du rectorat et de la santé scolaire obtenus à l'avance ; partenariat privé encadré par une charte et transparent ; consentements spécifiques et révocables, données minimales ; secret respecté et partage du strict nécessaire ; tout est tracé et évalué avec des indicateurs.",["Autorisations écrites","Partenariat transparent","Consentement et RGPD","Secret","Traçabilité et évaluation"]))
+ ]}
+};
+
+/* ---------- COURS 3 · FONDAMENTAUX DE LA PROMOTION ET DE LA PRÉVENTION ---------- */
+var B_IEP=[["Information","unidirectionnelle"],["Éducation","bidirectionnelle"],["Prévention","proactive, ciblée"]];
+var B_POP=[["Populationnelle","toute la population"],["Individuelle","personnes à risque"]];
+var B_DEP=[["MNA",""],["Courbes OMS",""],["Grilles TCA",""]];
+COURS.sp3={id:"sp3",n:3,t:"Fondamentaux de la prévention",lieu:"Réseau « Bien Vivre Ensemble » · Nantes",
+ pitch:"Le Dr Leblanc coordonne un réseau nantais : ateliers de Nadia, jardins de Quartiers Nourriciers avec Thomas. On passe de l'information descendante à la participation.",
+ P:{leblanc:{n:"Dr Anne-Sophie Leblanc",r:"Médecin, coordinatrice du réseau",av:{bg:"#ff7a59",skin:"#f0c8a8",hair:"#8a5a2b",hs:"bun",shirt:"#13303a",glasses:1}},
+    nadia:{n:"Nadia",r:"Diététicienne, ateliers en centre social",av:{bg:"#ffc94a",skin:"#a86f4c",hair:"#1f1410",hs:"curly",shirt:"#0e9f8e"}},
+    thomas:{n:"Thomas",r:"Quartiers Nourriciers, empowerment",av:{bg:"#3ee6b0",skin:"#e8b896",hair:"#d9a441",hs:"short",shirt:"#ae8dff"}}},
+ conseil:{who:"leblanc",t:"Toujours avec les habitants : diagnostic partagé, plaisir et accessibilité, pas de culpabilisation, transfert progressif aux habitants-référents, progrès célébrés."},
+ levels:[
+ {id:"sp3a",t:"Les bases",s:"Fiches 1 à 3 · informer, éduquer, prévenir",items:[
+  "Fiche 1 · Information, éducation, prévention",
+  N([T(B_IEP,"Brochure en salle d'attente",0,""),T(B_IEP,"Atelier de lecture d'étiquettes avec échanges",1,""),T(B_IEP,"Action ciblée sur les quartiers les plus exposés",2,"")],
+    A("Relie chaque approche à ton rôle.",[["Information","Expert détenteur du savoir"],["Éducation pour la santé","Facilitateur d'apprentissages"],["Prévention","Cibler les populations à risque"]],""),
+    E(["La prévention et l'éducation pour la santé"," ont la même finalité :"," rendre la personne autonome."],1,"L'éducation a une finalité émancipatrice ; la prévention, une finalité spécifiquement préventive.","Piège d'examen.")),
+  N(Q("Pourquoi l'information seule ne suffit-elle pas ?",["Elle ignore les contraintes budgétaires, culturelles et les compétences : on peut savoir sans changer","Elle coûte trop cher","Elle est interdite"],"L'écart entre savoir et faire."),
+    O("Remets dans l'ordre les 4 temps de la démarche éducative.",["Diagnostic éducatif partagé","Objectifs pédagogiques négociés","Activités variées","Évaluation des acquis et ajustements"],"")),
+  "Fiche 2 · Ottawa et Bangkok",
+  N(Q("La promotion de la santé selon Ottawa, c'est…",["Le processus qui confère aux populations les moyens d'un plus grand contrôle sur leur santé","Une campagne d'affichage","Un dépistage organisé"],""),
+    O("Range les 5 stratégies d'Ottawa dans l'ordre de ta fiche.",["Politiques publiques saines","Environnements favorables","Action communautaire","Aptitudes personnelles","Réorienter les services de santé"],""),
+    CAS("Les jardins partagés de Quartiers Nourriciers.",Q("Quel axe d'Ottawa ?",["Créer des environnements favorables","Réorienter les services de santé","Élaborer des politiques publiques saines"],"Autonomie alimentaire + cohésion sociale."))),
+  N(A("Ottawa ou Bangkok ?",[["Charte d'Ottawa","1986 : 5 stratégies"],["Charte de Bangkok","2005 : mondialisation, Health in All Policies, secteur privé"]],"Piège : ne mélange pas les dates."),
+    S("Comment dit-on « la santé dans toutes les politiques » en anglais ?",["health in all policies","hiap"],"")),
+  "Fiche 3 · Stratégies d'intervention",
+  N([T(B_POP,"Taxe sur les sodas",0,""),T(B_POP,"Suivi individualisé des enfants obèses",1,""),T(B_POP,"Fontaines à eau dans l'espace public",0,""),T(B_POP,"Accompagnement de familles en précarité alimentaire",1,"")],
+    A("Effets : relie.",[["Approche populationnelle","Bénéfices modestes mais étendus"],["Approche individuelle","Effets importants sur peu de personnes"]],""),
+    W("Pourquoi combiner populationnel et individuel ?","Le populationnel touche tout le monde via les déterminants, avec un petit effet par personne ; l'individuel agit fort sur les plus à risque. Ensemble, ils sont complémentaires et évitent la médicalisation exclusive des problèmes nutritionnels.",["Complémentarité des effets","Éviter la médicalisation exclusive"])),
+  N(C("Après la taxe soda, la consommation de boissons sucrées est passée d'environ 55 L à combien de litres par habitant et par an ?",43,"Santé publique France, 2019.","L",1)),
+  N(Q("La réduction des risques (RdR), c'est…",["Limiter les conséquences d'un comportement par petits pas, en admettant que le changement ne peut pas être immédiat","Interdire les aliments à risque","Un dépistage précoce"],""),
+    O("Exemple des sodas : ordonne les petits pas.",["Soda","Soda dilué avec de l'eau","Eau aromatisée","Eau pure"],"Chaque amélioration est valorisée.")),
+  N(Q("En co-construction, quelle posture adopter ?",["Humilité et écoute : reconnaître l'expertise d'usage des habitants","Expert qui décide de tout","Observateur extérieur"],""))
+ ]},
+ {id:"sp3b",t:"Les 3 préventions",s:"Fiches 4 à 6 · primaire, secondaire, tertiaire",items:[
+  "Fiche 4 · Prévention primaire",
+  N(Q("Quelle est la principale difficulté de la prévention primaire ?",["Un public en bonne santé apparente, avec des bénéfices différés et invisibles","Le coût des médicaments","Le manque de diététiciens"],"D'où l'enjeu d'une culture de la prévention dès l'enfance.")),
+  N(A("Relie chaque groupe prioritaire à son enjeu.",[["Femmes enceintes","Carences en fer et folates, retard de croissance intra-utérin"],["Nourrissons et enfants","Habitudes alimentaires de base"],["Adolescents","TCA, obésité, excès d'alcool"],["Travailleurs postés","Rythmes perturbés, grignotage"],["Populations précaires","Inégalités sociales de santé"]],""),
+    C("Combien de groupes prioritaires en prévention primaire ?",5,"")),
+  N(Q("Pourquoi réduire le sel dans les produits industriels réduit-il les inégalités ?",["Les populations précaires consomment plus d'aliments industriels : elles en profitent davantage","Parce que le sel coûte cher","Parce que les riches mangent plus salé"],"Les mesures populationnelles modifient l'environnement sans contraindre.")),
+  "Fiche 5 · Prévention secondaire",
+  N([T(B_DEP,"Dénutrition de la personne âgée",0,""),T(B_DEP,"Surpoids de l'enfant",1,""),T(B_DEP,"Troubles alimentaires de l'adolescent",2,"")],
+    S("Que signifie MNA ?",["mini nutritional assessment"],"")),
+  N(O("Remets dans l'ordre les 5 étapes du dépistage.",["Administrer l'outil validé","Interpréter selon les seuils","Évaluer la situation globale","Orienter selon la gravité","Planifier le suivi"],""),
+    E(["Le score MNA de Mme L. indique une dénutrition :"," le dépistage est terminé,"," on note le score dans le dossier."],1,"Le dépistage ne s'arrête pas au score : évaluation globale et orientation.","Piège d'examen.")),
+  N(Q("De quoi dépend l'efficacité d'un dépistage ?",["De sa systématisation et de son acceptabilité (communication rassurante)","Du prix des outils","Du nombre de questions"],"")),
+  "Fiche 6 · Prévention tertiaire et ETP",
+  N(Q("La prévention tertiaire vise…",["À limiter les complications et les rechutes chez des personnes déjà malades","À dépister tôt","À éviter l'apparition de la maladie"],""),
+    S("Que signifie ETP ?",["education therapeutique du patient","éducation thérapeutique du patient","education therapeutique"],"")),
+  N(A("Les lettres de SMART : relie.",[["S","Spécifique"],["M","Mesurable"],["A","Atteignable"],["R","Réaliste"],["T","Temporellement défini"]],""),
+    O("Remets dans l'ordre les étapes d'un programme d'ETP.",["Évaluation initiale partagée","Objectifs éducatifs SMART","Activités individuelles ou collectives","Suivi et ajustements"],""),
+    W("Qu'est-ce que l'ETP change dans la relation avec le patient ?","Elle transforme la relation en partenariat thérapeutique : le patient devient acteur, développe autonomie et auto-surveillance (techniques et compétences psychosociales) ; le diététicien sort de la seule prescription.",["Partenariat","Patient acteur, autonomie","Technique + psychosocial"]))
+ ]},
+ {id:"sp3c",t:"Le pouvoir d'agir",s:"Fiches 7 à 10 · empowerment et participation",items:[
+  "Fiche 7 · Empowerment individuel",
+  N(Q("L'empowerment individuel, c'est…",["Le processus par lequel une personne développe sa capacité d'action autonome sur les déterminants de sa santé","Suivre un régime prescrit","Recevoir une information"],"Tu passes de prescripteur à facilitateur."),
+    F("Littératie en santé : {trouver}, {comprendre}, {évaluer|evaluer} et {utiliser} l'information de santé.","")),
+  N(O("Remets dans l'ordre les 5 temps de l'entretien motivationnel.",["Écoute empathique","Explorer bénéfices et obstacles","Identifier valeurs et motivations","Renforcer les intentions de changement","Co-construire des objectifs réalistes"],""),
+    null,
+    CAS("Un patient connaît les repères mais continue ses sodas.",W("Pourquoi l'entretien motivationnel plutôt qu'un rappel des repères ?","Le comportement a des racines psychologiques et sociales, pas un manque de connaissances. L'entretien motivationnel explore l'ambivalence et les valeurs pour renforcer la motivation intrinsèque : le changement durable vient de la personne.",["Ambivalence","Motivation intrinsèque","Changement venu de la personne"]))),
+  N(Q("Les inégalités de littératie sont…",["Un facteur majeur d'inégalités sociales de santé : adapter les supports sans condescendance","Sans lien avec la santé","Un problème réservé aux personnes âgées"],"Thomas : pictogrammes, vidéos, pairs-relais.")),
+  "Fiche 8 · Empowerment collectif",
+  N(A("Les rôles des habitants-référents : complète.",[["Relais","d'information"],["Animateurs","d'ateliers"],["Porte-paroles","auprès des institutions"]],""),
+    E(["Thomas reste l'animateur central des jardins"," pour garantir que tout se passe comme prévu :"," c'est le but de l'empowerment collectif."],2,"Le but est que les habitants prennent le relais : il faut savoir se mettre en retrait.","Piège d'examen.")),
+  N(Q("Le plaidoyer (advocacy), c'est…",["Aider les communautés à influencer les politiques publiques","Défendre un patient au tribunal","Faire la publicité d'un produit"],""),
+    S("Cite un thème de plaidoyer citoyen.",["offre alimentaire","ameliorer l offre alimentaire locale","espaces verts","publicite alimentaire","reguler la publicite alimentaire","transports"],"Offre alimentaire locale, espaces verts, publicité alimentaire, transports.")),
+  "Fiche 9 · Méthodes participatives",
+  N(A("Les chiffres de la participation : relie.",[["Diagnostic partagé (SpF 2021)","Adhésion > 65 % vs 40 %"],["Évaluation participative (OMS 2020)","Pérennité 70 % vs 45 %"]],""),
+    C("Avec un diagnostic partagé, l'adhésion dépasse quel pourcentage ?",65,"Contre 40 % pour un projet conçu par des experts seuls.","%"),
+    W("Pourquoi l'évaluation participative améliore-t-elle la pérennité ?","Associer les bénéficiaires développe leur esprit critique et leur pouvoir d'influence, et ajuste l'action à leurs besoins réels : l'évaluation sert l'apprentissage, pas seulement le contrôle. Résultat : 70 % de pérennité contre 45 %.",["Pouvoir d'influence des bénéficiaires","Besoins réels","Apprentissage, pas contrôle"])),
+  N(O("Remets dans l'ordre les 6 étapes du diagnostic partagé.",["Groupe de travail mixte","Formation aux techniques d'enquête","Collecte collaborative","Analyse collective","Priorités partagées","Plan d'intervention consensuel"],""),
+    Q("La planification participative est…",["Bottom-up : objectifs et moyens définis avec la population","Top-down : décidée par l'ARS","Réservée aux experts"],"")),
+  "Fiche 10 · Méthodes",
+  N(Q("Comment maintenir l'engagement des habitants sur 18 mois ?",["Varier les formats, objectifs intermédiaires, progrès célébrés, soutien logistique","Augmenter la fréquence des conférences","Sanctionner les absents"],"Transport, garde d'enfants, feedback continu."))
+ ]}
+ ],
+ mission:{id:"sp3m",t:"Le réseau nantais",items:[
+  CH("leblanc","Les données locales montrent un écart de surpoids entre deux quartiers. Par quoi commences-tu ?",[
+    ["Une campagne d'affichage « 5 fruits et légumes »",0,[1,-5,-4],"Information descendante : on sait, mais on ne change pas."],
+    ["Un diagnostic partagé avec les habitants et les acteurs du quartier",2,[6,10,-3],"Adhésion > 65 % contre 40 % pour un projet d'experts."],
+    ["Des consultations individuelles pour toutes les familles",1,[3,0,-10],"Utile pour certains, mais coûteux et sans effet sur l'environnement."]],
+   "Fiches 9 et 10."),
+  CH("nadia","Dans mon atelier, une maman me dit : « Je sais que le soda c'est mauvais, mais mes enfants ne boivent que ça. »",[
+    ["« Il faut arrêter les sodas dès aujourd'hui. »",0,[0,-10,0],"Injonction culpabilisante : elle ne reviendra peut-être pas."],
+    ["« On peut commencer par diluer avec de l'eau, puis passer aux eaux aromatisées. »",2,[6,10,0],"Réduction des risques : petits pas valorisés, moins de culpabilisation."],
+    ["Lui redonner la brochure sur le sucre",0,[0,-4,-1],"Elle connaît déjà l'information : le problème est ailleurs."]],
+   "Fiche 3 : réduction des risques."),
+  BY("leblanc",T(B_DEP,"Mme Lefèvre, 84 ans, a perdu l'appétit",0,"Outil validé pour la personne âgée.")),
+  CH("leblanc","Le score MNA de Mme Lefèvre indique un risque de dénutrition. Ensuite ?",[
+    ["Je note le score, le dépistage est fait",0,[-3,-3,0],"Le dépistage ne s'arrête pas au score."],
+    ["J'évalue sa situation globale (sociale, médicale, psychologique), je l'oriente et je planifie le suivi",2,[8,6,-2],"Les 5 étapes complètes."]],
+   "Fiche 5 : processus de dépistage."),
+  BY("thomas",A("Quartiers Nourriciers : relie chaque action à la stratégie d'Ottawa.",[["Jardins partagés","Environnements favorables"],["Habitants-référents formés","Action communautaire"],["Atelier lecture d'étiquettes","Aptitudes personnelles"],["Demande à la mairie de réguler la pub","Politiques publiques saines"]],"")),
+  CH("thomas","Les habitants-référents veulent organiser une fête des récoltes au lieu de l'atelier prévu. Que fais-tu ?",[
+    ["Je maintiens l'atelier prévu",0,[0,-12,0],"Les habitants se sentent dépossédés : la dynamique s'essouffle."],
+    ["Je les soutiens et je me mets en retrait, en apportant mon expertise si on me la demande",2,[5,12,-2],"C'est le but de l'empowerment collectif : les habitants prennent le relais."]],
+   "Fiche 8."),
+  CH("leblanc","Dans un an, comment évaluer le projet ?",[
+    ["Un évaluateur externe rédige un rapport",1,[1,-2,-5],"Contrôle descendant : 45 % de pérennité."],
+    ["Co-construire les indicateurs avec les habitants, méthodes mixtes, résultats rendus visibles",2,[5,8,-3],"Évaluation participative : 70 % de pérennité."],
+    ["Compter les participants",0,[0,0,0],"Indicateur utile, mais très insuffisant seul."]],
+   "Fiche 9."),
+  BY("leblanc",W("Explique au conseil municipal pourquoi le réseau mise sur la participation des habitants.","La participation (diagnostic partagé, co-construction, évaluation participative) rend les actions pertinentes et appropriées : adhésion > 65 % contre 40 %, pérennité 70 % contre 45 %. L'empowerment individuel et collectif permet aux habitants d'agir sur leurs déterminants, bien au-delà de l'information descendante.",["Diagnostic partagé, co-construction","Chiffres d'adhésion et de pérennité","Empowerment","Limites de l'information seule"]))
+ ]}
+};
+
+(function(){
+var TITLE="Santé & Cité",PLAYER="Rym";
+/* =============== ÉTAT =============== */
+var KEY="rym-sp-v1";
+function blank(){return {xp:0,stars:{},carnet:[],mem:{},cal:{s:[0,0],h:[0,0],g:[0,0]},days:{},exams:{},team:{},q:{},best:{}}}
+var S=blank();
+function loadState(raw){try{var p=JSON.parse(raw);if(p&&typeof p==="object"){S=Object.assign(blank(),p);return true;}}catch(e){}return false;}
+try{var raw=localStorage.getItem(KEY);if(raw)loadState(raw);}catch(e){}
+function save(){S.ts=Date.now();try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}schedulePush();}
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a}
+function pick(a){return a[Math.floor(Math.random()*a.length)]}
+function fr(n){return String(n).replace(".",",")}
+function pct(x){return Math.round(x*100)}
+var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var DAY=86400000;
+function today(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function qd(){var k=today();if(!S.q[k])S.q={};if(!S.q[k])S.q[k]={lv:0,ok:0,cl:[]};return S.q[k]}
+
+/* =============== LA VILLE =============== */
+var QUARTIERS=[
+ {id:"sp",t:"Santé publique",ex:"E5",col:"#55d6cf",secs:[
+  {id:"promo",t:"Promotion et éducation",col:"#55d6cf",cours:[["sp1","Enjeux de santé publique"],["sp2","Cadre réglementaire"],["sp3","Fondamentaux de la prévention"],["sp4","Psychologie sociale"],["sp5","Pratiques et comportements alimentaires"],["sp6","Littératie en santé"],["sp7","Techniques de communication"],["sp8","Posture pro et com interdisciplinaire"],["sp9","Outils pédagogiques"],["sp10","Démarche de projet"],["sp11","Programme de prévention"],["sp12","Évaluation des projets"]]},
+  {id:"rech",t:"Activités de recherche",col:"#5bb8f5",cours:[["sp13","Initiation à la recherche"],["sp14","Recueil de données"],["sp15","Analyse et communication des résultats"]]},
+  {id:"veille",t:"Veille scientifique et réglementaire",col:"#ffc94a",cours:[["sp16","Recherche documentaire et veille"],["sp17","Veille réglementaire"]]},
+  {id:"cyber",t:"Cybersécurité",col:"#ae8dff",cours:[["sp18","Identité numérique"],["sp19","Bonnes pratiques numériques"]]}]},
+ {id:"soin",t:"Démarche de soin",ex:"E3",col:"#ff9476",secs:[],soon:true}
+];
+var RANKS=[[0,"Diététicienne stagiaire"],[300,"Diététicienne junior"],[800,"Chargée de prévention"],[1600,"Coordinatrice de projet"],[3000,"Experte en santé publique"],[5000,"Directrice de l'observatoire"]];
+function rankOf(xp){var r=0;for(var i=0;i<RANKS.length;i++)if(xp>=RANKS[i][0])r=i;return r}
+
+/* =============== INDEX DES NOTIONS =============== */
+var LEVELS={},NOTIONS={},WORLD_NOTIONS={sp:[]},COURSE_OF={},SEC_OF={};
+function kindTier(f){if(f.ctx||f.k==="pourquoi"||f.k==="erreur")return 3;if(f.k==="saisie"||f.k==="trous"||f.k==="calc")return 2;return 1}
+function labelOf(f){return f.q||f.n||(f.t?f.t.replace(/\{([^}|]*)[^}]*\}/g,"…"):"")||(f.segs?f.segs.join(""):"")}
+QUARTIERS.forEach(function(q){q.secs.forEach(function(s){s.cours.forEach(function(c){SEC_OF[c[0]]=s;});});});
+Object.keys(COURS).forEach(function(cid){var c=COURS[cid];c.notions=[];
+  var lv=c.levels.concat([c.mission]);
+  lv.forEach(function(l,li){l.course=c;l.isMission=(li===c.levels.length);if(!l.s)l.s="Mission";LEVELS[l.id]=l;
+    var sec="",ns=[],seq=[];
+    l.items.forEach(function(it){
+      if(typeof it==="string"){sec=it;return;}
+      if(it.k==="choix"){seq.push({ch:it});return;}
+      var n=it;if(!it.nt){var tf=[null,null,null,null];tf[kindTier(it)]=[it];n={nt:true,f:tf};}n.sec=sec||l.t;ns.push(n);seq.push(n);});
+    ns.forEach(function(n,i){n.id=l.id+"#"+i;n.level=l;n.world="sp";n.course=c;n.ref=c.n+". "+c.t+" · "+(l.isMission?"Mission":n.sec);
+      n.tiers=[1,2,3].filter(function(t){return n.f[t]&&n.f[t].length});
+      n.label=labelOf(n.f[n.tiers[0]][0]);NOTIONS[n.id]=n;WORLD_NOTIONS.sp.push(n);c.notions.push(n);});
+    l.notions=ns;l.seq=seq;});});
+S.carnet=(S.carnet||[]).filter(function(c){return c&&c.key&&NOTIONS[c.key]});
+
+/* =============== MÉMOIRE (FSRS-4.5) =============== */
+var W=[0.4072,1.1829,3.1262,15.4722,7.2102,0.5316,1.0651,0.0234,1.616,0.1544,1.0824,1.9813,0.0953,0.2975,2.2042,0.2407,2.9466];
+var DECAY=-0.5,FACTOR=19/81;
+function clamp(x,a,b){return Math.max(a,Math.min(b,x))}
+function retr(t,s){return Math.pow(1+FACTOR*t/s,DECAY)}
+function D0(g){return clamp(W[4]-(g-3)*W[5],1,10)}
+function memOf(id){return S.mem[id]||null}
+function R(id,at){var m=memOf(id);if(!m)return 0;var t=Math.max(0,((at||Date.now())-m.last)/DAY);return retr(t,m.s)}
+function review(n,g){
+  var m=memOf(n.id),now=Date.now();
+  if(!m){m={d:D0(g),s:W[g-1],last:now,reps:1,lapses:g===1?1:0,tier:n.tiers[0],top:false};}
+  else{var t=Math.max(0,(now-m.last)/DAY),r=retr(t,m.s);
+    var d=m.d-W[6]*(g-3);d=W[7]*D0(3)+(1-W[7])*d;m.d=clamp(d,1,10);
+    if(g===1){m.s=W[11]*Math.pow(m.d,-W[12])*(Math.pow(m.s+1,W[13])-1)*Math.exp(W[14]*(1-r));m.lapses++;}
+    else{m.s=m.s*(Math.exp(W[8])*(11-m.d)*Math.pow(m.s,-W[9])*(Math.exp(W[10]*(1-r))-1)*(g===2?W[15]:1)*(g===4?W[16]:1)+1);}
+    m.s=clamp(m.s,0.1,36500);m.last=now;m.reps++;}
+  /* paliers */
+  var i=n.tiers.indexOf(m.tier);if(i<0)i=0;var before=m.tier,isTop=i===n.tiers.length-1;
+  if(g>=2){if(isTop){if(g>=3)m.top=true;}else m.tier=n.tiers[i+1];}
+  else{m.tier=n.tiers[Math.max(0,i-1)];}
+  S.mem[n.id]=m;
+  var dk=today();S.days[dk]=(S.days[dk]||0)+1;
+  save();
+  return {from:before,to:m.tier,top:m.top};
+}
+function tierOf(n){var m=memOf(n.id);return m&&n.tiers.indexOf(m.tier)>=0?m.tier:n.tiers[0]}
+var STATES=["Nouvelle","En apprentissage","Ancrée","Maîtrisée"];
+function stateOf(n){var m=memOf(n.id);if(!m)return 0;if(m.top&&m.s>=21)return 3;
+  if(m.s>=4&&(n.tiers.length===1||m.tier>n.tiers[0]))return 2;return 1;}
+function examAt(w){var d=S.exams&&S.exams[w];if(!d)return null;var t=new Date(d+"T08:00:00").getTime();return isNaN(t)?null:t}
+function isDue(n){var m=memOf(n.id);if(!m)return false;var r=R(n.id);if(r<0.9)return true;
+  var ex=examAt(n.world),now=Date.now();if(ex&&ex>now&&ex-now<45*DAY&&(now-m.last)>DAY*0.9&&R(n.id,ex)<0.85)return true;return false}
+function dueList(w){var a=[];Object.keys(NOTIONS).forEach(function(k){var n=NOTIONS[k];if((!w||n.world===w)&&isDue(n))a.push(n)});a.sort(function(x,y){return R(x.id)-R(y.id)});return a}
+function avgR(list,at){if(!list.length)return 0;var s=0;list.forEach(function(n){s+=R(n.id,at)});return s/list.length}
+function streak(){var n=0,d=new Date();if(!S.days[today()])d.setDate(d.getDate()-1);
+  for(;;){var k=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");if(S.days[k]){n++;d.setDate(d.getDate()-1);}else break;}return n}
+
+
+function refreshHUD(){
+  var due=dueList().length;
+  $$(".dueN").forEach(function(e){e.textContent=due;e.hidden=!due});
+}
+function addMiss(key,q,a,ref){if(S.carnet.some(function(c){return c.key===key}))return;S.carnet.unshift({key:key,q:q,a:a,ref:ref});S.carnet=S.carnet.slice(0,80);save();}
+function clearMiss(key){var n=S.carnet.length;S.carnet=S.carnet.filter(function(c){return c.key!==key});if(n!==S.carnet.length)save();}
+function toast(t){var d=document.createElement("div");d.className="toast pop";d.textContent=t;document.body.appendChild(d);setTimeout(function(){d.remove()},2600)}
+
+/* =============== AVATARS =============== */
+function avatar(av,size,init){size=size||52;av=av||{bg:"#d3e6e2"};var h="";
+  var hair=av.hair||"#2b1b14",skin=av.skin||"#e8b896";
+  if(av.hs==="long")h+='<path d="M15 30 Q14 12 32 12 Q50 12 49 30 L50 46 Q44 40 44 30 L20 30 Q20 40 14 46Z" fill="'+hair+'"/>';
+  h+='<path d="M8 64 Q8 46 32 44 Q56 46 56 64Z" fill="'+(av.shirt||"#2f5a60")+'"/><rect x="28" y="36" width="8" height="9" fill="'+skin+'"/><circle cx="32" cy="28" r="13" fill="'+skin+'"/>';
+  if(av.hs==="short"||av.hs==="long")h+='<path d="M19 27 Q19 14 32 14 Q45 14 45 27 Q40 20 32 20 Q24 20 19 27Z" fill="'+hair+'"/>';
+  if(av.hs==="bun")h+='<circle cx="32" cy="11" r="6" fill="'+hair+'"/><path d="M19 27 Q19 15 32 15 Q45 15 45 27 Q40 19 32 19 Q24 19 19 27Z" fill="'+hair+'"/>';
+  if(av.hs==="curly")h+='<g fill="'+hair+'"><circle cx="22" cy="20" r="6"/><circle cx="30" cy="15" r="6.5"/><circle cx="38" cy="15" r="6"/><circle cx="44" cy="21" r="5.5"/><circle cx="19" cy="27" r="4.5"/><circle cx="45" cy="28" r="4.5"/></g>';
+  if(av.hs==="bald")h+='<path d="M19 30 Q19 24 21 22 L22 30Z M45 30 Q45 24 43 22 L42 30Z" fill="'+hair+'"/>';
+  h+='<circle cx="27.5" cy="29" r="1.6" fill="#13303a"/><circle cx="36.5" cy="29" r="1.6" fill="#13303a"/><path d="M28 34 Q32 37 36 34" stroke="#13303a" stroke-width="1.6" fill="none" stroke-linecap="round"/>';
+  if(av.glasses)h+='<g fill="none" stroke="#13303a" stroke-width="1.3"><circle cx="27.5" cy="29" r="4"/><circle cx="36.5" cy="29" r="4"/><path d="M31.5 29h1"/></g>';
+  return '<svg width="'+size+'" height="'+size+'" viewBox="0 0 64 64" aria-hidden="true" style="flex:none;border-radius:50%"><circle cx="32" cy="32" r="32" fill="'+av.bg+'"/><g clip-path="circle(32px at 32px 32px)">'+h+'</g></svg>'}
+var RYM={bg:"#0e9f8e",skin:"#c99067",hair:"#1f1410",hs:"long",shirt:"#ffc94a"};
+function person(c,k){return c&&c.P&&c.P[k]}
+
+/* =============== ÉTOILES, PROGRESSION =============== */
+function stars(n,max){var h="";for(var i=0;i<max;i++)h+='<span class="'+(i<n?"":"off")+'">★</span>';return '<span class="stars" aria-label="'+n+' étoiles sur '+max+'">'+h+'</span>'}
+function courseStars(c){var s=0;c.levels.concat([c.mission]).forEach(function(l){s+=S.stars[l.id]||0});return s}
+function courseMax(c){return 3*(c.levels.length+1)}
+function levelOpen(l){var c=l.course;if(l.isMission)return c.levels.every(function(x){return S.stars[x.id]>0});var i=c.levels.indexOf(l);return i===0||S.stars[c.levels[i-1].id]>0}
+function stateDist(ns){var d=[0,0,0,0];ns.forEach(function(n){d[stateOf(n)]++});return d}
+function stbar(ns){var d=stateDist(ns),t=ns.length||1;return '<div class="stbar" aria-hidden="true">'+[3,2,1].map(function(k){return '<i class="st'+k+'" style="width:'+(100*d[k]/t)+'%"></i>'}).join("")+'</div>'}
+function memPct(ns){var seen=ns.filter(function(n){return memOf(n.id)});return seen.length?pct(avgR(ns)):0}
+function memline(ns){var m=memPct(ns);return '<div class="memline"><span>Mémoire</span><span class="mb"><i style="width:'+m+'%"></i></span><span>'+m+' %</span></div>'}
+
+/* =============== ÉCRANS =============== */
+var screens=["home","quartier","secteur","cours","team","brain","game"],cur={q:"sp",s:"promo",c:"sp1"},backTo="cours";
+function show(id){screens.forEach(function(s){$("#"+s).hidden=(s!==id)});$("#nav").hidden=(id==="game");window.scrollTo(0,0);
+  $$("#nav [data-nav]").forEach(function(b){b.classList.toggle("on",b.dataset.nav===id||(id!=="team"&&id!=="brain"&&b.dataset.nav==="home"&&id!=="game"))});
+  if(id==="home")renderHome();if(id==="quartier")renderQuartier();if(id==="secteur")renderSecteur();if(id==="cours")renderCours();
+  if(id==="team")renderTeam();if(id==="brain")renderBrain();refreshHUD();}
+document.addEventListener("click",function(e){
+  var t=e.target.closest("[data-go],[data-brain],[data-nav],[data-quartier],[data-sec],[data-course],[data-level],[data-claim]");if(!t)return;
+  if(t.dataset.go)show(t.dataset.go);
+  else if(t.hasAttribute("data-brain"))show("brain");
+  else if(t.dataset.nav){if(t.dataset.nav==="due")startDue();else show(t.dataset.nav);}
+  else if(t.dataset.quartier){var q=QUARTIERS.filter(function(x){return x.id===t.dataset.quartier})[0];if(q.soon){toast("Le quartier du Soin (E3) arrive après la santé publique.");return;}cur.q=q.id;show("quartier");}
+  else if(t.dataset.sec){cur.s=t.dataset.sec;show("secteur");}
+  else if(t.dataset.course){if(!COURS[t.dataset.course]){toast("Ce cours arrive dans une prochaine vague.");return;}cur.c=t.dataset.course;show("cours");}
+  else if(t.dataset.level){var l=LEVELS[t.dataset.level];if(!levelOpen(l)){toast(l.isMission?"Termine les 3 niveaux du cours pour ouvrir la mission.":"Termine d'abord le niveau précédent.");return;}startLevel(l.id);}
+  else if(t.dataset.claim){var k=+t.dataset.claim,d=qd();if(d.cl.indexOf(k)<0){d.cl.push(k);S.xp+=50;save();toast("+50 XP · quête accomplie !");renderHome();}}
+});
+
+/* ---------- Accueil ---------- */
+function quests(){var d=qd(),n=S.days[today()]||0;
+  return [["Réponds à 15 questions",Math.min(n,15),15],["Réussis 10 réponses",Math.min(d.ok,10),10],["Termine un niveau ou une mission",Math.min(d.lv,1),1]]}
+function cityArt(){return '<svg viewBox="0 0 360 120" aria-hidden="true"><rect width="360" height="120" fill="#cfeee8"/><circle cx="300" cy="30" r="16" fill="#ffc94a"/>'+
+  '<rect x="20" y="50" width="54" height="70" rx="6" fill="#55d6cf"/><rect x="82" y="30" width="46" height="90" rx="6" fill="#5bb8f5"/><rect x="136" y="60" width="60" height="60" rx="6" fill="#ffc94a"/><rect x="204" y="42" width="50" height="78" rx="6" fill="#ae8dff"/><rect x="262" y="66" width="76" height="54" rx="6" fill="#ff9476"/>'+
+  '<g fill="#ffffff" opacity=".8"><rect x="30" y="60" width="10" height="10" rx="2"/><rect x="52" y="60" width="10" height="10" rx="2"/><rect x="30" y="80" width="10" height="10" rx="2"/><rect x="92" y="42" width="10" height="10" rx="2"/><rect x="110" y="42" width="10" height="10" rx="2"/><rect x="92" y="62" width="10" height="10" rx="2"/><rect x="148" y="72" width="12" height="10" rx="2"/><rect x="172" y="72" width="12" height="10" rx="2"/><rect x="214" y="54" width="10" height="10" rx="2"/><rect x="234" y="54" width="10" height="10" rx="2"/><rect x="276" y="78" width="12" height="10" rx="2"/><rect x="306" y="78" width="12" height="10" rx="2"/></g>'+
+  '<path d="M236 30h4v-6h4v6h4v4h-4v6h-4v-6h-4z" fill="#ffffff"/><rect y="112" width="360" height="8" fill="#13303a" opacity=".15"/></svg>'}
+function soinArt(){return '<svg viewBox="0 0 360 90" aria-hidden="true"><rect width="360" height="90" fill="#fbeee9"/><rect x="40" y="30" width="110" height="60" rx="8" fill="#ff9476"/><rect x="160" y="44" width="80" height="46" rx="8" fill="#f6c6b6"/><rect x="250" y="20" width="70" height="70" rx="8" fill="#ffb59e"/><path d="M89 44h12v10h10v12h-10v10H89V66H79V54h10z" fill="#ffffff"/></svg>'}
+function renderHome(){var r=rankOf(S.xp),nx=RANKS[r+1],lo=RANKS[r][0],prog=nx?(S.xp-lo)/(nx[0]-lo):1,due=dueList().length,st=streak();
+  var spNs=WORLD_NOTIONS.sp,done=0;Object.keys(COURS).forEach(function(k){if(S.stars[COURS[k].mission.id])done++});
+  var h='<div class="me">'+avatar(RYM,64)+'<div class="who"><div class="eyebrow">'+esc(TITLE)+'</div><h1>'+esc(PLAYER)+'</h1><div class="small mut"><b style="color:var(--ink)">Niv. '+(r+1)+' · '+esc(RANKS[r][1])+'</b></div>'+
+    '<div class="xpbar"><i style="width:'+pct(prog)+'%"></i></div><div class="small mut">'+S.xp+' XP'+(nx?' · prochain titre : '+esc(nx[1])+' ('+nx[0]+' XP)':' · titre maximal')+'</div></div>'+
+    '<div class="flame" title="Jours d\'affilée"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 6 6 6 12a6 6 0 0 1-12 0c0-3 2-5 3-6 0 2 1 3 2 3 0-4-1-6 1-9z" fill="'+(st?"#ff7a59":"#c9d9d6")+'"/></svg>'+st+'<small>jour'+(st>1?"s":"")+'</small></div></div>';
+  h+='<button class="due" type="button" data-nav="due"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffc94a" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v5h-5"/></svg><div><b>Révisions du jour</b><span>'+(due?due+" notion"+(due>1?"s":"")+" à consolider avant d'oublier":(spNs.some(function(n){return memOf(n.id)})?"Tout est à jour : reviens demain":"Commence un cours pour lancer ta mémoire"))+'</span></div>'+(due?'<span class="go">Réviser</span>':'')+'</button>';
+  var qs=quests(),d=qd();
+  h+='<div><div class="eyebrow" style="margin-bottom:8px">Quêtes du jour</div><div class="quests">'+qs.map(function(q,k){var ok=q[1]>=q[2],cl=d.cl.indexOf(k)>=0;
+    return '<div class="quest'+(cl?" done":"")+'"><span class="qi">'+(cl?"✓":(k+1))+'</span><div class="qt">'+esc(q[0])+'<small>'+q[1]+' / '+q[2]+(cl?" · récompense reçue":" · +50 XP")+'</small><div class="qbar"><i style="width:'+(100*q[1]/q[2])+'%"></i></div></div>'+(ok&&!cl?'<button class="claim" type="button" data-claim="'+k+'">Récupérer</button>':'')+'</div>'}).join("")+'</div></div>';
+  h+='<div><div class="eyebrow" style="margin-bottom:8px">Choisis ton quartier</div><div class="qz">'+
+    '<button class="qzc" type="button" data-quartier="sp">'+cityArt()+'<div class="t"><span class="pill">E5</span><b>Quartier Santé publique</b><span class="small mut">4 secteurs · 19 cours · '+Object.keys(COURS).length+' ouverts · '+done+' mission'+(done>1?"s":"")+' réussie'+(done>1?"s":"")+'</span>'+memline(spNs)+'</div></button>'+
+    '<button class="qzc lock" type="button" data-quartier="soin">'+soinArt()+'<div class="t"><span class="pill coral">E3</span><b>Quartier du Soin</b><span class="small mut">Démarche de soin · bilan, diagnostic, plan de soin, suivi · bientôt</span></div></button></div></div>';
+  $("#home").innerHTML=h;}
+
+/* ---------- Quartier ---------- */
+function secNotions(s){var a=[];s.cours.forEach(function(c){if(COURS[c[0]])a=a.concat(COURS[c[0]].notions)});return a}
+function renderQuartier(){var q=QUARTIERS[0],ex=examAt("sp"),j=ex?Math.ceil((ex-Date.now())/DAY):null;
+  var h='<div class="row" style="justify-content:space-between"><button class="back" type="button" data-go="home">← Ville</button>'+(j!==null&&j>=0?'<span class="pill coral">E5 · J-'+j+'</span>':'<button class="pill" type="button" data-brain style="border:0">Fixer la date de l\'E5</button>')+'</div>'+
+   '<div><div class="eyebrow">Quartier</div><h1 style="font-size:26px">Santé publique</h1><p class="mut small" style="margin:4px 0 0">Touche un secteur pour voir ses bâtiments. Chaque cours est un lieu, avec ses personnages et sa mission.</p></div>';
+  h+='<div class="secs">'+q.secs.map(function(s,i){var open=s.cours.filter(function(c){return COURS[c[0]]}).length,ns=secNotions(s),done=s.cours.filter(function(c){return COURS[c[0]]&&S.stars[COURS[c[0]].mission.id]}).length;
+    return '<button class="sec'+(i===0?" wide":"")+'" type="button" data-sec="'+s.id+'" style="background:'+s.col+'"><small>Secteur '+(i+1)+'</small><b>'+esc(s.t)+'</b><small>'+s.cours.length+' cours · '+(open?open+' ouvert'+(open>1?"s":"")+' · mémoire '+memPct(ns)+' %':'bientôt')+'</small><span class="bl">'+s.cours.map(function(c){return '<i class="'+(COURS[c[0]]&&S.stars[COURS[c[0]].mission.id]?"on":"")+'"></i>'}).join("")+'</span></button>'}).join("")+
+   '<button class="sec wide" type="button" style="background:#13303a;color:#fff" onclick="this.blur()" data-exam><small style="color:#ffc94a">Salle d\'examen</small><b>Épreuve blanche E5</b><small>Diagnostic → objectifs → stratégies → mise en œuvre → évaluation · ouvre quand le secteur 1 sera complet</small></button></div>';
+  $("#quartier").innerHTML=h;
+  var ex2=$("[data-exam]");if(ex2)ex2.onclick=function(){toast("L'épreuve blanche arrive avec les cours 10 à 12 (le projet de A à Z).")};}
+
+/* ---------- Secteur ---------- */
+function renderSecteur(){var s=QUARTIERS[0].secs.filter(function(x){return x.id===cur.s})[0],ns=secNotions(s);
+  var h='<button class="back" type="button" data-go="quartier">← Quartier</button><div><div class="eyebrow">Santé publique · secteur</div><h1 style="font-size:26px">'+esc(s.t)+'</h1></div>'+(ns.length?memline(ns):'');
+  h+='<div class="clist">'+s.cours.map(function(cc){var c=COURS[cc[0]],num=+cc[0].slice(2);
+    if(!c)return '<button class="crow soon" type="button" data-course="'+cc[0]+'"><span class="n">'+num+'</span><span class="tx"><b>'+esc(cc[1])+'</b><small>Arrive dans une prochaine vague</small></span></button>';
+    var k=Object.keys(c.P)[0],stn=courseStars(c),started=c.notions.some(function(n){return memOf(n.id)});
+    return '<button class="crow" type="button" data-course="'+c.id+'">'+avatar(c.P[k].av,46)+'<span class="tx"><b>'+c.n+' · '+esc(c.t)+'</b><small>'+esc(c.lieu)+'</small>'+(started?stbar(c.notions):'')+'</span>'+stars(Math.round(stn/courseMax(c)*3),3)+'</button>'}).join("")+'</div>';
+  $("#secteur").innerHTML=h;}
+
+/* ---------- Cours ---------- */
+var LVIC=["1","2","3"];
+function renderCours(){var c=COURS[cur.c],s=SEC_OF[c.id];
+  var h='<button class="back" type="button" data-go="secteur">← '+esc(s.t)+'</button>';
+  h+='<div class="hero"><div class="top" style="background:'+s.col+'33"><div class="eyebrow">Cours '+c.n+' · '+esc(c.lieu)+'</div><h1>'+esc(c.t)+'</h1><p class="small" style="margin:6px 0 0">'+esc(c.pitch)+'</p></div>'+
+    '<div class="cast">'+Object.keys(c.P).map(function(k){var p=c.P[k];return '<div class="p">'+avatar(p.av,52)+'<span>'+esc(p.n)+'</span><span class="mut" style="font-weight:600">'+esc(p.r)+'</span></div>'}).join("")+'</div></div>';
+  h+=memline(c.notions);
+  h+='<div class="lvls">'+c.levels.map(function(l,i){var op=levelOpen(l),st=S.stars[l.id]||0;
+    return '<button class="lvl'+(op?"":" lock")+'" type="button" data-level="'+l.id+'"><span class="ic">'+(op?LVIC[i]:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>')+'</span><span class="tx"><b>'+esc(l.t)+'</b><small>'+esc(l.s)+' · '+l.notions.length+' notions</small>'+stbar(l.notions)+'</span>'+stars(st,3)+'</button>'}).join("");
+  var m=c.mission,mo=levelOpen(m),ms=S.stars[m.id]||0,b=S.best[m.id];
+  h+='<button class="lvl mis'+(mo?"":" lock")+'" type="button" data-level="'+m.id+'"><span class="ic">'+(mo?"★":'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>')+'</span><span class="tx"><b>Mission · '+esc(m.t)+'</b><small>'+(mo?"Cas pratique avec choix et conséquences":"S'ouvre quand les 3 niveaux ont au moins 1 étoile")+(b?" · meilleur bilan : santé "+b[0]+", confiance "+b[1]+", budget "+b[2]:"")+'</small></span>'+stars(ms,3)+'</button></div>';
+  if(S.team[c.id])h+=conseilCard(c);
+  else h+='<p class="small mut" style="margin:0">Réussis la mission pour recruter l\'équipe du cours et obtenir sa carte « conseil pro ».</p>';
+  $("#cours").innerHTML=h;}
+function conseilCard(c){var p=c.P[c.conseil.who];return '<div class="conseil">'+avatar(p.av,44)+'<div><div class="lb">Carte conseil · '+esc(p.n)+'</div><p>'+esc(c.conseil.t)+'</p></div></div>'}
+
+/* ---------- Personnages ---------- */
+function renderTeam(){var all=[],got=0;Object.keys(COURS).forEach(function(k){var c=COURS[k];Object.keys(c.P).forEach(function(pk){all.push([c,pk]);if(S.team[c.id])got++;})});
+  var h='<div class="row" style="justify-content:space-between;align-items:flex-end"><div><div class="eyebrow">Ton réseau</div><h1 style="font-size:26px">Tes personnages</h1></div><span style="font-family:var(--display);font-weight:600;font-size:17px;color:var(--tealD)">'+got+' / '+all.length+'</span></div>'+
+   '<p class="small mut" style="margin:0">Chaque mission réussie recrute l\'équipe du cours. Leur carte « conseil pro » reprend les fiches Méthodes de tes cours : relis-les avant l\'épreuve.</p>';
+  h+='<div class="team">'+all.map(function(x){var c=x[0],p=c.P[x[1]];if(!S.team[c.id])return '<button class="tm unk" type="button" data-course="'+c.id+'"><span class="q">?</span><b>À rencontrer</b><small>'+esc(c.t)+'</small></button>';
+    return '<button class="tm" type="button" data-course="'+c.id+'">'+avatar(p.av,52)+'<b>'+esc(p.n)+'</b><small>'+esc(p.r)+'</small><em>'+esc(c.t)+'</em></button>'}).join("")+'</div>';
+  var cards=Object.keys(COURS).filter(function(k){return S.team[k]}).map(function(k){return conseilCard(COURS[k])}).join("");
+  h+=cards?'<div class="eyebrow">Tes cartes conseil</div>'+cards:'';
+  $("#team").innerHTML=h;}
+
+/* =============== PARTIES =============== */
+var G=null;
+$("#quitGame").onclick=function(){show(backTo)};
+function setProg(n,cur,res){var h="";for(var i=0;i<n;i++)h+='<i class="'+(res[i]===true?"ok":res[i]===false?"ko":(i===cur?"cur":""))+'"></i>';$("#gProg").innerHTML=h}
+function award(pts){G.score+=pts;S.xp+=pts;qd().ok++;save();$("#gScore").textContent=G.score;}
+function begin(title,lvl){G={id:lvl?lvl.id:null,score:0,lvl:lvl,gauges:null,onEnd:null};$("#gScore").textContent=0;$("#gGauges").hidden=true;show("game");$("#gTitle").textContent=title;}
+function startLevel(id){var l=LEVELS[id];backTo="cours";begin(l.isMission?"Mission · "+l.t:l.t,l);
+  if(l.isMission){G.gauges=[50,50,50];G.course=l.course;drawGauges(null);G.onEnd=missionEnd;Session(l.seq,false);}
+  else Session(l.notions,false);}
+function startDue(){var list=dueList().slice(0,20);
+  if(!list.length){toast(WORLD_NOTIONS.sp.some(function(n){return memOf(n.id)})?"Rien à réviser pour l'instant : ta mémoire est à jour.":"Commence un cours : tes notions apparaîtront ici quand il faudra les revoir.");return;}
+  backTo="home";begin("Révisions du jour",null);
+  var by={},order=[];list.forEach(function(n){var k=n.level.id;if(!by[k]){by[k]=[];order.push(k);}by[k].push(n)});
+  var mixed=[];while(mixed.length<list.length)order.forEach(function(k){if(by[k].length)mixed.push(by[k].shift())});
+  Session(mixed,true);}
+function startCarnet(){var list=S.carnet.map(function(c){return NOTIONS[c.key]}).filter(Boolean).slice(0,15);if(!list.length)return;backTo="brain";begin("Mes erreurs",null);Session(shuffle(list),true);}
+function finish(ratio,title,lines){var st=ratio>=.9?3:ratio>=.6?2:ratio>0?1:0;
+  if(G.id){var was=S.stars[G.id]||0;S.stars[G.id]=Math.max(was,st);qd().lv++;save();}
+  var big=G.id?'<div class="stars-big">'+stars(st,3)+'</div>':'';
+  var nxt="";if(G.id&&G.lvl&&!G.lvl.isMission){var c=G.lvl.course,i=c.levels.indexOf(G.lvl);var n=c.levels[i+1]||c.mission;if(st>0&&levelOpen(n))nxt='<button class="btn teal" type="button" id="nextLv">'+(n.isMission?"Lancer la mission":"Niveau suivant")+' →</button>';G.nx=n;}
+  $("#gStage").innerHTML='<div class="qcard end pop">'+big+'<h3 style="font-size:26px">'+esc(title)+'</h3><div class="endbody">'+lines+'</div><div class="row" style="justify-content:center">'+nxt+(G.id?'<button class="btn ghost" type="button" id="again">Rejouer</button>':'')+'<button class="btn ghost" type="button" data-go="'+backTo+'">Retour</button></div></div>';
+  var a=$("#again");if(a)a.onclick=function(){startLevel(G.id)};var b=$("#nextLv");if(b)b.onclick=function(){startLevel(G.nx.id)};}
+
+/* ---------- jauges de mission ---------- */
+var GN=["Santé pop.","Confiance","Budget"],GC=["var(--teal)","var(--sky)","var(--yel)"];
+function drawGauges(d){var g=G.gauges;$("#gGauges").hidden=false;
+  $("#gGauges").innerHTML=g.map(function(v,k){var dd=d&&d[k]?'<span class="d '+(d[k]>0?"p":"m")+'">'+(d[k]>0?"+":"")+d[k]+'</span>':'';return '<div class="gauge">'+GN[k]+dd+'<div class="gb"><i style="width:'+v+'%;background:'+GC[k]+'"></i></div></div>'}).join("");}
+function speaker(f,n){var c=(n&&n.course)||(G&&G.course);if(!f.who||!c||!c.P[f.who])return "";var p=c.P[f.who];return {av:avatar(p.av,48),n:p.n,r:p.r}}
+function missionEnd(res){var c=G.course,l=G.lvl,good=res.filter(Boolean).length,ratio=good/res.length,g=G.gauges,st=ratio>=.9?3:ratio>=.6?2:ratio>0?1:0;
+  var was=S.stars[l.id]||0;S.stars[l.id]=Math.max(was,st);qd().lv++;
+  var b=S.best[l.id];if(!b||g[0]+g[1]>b[0]+b[1])S.best[l.id]=g.slice();
+  var recruit=!S.team[c.id]&&st>0;if(st>0)S.team[c.id]=true;if(recruit){S.xp+=100;G.score+=100;}save();
+  var verdict=g[0]>=75&&g[1]>=75?"Ton action change vraiment les choses dans le territoire.":g[1]<45?"Les habitants et partenaires ne te suivent pas encore : rejoue en misant sur la participation.":"Bon travail ; quelques choix peuvent encore être améliorés.";
+  $("#gStage").innerHTML='<div class="qcard end pop"><div class="stars-big">'+stars(st,3)+'</div><div class="eyebrow">Conséquences de tes choix</div><h3 style="font-size:24px">'+good+' / '+res.length+' étapes réussies</h3><p style="margin:0">'+verdict+'</p>'+
+    '<div style="width:100%;display:grid;gap:10px">'+g.map(function(v,k){return '<div class="gauge" style="text-align:left;font-size:13px">'+GN[k]+' · '+v+'<div class="gb" style="height:12px"><i style="width:'+v+'%;background:'+GC[k]+'"></i></div></div>'}).join("")+'</div>'+
+    (recruit?'<div class="pill" style="font-size:13px">Équipe recrutée · +100 XP</div>'+conseilCard(c):(S.team[c.id]?conseilCard(c):''))+
+    '<div class="row" style="justify-content:center"><button class="btn ghost" type="button" id="again">Rejouer</button><button class="btn" type="button" data-go="cours">Retour au cours</button></div></div>';
+  $("#again").onclick=function(){startLevel(l.id)};}
+
+/* =============== SESSION =============== */
+function feedback(ok,title,e,ref,nextLabel,onNext,extra){
+  var f=$("#fb");f.innerHTML='<div class="fb '+(ok?"":"ko")+' pop"><strong>'+title+'</strong>'+(e?esc(e):"")+(extra||"")+'<span class="ref">Source : '+esc(ref)+'</span></div><div class="row" style="margin-top:12px"><button class="btn small" id="nx">'+nextLabel+'</button></div>';
+  var nx=$("#nx");nx.focus({preventScroll:true});f.scrollIntoView({behavior:reduce?"auto":"smooth",block:"nearest"});nx.onclick=onNext;
+}
+/* --- normalisation des réponses tapées --- */
+var SUB={"₀":"0","₁":"1","₂":"2","₃":"3","₄":"4","₅":"5","₆":"6","₇":"7","₈":"8","₉":"9","⁰":"0","¹":"1","²":"2","³":"3","⁴":"4","⁵":"5","⁶":"6","⁷":"7","⁸":"8","⁹":"9","⁺":"+","⁻":"-"};
+function norm(s){s=String(s).toLowerCase().replace(/[₀-₉⁰¹²³⁴-⁹⁺⁻]/g,function(c){return SUB[c]||c}).replace(/œ/g,"oe").replace(/æ/g,"ae").replace(/[’`]/g,"'");
+  s=s.normalize("NFD").replace(/[̀-ͯ]/g,"");
+  s=s.replace(/^\s*(le|la|les|un|une|des|du|de la)\s+/,"").replace(/^\s*(l|d)'\s*/,"");
+  return s.replace(/[^a-z0-9+]/g,"");}
+function lev(a,b){if(a===b)return 0;var m=a.length,n=b.length,d=[];for(var i=0;i<=m;i++){d[i]=[i]}for(var j=1;j<=n;j++)d[0][j]=j;
+  for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n]}
+function matchAns(input,list){var x=norm(input);if(!x)return false;
+  return list.some(function(a){var y=norm(a);if(x===y)return true;if(/\d/.test(y))return false;var tol=y.length>=9?2:y.length>=5?1:0;return tol&&lev(x,y)<=tol;});}
+function blanks(t){var out=[],re=/\{([^}]*)\}/g,m;while((m=re.exec(t)))out.push(m[1].split("|"));return out}
+
+var TIERN={1:"Reconnaître",2:"Rappeler",3:"Appliquer"};
+var KIND={qcm:"QCM",calc:"Calcul",tri:"Tri",assoc:"Association",ordre:"Remise en ordre",saisie:"Réponse libre",trous:"Texte à trous",pourquoi:"Explique pourquoi",erreur:"Trouve l'erreur",schema:"Schéma à légender"};
+function Session(list,isDefi){
+  var i=0,res=[],ups=0,l=G.lvl,cur=null;
+  function draw(){
+    setProg(list.length,i,res);if(list[i].ch){drawChoice(list[i].ch);return;}var n=list[i],tier=tierOf(n),forms=n.f[tier],f=pick(forms),st=stateOf(n);
+    cur={n:n,f:f,tier:tier,ready:false,sel:null};
+    var head='<div class="where">'+esc(isDefi?n.ref:(n.sec||n.level.s))+' · '+(i+1)+'/'+list.length+'</div><div class="tags"><span class="tierb t'+tier+'">Palier '+tier+' · '+TIERN[tier]+'</span><span class="kind">'+KIND[f.k]+'</span><span class="stb s'+st+'">'+STATES[st]+'</span></div>';
+    var ctx=f.ctx?'<div class="ctx">'+esc(f.ctx)+'</div>':'';
+    $("#gStage").innerHTML='<div class="qcard pop">'+head+spkHtml(f,n)+ctx+body(f)+confBar(f)+'<div id="fb"></div></div>';
+    wire(f);
+  }
+  function spkHtml(f,n){var sp=speaker(f,n);return sp?'<div class="spk">'+sp.av+'<div class="bub"><small>'+esc(sp.n)+'</small><span class="small mut">'+esc(sp.r)+'</span></div></div>':""}
+  function drawChoice(f){cur={ch:f,done:false};var sp=speaker(f,null);
+    var opts=shuffle(f.opts.map(function(o){return {o:o}}));
+    var data="";if(f.data){var mx=Math.max.apply(null,f.data.rows.map(function(r){return r[1]}))*1.15;
+      data='<div class="databox"><div class="lbl">'+esc(f.data.t)+'</div>'+f.data.rows.map(function(r){return '<div class="drow"><span>'+esc(r[0])+'</span><span class="db"><i style="width:'+(100*r[1]/mx)+'%"></i></span><b>'+fr(r[1])+' %</b></div>'}).join("")+'</div>';}
+    $("#gStage").innerHTML='<div class="qcard pop"><div class="where">Mission · étape '+(i+1)+'/'+list.length+'</div><div class="tags"><span class="kind">Décision</span><span>Tes choix modifient les jauges</span></div>'+
+      (sp?'<div class="spk">'+sp.av+'<div class="bub"><small>'+esc(sp.n)+'</small><h3>'+esc(f.q)+'</h3></div></div>':'<h3>'+esc(f.q)+'</h3>')+data+
+      '<div class="opts">'+opts.map(function(x,j){return '<button class="opt" type="button" data-j="'+j+'">'+esc(x.o[0])+'</button>'}).join("")+'</div><div id="fb"></div></div>';
+    $$(".opt").forEach(function(b){b.onclick=function(){if(cur.done)return;cur.done=true;var x=opts[+b.dataset.j],q=x.o[1],d=x.o[2]||[0,0,0];
+      $$(".opt").forEach(function(y,j){y.disabled=true;if(opts[j].o[1]===2)y.classList.add("ok")});if(q<2)b.classList.add(q===1?"sel":"ko");
+      b.insertAdjacentHTML("beforeend",'<span class="rx">'+esc(x.o[3])+'</span>');
+      if(G.gauges){G.gauges=G.gauges.map(function(v,k){return clamp(v+d[k],0,100)});drawGauges(d);}
+      res[i]=q===2;setProg(list.length,i,res);if(q===2)award(15);else if(q===1)award(5);
+      var title=q===2?"Excellent choix ! +15 XP":q===1?"Choix acceptable, mais il y avait mieux. +5 XP":"Mauvais choix : la meilleure option est en vert.";
+      feedback(q===2,title,f.e||"",G.course?G.course.n+". "+G.course.t:"Mission",i<list.length-1?"Suivant →":"Voir les conséquences",function(){i++;if(i<list.length){draw();window.scrollTo({top:0,behavior:reduce?"auto":"smooth"});}else if(G.onEnd)G.onEnd(res);});
+    }});
+  }
+
+  function confBar(f){if(f.k==="assoc"||f.k==="pourquoi")return "";
+    return '<div class="conf" id="conf"><span class="lbl">Valide en indiquant ta certitude</span><div class="confb"><button class="cb c-s" data-c="s" disabled>Sûre</button><button class="cb c-h" data-c="h" disabled>J\'hésite</button><button class="cb c-g" data-c="g" disabled>Au hasard</button></div><button class="idk" id="idk">Je ne sais pas</button></div>'}
+  function setReady(v){cur.ready=v;$$("#conf .cb").forEach(function(b){b.disabled=!v})}
+  function body(f){
+    if(f.k==="qcm"){f._o=shuffle(f.o.map(function(t,k){return {t:t,ok:k===0}}));return '<h3>'+esc(f.q)+'</h3><div class="opts">'+f._o.map(function(o,k){return '<button class="opt" data-k="'+k+'">'+esc(o.t)+'</button>'}).join("")+'</div>'}
+    if(f.k==="calc"||f.k==="saisie")return '<h3>'+esc(f.q)+'</h3><div class="calc"><label for="cin" class="lbl" style="width:100%">Ta réponse</label><input id="cin" type="text" '+(f.k==="calc"?'inputmode="decimal"':'')+' autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done" placeholder="'+(f.k==="calc"?"?":"Écris ta réponse")+'"><span class="u">'+esc(f.u||"")+'</span></div>';
+    if(f.k==="trous"){var k=0;return '<h3>Complète.</h3><p class="cloze">'+esc(f.t).replace(/\{[^}]*\}/g,function(){var id="b"+(k++);return '<input class="blank" id="'+id+'" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Trou '+k+'">'})+'</p>'}
+    if(f.k==="tri")return '<h3>Dans quelle case ranges-tu…</h3><div class="big pop">'+esc(f.n)+'</div>'+(f.sub?'<div class="big-sub">'+esc(f.sub)+'</div>':'')+'<div class="bins" style="grid-template-columns:repeat('+f.b.length+',minmax(0,1fr))">'+f.b.map(function(b,k){return '<button class="bin" data-k="'+k+'"><b>'+esc(b[0])+'</b>'+(b[1]?'<small>'+esc(b[1])+'</small>':'')+'</button>'}).join("")+'</div>';
+    if(f.k==="assoc"){f._r=shuffle(f.p.map(function(x,k){return k}));return '<h3>'+esc(f.q)+'</h3><p class="hint">Touche un élément à gauche, puis sa réponse à droite. Sans erreur = notion validée avec assurance.</p><div class="assoc"><div class="col">'+f.p.map(function(x,k){return '<button class="as L" data-k="'+k+'">'+esc(x[0])+'</button>'}).join("")+'</div><div class="col">'+f._r.map(function(k){return '<button class="as R" data-k="'+k+'">'+esc(f.p[k][1])+'</button>'}).join("")+'</div></div>'}
+    if(f.k==="ordre"){f._pool=shuffle(f.s.map(function(x,k){return k}));f._seq=[];return '<h3>'+esc(f.q)+'</h3><div class="lbl">Ta séquence</div><div class="seq" id="seq"></div><div class="lbl">À placer (touche dans l\'ordre)</div><div class="pool" id="pool"></div>'}
+    if(f.k==="erreur")return '<h3>Trouve l\'erreur : touche le passage faux.</h3><p class="segs">'+f.segs.map(function(s,k){return '<button class="seg" data-k="'+k+'">'+esc(s)+'</button>'}).join("")+'</p>';
+    if(f.k==="schema"){f._pool=shuffle(f.labels.map(function(x,k){return k}).concat(f.distract.map(function(x,k){return -1-k})));f._fill=[];f._act=0;
+      return '<h3>'+esc(f.q)+'</h3><div class="svgbox">'+f.svg+'</div><div class="lbl">Touche un numéro, puis son étiquette</div><div class="slots" id="slots"></div><div class="pool" id="pool"></div>'}
+    if(f.k==="pourquoi")return '<h3>'+esc(f.q)+'</h3><p class="hint">Écris ton explication avec tes mots, comme dans une copie. Ensuite, compare-la à la réponse modèle.</p><label for="why" class="lbl">Ton explication</label><textarea id="why" rows="5" placeholder="Parce que…"></textarea><div class="row"><button class="btn small" id="reveal">Voir la réponse modèle</button><button class="idk" id="idk2">Je ne sais pas</button></div><div id="model"></div>';
+    return "";
+  }
+  function lbl(f,k){return k>=0?f.labels[k]:f.distract[-1-k]}
+  function wire(f){
+    if(f.k==="qcm")$$(".opt").forEach(function(b){b.onclick=function(){$$(".opt").forEach(function(x){x.classList.remove("sel")});b.classList.add("sel");cur.sel=+b.dataset.k;setReady(true);}});
+    if(f.k==="tri")$$(".bin").forEach(function(b){b.onclick=function(){$$(".bin").forEach(function(x){x.classList.remove("sel")});b.classList.add("sel");cur.sel=+b.dataset.k;setReady(true);}});
+    if(f.k==="erreur")$$(".seg").forEach(function(b){b.onclick=function(){$$(".seg").forEach(function(x){x.classList.remove("sel")});b.classList.add("sel");cur.sel=+b.dataset.k;setReady(true);}});
+    if(f.k==="calc"||f.k==="saisie"){var inp=$("#cin");inp.focus({preventScroll:true});inp.addEventListener("input",function(){setReady(inp.value.trim()!=="")});
+      inp.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();if(cur.ready)$("#conf .c-s").focus();}});}
+    if(f.k==="trous"){var bs=$$(".blank");bs[0]&&bs[0].focus({preventScroll:true});bs.forEach(function(b,k){b.addEventListener("input",function(){setReady(bs.every(function(x){return x.value.trim()!==""}))});
+      b.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();if(bs[k+1])bs[k+1].focus();else if(cur.ready)$("#conf .c-s").focus();}});});}
+    if(f.k==="ordre"){
+      var rend=function(){$("#seq").innerHTML=f.s.map(function(x,k){var v=f._seq[k];return v===undefined?'<div class="slot"><b>'+(k+1)+'</b>…</div>':'<button class="slot fill" data-pos="'+k+'"><b>'+(k+1)+'</b>'+esc(f.s[v])+'</button>'}).join("");
+        $("#pool").innerHTML=f._pool.filter(function(k){return f._seq.indexOf(k)<0}).map(function(k){return '<button class="chipb" data-k="'+k+'">'+esc(f.s[k])+'</button>'}).join("");
+        $$("#pool .chipb").forEach(function(b){b.onclick=function(){f._seq.push(+b.dataset.k);rend()}});
+        $$("#seq .slot.fill").forEach(function(b){b.onclick=function(){if(cur.done)return;f._seq.splice(+b.dataset.pos,1);rend()}});
+        setReady(f._seq.length===f.s.length);};
+      cur.rend=rend;rend();}
+    if(f.k==="schema"){
+      var rs=function(){$("#slots").innerHTML=f.labels.map(function(x,k){var v=f._fill[k];return '<button class="slot2'+(k===f._act?" act":"")+(v!==undefined?" fill":"")+'" data-k="'+k+'"><b>'+(k+1)+'</b>'+(v!==undefined?esc(lbl(f,v)):"…")+'</button>'}).join("");
+        $("#pool").innerHTML=f._pool.filter(function(k){return f._fill.indexOf(k)<0}).map(function(k){return '<button class="chipb" data-k="'+k+'">'+esc(lbl(f,k))+'</button>'}).join("");
+        $$("#slots .slot2").forEach(function(b){b.onclick=function(){if(cur.done)return;var k=+b.dataset.k;if(f._fill[k]!==undefined)f._fill[k]=undefined;f._act=k;rs()}});
+        $$("#pool .chipb").forEach(function(b){b.onclick=function(){f._fill[f._act]=+b.dataset.k;var nx=-1;for(var j=0;j<f.labels.length;j++){var q=(f._act+1+j)%f.labels.length;if(f._fill[q]===undefined){nx=q;break;}}if(nx>=0)f._act=nx;rs()}});
+        var full=true;for(var j=0;j<f.labels.length;j++)if(f._fill[j]===undefined)full=false;setReady(full);};
+      cur.rend=rs;rs();}
+    if(f.k==="assoc"){var sL=null,sR=null,err=0,matched=0,num=0;
+      var tryPair=function(){if(sL===null||sR===null)return;var bl=$('.as.L[data-k="'+sL+'"]'),br=$('.as.R[data-k="'+sR+'"]');
+        if(sL===sR){num++;[bl,br].forEach(function(b){b.classList.remove("sel");b.classList.add("done");b.disabled=true;b.insertAdjacentHTML("afterbegin",'<span class="tagn">'+num+'</span>')});matched++;
+          if(matched===f.p.length){var g=err===0?3:err===1?2:1;conclude(g>=2,g,null,f.p.map(function(x){return x[0]+" → "+x[1]}).join(" · "));}}
+        else{err++;[bl,br].forEach(function(b){b.classList.remove("sel");b.classList.add("shake");setTimeout(function(){b.classList.remove("shake")},400)});}
+        sL=sR=null;};
+      $$(".as.L").forEach(function(b){b.onclick=function(){$$(".as.L").forEach(function(x){x.classList.remove("sel")});b.classList.add("sel");sL=+b.dataset.k;tryPair()}});
+      $$(".as.R").forEach(function(b){b.onclick=function(){$$(".as.R").forEach(function(x){x.classList.remove("sel")});b.classList.add("sel");sR=+b.dataset.k;tryPair()}});}
+    if(f.k==="pourquoi"){
+      var rv=function(skip){$("#reveal").disabled=true;$("#idk2").disabled=true;$("#why").readOnly=true;
+        $("#model").innerHTML='<div class="modelbox pop"><div class="lbl">Réponse modèle</div><p>'+esc(f.model)+'</p>'+(f.pts.length?'<div class="lbl">Les points à avoir</div><ul>'+f.pts.map(function(p){return '<li>'+esc(p)+'</li>'}).join("")+'</ul>':'')+
+          (skip?'':'<div class="lbl">Compare honnêtement avec ta réponse</div><div class="confb"><button class="cb c-s" data-g="3">J\'avais tout</button><button class="cb c-h" data-g="2">En partie</button><button class="cb c-g" data-g="1">Je n\'avais pas</button></div>')+'</div>';
+        if(skip){conclude(false,1,null,f.model,true);return;}
+        $$("#model [data-g]").forEach(function(b){b.onclick=function(){$$("#model [data-g]").forEach(function(x){x.disabled=true});var g=+b.dataset.g;conclude(g>=2,g,null,f.model,true);}});
+        $("#model").scrollIntoView({behavior:reduce?"auto":"smooth",block:"nearest"});};
+      $("#reveal").onclick=function(){if($("#why").value.trim().length<3){$("#why").focus();$("#why").placeholder="Écris au moins quelques mots avant de regarder : c'est l'effort de rappel qui ancre la notion.";return;}rv(false)};
+      $("#idk2").onclick=function(){rv(true)};}
+    $$("#conf .cb").forEach(function(b){b.onclick=function(){if(!cur.ready||cur.done)return;validate(b.dataset.c)}});
+    var idk=$("#idk");if(idk)idk.onclick=function(){if(cur.done)return;validate(null)};
+  }
+  /* correction propre à chaque type → {ok, ans} */
+  function evaluate(f){
+    if(f.k==="qcm"){$$(".opt").forEach(function(x,k){x.disabled=true;if(f._o[k].ok)x.classList.add("ok")});var ok=cur.sel!==null&&f._o[cur.sel].ok;if(cur.sel!==null&&!ok)$$(".opt")[cur.sel].classList.add("ko");return {ok:ok,ans:f.o[0]}}
+    if(f.k==="tri"){$$(".bin").forEach(function(x){x.disabled=true});var ok2=cur.sel===f.ans;if(cur.sel!==null&&!ok2)$$(".bin")[cur.sel].classList.add("ko");$$(".bin")[f.ans].classList.add("ok");return {ok:ok2,ans:f.b[f.ans][0]}}
+    if(f.k==="erreur"){$$(".seg").forEach(function(x,k){x.disabled=true;if(k===f.bad)x.classList.add("ko-mark")});return {ok:cur.sel===f.bad,ans:"« "+f.segs[f.bad].trim()+" » → "+f.fix}}
+    if(f.k==="calc"){var inp=$("#cin"),v=parseFloat(inp.value.replace(",",".").replace(/\s/g,""));var ok3=!isNaN(v)&&Math.abs(v-f.a)<=f.tol+1e-9;inp.disabled=true;inp.classList.add(ok3?"ok":"ko");return {ok:ok3,ans:fr(f.a)+(f.u?" "+f.u:"")}}
+    if(f.k==="saisie"){var inp2=$("#cin"),ok4=matchAns(inp2.value,f.ans);inp2.disabled=true;inp2.classList.add(ok4?"ok":"ko");return {ok:ok4,ans:f.ans[0],typed:inp2.value}}
+    if(f.k==="trous"){var bl=blanks(f.t),all=true,bs=$$(".blank");bs.forEach(function(b,k){var g=matchAns(b.value,bl[k]);if(!g)all=false;b.disabled=true;b.classList.add(g?"ok":"ko");if(!g)b.insertAdjacentHTML("afterend",'<span class="fix">'+esc(bl[k][0])+'</span>')});
+      var k2=0;return {ok:all,ans:f.t.replace(/\{([^}]*)\}/g,function(m,a){return a.split("|")[0]})}}
+    if(f.k==="ordre"){var ok5=true;$$("#seq .slot").forEach(function(sl,k){var g=f._seq[k]===k;if(!g)ok5=false;sl.classList.add(g?"ok":"ko");sl.disabled=true;});$("#pool").innerHTML="";return {ok:ok5,ans:f.s.join(" → ")}}
+    if(f.k==="schema"){var ok6=true;$$("#slots .slot2").forEach(function(sl,k){var g=f._fill[k]===k;if(!g){ok6=false;sl.insertAdjacentHTML("beforeend",'<span class="fix">→ '+esc(f.labels[k])+'</span>')}sl.classList.add(g?"ok":"ko");sl.disabled=true;});$("#pool").innerHTML="";return {ok:ok6,ans:f.labels.map(function(x,k){return (k+1)+" "+x}).join(" · ")}}
+    return {ok:false,ans:""};
+  }
+  function validate(c){
+    cur.done=true;$$("#conf button").forEach(function(b){b.disabled=true});
+    var r=evaluate(cur.f);if(!c)r.ok=false;
+    var g=!r.ok?1:c==="s"?3:c==="h"?2:1;
+    if(c){S.cal=S.cal||{s:[0,0],h:[0,0],g:[0,0]};S.cal[c][0]++;if(r.ok)S.cal[c][1]++;}
+    conclude(r.ok&&c!=="g",g,c,r.ans,false,r);
+  }
+  function conclude(ok,g,c,ans,isWhy,r){
+    cur.done=true;var n=cur.n,f=cur.f;
+    var ch=review(n,g);res[i]=ok;setProg(list.length,i,res);
+    if(ok){award(5+5*cur.tier);clearMiss(n.id);}else addMiss(n.id,n.label,ans,n.ref);
+    var st=stateOf(n),m=memOf(n.id);
+    var extra='<div class="memfb">';
+    if(ch.to>ch.from){ups++;extra+='<span class="up">↑ Palier '+ch.to+' débloqué : '+TIERN[ch.to]+'</span>';}
+    else if(ch.to<ch.from)extra+='<span class="down">↓ Retour au palier '+ch.to+' : '+TIERN[ch.to]+'</span>';
+    extra+='<span>Notion : <b>'+STATES[st]+'</b> · prochaine révision dans '+nextIn(m)+'</span></div>';
+    var title;
+    if(isWhy)title=g===3?"Bravo, explication complète ! +"+(5+5*cur.tier)+" pts":g===2?"Explication partielle : la notion revient bientôt.":"Relis bien la réponse modèle : la notion reviendra vite.";
+    else if(r&&r.ok&&c==="g")title="Bonne réponse… mais au hasard : elle ne compte pas encore comme acquise.";
+    else if(ok)title=(c==="h"?"Exact, malgré l'hésitation ! ":"Exact ! ")+"+"+(5+5*cur.tier)+" pts";
+    else title=(c==="s"?"Attention, tu étais sûre mais c'est faux. ":"Pas tout à fait. ")+"La bonne réponse : "+esc(ans);
+    if(r&&r.typed&&!r.ok)extra='<span class="typed">Tu as écrit : « '+esc(r.typed)+' »</span>'+extra;
+    feedback(ok,title,isWhy?"":(f.e||""),n.ref,i<list.length-1?"Suivant →":"Voir le bilan",function(){
+      i++;if(i<list.length){draw();window.scrollTo({top:0,behavior:reduce?"auto":"smooth"});}
+      else if(G.onEnd)G.onEnd(res);else{var gd=res.filter(Boolean).length;finish(gd/list.length,gd+" / "+list.length+" réussies",
+        '<p>'+(ups?ups+" notion"+(ups>1?"s ont":" a")+" monté de palier. ":"")+(gd===list.length?"Sans faute !":"Les notions ratées reviendront plus vite dans tes révisions du jour.")+'</p>'+(isDefi?"":secTable(list,res)));}
+    },extra);
+  }
+  draw();
+}
+function nextIn(m){var d=m.s;if(d<1)return "moins d'un jour";if(d<1.5)return "1 jour";if(d<45)return Math.round(d)+" jours";return Math.round(d/30)+" mois"}
+function secTable(items,res){var order=[],m={};items.forEach(function(it,i){var k=it.sec||"";if(!m[k]){m[k]=[0,0];order.push(k);}m[k][1]++;if(res[i])m[k][0]++;});
+  return '<div class="sectab">'+order.map(function(k){var v=m[k],ok=v[0]===v[1];return '<div class="secrow"><span>'+esc(k)+'</span><b class="'+(ok?"g":"r")+'">'+v[0]+' / '+v[1]+'</b></div>'}).join("")+'</div>';}
+
+/* ---------- JEU : assemble le diholoside ---------- */
+
+/* =============== MON CERVEAU =============== */
+function memRow(ns,label,strong){var r=pct(avgR(ns)),r7=pct(avgR(ns,Date.now()+7*DAY));
+  return '<div class="memrow'+(strong?" strong":"")+'"><span>'+esc(label)+'</span><span class="membar"><i style="width:'+r+'%"></i><em style="left:'+r7+'%"></em></span><b>'+r+' %</b><small>→ '+r7+' % dans 7 jours sans révision</small></div>'}
+function renderBrain(){var all=WORLD_NOTIONS.sp,seen=all.filter(function(n){return memOf(n.id)}),d=stateDist(all),due=dueList().length;
+  var h='<div><div class="eyebrow">Suivi d\'apprentissage</div><h1 style="font-size:26px">Mon cerveau</h1></div>';
+  h+='<div class="kpis"><div class="kpi"><b>'+(seen.length?pct(avgR(seen)):0)+' %</b><small>mémoire aujourd\'hui</small></div><div class="kpi"><b>'+d[2]+'</b><small>notions ancrées</small></div><div class="kpi"><b>'+d[3]+'</b><small>maîtrisées</small></div></div>';
+  h+='<div class="card"><div class="lbl" style="margin-bottom:6px">Tes '+all.length+' notions</div>'+stbar(all)+'<div class="row small" style="margin-top:8px;gap:12px"><span>⬤ <span class="mut">Nouvelles '+d[0]+'</span></span><span style="color:#b98a00">⬤ <span class="mut">En apprentissage '+d[1]+'</span></span><span style="color:var(--sky)">⬤ <span class="mut">Ancrées '+d[2]+'</span></span><span style="color:var(--teal)">⬤ <span class="mut">Maîtrisées '+d[3]+'</span></span></div></div>';
+  h+='<div class="card"><div class="lbl">Mémoire par cours</div><p class="small mut" style="margin:4px 0 6px">Barre verte : ce dont tu te souviens aujourd\'hui. Trait corail : ce qu\'il en restera dans 7 jours sans révision.</p>';
+  var any=false;Object.keys(COURS).forEach(function(k){var c=COURS[k],s2=c.notions.filter(function(n){return memOf(n.id)});if(!s2.length)return;any=true;h+=memRow(s2,c.n+" · "+c.t,true);
+    c.levels.concat([c.mission]).forEach(function(l){var s3=l.notions.filter(function(n){return memOf(n.id)});if(s3.length)h+=memRow(s3,"   "+(l.isMission?"Mission":l.t))});});
+  if(!any)h+='<p class="small mut">Rien encore : lance le premier niveau d\'un cours.</p>';
+  h+='</div>';
+  var frag=seen.slice().sort(function(a,b){return R(a.id)-R(b.id)}).slice(0,5);
+  if(frag.length)h+='<div class="card"><div class="lbl" style="margin-bottom:6px">Les plus fragiles</div><div class="carnet">'+frag.map(function(n){return '<div class="it"><b>'+esc(n.label)+'</b><span class="mut">'+esc(n.ref)+' · '+pct(R(n.id))+' %</span></div>'}).join("")+'</div>'+(due?'<div class="row" style="margin-top:10px"><button class="btn small teal" type="button" data-nav="due">Réviser '+due+' notion'+(due>1?"s":"")+'</button></div>':'')+'</div>';
+  var cal=S.cal||{s:[0,0],h:[0,0],g:[0,0]},cr=function(x){return x[0]?pct(x[1]/x[0])+" %":"–"};
+  h+='<div class="card"><div class="lbl">Ta calibration</div><p class="small mut" style="margin:4px 0 8px">Quand tu dis « Sûre », as-tu vraiment raison ? Bien calibrée, tu sais ce qu\'il te reste à revoir.</p><div class="kpis"><div class="kpi"><b>'+cr(cal.s)+'</b><small>justes si « Sûre » ('+cal.s[0]+')</small></div><div class="kpi"><b>'+cr(cal.h)+'</b><small>justes si « J\'hésite » ('+cal.h[0]+')</small></div><div class="kpi"><b>'+cr(cal.g)+'</b><small>justes « au hasard » ('+cal.g[0]+')</small></div></div></div>';
+  h+='<div class="card"><div class="lbl">Date de l\'épreuve E5</div><p class="small mut" style="margin:4px 0 8px">À l\'approche de l\'examen (45 jours), les révisions visent une mémoire d\'au moins 85 % le jour J.</p><div class="row"><input type="date" id="exE5" value="'+esc(S.exams.sp||"")+'" aria-label="Date de l\'épreuve E5"><button class="btn small" type="button" id="exSave">Enregistrer</button></div></div>';
+  h+='<div class="card"><div class="lbl" style="margin-bottom:6px">Carnet d\'erreurs ('+S.carnet.length+')</div>'+(S.carnet.length?'<div class="carnet">'+S.carnet.slice(0,8).map(function(c){return '<div class="it"><b>'+esc(c.q)+'</b><span class="mut">'+esc(c.a)+'</span></div>'}).join("")+'</div><div class="row" style="margin-top:10px"><button class="btn small coral" type="button" id="carnetGo">Retravailler mes erreurs</button></div>':'<p class="small mut" style="margin:0">Vide pour l\'instant. Chaque erreur s\'y range jusqu\'à ce que tu la corriges.</p>')+'</div>';
+  h+=syncCard();
+  h+='<details><summary>Comment le jeu calcule ta mémoire</summary><p class="small">Chaque notion a sa propre courbe d\'oubli, calculée avec le modèle FSRS (le même que les applis de révision espacée récentes). Une notion revient quand la probabilité de t\'en souvenir passe sous 90 %.</p><p class="small">Chaque notion monte de palier : <b>1 Reconnaître</b> (QCM, tri), <b>2 Rappeler</b> (réponse tapée, texte à trous), <b>3 Appliquer</b> (cas, explique pourquoi, trouve l\'erreur). C\'est l\'effort de rappel qui ancre l\'information (effet de test).</p><p class="small">Les révisions du jour mélangent les cours (pratique entrelacée) et ta certitude règle l\'intervalle : « Au hasard » ne compte pas comme acquis.</p></details>';
+  h+='<details><summary>Sauvegarder ou transférer ma progression</summary><p class="small">Ta progression est enregistrée dans ce navigateur. Copie ce code pour la garder ou la passer sur un autre appareil.</p><textarea class="code" id="bk" rows="3" readonly></textarea><div class="row" style="margin-top:8px"><button class="btn small ghost" type="button" id="bkCopy">Copier le code</button></div><label class="lbl" for="bkIn" style="display:block;margin-top:12px">Restaurer depuis un code</label><textarea class="code" id="bkIn" rows="3" placeholder="SPC1:…"></textarea><div class="row" style="margin-top:8px"><button class="btn small" type="button" id="bkLoad">Restaurer</button></div></details>';
+  $("#brain").innerHTML=h;
+  $("#exSave").onclick=function(){S.exams.sp=$("#exE5").value||"";save();toast(S.exams.sp?"Date de l'E5 enregistrée.":"Date effacée.");renderBrain();};
+  wireSync();
+  var cg=$("#carnetGo");if(cg)cg.onclick=startCarnet;
+  var code="SPC1:"+btoa(unescape(encodeURIComponent(JSON.stringify(S))));$("#bk").value=code;
+  $("#bkCopy").onclick=function(){var t=$("#bk");t.select();try{navigator.clipboard.writeText(t.value).then(function(){toast("Code copié.")},function(){document.execCommand("copy");toast("Code copié.")})}catch(e){try{document.execCommand("copy");toast("Code copié.")}catch(e2){}}};
+  $("#bkLoad").onclick=function(){var v=$("#bkIn").value.trim();if(v.indexOf("SPC1:")!==0){toast("Ce code ne vient pas de ce jeu.");return;}
+    var ok=false;try{ok=loadState(decodeURIComponent(escape(atob(v.slice(5)))));}catch(e){}
+    if(ok){save();toast("Progression restaurée.");show("home");}else toast("Code illisible.");};
+}
+
+
+/* =============== SYNCHRONISATION SUPABASE =============== */
+var GAME_ID="sante-cite",SB=null,SBuser=null,SBlast=null,SBerr="",pushT=null,SBstep=0,SBmail="";
+var CFG=window.SUPA||{};
+var SB_ON=!!(CFG.url&&CFG.key&&window.supabase&&window.supabase.createClient);
+function merge(a,b){/* a = local, b = distant : on garde le meilleur des deux */
+  var newer=(b.ts||0)>(a.ts||0)?b:a,o=Object.assign(blank(),newer);
+  o.xp=Math.max(a.xp||0,b.xp||0);
+  o.stars={};[a.stars||{},b.stars||{}].forEach(function(s){Object.keys(s).forEach(function(k){o.stars[k]=Math.max(o.stars[k]||0,s[k])})});
+  o.team=Object.assign({},a.team||{},b.team||{});
+  o.mem={};[a.mem||{},b.mem||{}].forEach(function(m){Object.keys(m).forEach(function(k){if(!o.mem[k]||(m[k].last||0)>(o.mem[k].last||0))o.mem[k]=m[k]})});
+  o.days={};[a.days||{},b.days||{}].forEach(function(d){Object.keys(d).forEach(function(k){o.days[k]=Math.max(o.days[k]||0,d[k])})});
+  o.ts=Math.max(a.ts||0,b.ts||0);return o;}
+function schedulePush(){if(!SB_ON||!SBuser)return;clearTimeout(pushT);pushT=setTimeout(push,2500)}
+function push(){if(!SBuser)return Promise.resolve();
+  return SB.from("progress").upsert({user_id:SBuser.id,game:GAME_ID,data:S,updated_at:new Date().toISOString()}).then(function(r){
+    if(r.error){SBerr=r.error.message;}else{SBerr="";SBlast=new Date();}refreshSync();});}
+function pull(){if(!SBuser)return Promise.resolve();
+  return SB.from("progress").select("data").eq("game",GAME_ID).maybeSingle().then(function(r){
+    if(r.error){SBerr=r.error.message;refreshSync();return;}
+    if(r.data&&r.data.data){S=merge(S,r.data.data);S.carnet=(S.carnet||[]).filter(function(c){return c&&c.key&&NOTIONS[c.key]});try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+    return push().then(function(){var vis=screens.filter(function(s){return !$("#"+s).hidden})[0];if(vis&&vis!=="game")show(vis);});});}
+function syncNow(){return pull()}
+if(SB_ON){
+  SB=window.supabase.createClient(CFG.url,CFG.key,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+  SB.auth.getSession().then(function(r){SBuser=r.data&&r.data.session?r.data.session.user:null;if(SBuser)pull();refreshSync();});
+  SB.auth.onAuthStateChange(function(ev,sess){var was=SBuser;SBuser=sess?sess.user:null;if(SBuser&&!was)pull();refreshSync();});
+  document.addEventListener("visibilitychange",function(){if(!SBuser)return;if(document.hidden){clearTimeout(pushT);push();}else pull();});
+}
+function syncCard(){
+  var h='<div class="card" id="syncCard"><div class="lbl" style="margin-bottom:6px">Synchronisation entre appareils</div>';
+  if(!SB_ON)return h+'<p class="small mut" style="margin:0">Pas encore activée. Une fois le jeu en ligne, remplis le fichier config.js avec ton adresse Supabase et ta clé publique : un bouton de connexion apparaîtra ici.</p></div>';
+  if(SBuser){return h+'<p class="small" style="margin:0 0 8px">Connectée : <b>'+esc(SBuser.email||"")+'</b><br><span class="mut">'+(SBerr?"Erreur : "+esc(SBerr):SBlast?"Dernière synchro à "+SBlast.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"}):"Synchronisation…")+'</span></p><div class="row"><button class="btn small teal" type="button" id="sbNow">Synchroniser maintenant</button><button class="btn small ghost" type="button" id="sbOut">Se déconnecter</button></div></div>';}
+  if(SBstep===1)return h+'<p class="small" style="margin:0 0 8px">Un code a été envoyé à <b>'+esc(SBmail)+'</b>. Tape-le ici (regarde aussi les spams).</p><div class="row"><input id="sbCode" inputmode="numeric" autocomplete="one-time-code" placeholder="Code reçu" style="flex:1;min-height:44px;border-radius:12px;border:2px solid var(--line);padding:0 10px;font:inherit;background:var(--card);color:var(--ink)"><button class="btn small" type="button" id="sbVerify">Valider</button></div><button class="idk" type="button" id="sbBack">Changer d\'adresse</button>'+(SBerr?'<p class="small" style="color:var(--coralD);margin:6px 0 0">'+esc(SBerr)+'</p>':'')+'</div>';
+  return h+'<p class="small mut" style="margin:0 0 8px">Connecte-toi avec ton e-mail pour retrouver ta progression sur ton téléphone et ton ordinateur. Tu recevras un code à 6 chiffres, sans mot de passe.</p><div class="row"><input id="sbMail" type="email" autocomplete="email" placeholder="ton@email.fr" value="'+esc(SBmail)+'" style="flex:1;min-width:180px;min-height:44px;border-radius:12px;border:2px solid var(--line);padding:0 10px;font:inherit;background:var(--card);color:var(--ink)"><button class="btn small" type="button" id="sbSend">Recevoir un code</button></div>'+(SBerr?'<p class="small" style="color:var(--coralD);margin:6px 0 0">'+esc(SBerr)+'</p>':'')+'</div>';}
+function refreshSync(){var c=$("#syncCard");if(!c)return;c.outerHTML=syncCard();wireSync();}
+function wireSync(){
+  var s=$("#sbSend");if(s){var go=function(){var m=$("#sbMail").value.trim();if(!/.+@.+\..+/.test(m)){SBerr="Adresse e-mail invalide.";refreshSync();return;}SBmail=m;s.disabled=true;
+    SB.auth.signInWithOtp({email:m,options:{shouldCreateUser:true}}).then(function(r){if(r.error){SBerr=r.error.message;}else{SBerr="";SBstep=1;}refreshSync();var c=$("#sbCode");if(c)c.focus();});};
+    s.onclick=go;$("#sbMail").addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();go();}});}
+  var v=$("#sbVerify");if(v){var ver=function(){var t=$("#sbCode").value.replace(/\D/g,"");if(t.length<6){SBerr="Le code contient au moins 6 chiffres.";refreshSync();return;}v.disabled=true;
+    SB.auth.verifyOtp({email:SBmail,token:t,type:"email"}).then(function(r){if(r.error){SBerr="Code incorrect ou expiré.";}else{SBerr="";SBstep=0;toast("Connectée ! Ta progression est synchronisée.");}refreshSync();});};
+    v.onclick=ver;$("#sbCode").addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();ver();}});}
+  var b=$("#sbBack");if(b)b.onclick=function(){SBstep=0;SBerr="";refreshSync();};
+  var n=$("#sbNow");if(n)n.onclick=function(){n.disabled=true;syncNow().then(function(){toast("Synchronisé.")});};
+  var o=$("#sbOut");if(o)o.onclick=function(){push().then(function(){return SB.auth.signOut()}).then(function(){SBuser=null;refreshSync();});};
+}
+/* PWA : fonctionne hors ligne une fois installé */
+if("serviceWorker" in navigator&&location.protocol==="https:"){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});}
+
+/* =============== DÉMARRAGE =============== */
+show("home");
+})();
+
+</script></body></html>
