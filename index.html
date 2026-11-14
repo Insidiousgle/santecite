@@ -1392,6 +1392,429 @@ COURS.sp9={id:"sp9",n:9,t:"Outils pédagogiques",lieu:"Atelier de conception de 
  ]}
 };
 
+/* ---------- COURS 10 · DÉMARCHE DE PROJET : ÉTAPES, OUTILS, MOYENS ---------- */
+var B_SWOT=[["Forces","interne +"],["Faiblesses","interne −"],["Opportunités","externe +"],["Menaces","externe −"]];
+var B_GOUV=[["Comité de pilotage","décideurs, arbitrages"],["Comité technique","opérationnels, ajustements"],["Groupe de travail","experts, questions pointues"]];
+var B_FORM=[["Convention","engagements, finances"],["Protocole","technique, opérationnel"],["Charte de projet","valeurs communes"]];
+var B_BUD=[["Personnel",""],["Fonctionnement",""],["Investissement",""],["Prestations externes",""],["Communication",""]];
+COURS.sp10={id:"sp10",n:10,t:"Démarche de projet",lieu:"Communauté de communes du Val de Sambre",
+ pitch:"Les enjeux nutritionnels dépassent la consultation : ils se jouent sur un territoire, avec de multiples acteurs. La communauté de communes te confie un projet, du diagnostic à la capitalisation.",
+ P:{benoit:{n:"Sarah Benoît",r:"Cheffe de projet santé, intercommunalité",av:{bg:"#0e9f8e",skin:"#e8b896",hair:"#2b1b14",hs:"long",shirt:"#ffc94a"}},
+    lacombe:{n:"Gérard Lacombe",r:"Vice-président chargé de la santé, élu",av:{bg:"#5bb8f5",skin:"#f0c8a8",hair:"#9a9a9a",hs:"bald",shirt:"#13303a",glasses:1}},
+    martel:{n:"Hugo Martel",r:"Animateur du centre social",av:{bg:"#ff7a59",skin:"#b07a55",hair:"#1f1410",hs:"curly",shirt:"#3ee6b0"}}},
+ conseil:{who:"benoit",t:"Toujours : partager, formaliser, rester réaliste. Diagnostic : croiser INSEE, ORS, données locales et terrain, puis valider en restitution. Prioriser avec des critères partagés. Partenaires : un apport concret pour chacun et des conventions. Plan : fiches d'activité, plans B dès le départ, ambition calibrée sur les ressources. Suivi : tableau de bord simple et partagé."},
+ levels:[
+ {id:"sp10a",t:"Diagnostiquer",s:"Fiches 1 à 4 · territoire, enquêtes, SWOT, priorités",items:[
+  "Fiche 0 · Les étapes d'un projet",
+  N(O("Remets dans l'ordre les étapes d'un projet.",["Diagnostic territorial","Priorisation des enjeux","Objectifs SMART","Plan d'action et budget","Partenariats","Gouvernance et logistique","Suivi et ajustements","Capitalisation"],""),
+    null,
+    W("Pourquoi le diététicien doit-il savoir conduire un projet ?","Les enjeux nutritionnels dépassent la consultation individuelle : ils s'inscrivent dans des dynamiques territoriales avec de multiples acteurs. Comme porteur ou partenaire technique, il lui faut une méthodologie rigoureuse, du diagnostic au pilotage, pour maximiser l'impact.",["Au-delà de la consultation","Territoire, multiples acteurs","Méthodologie, du diagnostic au pilotage"])),
+  "Fiche 1 · Le diagnostic territorial",
+  N(Q("Le diagnostic territorial, c'est…",["Une analyse globale du territoire (démographie, socio-économie, santé, environnement) pour adapter les interventions aux besoins locaux","Une étude de marché","Une enquête de satisfaction"],"Le point de départ obligé."),
+    E(["Ce quartier paraît homogène :"," inutile d'approfondir le diagnostic,"," mes hypothèses suffisent."],1,"Un quartier qui paraît homogène cache souvent une grande diversité ; le diagnostic peut contredire tes hypothèses.","")),
+  N(A("Relie chaque dimension à ce qu'elle t'apprend.",[["Démographie","Publics prioritaires"],["Géographie","Faisabilité : distances, transports"],["Équipements sanitaires et sociaux","Partenaires, zones sous-équipées"],["Tissu associatif","Tes meilleurs alliés"],["Politiques locales","Priorités des élus, financements"]],""),
+    S("Quel organisme fournit des indicateurs sanitaires par territoire ? (sigle)",["ors","observatoire regional de sante","observatoire régional de santé"],"Avec l'INSEE et les études épidémiologiques."),
+    W("Pourquoi comparer ton territoire aux moyennes régionales et nationales ?","La comparaison justifie tes choix : un territoire avec une obésité infantile au-dessus de la moyenne n'aura pas les mêmes priorités qu'un territoire vieillissant et isolé. Elle objective les besoins prioritaires.",["Justifier les choix","Objectiver les besoins","Exemple obésité vs vieillissement"])),
+  "Fiche 2 · Recueil qualitatif et participatif",
+  N(A("Relie chaque méthode à ce qu'elle apporte.",[["Questionnaires standardisés","Données comparables entre groupes"],["Entretiens semi-directifs","Mécanismes individuels"],["Focus groups","Perceptions et dynamiques collectives"],["Observations de terrain","Ce qui est invisible dans les enquêtes"]],""),
+    E(["Un focus group,"," c'est une série d'entretiens individuels"," réalisés le même jour."],1,"C'est une discussion de groupe animée par un modérateur, qui fait émerger les dynamiques collectives.","Piège d'examen.")),
+  N(Q("Les enquêtes par les pairs, c'est…",["Des habitants formés qui interrogent d'autres habitants","Des enquêteurs professionnels","Un sondage en ligne"],"Elles brisent les barrières sociales."),
+    S("Cite une approche participative du diagnostic.",["cartographie collaborative","ateliers de cartographie","groupes de parole","enquetes par les pairs","enquêtes par les pairs"],""),
+    W("Quel double avantage apportent les approches participatives ?","Un diagnostic plus pertinent (les habitants identifient eux-mêmes problèmes et ressources) et une adhésion préparée aux futures actions : ils deviennent parties prenantes dès la conception.",["Diagnostic plus pertinent","Adhésion préparée"])),
+  "Fiche 3 · L'analyse SWOT",
+  N([T(B_SWOT,"Un réseau associatif actif en prévention",0,""),T(B_SWOT,"Un manque de médecins en zone rurale",1,""),T(B_SWOT,"Un appel à projets de l'ARS",2,""),T(B_SWOT,"Des réductions budgétaires nationales",3,""),T(B_SWOT,"Des élus sensibilisés",0,""),T(B_SWOT,"Le vieillissement rapide de la population",3,"")],
+    F("SWOT : forces et faiblesses sont {internes} ; opportunités et menaces sont {externes}.",""),
+    E(["Une baisse des budgets nationaux"," est une faiblesse du territoire"," à compenser."],1,"C'est une menace (externe) : elle ne dépend pas du territoire.","Piège d'examen.")),
+  N(A("Relie chaque croisement à sa stratégie.",[["Forces × Opportunités","Maximiser l'impact"],["Faiblesses × Menaces","Sécuriser le projet"]],""),
+    S("Que signifie le W de SWOT ?",["weaknesses","faiblesses","weakness"],"")),
+  "Fiche 4 · Prioriser, valider, formuler",
+  N(A("Les 5 critères de priorisation : relie à leur question.",[["Gravité","Urgence sanitaire ?"],["Nombre de personnes","Impact potentiel ?"],["Faisabilité technique","Compétences nécessaires ?"],["Ressources","Budget, temps, partenaires ?"],["Volonté politique","Les élus vont-ils freiner ou accélérer ?"]],""),
+    C("Combien de critères de hiérarchisation le cours retient-il ?",5,""),
+    CAS("Toucher 1 000 personnes avec un problème modéré, ou 50 avec un problème grave ?",Q("Comment trancher ?",["Selon tes valeurs et ta mission, avec des critères explicites partagés avec les partenaires","Toujours le plus grand nombre","Toujours le plus grave"],""))),
+  N(Q("Pourquoi restituer le diagnostic aux partenaires ?",["Corriger les erreurs, enrichir l'analyse, préparer l'appropriation : ils deviennent co-auteurs","Pour respecter une formalité","Pour obtenir des signatures"],"Un diagnostic n'a de valeur que s'il est partagé et validé."),
+    null,
+    W("Formule un enjeu prioritaire bien construit.","Un enjeu articule le problème, les ressources mobilisables et une ambition réaliste. Par exemple : « Réduire l'isolement alimentaire des personnes âgées en milieu rural en mobilisant les associations locales et les services d'aide à domicile. »",["Problème","Ressources mobilisables","Ambition réaliste"]))
+ ]},
+ {id:"sp10b",t:"Planifier",s:"Fiches 5 à 7 · SMART, plan d'action, budget, partenaires",items:[
+  "Fiche 5 · Des objectifs SMART",
+  N(A("SMART en santé publique : relie.",[["Spécifique","Pas « améliorer l'alimentation » mais un public et un comportement précis"],["Mesurable","Des indicateurs quantifiables"],["Atteignable","Ambitieux mais réaliste selon les moyens"],["Réaliste","Tient compte des contraintes du diagnostic"],["Temporellement défini","Des échéances claires"]],""),
+    S("Que signifie le M de SMART ?",["mesurable"],""),
+    E(["« Améliorer l'alimentation des enfants du territoire »"," est un bon objectif SMART"," car il est ambitieux."],1,"Ni spécifique, ni mesurable, ni daté : ce n'est pas SMART.","Piège d'examen.")),
+  N(Q("Lequel est SMART ?",["Augmenter de 20 % la consommation de légumes des 6-11 ans des écoles du territoire d'ici 18 mois, mesurée par enquête avant/après","Faire manger plus de légumes aux enfants","Organiser des ateliers légumes"],""),
+    F("Exemple du cours : + {20} % de légumes chez les 6-11 ans en {18} mois.",""),
+    W("Contre quelles dérives SMART protège-t-il ?","Contre des objectifs trop ambitieux (échec), flous (impossibles à évaluer) ou inadaptés au territoire. Mieux vaut des objectifs modestes atteints que des ambitions démesurées abandonnées.",["Trop ambitieux","Flous, non évaluables","Inadaptés au territoire"])),
+  N(O("Remets dans l'ordre la hiérarchie des objectifs.",["Objectif général","Objectifs spécifiques","Objectifs opérationnels","Indicateurs de réussite"],"Évite de confondre moyens et fins."),
+    S("Cite une contrainte de temps à intégrer dans les objectifs.",["duree du financement","durée du financement","cycles politiques","elections","élections municipales","calendriers institutionnels","rentree scolaire","disponibilite des partenaires"],"")),
+  "Fiche 6 · Plan d'action et budget",
+  N(Q("Que précise chaque activité du plan d'action ?",["Qui fait quoi, quand, comment, avec quels moyens","Seulement le titre et la date","Le nom du financeur"],"Lieu, durée, participants, matériel, responsable, échéances."),
+    S("Cite un élément de la fiche d'activité type.",["intitule","intitulé","objectif vise","public cible","modalites pratiques","responsable","partenaires","ressources","indicateurs de reussite","echeances","échéances"],"")),
+  N([T(B_BUD,"Tes heures d'intervention",0,""),T(B_BUD,"Déplacements et petit équipement",1,""),T(B_BUD,"Un jeu pédagogique durable",2,""),T(B_BUD,"Une évaluation par un cabinet",3,""),T(B_BUD,"Affiches et événement de lancement",4,"")],
+    C("Combien de postes compte le budget prévisionnel ?",5,""),
+    E(["Pour économiser,"," je supprime le poste communication du budget :"," ce n'est pas indispensable."],1,"La communication est souvent sous-estimée mais indispensable.","")),
+  N(Q("Pourquoi diversifier les financements ?",["Pour se protéger des aléas","Pour compliquer la gestion","Pour éviter les conventions"],"Subventions publiques, privés, contributions en nature.")),
+  "Fiche 7 · Partenariats",
+  N(A("Quelle valeur ajoutée mettre en avant ?",[["Élus","Visibilité"],["Associations","Impact social"],["Professionnels de santé","Enrichissement de leur offre"]],""),
+    S("Cite une contribution possible d'un partenaire.",["expertise","reseau","réseau","financement","logistique","communication"],"La réciprocité équilibre la relation.")),
+  N([T(B_FORM,"Engagements réciproques et modalités financières",0,""),T(B_FORM,"Aspects techniques et opérationnels",1,""),T(B_FORM,"Valeurs communes et principes de fonctionnement",2,"")],
+    null,
+    W("Formaliser par écrit, n'est-ce pas trop bureaucratique ?","Cela peut sembler lourd, mais conventions, protocoles et chartes sécurisent les engagements et facilitent la résolution des conflits. Former les partenaires améliore la qualité de mise en œuvre et la pérennisation.",["Sécuriser les engagements","Résoudre les conflits","Former pour pérenniser"]))
+ ]},
+ {id:"sp10c",t:"Piloter",s:"Fiches 8 à 10 · gouvernance, suivi, capitalisation",items:[
+  "Fiche 8 · Gouvernance, logistique, traçabilité",
+  N([T(B_GOUV,"Arbitrer le budget de l'année 2",0,""),T(B_GOUV,"Ajuster l'horaire des ateliers trop peu fréquentés",1,""),T(B_GOUV,"Étudier l'offre alimentaire autour des collèges",2,"")],
+    E(["Le comité technique"," arbitre les grandes orientations et le budget,"," le comité de pilotage gère le terrain."],1,"C'est l'inverse : le COPIL arbitre, le comité technique ajuste.","Piège d'examen.")),
+  N(Q("Pourquoi des check-lists par type d'action ?",["Éviter les « échecs bêtes » : salle, matériel, participants informés","Pour faire plaisir aux financeurs","Pour remplacer le plan d'action"],""),
+    S("Que faut-il clarifier pour chaque membre de l'équipe ?",["missions","responsabilites","responsabilités","marges d'autonomie","interlocuteurs","qui contacte qui"],"")),
+  N(A("Les 5 avantages de la traçabilité : complète.",[["Éviter","les mauvaises surprises"],["Renforcer","l'organisation"],["Garantir","la transparence"],["Améliorer","la réactivité"],["Capitaliser","pour les actions futures"]],""),
+    null,
+    W("Les rapports d'étape sont-ils une contrainte bureaucratique ?","Non : ce sont des outils de valorisation. Ils justifient l'usage des fonds publics, entretiennent la confiance des financeurs et préparent de futurs partenariats.",["Outil de valorisation","Justifier les fonds publics","Futurs partenariats"])),
+  "Fiche 9 · Suivi, aléas, capitalisation",
+  N(A("Relie chaque indicateur de suivi à ce qu'il révèle.",[["Taux de participation","Attractivité des actions"],["Satisfaction","Qualité perçue"],["Respect des échéances","Maîtrise organisationnelle"],["Consommation budgétaire","Adéquation prévisions / réalité"]],""),
+    S("Cite un élément du tableau de bord mensuel.",["actions realisees","actions réalisées","taux de participation","budget consomme","budget consommé","difficultes","difficultés","ajustements","satisfaction des partenaires"],"")),
+  N(Q("Un plan de contingence, c'est…",["Des scénarios alternatifs prévus en cas d'imprévu","Un plan de communication","Le budget prévisionnel"],"Report, substitution, réallocation."),
+    CAS("La salle des ateliers est fermée pour travaux pendant 2 mois.",Q("Ta réaction ?",["Activer le plan B : salle du centre social ou report, sans perdre le public","Annuler le projet","Attendre la fin des travaux sans prévenir"],"Aucun projet ne se déroule exactement comme prévu."))),
+  N(Q("La capitalisation, c'est…",["Tirer et documenter les enseignements pour s'améliorer et transférer","Accumuler du budget","Augmenter le capital de l'association"],"Le suivi n'est pas un contrôle."),
+    S("Que permet la capitalisation au-delà du territoire ?",["transferabilite","transférabilité","transferer","transfert","essaimage"],"")),
+  "Fiche 10 · Méthodes",
+  N(Q("Le fil commun des conseils pro ?",["Partager, formaliser, rester réaliste","Agir vite, seul, beaucoup","Planifier sans les partenaires"],""),
+    A("Relie chaque situation au réflexe.",[["Diagnostic représentatif","Croiser les sources et valider en restitution"],["Prioriser","Matrice discutée en atelier multi-acteurs"],["Partenariats","Conventions claires, engagements réciproques"],["Plan d'action réaliste","Plans de contingence dès le départ"],["Suivi utile","Tableau de bord simple et partagé"]],""))
+ ]}
+ ],
+ mission:{id:"sp10m",t:"Le projet du Val de Sambre",items:[
+  CH("benoit","L'intercommunalité veut « faire quelque chose sur la nutrition ». Ta première étape ?",[
+    ["Lancer des ateliers cuisine dès le mois prochain",0,[0,-6,-5],"Sans diagnostic, tu risques d'agir à côté des vrais besoins."],
+    ["Un diagnostic territorial : INSEE, ORS, données locales, entretiens et focus groups avec les habitants",2,[8,8,-3],"Le point de départ obligé, quanti et quali."],
+    ["Recopier un projet qui a marché ailleurs",1,[2,-2,-1],"Inspirant, mais ce qui marche ailleurs n'est pas forcément adapté ici."]],
+   "Fiches 1 et 2.",{t:"Surpoids des enfants de 6 ans (données fictives du cas)",rows:[["Val de Sambre",21],["Région",17],["France",15]]}),
+  BY("benoit",T(B_SWOT,"L'ARS lance un appel à projets « nutrition et territoires »",2,"Externe et positif : une opportunité.")),
+  BY("martel",T(B_SWOT,"Peu de bus le soir entre les villages et le centre social",1,"Interne et négatif : une faiblesse à compenser.")),
+  CH("lacombe","Les élections municipales ont lieu dans 2 ans. Je veux des résultats rapides.",[
+    ["On promet de diviser l'obésité infantile par deux en 1 an",0,[0,-6,0],"Objectif irréaliste : échec et démobilisation."],
+    ["Des objectifs SMART réalistes, avec une action pilote visible dès la 1re année",2,[6,10,-2],"Modeste et atteint plutôt que démesuré et abandonné ; l'action pilote montre des résultats."],
+    ["On ne fixe pas d'objectif chiffré, pour ne pas décevoir",0,[0,-4,0],"Impossible à évaluer."]],
+   "Fiches 4 et 5."),
+  BY("benoit",O("Range ces objectifs du plus général au plus opérationnel.",["Améliorer l'état nutritionnel des enfants du territoire","Augmenter la consommation de légumes des 6-11 ans","Animer 30 ateliers « légumes » dans les 6 écoles d'ici juin","Taux de participation et enquête avant/après"],"Fiche 5.")),
+  CH("martel","Le centre social hésite à s'engager : « Encore un projet qui va nous prendre du temps. »",[
+    ["On lui impose : c'est une priorité intercommunale",0,[0,-12,0],"Un partenaire contraint s'investit peu."],
+    ["On montre l'impact social pour ses familles, on définit sa contribution et on signe une convention",2,[5,10,-1],"Valeur ajoutée, réciprocité, engagements écrits."],
+    ["On se passe du centre social",1,[-3,-2,0],"Tu perds ton meilleur allié de terrain."]],
+   "Fiche 7."),
+  CH("benoit","Au 6e mois, le tableau de bord montre 40 % de participation au lieu des 70 % prévus.",[
+    ["On attend la fin du projet pour en parler",0,[-2,-6,0],"Le suivi sert à ajuster en temps réel."],
+    ["Comité technique : comprendre (horaires, transport), ajuster, activer un plan B",2,[6,6,-2],"Pilotage en temps réel et plans de contingence."],
+    ["Le COPIL supprime les ateliers",1,[-3,-3,2],"Trop radical sans analyse : c'est d'abord un sujet d'ajustement technique."]],
+   "Fiches 8 et 9."),
+  BY("benoit",W("Le projet se termine. Rédige pour le COPIL les grandes lignes du bilan et de la capitalisation.","Rappeler le diagnostic et les objectifs SMART ; présenter le réalisé vs prévu (participation, satisfaction, échéances, budget) et les ajustements faits ; tirer les enseignements (ce qui a marché, difficultés surmontées) ; documenter pour transférer à d'autres communes ; remercier les partenaires et préparer la suite (financements, conventions).",["Diagnostic et objectifs","Réalisé / prévu, ajustements","Enseignements","Transférabilité","Suite du projet"]))
+ ]}
+};
+
+/* ---------- COURS 11 · ÉLABORATION ET MISE EN ŒUVRE DE PROGRAMMES DE PRÉVENTION ---------- */
+var B_STRAT=[["Grand public","20 %"],["Publics vulnérables","50 %"],["Haut risque","30 %"]];
+var B_MODU=[["Module de base","universel"],["Module optionnel","besoin local"],["Module évolutif","retours d'expérience"]];
+var B_INTER=[["Prérequis",""],["Synergie",""],["Concurrence",""]];
+COURS.sp11={id:"sp11",n:11,t:"Programme de prévention",lieu:"Programme « Bien manger en Cévennes » · Alès",
+ pitch:"Transformer des enjeux de santé publique en actions concrètes qui touchent des populations entières : un programme cohérent avec le PNNS, adapté au territoire, réaliste, et qui continue sans toi.",
+ P:{vidal:{n:"Dr Laure Vidal",r:"Référente prévention, ARS",av:{bg:"#ae8dff",skin:"#f0c8a8",hair:"#3a2a1e",hs:"bun",shirt:"#13303a",glasses:1}},
+    roux:{n:"Bastien Roux",r:"Coordinateur du programme",av:{bg:"#3ee6b0",skin:"#e8b896",hair:"#c26a2e",hs:"short",shirt:"#ff7a59"}},
+    mansour:{n:"Aïcha Mansour",r:"Directrice de centre social",av:{bg:"#ffc94a",skin:"#a86f4c",hair:"#1f1410",hs:"long",shirt:"#5bb8f5"}}},
+ conseil:{who:"vidal",t:"Toujours : justifier, prioriser, transmettre. Écarts au PNNS justifiés par des données chiffrées ; budget stratifié (ex. 20 / 50 / 30 %) et actions modulaires ; sensibiliser → former → accompagner, calé sur les rythmes du territoire ; rôles clairs et outils partagés ; financements diversifiés, intégration aux budgets des partenaires, relais formés."},
+ levels:[
+ {id:"sp11a",t:"Cibler",s:"Fiches 1 à 3 · PNNS et territoire, publics, thèmes",items:[
+  "Fiche 1 · Priorités nationales et territoriales",
+  N(A("Respecter le PNNS et répondre au territoire : relie.",[["Respecter le PNNS","Accéder aux financements publics"],["Répondre au territoire","Être accepté et efficace"]],""),
+    null,
+    CAS("Un territoire rural vieillissant veut prioriser la dénutrition des seniors, alors que le PNNS insiste sur l'obésité infantile.",Q("Est-ce possible ?",["Oui, en justifiant l'écart par des données chiffrées (INSEE, ARS, observatoires)","Non, il faut suivre le PNNS à la lettre","Oui, sans justification"],"Piège d'examen : jamais sans données."))),
+  N(Q("Objectif national : − 20 % d'obésité infantile. Le territoire a de fortes contraintes sociales. Quel objectif local ?",["− 15 %, documenté et justifié","− 25 %","− 20 % obligatoirement"],"− 25 % si la situation de départ est plus favorable."),
+    F("Déclinaison : − {25} % si la situation est plus favorable, − {15} % si les contraintes sociales sont fortes.",""),
+    W("Pourquoi adapter un objectif national au territoire ?","Des objectifs réalistes évitent la démobilisation ; on garde la cohérence avec le national tout en adaptant les modalités, et les écarts sont documentés, justifiés et suivis par des indicateurs.",["Éviter la démobilisation","Cohérence nationale","Écarts justifiés et suivis"])),
+  N(A("Relie chaque outil à son niveau.",[["Projet Régional de Santé","Priorités et financements régionaux"],["Schémas Régionaux de Prévention","Modalités d'intervention"],["FEDER","Développement territorial (Europe)"],["FSE","Insertion sociale (Europe)"]],""),
+    S("Que signifie PRS ?",["projet regional de sante","projet régional de santé"],"Avec les SRP (ARS).")),
+  "Fiche 2 · Cibler et prioriser les publics",
+  N([T(B_STRAT,"Campagne d'affichage en ville",0,""),T(B_STRAT,"Ateliers cuisine en centre social",1,""),T(B_STRAT,"Dépistage nutritionnel et suivi individuel",2,""),T(B_STRAT,"Éducation thérapeutique",2,"")],
+    F("Exemple de budget stratifié : {20} % grand public, {50} % publics vulnérables, {30} % haut risque.",""),
+    W("Pourquoi combiner approche universelle et actions ciblées ?","L'universel normalise les messages pour tous ; le ciblé compense les inégalités et répond aux besoins spécifiques. Ensemble, ils optimisent l'efficacité et évitent un programme élitiste qui ne toucherait que des publics déjà sensibilisés.",["Universel : normaliser","Ciblé : compenser les inégalités","Éviter l'élitisme"])),
+  N(A("Les 4 critères de priorisation des publics : relie.",[["Prévalence","Ampleur du problème"],["Vulnérabilité sociale","Inégalités à réduire"],["Accessibilité","Capacité réelle à le toucher"],["Capacité des partenaires","Relais disponibles"]],""),
+    E(["Je cible en priorité un public très touché"," mais que je ne peux atteindre par aucun relais :"," c'est la priorité absolue."],1,"Inutile de cibler un public inatteignable : l'accessibilité est un critère.","")),
+  N(Q("Les spécificités culturelles d'un public sont…",["Des ressources (traditions riches en légumes, savoir-faire, solidarités)","Des obstacles","Sans importance"],"Adapter ne veut pas dire renoncer à la qualité.")),
+  "Fiche 3 · Choisir les axes thématiques",
+  N(Q("Combien de thèmes choisir ?",["Quelques thèmes approfondis","Le plus possible","Un seul, toujours le même"],"Plutôt que beaucoup de sujets superficiels."),
+    A("Relie le territoire au thème possible.",[["Beaucoup d'espaces verts","Agriculture urbaine"],["Population âgée","Lutte contre la dénutrition"]],"")),
+  N(A("Adapter le thème au public : relie.",[["Seniors isolés","Ateliers intergénérationnels"],["Enfants","Jardins pédagogiques"]],""),
+    null,
+    CAS("Le financeur demande « l'intégration des enjeux transversaux ».",W("Lesquels, et comment ?","Développement durable (circuits courts, saisonnalité, anti-gaspillage) ; égalité des genres (actions équilibrées hommes/femmes) ; lutte contre les discriminations (messages adaptés au handicap, à la précarité, aux minorités culturelles). Cela répond aux financeurs et enrichit l'impact social.",["Développement durable","Égalité des genres","Non-discrimination"])))
+ ]},
+ {id:"sp11b",t:"Organiser",s:"Fiches 4 à 6 · actions, progression, modularité",items:[
+  "Fiche 4 · Des actions complémentaires",
+  N([T(B_PREV,"Événement festif sur les fruits de saison",0,""),T(B_PREV,"Dépistage nutritionnel en pharmacie",1,""),T(B_PREV,"Ateliers cuisine pour insuffisants cardiaques",2,"Piège d'examen : personnes déjà malades = tertiaire."),T(B_PREV,"Groupe de parole pour personnes à risque",1,""),T(B_PREV,"ETP des diabétiques",2,"")],
+    S("Cite une action de prévention secondaire.",["depistage","dépistage","depistage nutritionnel","consultation preventive","consultations préventives","bilan de sante","bilans de santé","groupe de parole"],""),
+    E(["Un atelier cuisine pour des insuffisants cardiaques"," relève de la prévention primaire"," car il s'agit d'éducation alimentaire."],1,"Les participants sont déjà malades : c'est de la prévention tertiaire.","Piège d'examen.")),
+  N(A("Relie chaque modalité pédagogique à son public.",[["Information descendante","Publics demandeurs d'expertise"],["Éducation participative","Publics sceptiques envers l'autorité médicale"],["Activités pratiques","Ceux qui apprennent en manipulant"],["Accompagnement individualisé","Ceux qui ont le plus de difficultés"]],""),
+    null,
+    W("Pourquoi varier les modalités dans un même programme ?","Les publics apprennent différemment : combiner information, participation, pratique et accompagnement individuel s'adapte aux besoins de chacun et favorise une compréhension et une adoption durables.",["Publics différents","Combiner","Adoption durable"])),
+  "Fiche 5 · Progression, calendrier, interdépendances",
+  N(O("Remets dans l'ordre la progression des interventions.",["Sensibilisation générale","Compétences spécifiques","Accompagnement du changement"],""),
+    A("Relie chaque rythme du territoire à son effet.",[["Année scolaire","Délimite les interventions éducatives"],["Cycles budgétaires municipaux","Décisions de financement"],["Mandats politiques","Soutiens institutionnels"],["Rythmes agricoles","Disponibilité du public rural"]],"")),
+  N([T(B_INTER,"La formation des animateurs doit précéder les ateliers",0,""),T(B_INTER,"La campagne d'affichage renforce les ateliers",1,""),T(B_INTER,"Deux ateliers visent le même public le même soir",2,"")],
+    null,
+    CAS("Bastien a programmé les ateliers en milieu rural pendant les vendanges.",Q("Quel problème ?",["Les rythmes agricoles réduisent la disponibilité du public","Aucun","Le budget"],"Synchroniser avec les rythmes du territoire."))),
+  "Fiche 6 · Flexibilité, modularité, réalisme",
+  N(A("Relie chaque contexte au format adapté.",[["Zone urbaine dense","Actions intensives de courte durée"],["Milieu rural dispersé","Interventions mobiles ou formats longs concentrés"],["Centre social dynamique","Collaboration étroite"],["Zone sous-équipée","Suppléance par d'autres acteurs"]],"Pour l'équité territoriale.")),
+  N([T(B_MODU,"Atelier « équilibre » proposé partout",0,""),T(B_MODU,"Module ramadan pour un quartier qui le demande",1,""),T(B_MODU,"Module enrichi après les retours des animateurs",2,"")],
+    S("Cite une contrainte réelle à intégrer dès la conception.",["budget","competences","compétences des équipes","capacites des partenaires","capacités des partenaires"],""),
+    W("« Un programme modeste mais réalisé vaut mieux qu'un programme ambitieux abandonné. » Explique.","Le budget encadre les ambitions, les compétences des équipes limitent certaines actions et les capacités des partenaires modulent leur contribution. Dimensionner selon les moyens réels évite l'abandon et préserve la crédibilité.",["Budget, compétences, partenaires","Éviter l'abandon","Crédibilité"]))
+ ]},
+ {id:"sp11c",t:"Ancrer",s:"Fiches 7 à 10 · politiques locales, réseaux, pérennité",items:[
+  "Fiche 7 · Politiques locales et droit commun",
+  N(A("Relie chaque politique locale au lien avec ton programme.",[["Politique de la ville","Cohésion sociale"],["Agendas de développement durable","Alimentation locale, anti-gaspillage"],["PEDT","Volet nutrition des interventions scolaires"]],""),
+    S("Que signifie PEDT ?",["projet educatif territorial","projet éducatif territorial","projets educatifs territoriaux"],"")),
+  N(Q("Les dispositifs de droit commun, ce sont…",["Les dispositifs existants : PMI, centres sociaux, écoles, soins, aide alimentaire","Les tribunaux","Les associations de consommateurs"],"Ne pas réinventer l'existant."),
+    S("Que signifie PMI ?",["protection maternelle et infantile"],""),
+    E(["Nous créons nos propres consultations pour nourrissons,"," à côté de celles de la PMI,"," pour être plus visibles."],1,"Doublon avec la PMI : on perd en légitimité. Il faut compléter, pas concurrencer.","Piège d'examen.")),
+  N(A("Relie l'objectif local à la contribution de la nutrition.",[["Cohésion sociale","Ateliers collectifs, rencontres intergénérationnelles"],["Développement économique","Promotion des circuits courts"],["Transition écologique","Saisonnalité, gaspillage"]],"Facilite l'adhésion des élus.")),
+  "Fiche 8 · Réseaux et recherche",
+  N(Q("Qu'apporte un réseau de santé spécialisé (diabète, gérontologie) ?",["Recrutement des publics, formation, continuité des prises en charge, légitimité","Un financement automatique","Le remplacement des diététiciens"],""),
+    S("Que peuvent apporter les instituts de formation ?",["stagiaires","des stagiaires","stagiaires motives"],"Un regard neuf et des compétences actualisées."),
+    Q("Qu'apporte un partenariat de recherche ?",["Documenter l'efficacité, améliorer les pratiques, attirer des financements","Des participants supplémentaires","Une autorisation de l'ARS"],"")),
+  "Fiche 9 · Pérenniser, autonomiser, essaimer",
+  N(A("Intégrer l'action au budget d'un partenaire : relie.",[["Budget municipal","Événements publics"],["Budget scolaire","Interventions éducatives"],["Budget associatif","Animation de proximité"]],""),
+    S("Cite une source de financement pour l'après-amorçage.",["cofinancements publics","cofinancement","partenariats prives ethiques","privé éthique","economies generees","budget municipal","ars","departement","intercommunalite"],"")),
+  N(Q("L'autonomie territoriale passe par…",["Transfert progressif aux acteurs locaux, relais formés, outils appropriables","Ta présence permanente","Un nouveau financement chaque année"],"Guides d'animation, procédures simplifiées."),
+    null,
+    W("Qu'est-ce qu'essaimer, et comment ?","Diffuser ses pratiques au-delà de son territoire : documenter les bonnes pratiques (guides méthodologiques), organiser des formations inter-territoriales, s'appuyer sur des réseaux d'échange et plateformes collaboratives. La capitalisation valorise l'investissement initial.",["Diffuser au-delà du territoire","Guides, formations","Réseaux, plateformes"])),
+  "Fiche 10 · Méthodes",
+  N(Q("Le fil commun des conseils pro ?",["Justifier, prioriser, transmettre","Copier, coller, diffuser","Agir seul, vite, partout"],""),
+    A("Relie chaque situation au réflexe.",[["PNNS et local","Diagnostic chiffré pour justifier les écarts"],["Budget limité","Budget stratifié, actions modulaires"],["Séquençage","Sensibiliser → former → accompagner"],["Coordination","Conventions, gouvernance simple"],["Pérennité","Intégrer aux budgets des partenaires"]],""))
+ ]}
+ ],
+ mission:{id:"sp11m",t:"Bien manger en Cévennes",items:[
+  CH("vidal","Le diagnostic montre surtout de la dénutrition chez les seniors isolés. Le PNNS insiste sur l'obésité infantile. Que fais-tu ?",[
+    ["Je suis le PNNS : obésité infantile",0,[-4,-4,0],"Tu passes à côté du besoin principal du territoire."],
+    ["Je priorise les seniors, en justifiant l'écart par les données chiffrées, tout en restant cohérent avec le PNNS",2,[10,8,0],"Écart justifié, cohérence montrée dans le dossier."],
+    ["Je fais les deux à parts égales sans rien justifier",1,[3,-2,-4],"Dispersion, et un dossier fragile pour le financeur."]],
+   "Fiche 1.",{t:"Seniors à risque de dénutrition (données fictives du cas)",rows:[["Cévennes",19],["Région",12]]}),
+  CH("roux","Budget de 40 000 €. Comment le répartir entre les publics ?",[
+    ["Tout sur une grande campagne d'affichage",0,[1,-4,-2],"Programme élitiste : il touche ceux qui sont déjà sensibilisés."],
+    ["Stratifié : environ 20 % grand public, 50 % publics vulnérables, 30 % haut risque",2,[8,6,-3],"Universel + ciblé : efficacité et équité."],
+    ["Tout sur le suivi individuel des personnes à haut risque",1,[4,0,-5],"Effet fort sur peu de personnes, sans action sur l'environnement."]],
+   "Fiche 2."),
+  BY("roux",T(B_PREV,"Ateliers cuisine pour des seniors déjà dénutris",2,"Personnes déjà concernées : prévention tertiaire.")),
+  CH("mansour","Au centre social, on fait déjà des repas partagés pour les seniors le jeudi.",[
+    ["On crée nos propres repas le mardi",0,[0,-10,-3],"Doublon et concurrence : tu perds un allié."],
+    ["On s'appuie sur ces repas pour ajouter un module nutrition, avec une convention",2,[6,10,-1],"S'inscrire dans le droit commun, compléter."]],
+   "Fiche 7."),
+  CH("roux","On démarre en septembre. Dans quel ordre ?",[
+    ["Suivi individuel tout de suite, pour aller vite",0,[0,-4,-2],"Sans sensibilisation, peu de personnes s'engagent."],
+    ["Sensibilisation (fête des récoltes), puis ateliers pratiques, puis accompagnement individualisé",2,[6,6,-2],"Progression respectant les rythmes d'appropriation, calée sur la saison."]],
+   "Fiche 5."),
+  BY("vidal",A("Les villages sont dispersés : quel format pour quel contexte ?",[["Village isolé","Intervention mobile (camion-atelier)"],["Bourg-centre","Atelier en centre social"],["Zone sans structure","Suppléance par les aides à domicile"]],"Fiche 6.")),
+  CH("vidal","Le financement ARS s'arrête dans 2 ans. Comment préparer l'après ?",[
+    ["Redemander une subvention dans 2 ans",0,[0,-4,0],"Le programme reste fragile."],
+    ["Diversifier les financements, intégrer les actions aux budgets des partenaires, former des relais locaux",2,[6,8,2],"Pérennisation et autonomie territoriale."],
+    ["Réduire le programme au strict minimum dès maintenant",1,[-3,0,3],"Prudent, mais on perd l'élan."]],
+   "Fiche 9."),
+  BY("vidal",W("Présente le programme en une page au comité de l'ARS.","Priorités : dénutrition des seniors isolés, écart au PNNS justifié par les données, cohérence nationale montrée. Publics stratifiés (20/50/30 %) selon prévalence, vulnérabilité, accessibilité, partenaires. Actions sur les 3 niveaux de prévention, modalités variées, progression sensibiliser-former-accompagner calée sur les rythmes locaux, modules adaptés aux villages. Intégration au droit commun (centre social, aides à domicile) et aux réseaux (gérontologie). Pérennité : financements diversifiés, budgets des partenaires, relais formés, essaimage.",["Priorités justifiées","Publics stratifiés","Actions, progression, modularité","Droit commun, réseaux","Pérennité"]))
+ ]}
+};
+
+/* ---------- COURS 12 · ÉVALUATION DES PROJETS DE PRÉVENTION ---------- */
+var B_NIV=[["Processus","comme prévu ?"],["Résultats","appris ?"],["Impact","vie changée ?"]];
+var B_QIND=[["Structure / moyens",""],["Résultats",""],["Impact populationnel",""]];
+var B_ANA=[["Descriptive",""],["Inférentielle",""],["Thématique",""],["Croisée",""]];
+var B_RESTIT=[["Décideurs","synthèse exécutive"],["Professionnels","rapport technique"],["Participants","supports visuels"]];
+COURS.sp12={id:"sp12",n:12,t:"Évaluation des projets",lieu:"Programme « Cantines en forme » · Strasbourg",
+ pitch:"Les financeurs attendent des preuves, et toi, tu veux savoir ce qui marche. Le programme « Cantines en forme » arrive à mi-parcours : il est temps de l'évaluer pour prouver, expliquer et améliorer.",
+ P:{weber:{n:"Dr Martin Weber",r:"Évaluateur, biostatisticien",av:{bg:"#5bb8f5",skin:"#f0c8a8",hair:"#d9a441",hs:"short",shirt:"#13303a",glasses:1}},
+    okafor:{n:"Lina Okafor",r:"Diététicienne, coordinatrice du programme",av:{bg:"#3ee6b0",skin:"#7a4a30",hair:"#1f1410",hs:"curly",shirt:"#ffc94a"}},
+    duval:{n:"Christine Duval",r:"Chargée de mission, fondation financeuse",av:{bg:"#ffc94a",skin:"#e8b896",hair:"#6b3f24",hs:"bun",shirt:"#ae8dff"}}},
+ conseil:{who:"weber",t:"Toujours : standardiser, prioriser, mutualiser, valoriser. Fidélité : checklist standardisée, observateurs formés, observations croisées. Budget limité : indicateurs utiles et peu coûteux, sous-échantillon longitudinal. Suivi : 3 et 6 mois, relances par SMS, analyse des facteurs confondants. Restituer sans stigmatiser : réussites et progrès collectifs."},
+ levels:[
+ {id:"sp12a",t:"Cadrer",s:"Fiches 1 à 5 · processus, fidélité, résultats, impact",items:[
+  "Fiche 0 · Pourquoi évaluer ?",
+  N(Q("Pourquoi évaluer un projet de prévention ?",["Rendre des comptes, vérifier l'atteinte des objectifs, identifier ce qui marche, transformer l'expérience en expertise","Uniquement pour les financeurs","Pour remplir un rapport"],"4 raisons."),
+    C("Combien de raisons d'évaluer le cours donne-t-il ?",4,"")),
+  "Fiche 1 · Les 3 niveaux d'évaluation",
+  N(O("Remets dans l'ordre les 3 niveaux d'évaluation.",["Processus","Résultats à court terme","Impact à moyen et long terme"],""),
+    [T(B_NIV,"Les ateliers ont-ils eu lieu comme prévu ?",0,""),T(B_NIV,"Les enfants connaissent-ils mieux les groupes d'aliments ?",1,""),T(B_NIV,"La prévalence du surpoids a-t-elle baissé en 2 ans ?",2,"")],
+    E(["Une hausse des connaissances nutritionnelles"," mesurée juste après les ateliers"," prouve l'impact du programme."],2,"C'est un résultat à court terme ; l'impact porte sur des changements durables (comportements, santé, environnement).","Piège d'examen.")),
+  N(A("Relie chaque niveau à son moment.",[["Processus","Pendant le projet, en temps réel"],["Résultats","Immédiat, 3 mois"],["Impact","6 mois, 12 mois et plus"]],""),
+    W("Pourquoi l'évaluation devient-elle plus coûteuse avec le temps ?","Plus on avance, plus la question est ambitieuse (de « comme prévu ? » à « leur vie a-t-elle changé ? ») : il faut des suivis longitudinaux, des groupes témoins et des analyses statistiques, donc plus de moyens et de complexité.",["Question plus ambitieuse","Suivis longitudinaux, groupes témoins","Plus coûteux et complexe"])),
+  "Fiche 2 · L'évaluation de processus",
+  N(Q("L'évaluation de processus sert à…",["Vérifier la conformité au plan et ajuster en temps réel","Mesurer l'impact sur la santé","Calculer le coût total à la fin"],"Calendrier ? Publics visés ? Partenariats ?"),
+    S("Cite un indicateur de processus.",["nombre de participants","participants","taux de participation","assiduite","assiduité","satisfaction","respect des protocoles"],""),
+    E(["Nous avons eu 300 participants :"," le programme est donc une réussite"," sur le plan du processus."],1,"Le nombre ne suffit pas : il faut aussi le taux de participation et l'assiduité.","Piège d'examen.")),
+  N(Q("Que contient le tableau de bord de processus ?",["Participants / objectif, assiduité, satisfaction, actions réalisées / prévues, budget consommé / prévu, difficultés","Les résultats biologiques","Les publications scientifiques"],"Complété par du qualitatif : climat, dynamiques, retours spontanés.")),
+  "Fiche 3 · La fidélité aux protocoles",
+  N(Q("Le contrôle de la fidélité vérifie…",["La conformité entre la conception et la réalisation","La fidélité des participants","La satisfaction des financeurs"],""),
+    S("Cite une dérive méthodologique possible.",["seances ecourtees","séances écourtées","contenus simplifies","contenus simplifiés","public different","mauvais public"],""),
+    E(["Une animatrice a ajouté un jeu qui marche très bien :"," c'est une dérive,"," il faut l'interdire."],1,"Une adaptation bénéfique se documente et s'intègre aux protocoles futurs.","Piège d'examen.")),
+  N(Q("Avec plusieurs intervenants, on mesure…",["L'homogénéité de mise en œuvre","Leur ancienneté","Leur satisfaction seulement"],"La standardisation assure reproductibilité et validité scientifique.")),
+  "Fiche 4 · Les résultats à court terme",
+  N(A("Relie chaque outil à ce qu'il mesure.",[["Pré/post-tests","Acquis cognitifs"],["Questionnaire d'auto-efficacité","Confiance en ses capacités"],["Grille d'observation","Comportements en situation"],["Carnets alimentaires avant/après","Premiers changements de consommation"]],""),
+    S("Quelle mesure prédit mieux le changement que les seules connaissances ?",["auto-efficacite","auto-efficacité","autoefficacite","sentiment d'auto-efficacite"],"Piège d'examen.")),
+  N(O("Remets dans l'ordre les temps de mesure.",["Immédiat (acquis à chaud)","3 mois (maintien)","6 mois (comportements durables)"],""),
+    null,
+    W("Pourquoi ne pas se contenter de l'évaluation immédiate ?","Les acquis « à chaud » sont souvent surévalués ; les vrais apprentissages se révèlent dans la durée, une fois les conseils testés dans la vie quotidienne : on mesure à 3 mois (maintien) et à 6 mois (comportements).",["Acquis à chaud surévalués","Tester dans la vie quotidienne","3 et 6 mois"])),
+  "Fiche 5 · L'impact à moyen et long terme",
+  N(A("Relie chaque domaine d'impact à un exemple.",[["Offre alimentaire","Menus scolaires plus équilibrés"],["Institutionnel","Critères nutritionnels dans les marchés publics"],["Social","Jardins partagés intergénérationnels"],["Urbain","Pistes cyclables, moins d'environnements obésogènes"],["Économique et culturel","Soutien aux producteurs locaux"]],"")),
+  N(Q("Comment prouver qu'un changement est dû au programme ?",["Groupe témoin et analyses multivariées contrôlant les facteurs confondants","Comparer avant/après sans autre précaution","Demander aux participants"],""),
+    S("Comment appelle-t-on une variable qui brouille le lien entre programme et résultat ?",["facteur confondant","facteurs confondants","confondant"],"Âge, sexe, niveau socio-économique, autres interventions."),
+    CAS("Le surpoids des élèves a baissé de 3 points, mais une campagne nationale a eu lieu en même temps.",Q("Peut-on l'attribuer au programme ?",["Pas sans groupe témoin ni contrôle des facteurs confondants","Oui, c'est évident","Non, jamais"],"Piège d'examen.")))
+ ]},
+ {id:"sp12b",t:"Mesurer",s:"Fiches 6 à 8 · indicateurs, qualitatif, triangulation",items:[
+  "Fiche 6 · Les indicateurs quantitatifs",
+  N([T(B_QIND,"Budget par participant",0,"Piège d'examen : c'est un indicateur de moyens."),T(B_QIND,"Évolution du score de qualité alimentaire",1,""),T(B_QIND,"Prévalence de l'obésité sur le territoire",2,""),T(B_QIND,"Ratio encadrants / participants",0,""),T(B_QIND,"Variation du tour de taille",1,"")],
+    S("Cite un indicateur de structure et de moyens.",["budget par participant","heures de formation","nombre de partenaires actifs","partenaires actifs","ratio encadrants participants","ratio encadrants"],""),
+    W("Pourquoi les indicateurs d'impact populationnel demandent-ils une coordination ?","Prévalence des pathologies, habitudes de consommation territoriales et recours aux services de santé ne se mesurent pas au niveau d'un atelier : il faut des systèmes de surveillance coordonnés avec les partenaires institutionnels.",["Mesures à l'échelle du territoire","Systèmes de surveillance","Partenaires institutionnels"])),
+  N(Q("Pourquoi les mesures standardisées rassurent-elles les financeurs ?",["Elles sont reproductibles et permettent analyses statistiques et comparaisons dans le temps","Elles sont gratuites","Elles sont rapides"],"")),
+  "Fiche 7 · Les approches qualitatives",
+  N(A("Relie chaque méthode à ce qu'elle révèle.",[["Entretiens semi-directifs","Motivations, obstacles, stratégies"],["Focus groups","Dynamiques collectives, influence des pairs"],["Récits de parcours","Trajectoires et facteurs déclenchants"]],""),
+    E(["Pour comprendre le vécu personnel d'une mère de famille,"," j'organise un focus group"," avec dix parents."],1,"Le vécu individuel s'explore en entretien semi-directif ; le focus group révèle les dynamiques de groupe.","Piège d'examen.")),
+  N(Q("L'observation directe et l'ethnographie montrent…",["L'écart entre comportements déclarés et effectifs","La représentativité de l'échantillon","Les coûts du programme"],"Observation non participante des ateliers, ethnographie familiale."),
+    null,
+    W("Que dit le qualitatif que les chiffres ne disent pas ?","Les chiffres disent combien ; le qualitatif explique pourquoi les participants ont changé ou non : processus sous-jacents, représentations, croyances héritées, freins psychologiques. Il identifie les leviers efficaces et les messages contre-productifs.",["Pourquoi, pas combien","Représentations, freins","Leviers, messages contre-productifs"])),
+  "Fiche 8 · Triangulation",
+  N(A("Triangulation des méthodes : relie.",[["Quantitatif","Mesure l'ampleur des changements"],["Qualitatif","Explique les mécanismes"],["Observation","Vérifie la cohérence"]],""),
+    E(["Trianguler,"," c'est seulement combiner quantitatif et qualitatif,"," peu importe les sources."],1,"C'est aussi croiser les sources : participants, intervenants, entourage, données de santé.","Piège d'examen.")),
+  N(S("Cite une source à croiser avec les auto-déclarations des participants.",["observations des intervenants","intervenants","entourage","entourage familial","donnees de sante","données objectives de santé"],""),
+    null,
+    CAS("Les partenaires de terrain trouvent les outils d'évaluation trop lourds.",Q("Que fais-tu ?",["Simplifier les outils, alléger les protocoles, proposer une courte formation méthodologique","Garder les outils, la rigueur avant tout","Supprimer l'évaluation"],"La faisabilité sans sacrifier la rigueur.")))
+ ]},
+ {id:"sp12c",t:"Exploiter",s:"Fiches 9 à 12 · analyse, restitution, amélioration",items:[
+  "Fiche 9 · Analyser et interpréter",
+  N([T(B_ANA,"Moyennes et pourcentages des scores",0,""),T(B_ANA,"Test de significativité avant/après",1,""),T(B_ANA,"Regrouper les verbatims par grands thèmes",2,""),T(B_ANA,"Synthèse intégrant chiffres et entretiens",3,"")],
+    E(["Le score moyen est passé de 12 à 13 :"," c'est la preuve"," d'une amélioration réelle."],1,"Une moyenne qui augmente ne prouve rien sans test de significativité (analyse inférentielle).","Piège d'examen.")),
+  N(Q("Pourquoi distinguer indicateurs de processus et de résultats à l'analyse ?",["Les premiers expliquent pourquoi le programme réussit ou échoue","Pour faire deux rapports","Ils mesurent la même chose"],""),
+    S("Cite un élément de contexte à prendre en compte pour interpréter.",["caracteristiques du territoire","territoire","specificites des publics","publics","conditions de mise en oeuvre","conditions de mise en œuvre"],"On évite les généralisations abusives.")),
+  N(Q("Signaler les biais et limites de l'évaluation…",["Renforce la crédibilité","Affaiblit le dossier","Est inutile"],"Faible taux de réponse, publics difficiles à atteindre, interprétation trop optimiste."),
+    null,
+    W("Qu'est-ce qu'un « facteur de réussite » et pourquoi le chercher ?","Ce qui a favorisé l'engagement et l'efficacité (et les obstacles), ainsi que les surprises : résultats inattendus, publics touchés de façon imprévue, effets indirects. Les identifier permet de reproduire ce qui marche et d'améliorer le reste.",["Engagement, conditions d'efficacité","Surprises, effets indirects","Reproduire, améliorer"])),
+  "Fiche 10 · Communiquer et valoriser",
+  N([T(B_RESTIT,"Impact et coût-efficacité en 2 pages",0,""),T(B_RESTIT,"Méthodes détaillées et reproductibilité",1,""),T(B_RESTIT,"Affiche des réussites et de la suite du programme",2,"")],
+    E(["Pour l'élu,"," je présente en détail la méthodologie statistique"," dans un rapport de 80 pages."],1,"Aux décideurs : synthèse exécutive, messages clés et recommandations, pas la méthodologie détaillée.","Piège d'examen.")),
+  N(Q("Pourquoi publier dans des revues spécialisées ?",["Légitimité scientifique et évolution de la profession","Pour gagner de l'argent","C'est obligatoire"],"Documenter, échanger entre territoires, former.")),
+  "Fiche 11 · Amélioration continue",
+  N(Q("La fonction formative de l'évaluation, c'est…",["Réviser protocoles, outils et recrutement selon les résultats","Noter les intervenants","Sanctionner les écarts"],""),
+    O("Remets dans l'ordre la boucle de rétroaction.",["Mesurer","Analyser","Décider","Agir"],"Chaque cycle nourrit les décisions suivantes."),
+    E(["L'évaluation se fait à la fin du projet,"," en un exercice ponctuel,"," pour rendre des comptes."],1,"C'est un pilotage continu, intégré au fonctionnement.","Piège d'examen.")),
+  N(Q("L'évaluation participative et autonome, c'est…",["Former les partenaires à l'auto-évaluation et co-construire les améliorations","Laisser chaque partenaire évaluer seul sans outils","Faire évaluer par les financeurs"],"Appropriation et autonomisation territoriale.")),
+  "Fiche 12 · Méthodes",
+  N(Q("Le fil commun des conseils pro ?",["Standardiser, prioriser, mutualiser, valoriser","Mesurer tout, tout le temps","Évaluer seul, à la fin"],""),
+    A("Relie chaque situation au réflexe.",[["Fidélité avec plusieurs intervenants","Checklist standardisée et observations croisées"],["Budget limité","Indicateurs utiles et peu coûteux"],["Suivi longitudinal","Sous-échantillon à 3 et 6 mois, relances SMS"],["Restituer aux familles","Réussites et progrès collectifs"]],""),
+    CAS("Suivi longitudinal avec 25 000 € sur 2 ans.",W("Comment l'organiser ?","Un sous-échantillon représentatif mesuré à 3 et 6 mois ; des outils numériques (SMS, formulaires courts) pour les relances ; un budget réservé aux analyses statistiques (facteurs confondants) ; des données mutualisées avec les partenaires (écoles, santé).",["Sous-échantillon, 3 et 6 mois","SMS, formulaires courts","Analyses statistiques","Mutualiser les données"])))
+ ]}
+ ],
+ mission:{id:"sp12m",t:"L'évaluation de « Cantines en forme »",items:[
+  CH("duval","La fondation renouvelle son financement si vous prouvez l'efficacité. Par quoi commencez-vous ?",[
+    ["Une enquête de satisfaction en fin d'année",0,[0,-6,0],"La satisfaction est un indicateur de processus, pas une preuve d'efficacité."],
+    ["Un plan d'évaluation sur 3 niveaux : processus en continu, résultats à 3 et 6 mois, impact avec groupe témoin",2,[8,8,-4],"Chaque question a son niveau, ses indicateurs et son moment."],
+    ["Mesurer seulement le poids des enfants dans 2 ans",1,[2,-2,-2],"Trop tardif et sans comprendre le pourquoi."]],
+   "Fiche 1."),
+  BY("okafor",T(B_NIV,"6 écoles sur 8 ont servi les nouveaux menus comme prévu",0,"Conformité au plan : évaluation de processus.")),
+  CH("weber","Trois animateurs interviennent dans les écoles. Comment vérifier qu'ils font la même chose ?",[
+    ["On leur fait confiance",0,[-2,0,0],"Sans contrôle, impossible d'interpréter les résultats."],
+    ["Checklist standardisée par séance, observateurs formés, observations croisées, adaptations utiles documentées",2,[5,6,-2],"Fidélité et homogénéité : reproductibilité des interventions."]],
+   "Fiches 3 et 12."),
+  CH("okafor","Juste après les ateliers, 90 % des enfants reconnaissent les légumineuses. On s'arrête là ?",[
+    ["Oui, c'est un excellent résultat",0,[0,-4,0],"Acquis « à chaud » : souvent surévalués."],
+    ["On remesure à 3 et 6 mois, avec un questionnaire d'auto-efficacité et des observations à la cantine",2,[6,6,-2],"Maintien, comportements réels, et l'auto-efficacité prédit mieux le changement."]],
+   "Fiche 4."),
+  CH("weber","Les plateaux-repas montrent + 15 % de légumes consommés. Le surpoids a aussi baissé, mais une campagne nationale a eu lieu.",[
+    ["On attribue la baisse au programme",0,[0,-8,0],"Sans groupe témoin, l'effet n'est pas démontré."],
+    ["Comparer avec les écoles témoins et contrôler les facteurs confondants avant de conclure",2,[6,8,-3],"Groupe témoin et analyses multivariées."],
+    ["On n'en parle pas",1,[0,-2,0],"Prudent, mais on peut mieux faire : l'analyser rigoureusement."]],
+   "Fiches 5 et 9."),
+  BY("weber",T(B_ANA,"Vérifier que le passage de 2,1 à 2,6 portions de légumes n'est pas dû au hasard",1,"Test de significativité : analyse inférentielle.")),
+  CH("duval","Je dois présenter les résultats à mon conseil d'administration la semaine prochaine.",[
+    ["Je vous envoie le rapport technique complet de 80 pages",0,[0,-6,0],"Inadapté aux décideurs."],
+    ["Une synthèse exécutive : impact, coût-efficacité, limites, recommandations",2,[4,10,0],"Le bon format pour les décideurs."]],
+   "Fiche 10."),
+  CH("okafor","Les familles d'une école ont peu participé. Comment restituer les résultats à cette école ?",[
+    ["Montrer le classement des écoles",0,[0,-12,0],"Stigmatisant pour les familles."],
+    ["Valoriser les progrès collectifs, expliquer les facteurs contextuels, associer des représentants des parents",2,[5,10,0],"Restituer sans stigmatiser."]],
+   "Fiche 12."),
+  BY("weber",W("Rédige la conclusion de l'évaluation et les suites pour l'année prochaine.","Processus : mise en œuvre largement conforme, fidélité vérifiée, adaptations utiles intégrées. Résultats : connaissances et auto-efficacité en hausse, maintenues à 3 et 6 mois. Impact : hausse de la consommation de légumes à la cantine, effet sur le surpoids à confirmer avec le groupe témoin et l'analyse des facteurs confondants. Limites signalées. Suites : réviser protocoles, outils et recrutement (boucle de rétroaction), former les équipes à l'auto-évaluation, restituer à chaque public dans le bon format.",["Processus, résultats, impact","Preuve et limites","Améliorations","Restitution adaptée"]))
+ ]}
+};
+
+/* ---------- ÉPREUVE BLANCHE E5 · SALLE D'EXAMEN ---------- */
+/* Trame E5 (fiche méthode) : diagnostic → objectifs → stratégies et actions → mise en œuvre → évaluation. */
+var B_PROC=[["Indicateur de processus","fait comme prévu ?"],["Indicateur de résultat","impact réel ?"]];
+var EXAM_E5={id:"e5blanc",t:"Épreuve blanche E5",
+ unlock:["sp10m","sp11m","sp12m"],
+ sujet:"Commune fictive de Saint-Aubin-sur-Loire, quartier prioritaire des Tilleuls (6 000 habitants). Le surpoids des enfants de 6-11 ans atteint 24 % (département 17 %, France 16 %). Le quartier compte 9 restaurations rapides, 1 supermarché discount, aucun primeur ; 38 % de familles monoparentales. Atouts : un centre social actif, 3 écoles, une PMI, un marché le samedi. L'ARS lance un appel à projets : 30 000 € sur 18 mois. Vous êtes diététicienne au CCAS : présentez votre projet au jury.",
+ C:{id:"e5",n:"E5",t:"Épreuve blanche",
+  P:{lambert:{n:"Mme Françoise Lambert",r:"Présidente du jury, diététicienne-cadre",av:{bg:"#13303a",skin:"#f0c8a8",hair:"#9a9a9a",hs:"bun",shirt:"#ffc94a",glasses:1}},
+     martin:{n:"Dr Olivier Martin",r:"Membre du jury, médecin de santé publique",av:{bg:"#5bb8f5",skin:"#d9a587",hair:"#2b1b14",hs:"short",shirt:"#13303a"}},
+     petit:{n:"Julien Petit",r:"Membre du jury, chargé de prévention (IREPS)",av:{bg:"#3ee6b0",skin:"#e8b896",hair:"#c26a2e",hs:"curly",shirt:"#ae8dff"}}}},
+ stages:[
+  {t:"1 · Diagnostic de situation",ok:"Problème, population, déterminants et données : votre diagnostic est solide.",mid:"Diagnostic correct, mais certains déterminants ou sources de données manquent.",ko:"Le diagnostic est le socle de la copie : reprenez problème, population, déterminants, données quanti et quali."},
+  {t:"2 · Objectifs",ok:"Objectif général et objectifs opérationnels SMART bien hiérarchisés.",mid:"Objectifs présents, mais pas toujours mesurables ou datés.",ko:"Revoyez la hiérarchie des objectifs et les 5 critères SMART."},
+  {t:"3 · Stratégies et actions",ok:"Niveaux de prévention et promotion de la santé bien distingués, actions adaptées.",mid:"Stratégies plausibles, mais la distinction prévention / promotion reste floue.",ko:"Ne confondez pas prévention (I, II, III) et promotion de la santé (agir sur les déterminants)."},
+  {t:"4 · Mise en œuvre",ok:"Partenaires, calendrier, cadre légal et communication : un projet réaliste.",mid:"Mise en œuvre esquissée : précisez partenaires, calendrier ou communication.",ko:"La logistique compte : ressources, partenaires, calendrier, autorisations, communication."},
+  {t:"5 · Évaluation",ok:"Indicateurs de processus et de résultat distingués, démarche rigoureuse.",mid:"Évaluation présente, mais processus et résultats sont parfois confondus.",ko:"Distinguez indicateurs de processus (fait comme prévu ?) et de résultat (impact réel ?)."}],
+ items:[
+  "1 · Diagnostic de situation",
+  CH("lambert","Vous avez le sujet sous les yeux. Par quoi commence votre copie ?",[
+    ["Par la liste des ateliers que vous allez proposer",0,[0,0,0],"Le jury attend d'abord le diagnostic : on ne choisit pas d'actions sans avoir posé le problème."],
+    ["Par le diagnostic : problème de santé publique, population concernée, déterminants, données disponibles",2,[0,0,0],"C'est l'étape 1 de la trame E5."],
+    ["Par les objectifs SMART",1,[0,0,0],"Bonne étape, mais elle vient après le diagnostic."]],
+   "Méthode E5, étape 1.",{t:"Surpoids des 6-11 ans (données du sujet)",rows:[["Quartier des Tilleuls",24],["Département",17],["France",16]]}),
+  BY("martin",A("Classez les déterminants du sujet dans le modèle de Dahlgren et Whitehead.",[["Antécédents familiaux de surpoids","Cercle 1 · facteurs individuels"],["Grignotage devant les écrans","Cercle 2 · modes de vie"],["Influence des copains à la sortie de l'école","Cercle 3 · réseaux sociaux"],["9 fast-foods, aucun primeur","Cercle 4 · conditions de vie"],["Hausse des prix alimentaires","Cercle 5 · conditions socio-économiques"]],"Cours 1, fiche 3.")),
+  CH("martin","Quelles données mobilisez-vous pour compléter le diagnostic ?",[
+    ["Uniquement les chiffres du sujet",1,[0,0,0],"C'est une base, mais il manque le vécu des habitants."],
+    ["Données quantitatives (ORS, INSEE, santé scolaire) et qualitatives (entretiens, focus groups avec les parents, observation du marché)",2,[0,0,0],"Croiser quanti et quali : diagnostic fiable."],
+    ["Votre expérience personnelle du quartier",0,[0,0,0],"Une impression n'est pas une donnée."]],
+   "Cours 5 (triangulation) et cours 10 (diagnostic territorial)."),
+  BY("lambert",W("Formulez en quelques phrases le problème de santé publique de ce sujet.","Le quartier des Tilleuls présente un surpoids infantile (24 %) nettement supérieur aux moyennes départementale et nationale. Il touche les 6-11 ans d'un quartier prioritaire où se cumulent déterminants sociaux (précarité, familles monoparentales) et environnementaux (offre alimentaire dominée par la restauration rapide, pas de primeur). Les ressources locales (centre social, écoles, PMI, marché) sont des points d'appui.",["Problème chiffré et comparé","Population concernée","Déterminants sociaux et environnementaux","Ressources du territoire"])),
+  "2 · Objectifs",
+  CH("petit","Lequel est un objectif opérationnel SMART ?",[
+    ["Améliorer l'alimentation des enfants du quartier",0,[0,0,0],"Ni mesurable, ni daté : c'est au mieux une intention."],
+    ["D'ici juin 2028, 60 % des familles d'élèves des 3 écoles auront participé à au moins 2 ateliers cuisine, mesuré par les feuilles d'émargement",2,[0,0,0],"Spécifique, mesurable, atteignable, réaliste, daté."],
+    ["Réduire de moitié le surpoids infantile en 6 mois",0,[0,0,0],"Irréaliste : échec annoncé."]],
+   "Cours 10, fiche 5."),
+  BY("petit",O("Remettez dans l'ordre la hiérarchie des objectifs de votre projet.",["Réduire le surpoids des enfants du quartier","Augmenter la consommation de fruits et légumes des 6-11 ans","Animer 24 ateliers cuisine parents-enfants d'ici 18 mois","Taux de participation et enquête alimentaire avant/après"],"Général → spécifique → opérationnel → indicateur.")),
+  BY("lambert",S("Que signifie le T de SMART ?",["temporellement defini","temporellement défini","temporel","date","daté","temporellement"],"Des échéances claires qui permettent l'évaluation.")),
+  "3 · Stratégies et actions",
+  BY("martin",T(B_PREV,"Ateliers goût et cuisine pour tous les élèves de CM1-CM2",0,"Population générale d'enfants : prévention primaire.")),
+  BY("martin",T(B_PREV,"Repérage du surpoids par la santé scolaire et orientation vers un suivi",1,"Dépister tôt : prévention secondaire.")),
+  CH("petit","Comment ciblez-vous les familles sans les stigmatiser ?",[
+    ["Des ateliers réservés aux familles d'enfants en surpoids",0,[0,0,0],"Stigmatisant : les familles risquent de ne pas venir."],
+    ["Une action ouverte à tous, renforcée pour les familles les plus vulnérables (universalisme proportionné)",2,[0,0,0],"Universel + intensité selon les besoins."],
+    ["Une campagne d'affichage pour tout le quartier",1,[0,0,0],"Personne n'est stigmatisé, mais les plus éloignés restent peu touchés."]],
+   "Cours 1, fiche 10 ; cours 11, fiche 2."),
+  CH("martin","Le jury vous demande une action de promotion de la santé, distincte de la prévention. Laquelle ?",[
+    ["Un dépistage du surpoids à l'école",0,[0,0,0],"C'est de la prévention secondaire."],
+    ["Avec la mairie et les habitants, faire venir un primeur au marché et créer un jardin partagé au centre social",2,[0,0,0],"On agit sur les déterminants (environnement) et le pouvoir d'agir des habitants."],
+    ["Une conférence sur l'équilibre alimentaire",1,[0,0,0],"De l'information : utile, mais elle n'agit ni sur l'environnement ni sur le pouvoir d'agir."]],
+   "Méthode E5, étape 3 ; Charte d'Ottawa."),
+  BY("petit",A("Choisissez le type d'action adapté à chaque besoin.",[["Parents à faible littératie","Atelier cuisine avec démonstration"],["Enfants de CM1","Jeu de cartes des groupes d'aliments"],["Tout le quartier","Campagne d'affichage, message unique"],["Familles à emporter chez elles","Fiche recettes illustrée à petit budget"]],"Cours 6, 7 et 9.")),
+  "4 · Mise en œuvre",
+  CH("lambert","Avec qui montez-vous le projet ?",[
+    ["Seule, pour aller plus vite",0,[0,0,0],"Le jury attend des partenaires mobilisés."],
+    ["Centre social, écoles et santé scolaire, PMI, mairie, marché, associations d'aide alimentaire, avec des conventions",2,[0,0,0],"Cartographie des acteurs et engagements formalisés."],
+    ["Avec une enseigne de supermarché qui finance tout",0,[0,0,0],"Conflit d'intérêts possible : la neutralité est menacée."]],
+   "Cours 8 et 10."),
+  BY("lambert",O("Remettez votre calendrier de lancement dans l'ordre.",["Diagnostic partagé et restitution aux partenaires","Conventions et autorisations (rectorat, au moins 2 mois avant)","Formation des animateurs relais","Lancement des ateliers à la rentrée","Bilan intermédiaire au comité de pilotage"],"Cours 2, 10 et 11.")),
+  CH("martin","Vous souhaitez peser les enfants au début et à la fin du projet. Que prévoyez-vous ?",[
+    ["On pèse tout le monde pendant les ateliers",0,[0,0,0],"Sans autorisation parentale : faute grave."],
+    ["Une autorisation parentale, un consentement par finalité, des données minimales et sécurisées, et une alternative pour ceux qui refusent",2,[0,0,0],"Cadre légal et RGPD respectés, sans exclure."]],
+   "Cours 2, fiches 5 et 9."),
+  CH("petit","Comment informez-vous les familles du quartier ?",[
+    ["Un courrier détaillé de 4 pages",0,[0,0,0],"Inadapté à une faible littératie."],
+    ["Plusieurs canaux : relais du centre social et des écoles, affiche simple et visuelle, message court sur les réseaux des parents, bouche-à-oreille des parents-relais",2,[0,0,0],"Bon canal, message clair, relais de confiance."],
+    ["Uniquement une page Facebook",1,[0,0,0],"Une partie des familles n'y est pas : fracture numérique."]],
+   "Cours 6 et 7."),
+  "5 · Évaluation",
+  BY("petit",T(B_PROC,"Nombre d'ateliers réalisés sur les 24 prévus",0,"A-t-on fait ce qui était prévu ?")),
+  BY("petit",T(B_PROC,"Évolution des portions de fruits et légumes des enfants à 6 mois",1,"Quel effet réel sur la population ?")),
+  CH("martin","Le surpoids baisse de 2 points. Comment montrez-vous que c'est grâce au projet ?",[
+    ["Le résultat parle de lui-même",0,[0,0,0],"Sans comparaison, impossible d'attribuer l'effet."],
+    ["Comparaison avec un quartier témoin et prise en compte des facteurs confondants",2,[0,0,0],"Groupe témoin et analyses multivariées."],
+    ["On interroge les parents pour savoir s'ils sont contents",1,[0,0,0],"La satisfaction est un indicateur de processus, pas une preuve d'impact."]],
+   "Cours 12, fiche 5."),
+  BY("lambert",W("Pour conclure votre oral, présentez au jury la synthèse de votre projet en suivant les 5 étapes.","Diagnostic : surpoids infantile élevé, déterminants sociaux et environnementaux, données quanti et quali. Objectifs : un objectif général et des objectifs opérationnels SMART hiérarchisés. Stratégies : prévention primaire (ateliers pour tous) et secondaire (repérage), promotion de la santé (primeur au marché, jardin partagé), universalisme proportionné. Mise en œuvre : partenaires et conventions, calendrier, autorisations et RGPD, communication adaptée. Évaluation : indicateurs de processus (ateliers réalisés, participation) et de résultat (consommation, surpoids avec quartier témoin), restitution et ajustements.",["Diagnostic","Objectifs SMART","Stratégies : prévention et promotion","Mise en œuvre","Évaluation processus et résultat"]))
+ ]};
+
 (function(){
 var TITLE="Santé & Cité",PLAYER="Rym";
 /* =============== ÉTAT =============== */
@@ -1442,6 +1865,54 @@ Object.keys(COURS).forEach(function(cid){var c=COURS[cid];c.notions=[];
       n.tiers=[1,2,3].filter(function(t){return n.f[t]&&n.f[t].length});
       n.label=labelOf(n.f[n.tiers[0]][0]);NOTIONS[n.id]=n;WORLD_NOTIONS.sp.push(n);c.notions.push(n);});
     l.notions=ns;l.seq=seq;});});
+/* =============== SALLE D'EXAMEN · ÉPREUVE BLANCHE E5 =============== */
+/* Extension du moteur : indexe le sujet (EXAM_E5) comme un niveau à part, ouvert quand les missions des cours 10 à 12 sont réussies.
+   Identifiants : niveau "e5blanc", notions "e5blanc#i" (ajout uniquement à la fin, comme pour les cours). */
+var EXL=null;
+(function(){
+ if(typeof EXAM_E5==="undefined")return;
+ var X=EXAM_E5,L={id:X.id,t:X.t,s:"Épreuve blanche",isMission:true,isExam:true,course:X.C,items:X.items};
+ var sec="",stage=-1,ns=[],seq=[],stg=[];
+ X.items.forEach(function(it){
+   if(typeof it==="string"){sec=it;stage=X.stages.map(function(s){return s.t}).indexOf(it);return;}
+   if(it.k==="choix"){seq.push({ch:it});stg.push(stage);return;}
+   var n=it;if(!it.nt){var tf=[null,null,null,null];tf[kindTier(it)]=[it];n={nt:true,f:tf};}
+   n.sec=sec;ns.push(n);seq.push(n);stg.push(stage);});
+ ns.forEach(function(n,i){n.id=L.id+"#"+i;n.level=L;n.world="sp";n.course=X.C;n.ref="Épreuve blanche E5 · "+n.sec;
+   n.tiers=[1,2,3].filter(function(t){return n.f[t]&&n.f[t].length});n.label=labelOf(n.f[n.tiers[0]][0]);NOTIONS[n.id]=n;WORLD_NOTIONS.sp.push(n);});
+ L.notions=ns;L.seq=seq;L.stg=stg;LEVELS[L.id]=L;EXL=L;
+})();
+function examDone(){return EXL?EXAM_E5.unlock.filter(function(id){return (S.stars[id]||0)>0}).length:0}
+function examOpen(){return EXL&&examDone()===EXAM_E5.unlock.length}
+function startExam(){
+  if(!EXL)return;
+  if(!examOpen()){toast("La salle d'examen ouvre quand les missions des cours 10, 11 et 12 sont réussies ("+examDone()+"/3).");return;}
+  backTo="quartier";begin("Épreuve blanche E5",EXL);G.course=EXAM_E5.C;G.gauges=null;G.onEnd=examEnd;
+  $("#gStage").innerHTML='<div class="qcard pop"><div class="eyebrow">Salle d\'examen · sujet</div><h3>'+esc(EXAM_E5.t)+'</h3><div class="ctx">'+esc(EXAM_E5.sujet)+'</div>'+
+    '<div class="cast" style="padding:0">'+Object.keys(EXAM_E5.C.P).map(function(k){var p=EXAM_E5.C.P[k];return '<div class="p">'+avatar(p.av,52)+'<span>'+esc(p.n)+'</span><span class="mut" style="font-weight:600">'+esc(p.r)+'</span></div>'}).join("")+'</div>'+
+    '<p class="small mut" style="margin:0">Le jury suit la trame E5 : diagnostic → objectifs → stratégies → mise en œuvre → évaluation. Chaque étape est notée sur 4 points.</p>'+
+    '<div class="row"><button class="btn teal" type="button" id="exGo">Commencer l\'épreuve</button></div></div>';
+  $("#exGo").onclick=function(){Session(EXL.seq,false)};}
+function examEnd(res){
+  var X=EXAM_E5,pts=X.stages.map(function(){return [0,0]});
+  EXL.stg.forEach(function(s,i){if(s<0)return;pts[s][1]++;if(res[i])pts[s][0]++;});
+  var notes=pts.map(function(p){return p[1]?Math.round(4*p[0]/p[1]*2)/2:0}),note=notes.reduce(function(a,b){return a+b},0);
+  var st=note>=16?3:note>=12?2:note>=10?1:0,was=S.stars[EXL.id]||0;S.stars[EXL.id]=Math.max(was,st);qd().lv++;
+  var b=S.best[EXL.id],first=!b;if(!b||note>b[0])S.best[EXL.id]=[note];
+  if(first&&note>=10){S.xp+=150;G.score+=150;}save();
+  var mention=note>=16?"Très bien":note>=14?"Bien":note>=12?"Assez bien":note>=10?"Passable":"Insuffisant";
+  var rows=X.stages.map(function(s,k){var r=notes[k]/4;return '<div class="secrow" style="flex-direction:column;align-items:stretch;gap:2px"><span style="display:flex;justify-content:space-between"><b>'+esc(s.t)+'</b><b class="'+(r>=0.75?"g":"r")+'">'+fr(notes[k])+' / 4</b></span><span class="small mut">'+esc(r>=0.75?s.ok:r>=0.5?s.mid:s.ko)+'</span></div>'}).join("");
+  var pres=X.C.P.lambert;
+  $("#gStage").innerHTML='<div class="qcard end pop"><div class="stars-big">'+stars(st,3)+'</div><div class="eyebrow">Délibération du jury</div><h3 style="font-size:30px">'+fr(note)+' / 20</h3><span class="pill'+(note>=10?"":" coral")+'" style="font-size:13px">'+mention+'</span>'+
+    '<div class="spk" style="text-align:left;width:100%">'+avatar(pres.av,44)+'<div class="bub"><small>'+esc(pres.n)+'</small>'+(note>=14?"Une démarche claire et complète : vous êtes prête pour l'E5.":note>=10?"La trame est là ; retravaillez les étapes en rouge dans vos cours.":"Reprenez la trame en 5 étapes : chaque étape rapporte des points.")+'</div></div>'+
+    '<div class="sectab" style="width:100%">'+rows+'</div>'+(first&&note>=10?'<div class="pill" style="font-size:13px">Première réussite · +150 XP</div>':'')+
+    '<div class="row" style="justify-content:center"><button class="btn ghost" type="button" id="again">Repasser l\'épreuve</button><button class="btn" type="button" data-go="quartier">Retour au quartier</button></div></div>';
+  $("#again").onclick=startExam;}
+var _renderQuartier=renderQuartier;
+renderQuartier=function(){_renderQuartier();var b=$("[data-exam]");if(!b||!EXL)return;var d=examDone(),best=S.best[EXL.id];
+  b.innerHTML='<small style="color:#ffc94a">Salle d\'examen</small><b>Épreuve blanche E5</b><small>'+(examOpen()?"Ouverte · un sujet complet devant le jury"+(best?" · meilleure note "+fr(best[0])+"/20":""):"Diagnostic → objectifs → stratégies → mise en œuvre → évaluation · ouvre après les missions des cours 10 à 12 ("+d+"/3)")+'</small>';
+  b.onclick=startExam;};
+
 S.carnet=(S.carnet||[]).filter(function(c){return c&&c.key&&NOTIONS[c.key]});
 
 /* =============== MÉMOIRE (FSRS-4.5) =============== */
