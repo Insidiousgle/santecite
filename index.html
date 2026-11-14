@@ -1736,6 +1736,330 @@ COURS.sp12={id:"sp12",n:12,t:"Évaluation des projets",lieu:"Programme « Cantin
  ]}
 };
 
+/* ---------- COURS 13 · INITIATION À LA RECHERCHE EN NUTRITION HUMAINE ---------- */
+var B_RECH=[["Fondamentale","mécanismes"],["Appliquée / clinique","efficacité en pratique"]];
+var B_ETU=[["Descriptive","combien ? qui ?"],["Analytique","pourquoi ? quels liens ?"],["Interventionnelle","est-ce efficace ?"]];
+var B_JARDE=[["Catégorie 1","interventionnelle"],["Catégorie 2","risques minimes"],["Catégorie 3","non interventionnelle"],["Hors loi Jardé","données existantes"]];
+var B_FAIS=[["Temporelle",""],["Financière",""],["Matérielle",""],["Éthique",""]];
+COURS.sp13={id:"sp13",n:13,t:"Initiation à la recherche",lieu:"Unité de recherche clinique · CHU de Bordeaux",
+ pitch:"Sur le terrain, tu rencontres des questions sans réponse : patients qui n'adhèrent pas, outils inadaptés, nouvelles pratiques. Romain, diététicien en EHPAD, veut en faire une vraie étude avec l'équipe du CHU.",
+ P:{girard:{n:"Pr Nathalie Girard",r:"Chercheuse, investigatrice principale",av:{bg:"#5bb8f5",skin:"#f0c8a8",hair:"#5a4a3a",hs:"bun",shirt:"#13303a",glasses:1}},
+    romain:{n:"Romain Lefort",r:"Diététicien en EHPAD, diététicien-chercheur",av:{bg:"#3ee6b0",skin:"#e8b896",hair:"#2b1b14",hs:"short",shirt:"#ff7a59"}},
+    arnaud:{n:"Sophie Arnaud",r:"Juriste, membre du CPP",av:{bg:"#ae8dff",skin:"#c99067",hair:"#1f1410",hs:"long",shirt:"#ffc94a"}}},
+ conseil:{who:"girard",t:"Toujours : question claire, bon design, éthique validée, données protégées. De l'observation à la question (qui, quoi, où, quand) ; le type d'étude selon la question ; classer l'étude dans la loi Jardé et anticiper les mois de délai du CPP ; pseudonymiser, chiffrer, accès par rôle ; tout déclarer et communiquer avec ses limites."},
+ levels:[
+ {id:"sp13a",t:"Comprendre",s:"Fiches 1 et 2 · types de recherche, enjeux",items:[
+  "Fiche 0 · Le fil rouge",
+  N(Q("Quel rôle le diététicien peut-il jouer dans la recherche ?",["Identifier des besoins de recherche, participer à des protocoles, développer ses propres questions","Aucun, c'est réservé aux médecins","Seulement recruter des patients"],"Thèmes : EHPAD, téléconsultation, acceptabilité des régimes chez l'adolescent…")),
+  "Fiche 1 · Les types de recherche et d'études",
+  N([T(B_RECH,"Étudier le métabolisme d'un nutriment dans la cellule",0,""),T(B_RECH,"Tester l'acceptabilité d'un régime chez des adolescents",1,""),T(B_RECH,"Comparer deux façons d'enrichir les repas en EHPAD",1,""),T(B_RECH,"Explorer des interactions moléculaires",0,"")],
+    F("La recherche {clinique} en nutrition humaine étudie l'{efficacité|efficacite} d'interventions nutritionnelles chez l'humain.","")),
+  N([T(B_ETU,"Quelle est la prévalence de la dénutrition en EHPAD ?",0,""),T(B_ETU,"Quels facteurs sont associés à une bonne observance chez les diabétiques ?",1,""),T(B_ETU,"Un enrichissement des repas réduit-il la perte de poids ?",2,"")],
+    S("Quel type d'étude teste directement l'efficacité d'une intervention ?",["interventionnelle","etude interventionnelle","étude interventionnelle"],""),
+    E(["Une étude analytique observationnelle"," montre que les mangeurs de fibres ont moins de maladies cardiovasculaires :"," cela prouve que les fibres protègent."],2,"Elle montre une association ; seule une étude interventionnelle bien conduite teste directement l'efficacité.","Piège d'examen.")),
+  N(Q("Qu'apporte le diététicien de terrain à une équipe de recherche ?",["Il repère les vraies questions (observance, contraintes) et propose des protocoles réalisables","Il réalise les analyses statistiques","Il rédige seul les publications"],"La recherche gagne en pertinence quand elle part de la pratique.")),
+  "Fiche 2 · Enjeux contemporains",
+  N(Q("Quelles recommandations reposent sur les preuves de la recherche ?",["PNNS, critères du Nutri-Score, règles de la restauration collective","Les publicités alimentaires","Les régimes des influenceurs"],"D'où une grande responsabilité éthique."),
+    A("Relie chaque innovation à son apport.",[["Applications de suivi alimentaire","Données comportementales à grande échelle"],["Intelligence artificielle","Analyse de grands volumes de données"],["Nutrigénomique","Recommandations selon le profil génétique (perspective)"],["Téléconsultation","Comparer présentiel et distanciel"]],""),
+    E(["La nutrigénomique"," sert déjà de base"," aux recommandations nutritionnelles courantes."],1,"C'est une perspective de recherche, pas encore une base de recommandations courantes.","Piège d'examen.")),
+  N(Q("Pourquoi l'interdisciplinarité en recherche nutritionnelle ?",["Les déterminants alimentaires sont multifactoriels : médecins, psychologues, sociologues, économistes","Pour avoir plus de signatures","Parce que la loi l'impose"],""),
+    S("Cite une discipline avec laquelle collaborer.",["medecins","médecine","psychologues","psychologie","sociologues","sociologie","economistes","économie"],""))
+ ]},
+ {id:"sp13b",t:"Construire",s:"Fiches 3 et 4 · question, hypothèse, faisabilité",items:[
+  "Fiche 3 · De l'observation à la question",
+  N(A("Sources de questionnement : relie.",[["Résistance de patients","Pourquoi certains adhèrent mieux que d'autres ?"],["Échec d'interventions bien conçues","Quels facteurs méconnus ?"],["Manque d'outils","Grands prématurés, personnes très âgées, cultures minoritaires"]],""),
+    null,
+    W("Pourquoi partir du terrain pour construire une question de recherche ?","Les bonnes questions naissent des difficultés réelles : résistances des patients, échecs d'interventions, manque d'outils pour certains publics. Partir du terrain garantit la pertinence pratique des résultats.",["Difficultés réelles","Pertinence pratique"])),
+  N(O("Remets dans l'ordre la démarche de recherche.",["Observation de terrain","Question de recherche","Hypothèse","Délimitation","Faisabilité"],""),
+    S("Que faut-il identifier pour formaliser une question ? (un élément)",["concepts","variables mesurables","variables","champ d'etude","champ d'étude"],"Concepts définis, variables mesurables, champ délimité."),
+    E(["« Les résidents d'EHPAD mangent peu »"," est une bonne question de recherche"," car elle part du terrain."],1,"C'est une observation : il faut une population, des variables et un cadre précis (« Quels facteurs influencent l'observance nutritionnelle des plus de 75 ans en institution ? »).","Piège d'examen.")),
+  "Fiche 4 · Hypothèses, délimitation, faisabilité",
+  N(Q("Une bonne hypothèse…",["Précise la relation et sa direction, les conditions de vérification, et est réfutable","Est vraie à coup sûr","Décrit simplement la population"],""),
+    F("Une hypothèse non {réfutable|refutable} n'est pas scientifique.",""),
+    CAS("Romain propose : « L'alimentation influence peut-être un peu l'humeur des résidents. »",W("Améliore cette hypothèse.","Préciser la relation, sa direction et les conditions : « Chez les résidents autonomes de l'EHPAD, un enrichissement protéique de 3 mois augmente le score de qualité de vie mesuré par une échelle validée, par rapport aux résidents sans enrichissement. » Elle devient testable et réfutable.",["Variables précises","Direction de la relation","Conditions, durée","Réfutable"]))),
+  N(A("Délimiter le champ d'étude : relie.",[["Population cible","Critères d'inclusion et d'exclusion"],["Durée de suivi","Suffisante pour mesurer un changement"],["Zone géographique","Conditionne la généralisation"]],"Une délimitation précise améliore la validité interne."),
+    S("Comment appelle-t-on les critères qui définissent qui peut participer ?",["criteres d'inclusion","critères d'inclusion","inclusion","criteres d inclusion"],"")),
+  N([T(B_FAIS,"Le stage dure 10 semaines",0,""),T(B_FAIS,"Pas de budget pour des analyses de sang",1,""),T(B_FAIS,"Pas de balance-chaise disponible",2,""),T(B_FAIS,"L'avis du CPP est nécessaire",3,"")],
+    null,
+    CAS("Mémoire de BTS sur l'acceptabilité des textures modifiées en EHPAD.",Q("Quelle délimitation réaliste ?",["EHPAD de plus de 80 lits, résidents autonomes pour s'alimenter, 3 mois","Tous les EHPAD de France pendant 5 ans","Un seul résident pendant une semaine"],"Exemple de ta fiche : exploitable avec des moyens d'étudiant.")))
+ ]},
+ {id:"sp13c",t:"Protéger",s:"Fiches 5 à 8 · loi Jardé, CPP, consentement, intégrité",items:[
+  "Fiche 5 · Loi Jardé et CPP",
+  N([T(B_JARDE,"Tester un nouveau régime non utilisé en pratique courante",0,""),T(B_JARDE,"Un questionnaire alimentaire et une pesée (liste fixée par arrêté)",1,""),T(B_JARDE,"Observer la prise en charge habituelle",2,""),T(B_JARDE,"Analyser des dossiers déjà existants",3,"")],
+    A("Relie chaque catégorie à l'accord requis.",[["Catégorie 1","Consentement écrit"],["Catégorie 2","Consentement exprès (écrit ou oral)"],["Catégorie 3","Non-opposition après information"]],""),
+    E(["Une étude sur des dossiers patients déjà existants"," est une recherche de catégorie 3"," de la loi Jardé."],1,"Elle n'implique pas la personne humaine : elle relève de la protection des données (CNIL), pas de la loi Jardé.","Piège d'examen.")),
+  N(Q("Quelle autorisation en plus du CPP pour la catégorie 1 ?",["L'ANSM","La CNIL seulement","Aucune"],""),
+    S("Que signifie CPP ?",["comite de protection des personnes","comité de protection des personnes"],"Avis obligatoire pour les 3 catégories.")),
+  N(Q("Le rôle du CPP ?",["Évaluer la pertinence scientifique et l'éthique du protocole, avant de commencer","Financer la recherche","Publier les résultats"],"Composition pluridisciplinaire : médecins, juristes, représentants d'usagers…"),
+    null,
+    W("Pourquoi intégrer les démarches CPP dès la conception du projet ?","Les autorisations prennent plusieurs mois et la catégorie Jardé détermine les accords et le niveau de protection. Les anticiper évite de bloquer le calendrier (stage, financement) et protège participants et chercheurs.",["Plusieurs mois de délai","Catégorie → autorisations","Protéger participants et chercheurs"])),
+  "Fiche 6 · Consentement, données, vulnérables",
+  N(Q("Comment informer un participant ?",["Oralement ET par écrit : lettre d'information + formulaire de consentement séparé, adaptés à sa compréhension","Par un SMS","Oralement seulement"],"Contraintes, prélèvements éventuels, risques."),
+    S("Qui donne l'information au participant ?",["investigateur","l'investigateur","membre qualifie de l'equipe","medecin"],"Médecin obligatoire pour certaines recherches, notamment en catégorie 1.")),
+  N(A("Protéger les données : relie.",[["Pseudonymisation","Remplacer l'identité par un code, suivi possible"],["Chiffrement","Stockages et transmissions"],["Accès limités","Selon les rôles"],["Mesures organisationnelles","Formation, contrôles, audits"]],""),
+    E(["Les données sont pseudonymisées :"," le RGPD"," ne s'applique plus."],2,"Des données pseudonymisées restent personnelles : le RGPD s'applique toujours.","Piège d'examen.")),
+  N(A("Participants vulnérables : relie à la précaution.",[["Mineurs","Autorisation des parents ET assentiment du mineur"],["Personnes âgées dépendantes","Capacité de consentement parfois altérée"],["Précarité, psychiatrie","Risque de pressions indirectes"],["Adolescents avec TCA","Procédures adaptées, expertise spécialisée"]],""),
+    CAS("Une étude auprès de collégiens de 13 ans.",Q("Quel accord faut-il ?",["Autorisation des parents et assentiment de l'adolescent","Autorisation des parents seulement","L'accord du principal du collège"],""))),
+  "Fiche 7 · Intégrité et diffusion",
+  N(Q("Que faut-il déclarer pour prévenir les conflits d'intérêts ?",["Tous les financements et les liens personnels (entreprises, interventions rémunérées)","Seulement les gros financements","Rien si l'étude est rigoureuse"],"Industrie agroalimentaire, compléments, producteurs agricoles."),
+    S("Comment appelle-t-on la possibilité pour une autre équipe de refaire l'étude ?",["reproductibilite","reproductibilité"],"Un résultat non reproduit reste fragile.")),
+  N(Q("Face aux médias, le chercheur doit…",["Éviter interprétations hâtives et recommandations prématurées, garder nuances et limites","Simplifier au maximum pour être repris","Refuser toute interview"],""),
+    null,
+    W("À quoi sert une charte déontologique d'équipe ?","Elle formalise les engagements de l'équipe envers les participants, les financeurs et la société, au-delà des obligations légales : elle guide les décisions et renforce la confiance.",["Engagements au-delà de la loi","Participants, financeurs, société","Confiance"])),
+  "Fiche 8 · Méthodes",
+  N(Q("Le fil commun des conseils pro ?",["Question claire, bon design, éthique validée, données protégées","Publier vite","Recruter le plus possible"],""),
+    A("Relie chaque situation au réflexe.",[["Formuler une problématique","Qui, quoi, où, quand + faisabilité"],["Choisir le type d'étude","Combien → descriptive, pourquoi → analytique"],["Dossier CPP","Classer l'étude et anticiper les délais"],["Confidentialité","Pseudonymiser, chiffrer, registre"],["Technologie (IA, téléconsultation)","Valider l'outil, plan B, accessibilité"]],""))
+ ]}
+ ],
+ mission:{id:"sp13m",t:"L'étude de Romain",items:[
+  CH("romain","Dans mon EHPAD, les résidents laissent la moitié de leur plat mixé. Je voudrais en faire une étude. Par quoi commencer ?",[
+    ["Publier un article sur le sujet",0,[0,-4,0],"Il n'y a encore ni question, ni méthode, ni données."],
+    ["Transformer l'observation en question précise : population, variables, lieu, durée",2,[6,8,0],"Observation → question de recherche."],
+    ["Changer tout de suite les recettes",1,[2,2,-2],"Utile pour les résidents, mais ce n'est pas une démarche de recherche."]],
+   "Fiche 3."),
+  BY("girard",T(B_ETU,"Un enrichissement des purées en protéines améliore-t-il les apports des résidents ?",2,"On teste une intervention : étude interventionnelle.")),
+  CH("girard","Quelle hypothèse retiens-tu pour le protocole ?",[
+    ["« Les résidents aimeront peut-être mieux de bons plats. »",0,[0,-3,0],"Ni précise, ni orientée, ni réfutable."],
+    ["« Chez les résidents autonomes, des purées enrichies et colorées augmentent la part consommée d'au moins 20 % en 3 mois. »",2,[6,6,0],"Relation, direction, conditions, réfutable."]],
+   "Fiche 4."),
+  BY("arnaud",T(B_JARDE,"Phase préalable : on observe les quantités consommées des plats habituels, sans rien changer à la prise en charge",2,"Actes habituels et observation : catégorie 3, avis du CPP et non-opposition. La phase avec enrichissement, elle, sera classée en catégorie 1 ou 2.")),
+  CH("arnaud","Plusieurs résidents ont des troubles cognitifs. Comment recueillir leur accord ?",[
+    ["On ne leur demande rien, c'est pour leur bien",0,[0,-14,0],"Inacceptable : le consentement doit rester libre et éclairé."],
+    ["Information adaptée, orale et écrite, avec l'appui de l'entourage ou du représentant légal, et vérification de la capacité de consentement",2,[4,10,0],"Personnes vulnérables : précautions renforcées."],
+    ["On les exclut tous de l'étude",1,[-2,0,0],"Prudent, mais l'étude ne représenterait plus les résidents réels."]],
+   "Fiche 6."),
+  CH("girard","Un fabricant de compléments propose de fournir gratuitement la poudre de protéines.",[
+    ["On accepte sans le mentionner",0,[0,-12,3],"Conflit d'intérêts non déclaré : la crédibilité de l'étude est perdue."],
+    ["On peut accepter si c'est déclaré, que le fabricant n'intervient ni sur le protocole ni sur la publication",2,[2,6,3],"Transparence totale et indépendance."],
+    ["On refuse et on renonce à l'étude",1,[-2,0,0],"Excès de prudence : un financement déclaré et encadré reste possible."]],
+   "Fiche 7."),
+  BY("romain",O("Remets dans l'ordre la protection des données de mon étude.",["Pseudonymiser les résidents (code)","Chiffrer le fichier","Limiter les accès selon les rôles","Tenir le registre et former l'équipe"],"Fiches 6 et 8.")),
+  BY("girard",W("Résume le protocole de Romain en quelques lignes pour le dossier du CPP.","Observation de terrain : faible consommation des plats mixés. Question : un enrichissement des purées augmente-t-il la part consommée chez les résidents autonomes ? Étude interventionnelle sur 3 mois, critères d'inclusion et d'exclusion explicites, faisabilité vérifiée. Classement dans la loi Jardé justifié, avis du CPP, information orale et écrite, précautions pour les personnes vulnérables. Données pseudonymisées et chiffrées, liens d'intérêts déclarés, résultats communiqués avec leurs limites.",["Question et hypothèse","Type d'étude, délimitation","Loi Jardé, CPP, consentement","Données, intégrité"]))
+ ]}
+};
+
+/* ---------- COURS 14 · MÉTHODES ET OUTILS DE RECUEIL DE DONNÉES ---------- */
+var B_QQ=[["Quantitative","mesurer, généraliser"],["Qualitative","comprendre pourquoi"]];
+var B_BIA=[["Désirabilité sociale",""],["Mémoire",""],["Sélection",""],["Confirmation",""],["Effet Hawthorne",""]];
+var B_ECH=[["Probabiliste","tirage au sort"],["Non probabiliste","sans tirage"]];
+var B_FIAB=[["Test-retest","stabilité dans le temps"],["Inter-évaluateurs","accord entre observateurs"],["Cohérence interne","items d'une échelle"]];
+var B_VAL=[["Validité de contenu",""],["Validité de critère",""],["Validité interne",""],["Validité externe",""]];
+COURS.sp14={id:"sp14",n:14,t:"Recueil de données",lieu:"Étude « Assiettes réelles » · Lille",
+ pitch:"Entre ce que les patients déclarent et ce qu'ils mangent vraiment, l'écart peut être considérable. L'étude « Assiettes réelles » doit recueillir des données valides, fiables et représentatives auprès de familles lilloises.",
+ P:{rousset:{n:"Dr Amélie Rousset",r:"Épidémiologiste, méthodologiste",av:{bg:"#5bb8f5",skin:"#f0c8a8",hair:"#c26a2e",hs:"long",shirt:"#13303a",glasses:1}},
+    yacine:{n:"Yacine Amrani",r:"Diététicien enquêteur",av:{bg:"#ffc94a",skin:"#b07a55",hair:"#1f1410",hs:"short",shirt:"#0e9f8e"}},
+    lebrun:{n:"Pauline Lebrun",r:"Déléguée à la protection des données",av:{bg:"#ae8dff",skin:"#e8b896",hair:"#6b3f24",hs:"bun",shirt:"#ff7a59"}}},
+ conseil:{who:"rousset",t:"Toujours : neutralité, validation, triangulation, transparence. Questionnaire : objectifs et dimensions d'abord, formulation neutre, pré-test « penser à voix haute », questions de contrôle. Outil numérique : validité, alternative papier. RGPD : consentement éclairé, minimisation, pseudonymisation. Échantillon : hypothèse, taille d'effet, α, puissance, majoration pour les pertes."},
+ levels:[
+ {id:"sp14a",t:"Choisir l'approche",s:"Fiches 1 et 2 · quantitatif, qualitatif, mixte",items:[
+  "Fiche 0 · Le constat",
+  N(Q("Pourquoi le choix des outils de recueil est-il crucial ?",["Les déclarations peuvent s'écarter fortement de la réalité de l'assiette","Parce que les outils coûtent cher","Pour respecter la loi Jardé"],"Questionnaire, entretien, observation, journal, données de caisse : chacun éclaire une facette.")),
+  "Fiche 1 · Quantitatif et qualitatif",
+  N([T(B_QQ,"Lien entre fibres et risque cardiovasculaire sur une grande cohorte",0,""),T(B_QQ,"Comment une famille négocie ses repas",1,""),T(B_QQ,"Combien de portions de légumes par jour ?",0,""),T(B_QQ,"Pourquoi garder des habitudes traditionnelles ?",1,"")],
+    S("Cite un des 3 piliers du quantitatif.",["mesurabilite","mesurabilité","reproductibilite","reproductibilité","generalisabilite","généralisabilité"],""),
+    W("Quelles sont les limites du quantitatif ?","Il saisit mal la complexité individuelle (émotions, traditions familiales), et un résultat significatif en population peut ne pas s'appliquer à certains individus ou sous-groupes. Il identifie des tendances ; le qualitatif est souvent nécessaire pour comprendre les mécanismes.",["Complexité individuelle mal saisie","Population ≠ individu","Qualitatif pour les mécanismes"])),
+  N(E(["Une grande étude quantitative observationnelle"," montre une association entre sodas et surpoids :"," la causalité est donc établie."],2,"Une étude observationnelle montre une association ; la causalité demande un protocole adapté (essai, contrôle des facteurs de confusion).","Piège d'examen.")),
+  "Fiche 2 · Méthodes mixtes et enjeux du qualitatif",
+  N(O("Familles monoparentales : remets l'étude mixte séquentielle dans l'ordre.",["Questionnaire (n = 400)","3 profils de consommation","30 entretiens approfondis","Recommandations nuancées par profil"],""),
+    S("Comment appelle-t-on le croisement des approches qui renforce la validité ?",["triangulation"],"")),
+  N(A("Enjeux du qualitatif en nutrition : relie.",[["Intimité des pratiques","Gêne à révéler des comportements jugés non conformes"],["Regard extérieur","Les comportements changent quand on est observé"],["Variabilité culturelle","« Repas équilibré » varie selon culture et milieu"]],""),
+    null,
+    CAS("En entretien, une mère avoue que ses enfants mangent souvent devant la télé.",Q("Quelle posture ?",["Neutralité bienveillante : aucun jugement, reformuler, la laisser nuancer","Lui expliquer que ce n'est pas recommandé","Noter discrètement « mauvaise pratique »"],"Le jugement, même implicite, déforme ce que le participant ose dire.")))
+ ]},
+ {id:"sp14b",t:"Choisir l'outil",s:"Fiches 3 à 5 · questionnaires, journaux, observation, numérique",items:[
+  "Fiche 3 · Construire un questionnaire",
+  N(O("Remets dans l'ordre les 8 étapes de conception d'un questionnaire.",["Objectifs et hypothèses","Dimensions à mesurer","Type de question par dimension","Organisation progressive","Formulation accessible","Questions de contrôle","Pré-test","Ajustement"],""),
+    E(["Le questionnaire commence par l'âge, les revenus et la profession,"," puis enchaîne sur les questions générales,"," et finit par les questions spécifiques."],0,"Les données socio-démographiques se placent à la fin ; on commence par des questions générales pour mettre en confiance.","Piège d'examen.")),
+  N(Q("Quelle formulation est neutre ?",["« Quelle est votre consommation habituelle de produits sucrés ? »","« Consommez-vous trop de sucre ? »","« Savez-vous que le sucre est dangereux ? »"],"Les questions moralisatrices renforcent la désirabilité sociale."),
+    S("Comment s'appelle la technique de pré-test où le participant verbalise ses hésitations ?",["penser a voix haute","penser à voix haute","pensee a voix haute"],"")),
+  N(A("Relie chaque type de question à son exemple.",[["Question numérique","Combien de portions par jour ?"],["Échelle de fréquence","Jamais → plusieurs fois par jour"],["Question semi-ouverte","Liste + zone libre"],["Échelle de Likert","Tout à fait d'accord → pas du tout d'accord"],["Échelle visuelle analogique","Position sur une ligne continue"]],"")),
+  "Fiche 4 · Journaux, observation, entretiens",
+  N(Q("Quel est l'atout principal du journal alimentaire ?",["L'enregistrement en temps réel limite les biais de mémoire","Il ne demande aucun effort","Il ne modifie jamais les comportements"],"Mais il demande un fort engagement."),
+    F("Un journal alimentaire dure généralement {3} à {7} jours.",""),
+    CAS("Des adolescents remplissent mal leur journal papier.",Q("Quelle adaptation ?",["Un journal sous forme d'application où ils photographient leurs repas","Un journal plus long","Supprimer le journal"],"Meilleure adhésion, plus de précision."))),
+  N(Q("L'effet Hawthorne, c'est…",["Changer de comportement parce qu'on se sait observé","Oublier ce qu'on a mangé","Répondre ce qui est bien vu"],"Limite : observation prolongée ou discrète si l'éthique le permet."),
+    S("Comment s'appelle le fait de changer de comportement parce qu'on est observé ?",["effet hawthorne","hawthorne"],"")),
+  N(Q("La grille d'un entretien semi-directif est…",["Un canevas souple en entonnoir, du général au spécifique","Une liste de questions fermées","Un questionnaire chronométré"],"« Parlez-moi de vos habitudes alimentaires »…")),
+  "Fiche 5 · Numérique, big data, RGPD",
+  N(A("Applis et objets connectés : atout ou limite ?",[["Collecte en temps réel, scan des codes-barres","Atout"],["Fracture numérique, bases de qualité variable","Limite"]],""),
+    E(["Les données des cartes de fidélité"," montrent exactement"," ce que les familles mangent."],2,"Achat ≠ consommation : gaspillage, partage familial, stockage.","Piège d'examen.")),
+  N(Q("Les données nutritionnelles liées à la santé sont…",["Des données de santé (catégorie particulière, art. 9 du RGPD)","Des données ordinaires","Des données publiques"],"Base légale : souvent intérêt public ou consentement explicite."),
+    S("Cite un principe du RGPD pour la recherche.",["minimisation","limitation des finalites","limitation des finalités","consentement eclaire","pseudonymisation","anonymisation","droit a l'effacement"],""),
+    W("Avant d'adopter une application pour recueillir les apports, que vérifies-tu ?","Sa validité face aux méthodes de référence : qualité de la base de données, algorithmes, saisie. Son ergonomie et sa robustesse sur le terrain, l'accessibilité (alternative papier pour la fracture numérique), et la conformité RGPD.",["Validité vs référence","Base de données","Fracture numérique","RGPD"]))
+ ]},
+ {id:"sp14c",t:"Garantir la qualité",s:"Fiches 6 à 11 · validité, biais, manquants, échantillon",items:[
+  "Fiche 6 · Validité et fiabilité",
+  N(Q("La validité, c'est…",["L'outil mesure bien ce qu'il doit mesurer","L'outil donne toujours le même résultat","L'outil est facile à utiliser"],"La fiabilité = mesurer de façon constante."),
+    [T(B_VAL,"Le questionnaire couvre-t-il tous les aspects du phénomène ?",0,""),T(B_VAL,"Concorde-t-il avec un outil de référence ?",1,""),T(B_VAL,"Les résultats sont-ils exempts de biais dans l'échantillon ?",2,""),T(B_VAL,"Peut-on généraliser d'un public urbain à un public rural ?",3,"")],
+    E(["Un outil valide"," peut ne pas être fiable,"," l'inverse est impossible."],1,"C'est l'inverse : fiable sans être valide est possible ; valide sans être fiable, non.","Piège d'examen.")),
+  N([T(B_FIAB,"Le même questionnaire passé à 15 jours d'intervalle",0,""),T(B_FIAB,"Deux enquêteurs observent le même repas",1,""),T(B_FIAB,"Les items d'une échelle de motivation mesurent-ils le même concept ?",2,"")],
+    F("Repères : CCI > {0,75|0.75} = bonne fiabilité ; alpha de {Cronbach} entre 0,70 et 0,95.","")),
+  "Fiche 7 · Les biais",
+  N([T(B_BIA,"Déclarer plus de fruits qu'en réalité",0,""),T(B_BIA,"Oublier le grignotage d'avant-hier",1,""),T(B_BIA,"Les volontaires sont déjà sensibilisés",2,""),T(B_BIA,"Le chercheur retient les données qui confirment son idée",3,""),T(B_BIA,"La famille cuisine mieux le jour de l'observation",4,"")],
+    S("Quel biais touche le journal alimentaire avec le temps ?",["fatigue d'enregistrement","fatigue","sous-declaration progressive"],"")),
+  N(A("Relie chaque stratégie à son principe.",[["Randomisation","Répartir au hasard les facteurs de confusion"],["Aveugle des enquêteurs","Éviter d'influencer les mesures"],["Triangulation","Questionnaire + journal + observation"],["Questions de contrôle","Aliment inexistant, question reformulée"]],""),
+    null,
+    CAS("Yacine ajoute « le vrombier » à la liste des légumes du questionnaire.",Q("Pourquoi ?",["C'est un aliment inexistant : il repère les réponses données au hasard","C'est une erreur à corriger","Pour tester la culture générale"],"Question de contrôle."))),
+  "Fiche 8 · Données manquantes",
+  N(Q("Pourquoi les données manquantes posent-elles problème ?",["Elles sont souvent non aléatoires et les abandons peuvent être informatifs : biais de sélection progressif","Elles réduisent seulement l'effectif","Elles n'ont aucun effet"],"Ceux dont l'alimentation pose le plus problème partent plus souvent."),
+    C("De combien de pourcentage maximum le cours propose-t-il de majorer l'échantillon pour compenser les pertes ?",30,"Entre 10 et 30 %, davantage pour les études longitudinales.","%"),
+    E(["Pour traiter les données manquantes,"," l'imputation par la moyenne est toujours la plus robuste,"," car elle est simple."],1,"Simple mais elle masque la variabilité : l'imputation multiple est plus robuste.","Piège d'examen.")),
+  "Fiche 9 · Échantillonnage",
+  N([T(B_ECH,"Aléatoire simple",0,""),T(B_ECH,"Stratifié",0,""),T(B_ECH,"En grappes",0,""),T(B_ECH,"Par quotas",1,"Piège d'examen : proportions fixées mais sans tirage."),T(B_ECH,"Boule de neige",1,""),T(B_ECH,"Convenance",1,"")],
+    A("Relie chaque méthode à son intérêt.",[["Stratifié","Garantir chaque sous-groupe"],["En grappes","Pratique et économique"],["Boule de neige","Populations difficiles d'accès"],["Convenance","Simple, généralisation limitée"]],"")),
+  N(Q("Comment toucher des populations difficiles d'accès ?",["Partenaires de terrain, surreprésentation volontaire puis pondération à l'analyse","Les exclure","Un questionnaire en ligne"],"Sinon, on risque de sous-estimer les problèmes.")),
+  "Fiche 10 · Taille de l'échantillon",
+  N(A("Paramètres du calcul : relie.",[["Seuil α","0,05 : conclure à tort à un effet"],["Puissance (1 − β)","80 % ou 90 % : détecter un effet réel"],["Taille d'effet","Littérature ou étude pilote"]],""),
+    E(["L'erreur de type II,"," c'est conclure à un effet"," qui n'existe pas."],1,"Ça, c'est l'erreur de type I (α) ; le type II, c'est rater un effet réel (β).","Piège d'examen."),
+    C("L'effectif théorique est de 200 participants. Avec une majoration de 20 % pour les pertes, combien en recruter ?",240,"200 × 1,2 = 240.","participants")),
+  N(Q("Plus l'effet attendu est petit…",["Plus il faut de participants","Moins il faut de participants","Rien ne change"],""),
+    O("Remets dans l'ordre le calcul de la taille d'échantillon.",["Hypothèse principale et test","Estimer la taille d'effet","Fixer α et la puissance","Calculer l'effectif théorique","Majorer pour les pertes","Vérifier la faisabilité"],"")),
+  "Fiche 11 · Méthodes",
+  N(Q("Le fil commun des conseils pro ?",["Neutralité, validation, triangulation, transparence","Vitesse, quantité, simplicité","Un seul outil, bien choisi"],""),
+    A("Relie chaque situation au réflexe.",[["Questionnaire fiable","Pré-test « penser à voix haute »"],["Outil technologique","Prévoir une alternative papier"],["Biais de réponse","Enquêteurs formés à la neutralité"],["RGPD","Minimiser, pseudonymiser"],["Taille d'échantillon","Majorer pour les abandons"]],""))
+ ]}
+ ],
+ mission:{id:"sp14m",t:"Assiettes réelles",items:[
+  CH("rousset","On veut savoir combien de légumes mangent les familles du quartier, et pourquoi certaines en mangent peu. Quelle approche ?",[
+    ["Uniquement des entretiens",1,[2,2,-2],"Tu comprendras le pourquoi, mais tu ne pourras pas mesurer ni généraliser."],
+    ["Mixte séquentielle : questionnaire pour mesurer et repérer des profils, puis entretiens par profil",2,[8,6,-4],"Mesurer et comprendre : triangulation."],
+    ["Uniquement un questionnaire en ligne",0,[1,-2,-1],"Pas de pourquoi, et la fracture numérique exclut une partie des familles."]],
+   "Fiches 1 et 2."),
+  BY("yacine",E(["Question 3 :"," « Mangez-vous trop de produits gras ? »"," Oui / Non"],1,"Formulation moralisatrice : on préfère « Quelle est votre consommation habituelle de produits gras ? » avec une échelle de fréquence.","Fiche 3.")),
+  CH("yacine","Pour observer les repas à domicile, comment limiter l'effet Hawthorne ?",[
+    ["Observer une seule fois, en prévenant la veille",0,[0,-2,0],"La famille risque de « bien faire » ce jour-là."],
+    ["Observer plusieurs fois sur une période prolongée, de façon discrète dans le respect de l'éthique",2,[5,4,-2],"Les comportements reviennent à la normale avec le temps."]],
+   "Fiche 4."),
+  BY("rousset",T(B_BIA,"Seules les familles déjà intéressées par la nutrition ont répondu à l'affiche",2,"Biais de sélection : échantillon non représentatif.")),
+  CH("rousset","Les familles précaires répondent peu. Que faire ?",[
+    ["Tant pis, on analyse ceux qui ont répondu",0,[-4,-4,0],"On sous-estime les problèmes des plus vulnérables."],
+    ["Recruter via le centre social et les associations, surreprésenter ces familles puis pondérer",2,[8,8,-3],"Partenaires de terrain, surreprésentation et pondération."],
+    ["Les recruter par boule de neige uniquement",1,[3,2,-1],"Utile, mais la généralisation reste limitée."]],
+   "Fiche 9."),
+  CH("lebrun","Yacine stocke les questionnaires nominatifs sur sa clé USB personnelle.",[
+    ["Ce n'est pas grave, il fait attention",0,[0,-10,0],"Données de santé non protégées : non conforme au RGPD."],
+    ["On pseudonymise, on chiffre, on stocke sur un espace sécurisé avec accès par rôle, et on documente au registre",2,[3,8,-1],"Minimisation, sécurité, traçabilité."]],
+   "Fiches 5 et 11."),
+  BY("rousset",C("Il faut 300 familles pour la puissance voulue. On prévoit 25 % de pertes. Combien en recruter ?",375,"300 × 1,25 = 375.","familles")),
+  BY("rousset",W("Rédige la partie « Méthodes de recueil » du protocole.","Approche mixte séquentielle : questionnaire pré-testé (formulation neutre, questions de contrôle) puis entretiens semi-directifs ; journal alimentaire de 3 à 7 jours avec aides aux portions ; observations prolongées pour limiter l'effet Hawthorne. Outils validés (fiabilité, validité). Échantillon stratifié avec recrutement via les partenaires, surreprésentation et pondération des familles précaires ; taille calculée (α, puissance, taille d'effet) et majorée pour les pertes. Biais anticipés (triangulation), données manquantes analysées, RGPD respecté.",["Approche mixte, outils","Validité, fiabilité, biais","Échantillonnage et taille","RGPD"]))
+ ]}
+};
+
+/* ---------- COURS 15 · TRAITEMENT, ANALYSE ET COMMUNICATION DES RÉSULTATS ---------- */
+var B_VAR=[["Nominale","sans ordre"],["Ordinale","ordonnée"],["Quantitative","mesure"]];
+var B_GR=[["Histogramme",""],["Barres",""],["Nuage de points",""],["Box-plot",""]];
+var B_TST=[["Student","2 moyennes indépendantes"],["Student apparié","avant / après"],["Chi-2","2 variables qualitatives"],["Pearson / Spearman","2 variables quantitatives"]];
+var B_IMRAD=[["Introduction",""],["Méthodes",""],["Résultats",""],["Discussion",""]];
+var B_PUB=[["Scientifiques","rigueur, limites"],["Professionnels","pertinence clinique"],["Grand public","simple, nuancé"]];
+COURS.sp15={id:"sp15",n:15,t:"Analyse et communication des résultats",lieu:"Laboratoire de biostatistique · Nancy",
+ pitch:"Les données sont collectées. Entre les tableurs remplis de chiffres et les recommandations, tout reste à faire : préparer, analyser, interpréter avec esprit critique et communiquer au bon public.",
+ P:{cohen:{n:"Dr Samuel Cohen",r:"Biostatisticien",av:{bg:"#5bb8f5",skin:"#e8b896",hair:"#1f1410",hs:"curly",shirt:"#13303a",glasses:1}},
+    navarro:{n:"Élise Navarro",r:"Diététicienne doctorante",av:{bg:"#ff7a59",skin:"#f0c8a8",hair:"#2b1b14",hs:"long",shirt:"#3ee6b0"}},
+    aubert:{n:"Marc Aubert",r:"Journaliste santé",av:{bg:"#ffc94a",skin:"#d9a587",hair:"#9a9a9a",hs:"short",shirt:"#ae8dff"}}},
+ conseil:{who:"cohen",t:"Toujours : documenter, vérifier, nuancer, adapter. Base : formats harmonisés, dictionnaire versionné, journal des transformations. Codage : pas d'ordre artificiel, garder la variable continue. Test : vérifier les conditions, rapporter p, IC et taille d'effet, corriger les comparaisons multiples. Résultat inattendu : revenir aux données brutes. Communication : transparence pour les scientifiques, cas pratiques pour les pros, simple mais nuancé pour le public."},
+ levels:[
+ {id:"sp15a",t:"Préparer et décrire",s:"Fiches 1 à 4 · base, codage, descriptif, graphiques",items:[
+  "Fiche 1 · Préparer la base de données",
+  N(O("Remets dans l'ordre les 8 étapes de préparation d'une base.",["Importer et vérifier l'intégrité","Nettoyer les valeurs aberrantes","Coder selon un plan prédéfini","Créer le dictionnaire des variables","Gérer les valeurs manquantes","Validation croisée","Documenter les transformations","Sauvegarder en versions"],""),
+    S("Comment s'appelle la liste documentée des variables, de leur codage et de leurs formules ?",["dictionnaire des variables","dictionnaire"],""),
+    E(["Les données sont mal nettoyées,"," mais une analyse statistique sophistiquée"," corrigera les erreurs."],1,"Une analyse sophistiquée sur des données mal nettoyées donne des résultats faux.","Piège d'examen.")),
+  N(Q("Que fait-on avant toute analyse croisée ?",["Un tri à plat de chaque variable","Un test du Chi-2","Une publication"],"Il révèle erreurs de codage, distributions inattendues, effectifs trop faibles.")),
+  "Fiche 2 · Coder les variables",
+  N([T(B_VAR,"Régime : végétarien, omnivore, végétalien",0,""),T(B_VAR,"Fréquence : jamais, parfois, souvent, toujours",1,""),T(B_VAR,"Poids en kg",2,""),T(B_VAR,"Sexe",0,""),T(B_VAR,"Nombre de repas par jour",2,"")],
+    S("Comment appelle-t-on une variable 0/1 créée pour chaque modalité d'une variable nominale ?",["variable indicatrice","indicatrice","dummy","variables indicatrices"],""),
+    E(["Je code végétarien = 1, omnivore = 2, végétalien = 3,"," puis je calcule la moyenne du régime"," de l'échantillon."],1,"Le code chiffré d'une variable nominale n'a pas d'ordre : la moyenne n'a aucun sens. Codage neutre ou variables indicatrices.","Piège d'examen.")),
+  N(Q("Pourquoi garder la variable continue d'origine (âge, apports) ?",["Découper en catégories fait perdre de l'information de façon irréversible","Pour alourdir la base","Ce n'est pas utile"],""),
+    S("Cite une variable dérivée.",["imc","indice de masse corporelle","ratio","ratios","score","score composite","scores de qualite"],"IMC, ratios de macronutriments, scores composites.")),
+  "Fiche 3 · Statistiques descriptives",
+  N(A("Relie chaque indicateur à son usage.",[["Moyenne","Distributions symétriques"],["Médiane","Distributions asymétriques, robuste"],["Mode","Variables catégorielles"],["Étendue interquartile","Dispersion robuste (Q3 − Q1)"]],""),
+    CAS("Calcium : moyenne 850 mg/j, médiane 780 mg/j, Q1 600, Q3 1 000.",C("Quelle est l'étendue interquartile ?",400,"Q3 − Q1 = 1 000 − 600 = 400 mg/j.","mg/j")),
+    CAS("Calcium : moyenne 850 mg/j, médiane 780 mg/j.",W("Interprète cet écart.","Moyenne > médiane : distribution asymétrique vers la droite, quelques gros consommateurs tirent la moyenne vers le haut. La médiane représente mieux la consommation typique ; on présente médiane et étendue interquartile.",["Asymétrie à droite","Gros consommateurs","Médiane plus représentative"]))),
+  N(Q("En nutrition, les apports en alcool ou en micronutriments sont souvent asymétriques. On présente…",["La médiane et l'étendue interquartile","La moyenne et l'écart-type","Le mode seulement"],""),
+    A("Tri à plat ou tableau croisé ?",[["Tri à plat","Une variable : fréquences, anomalies"],["Tableau croisé","Deux variables : relations, différences entre groupes"]],"")),
+  "Fiche 4 · Indicateurs nutritionnels et graphiques",
+  N(S("Quelle table de composition est la référence française ?",["ciqual","table ciqual"],"Table de l'ANSES."),
+    A("Relie chaque indicateur à ce qu'il mesure.",[["Score de diversité","Variété des groupes consommés"],["Ratio glucides / lipides / protéines","Équilibre des macronutriments"],["PNNS-GS","Score composite de qualité"]],"")),
+  N([T(B_GR,"Distribution des apports caloriques",0,""),T(B_GR,"Proportion de végétariens par région",1,""),T(B_GR,"Lien entre apports en sel et tension",2,""),T(B_GR,"Comparer les distributions de calcium entre 3 groupes",3,"")],
+    E(["Dans un histogramme,"," les barres sont séparées"," car elles représentent des catégories."],1,"Barres collées : classes d'une variable quantitative. Les barres séparées, c'est le diagramme en barres.","Piège d'examen."))
+ ]},
+ {id:"sp15b",t:"Tester et valider",s:"Fiches 5 à 8 · tests, p-values, validation, recommandations",items:[
+  "Fiche 5 · Choisir un test",
+  N([T(B_TST,"Apports caloriques des hommes vs des femmes",0,""),T(B_TST,"Poids avant et après le programme, mêmes personnes",1,""),T(B_TST,"Petit-déjeuner (oui/non) selon la CSP",2,""),T(B_TST,"Apports en fibres et cholestérol",3,"")],
+    S("Quel test compare deux moyennes quand les variances sont différentes ?",["welch","test de welch"],""),
+    E(["Pour comparer le poids avant et après chez les mêmes patients,"," j'utilise un test de Student pour groupes indépendants."," C'est le test adapté."],1,"Mêmes personnes = données appariées : test apparié.","Piège d'examen.")),
+  N(A("Pearson ou Spearman ?",[["Pearson","Relation linéaire"],["Spearman","Relation monotone"]],""),
+    O("Remets dans l'ordre la logique de choix d'un test (début).",["Nature des variables","Nombre de groupes","Groupes indépendants ou appariés","Conditions d'application","Objectif"],"")),
+  N(Q("Un test se lit avec…",["La p-value, l'intervalle de confiance et la taille d'effet","La p-value seule","Le nombre de participants seul"],"")),
+  "Fiche 6 · P-values et limites",
+  N(Q("« Statistiquement significatif » veut dire…",["Peu probablement dû au hasard, pas forcément important cliniquement","Important pour la santé","Prouvé à 100 %"],"Ne pas confondre significativité et pertinence clinique."),
+    E(["Sur 20 000 personnes, une différence de 5 kcal/jour est significative :"," c'est donc un résultat"," cliniquement important."],1,"Avec un très grand échantillon, une différence minime peut être significative mais cliniquement négligeable.","Piège d'examen.")),
+  N(C("Avec 20 tests au seuil de 5 %, quel est environ le risque d'au moins un faux positif ?",64,"1 − 0,95²⁰ ≈ 0,64.","%"),
+    S("Cite une méthode de correction des comparaisons multiples.",["bonferroni","benjamini-hochberg","benjamini hochberg","benjamini"],"")),
+  N(Q("L'intervalle de confiance à 95 % renseigne sur…",["La précision de l'estimation : plage de valeurs compatibles avec les données","La significativité seulement","La taille de l'échantillon"],""),
+    null,
+    W("Pourquoi un petit échantillon peut-il « rater » un effet important ?","Manque de puissance : une différence réelle et importante peut ne pas être significative (erreur de type II). Il faut regarder la taille d'effet et l'IC, et calculer l'effectif avant l'étude.",["Manque de puissance","Erreur de type II","Taille d'effet et IC"])),
+  "Fiche 7 · Valider les résultats",
+  N(A("Relectures croisées : qui vérifie quoi ?",[["Statisticien","Les analyses"],["Clinicien","La plausibilité"],["Terrain","L'expérience pratique"]],""),
+    S("Comment appelle-t-on la cohérence d'un résultat avec les mécanismes connus ?",["plausibilite biologique","plausibilité biologique","plausibilite"],"")),
+  N(O("Résultat inattendu : remets la démarche dans l'ordre.",["Vérifier les analyses (codage, test)","Explorer des hypothèses alternatives","Consulter des experts sur la plausibilité"],""),
+    E(["Ce résultat contredit mon hypothèse :"," je le mets de côté"," pour ne pas brouiller le message."],1,"Ignorer un résultat qui dérange est un biais de confirmation : on l'explore avec la même rigueur.","Piège d'examen.")),
+  N(Q("Reconnaître les limites de son étude…",["Montre la lucidité méthodologique et guide le lecteur","Affaiblit l'étude","Est réservé aux mauvaises études"],"")),
+  "Fiche 8 · Contextualiser et recommander",
+  N(Q("Laquelle est une recommandation SMART ?",["« Augmenter la consommation de légumes de 150 g/jour, avec des préparations simples et peu coûteuses »","« Améliorer l'alimentation »","« Manger mieux »"],""),
+    O("Remets dans l'ordre la formulation des recommandations (début).",["Repérer les résultats cliniquement pertinents","Évaluer leur robustesse","Traduire en messages d'action","Adapter aux contraintes des publics"],""),
+    W("Comment situer tes résultats dans la littérature ?","Recherche actualisée (études récentes, méta-analyses, études comparables) ; confronter chaque résultat principal : les convergences renforcent les conclusions, les divergences s'expliquent (population, évolution des comportements, méthode). Pas de catalogue exhaustif.",["Littérature récente, méta-analyses","Convergences / divergences","Expliquer les écarts"]))
+ ]},
+ {id:"sp15c",t:"Communiquer",s:"Fiches 9 à 12 · rapport, publics, oral, numérique",items:[
+  "Fiche 9 · Rédiger un rapport scientifique",
+  N([T(B_IMRAD,"Contexte, lacunes, objectif",0,""),T(B_IMRAD,"Population, outils, analyses, éthique",1,""),T(B_IMRAD,"Les faits, dans l'ordre des objectifs, sans interprétation",2,""),T(B_IMRAD,"Interprétation, littérature, limites, perspectives",3,"")],
+    S("Comment appelle-t-on la structure Introduction, Méthodes, Résultats, Discussion ?",["imrad","imred"],""),
+    E(["Dans la partie Résultats,"," j'explique pourquoi les enfants mangent moins de légumes"," et je compare à la littérature."],1,"L'interprétation et la littérature vont dans la discussion ; les résultats présentent les faits.","Piège d'examen.")),
+  N(Q("Un bon tableau de résultats a…",["Un titre explicite, variables en lignes, groupes en colonnes, légende, tests et effectifs, un message principal","Le plus de chiffres possible","Des couleurs vives partout"],""),
+    S("Quel style pour un rapport scientifique ?",["precis","précis","concis","objectif","precis concis objectif"],"Précis, concis, objectif.")),
+  "Fiche 10 · Adapter au public",
+  N([T(B_PUB,"Article à comité de lecture",0,""),T(B_PUB,"Synthèse avec cas cliniques",1,""),T(B_PUB,"Infographie",2,"")],
+    A("Vulgariser sans déformer : relie.",[["Différence statistiquement significative","Différence peu probablement due au hasard"],["Facteurs de confusion","Autres explications possibles"],["Essai randomisé","Groupes tirés au sort"]],""),
+    E(["Pour les professionnels de santé,"," je classe les résultats par p-value croissante,"," du plus significatif au moins significatif."],1,"Pour les professionnels, on hiérarchise selon la pertinence clinique, pas selon la p-value.","Piège d'examen.")),
+  N(Q("Vulgariser, c'est…",["Simplifier en gardant les nuances et les limites, sans promesses","Approximer pour être compris","Supprimer les chiffres"],"")),
+  "Fiche 11 · Supports, oral, numérique",
+  N(C("Combien de messages clés maximum à l'oral ?",4,"3 à 4, illustrés et répétés.",""),
+    O("Remets dans l'ordre une présentation orale.",["Accroche","Objectifs","Méthode (principes)","Résultats (3-4 messages)","Implications","Limites et perspectives","Conclusion et questions"],""),
+    E(["À l'oral,"," je présente tous mes résultats et le détail des tests"," pour montrer ma rigueur."],1,"Trop de résultats noient le message : 3 à 4 messages clés suffisent, la méthode en principes.","Piège d'examen.")),
+  N(A("Relie chaque public à son support.",[["Décideurs institutionnels","Rapports détaillés"],["Professionnels très occupés","Synthèses visuelles"],["Grand public","Infographies"]],""),
+    null,
+    W("Quelle tension pose la diffusion numérique des résultats ?","Open access, partage de données anonymisées, réseaux (LinkedIn, ResearchGate) donnent visibilité et collaborations, mais la rapidité de diffusion peut court-circuiter la validation : tension entre accessibilité et rigueur.",["Visibilité, collaborations","Rapidité vs validation","Accessibilité / rigueur"])),
+  "Fiche 12 · Méthodes",
+  N(Q("Le fil commun des conseils pro ?",["Documenter, vérifier, nuancer, adapter","Simplifier, publier, oublier","Tester tout, garder le significatif"],""),
+    A("Relie chaque situation au réflexe.",[["Base de données","Dictionnaire versionné, journal des transformations"],["Codage","Pas d'ordre artificiel"],["Test","Rapporter p, IC, taille d'effet"],["Résultat inattendu","Revenir aux données brutes"],["Communication","Support adapté au public"]],""))
+ ]}
+ ],
+ mission:{id:"sp15m",t:"Les résultats d'Élise",items:[
+  CH("navarro","Ma base contient des dates en 3 formats et des poids en kg et en g. Je lance directement les tests ?",[
+    ["Oui, le logiciel s'adaptera",0,[0,-4,0],"Données mal préparées = résultats faux."],
+    ["J'harmonise formats et unités, je fais les tris à plat, je documente dans le dictionnaire",2,[6,6,-1],"Préparer, vérifier, documenter avant d'analyser."]],
+   "Fiche 1."),
+  BY("cohen",T(B_TST,"Score de qualité alimentaire des mêmes enfants avant et après le programme",1,"Mêmes personnes : test apparié.")),
+  CH("cohen","Les apports en vitamine D ont une moyenne de 4,8 µg/j et une médiane de 2,9 µg/j. Que présentes-tu ?",[
+    ["La moyenne, c'est plus parlant",0,[0,-3,0],"La distribution est très asymétrique : la moyenne est tirée par quelques gros consommateurs."],
+    ["La médiane et l'étendue interquartile, avec un box-plot",2,[5,5,0],"Indicateurs robustes et graphique adapté."]],
+   "Fiches 3 et 4."),
+  CH("cohen","Élise a fait 20 tests ; un seul est significatif (p = 0,04). Elle veut en faire son titre.",[
+    ["C'est significatif, on publie",0,[0,-8,0],"Avec 20 tests, environ 64 % de risque d'au moins un faux positif."],
+    ["On corrige les comparaisons multiples (Bonferroni) et on rapporte IC et taille d'effet",2,[5,8,0],"Rigueur et transparence."]],
+   "Fiche 6."),
+  BY("navarro",E(["Résultats :"," les enfants mangent moins de légumes à cause du prix,"," comme l'a montré Dupont en 2020."],1,"Interprétation et littérature vont dans la discussion, pas dans les résultats.","Fiche 9.")),
+  CH("aubert","Je voudrais titrer : « Les enfants du programme mangent enfin sainement ! » Ça vous va ?",[
+    ["Oui, c'est accrocheur",0,[0,-10,0],"Promesse excessive : on déforme les résultats."],
+    ["Plutôt : « Une hausse modérée de la consommation de légumes, à confirmer sur une plus longue durée »",2,[4,10,0],"Vulgariser sans déformer : nuances et limites."]],
+   "Fiche 10."),
+  CH("navarro","J'ai 10 minutes pour présenter au congrès. Combien de résultats ?",[
+    ["Tous les 25 tableaux, pour montrer le travail",0,[0,-6,0],"Le message est noyé."],
+    ["3 à 4 messages clés illustrés, la méthode en principes, les limites, puis les questions",2,[4,6,0],"Structure orale efficace."]],
+   "Fiche 11."),
+  BY("cohen",W("Rédige la conclusion de l'étude d'Élise pour la discussion.","Résumer les résultats principaux avec leur taille d'effet et leur IC ; les confronter à la littérature (convergences, divergences expliquées) ; vérifier la plausibilité ; exposer forces et limites (échantillon, biais, confusion, comparaisons multiples corrigées) ; formuler des recommandations SMART validées par le terrain ; ouvrir des perspectives (suivi plus long, autres populations).",["Résultats nuancés (IC, effet)","Littérature, plausibilité","Forces et limites","Recommandations SMART, perspectives"]))
+ ]}
+};
+
 /* ---------- ÉPREUVE BLANCHE E5 · SALLE D'EXAMEN ---------- */
 /* Trame E5 (fiche méthode) : diagnostic → objectifs → stratégies et actions → mise en œuvre → évaluation. */
 var B_PROC=[["Indicateur de processus","fait comme prévu ?"],["Indicateur de résultat","impact réel ?"]];
