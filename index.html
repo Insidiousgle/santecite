@@ -3622,6 +3622,89 @@ COURS.ds12={id:"ds12",n:"Soin 12",t:"Risques, limites et responsabilités",lieu:
  ]}
 };
 
+/* ---------- SOIN 13 · OUTILS ET SERVICES SOCLES EN SANTÉ ---------- */
+var B_SOCLE=[["DMP","centraliser"],["MSSanté","échanger"],["Pro Santé Connect","s'authentifier"]];
+var B_MSS=[["Confidentialité","chiffrement"],["Authenticité","RPPS"],["Intégrité","non modifié"]];
+COURS.ds13={id:"ds13",n:"Soin 13",t:"Outils et services socles en santé",lieu:"Maison de santé pluriprofessionnelle · Valence",
+ pitch:"Comment un patient diabétique suivi par son médecin, un cardiologue et un diététicien peut-il avoir une prise en charge vraiment coordonnée ? L'État a créé 3 services socles, publics, gratuits et interopérables. Leïla Haddou, diététicienne en MSP, s'en sert chaque matin ; Pécunia, 65 ans, entre en EHPAD avec un DMP bien rempli.",
+ P:{leila:{n:"Leïla Haddou",r:"Diététicienne en MSP · Valence",av:{bg:"#55d6cf",skin:"#c99067",hair:"#1f1410",hs:"long",shirt:"#ff9476"}},
+    martin:{n:"Romain Martin",r:"Diététicien en clinique",av:{bg:"#5bb8f5",skin:"#e8b896",hair:"#2b1b14",hs:"short",shirt:"#ffc94a",glasses:1}},
+    pecunia:{n:"Pécunia Lebon",r:"Résidente d'EHPAD, 65 ans",av:{bg:"#ae8dff",skin:"#f0c8a8",hair:"#d9d9d9",hs:"bun",shirt:"#13303a"}}},
+ conseil:{who:"leila",t:"3 services, 3 verbes : le DMP pour centraliser, MSSanté pour échanger, Pro Santé Connect pour s'authentifier. DMP : loi 2016, CNAM, le patient garde le contrôle. MSSanté : confidentialité, authenticité (RPPS), intégrité. Pro Santé Connect : une seule connexion (SSO), e-CPS obligatoire depuis 2023. À chaque fois : organiser, standardiser, sécuriser, mesurer."},
+ levels:[
+ {id:"ds13a",t:"Le DMP",s:"Fiches 0 à 2 · services socles, architecture, pratique",items:[
+  "Fiche 0 · Les 3 services socles",
+  N([T(B_SOCLE,"Historique médical du patient partagé",0,""),T(B_SOCLE,"Envoyer un bilan chiffré au cardiologue",1,""),T(B_SOCLE,"Une seule connexion pour tous les services",2,"")],
+    Q("Les services socles de l'État sont…",["Publics, gratuits et interopérables","Payants et réservés aux hôpitaux","Des logiciels privés"],"")),
+  "Fiche 1 · Architecture et droits du patient",
+  N(Q("Le DMP, c'est…",["Un service public qui centralise les informations de santé, accessible aux professionnels autorisés avec l'accord du patient","Le dossier papier de l'hôpital","Une messagerie"],"Un carnet de santé numérique qui brise les silos."),
+    F("Le DMP a été mis en place par la loi de modernisation du système de santé de {2016} ; il est géré par la {CNAM}.",""),
+    W("Pourquoi l'organisation chronologique et horodatée du DMP est-elle utile ?","Chaque élément est daté : on évite les pertes d'information et les examens redondants, et on suit l'évolution du patient dans le temps.",["Pas de pertes","Pas de doublons","Évolution dans le temps"])),
+  N(A("Le DMP pour la nutrition : relie.",[["Comptes-rendus","Anamnèse, recommandations"],["Bilans nutritionnels","Anthropométrie, besoins"],["Plans","Alimentaires personnalisés"],["Suivi","Poids et paramètres dans le temps"]],""),
+    O("Les droits du patient sur son DMP : remets dans l'ordre.",["Créer","Consulter","Masquer certaines informations","Supprimer"],""),
+    E(["Le DMP me donne toutes les informations sur ma patiente :"," je n'ai plus besoin"," de l'interroger."],1,"Le patient peut masquer des informations : le DMP ne remplace pas l'interrogatoire.","Piège d'examen.")),
+  N(Q("Aujourd'hui, un diététicien libéral peut-il accéder au DMP ?",["Non : seulement les diététiciens en structure (hôpital, clinique, EHPAD, centre de santé) ; cela devrait évoluer","Oui, comme les médecins","Oui, sans l'accord du patient"],"Piège d'examen."),
+    S("Que voit le patient pour chaque accès à son DMP ?",["qui quand quelles actions","qui, quand, quelles actions","la tracabilite","traçabilité","qui quand quoi"],"Chaque accès est tracé : cela rassure le patient et responsabilise les professionnels.")),
+  "Fiche 2 · Le DMP dans la pratique",
+  N(O("Remets dans l'ordre les 7 points du compte-rendu diététique pour le DMP.",["Motif et contexte","Anamnèse alimentaire","Évaluation clinique","Diagnostic nutritionnel","Objectifs négociés","Recommandations","Planification du suivi"],""),
+    E(["Mon compte-rendu dans le DMP n'est lu que par des médecins :"," je peux écrire en abrégé"," avec mon jargon."],1,"Le CR est lisible par toute l'équipe et par le patient lui-même : clair, structuré, professionnel.","Piège d'examen.")),
+  N(CAS("Pécunia, 65 ans, arrive en EHPAD. Son DMP indique : DT2 depuis 10 ans, metformine, insuffisance cardiaque modérée, restriction sodée prescrite par le cardiologue.",Q("Qu'apporte le DMP à la première consultation ?",["Une évaluation adaptée d'emblée, sans recommandations contradictoires ni biais de transmission","Rien de plus que l'interrogatoire","Il remplace le bilan diététique"],"")),
+    A("Consulter le DMP : relie.",[["Antécédents","Diabète, rein, cardio, digestif"],["Traitements","Effets sur l'appétit, l'absorption"],["Biologie","Albumine, préalbumine, vitamines"]],""),
+    A("Coordonner grâce au DMP : relie.",[["Médecin traitant","Lit tes recommandations avant d'adapter le traitement"],["Cardiologue","Vérifie la cohérence prescription / régime"],["Pharmacien","Repère les interactions compléments-médicaments"]],""))
+ ]},
+ {id:"ds13b",t:"MSSanté",s:"Fiches 3 et 4 · sécurité, organisation",items:[
+  "Fiche 3 · Principes et sécurité",
+  N([T(B_MSS,"Personne d'autre ne peut lire le message",0,""),T(B_MSS,"Le correspondant est bien celui qu'il prétend être",1,""),T(B_MSS,"Le message n'a pas été modifié",2,"")],
+    S("Quel répertoire garantit l'identité des correspondants MSSanté ?",["rpps","le rpps","repertoire partage des professionnels de sante"],"Répertoire partagé des professionnels de santé."),
+    E(["Pour une fois, j'envoie le bilan de Pécunia par Gmail :"," une seule fois, ce n'est pas grave"," si je mets un mot de passe."],1,"Envoyer un bilan par Gmail est non conforme, même une seule fois : sanctions possibles.","Piège d'examen.")),
+  N(A("MSSanté ou messagerie grand public : relie.",[["Gmail, Outlook","Pas aux normes santé, usurpation possible"],["MSSanté","Certifiée HDS, chiffrée, identité vérifiée"]],""),
+    W("Qu'apporte MSSanté au diététicien sans compétence technique ?","Le chiffrement et l'hébergement HDS sont automatiques : il respecte ses obligations légales sans maîtriser la technique. Chaque message est archivé et horodaté, et reste protégé même sur un WiFi public.",["Conformité HDS automatique","Traçabilité","Protégé même en WiFi public"])),
+  "Fiche 4 · Organiser ses échanges",
+  N(O("Organiser MSSanté : remets dans l'ordre.",["Classer ses contacts par groupes","Standardiser l'objet des messages","Formats types pour avis, CR, alertes","Modèles de messages récurrents"],""),
+    Q("Quel objet de message est bien standardisé ?",["« Mme Y – Question interaction médicamenteuse »","« Urgent !!! »","« Re: re: re: »"],"Tes confrères priorisent et retrouvent plus vite.")),
+  N(A("Connecter MSSanté au logiciel métier : relie.",[["Connecteur","Envoi depuis le dossier, sans double saisie"],["Règles","CR automatique au prescripteur après la 1re consultation"],["Alerte","Automatique si critères de dénutrition"],["Archivage","Messages rangés dans le dossier patient"]],""),
+    F("En automatisant l'envoi des CR, M. Martin gagne {15} minutes par consultation.",""),
+    A("Avec qui échanger ? Relie au bénéfice.",[["Médecins prescripteurs","Ajustements rapides et documentés"],["Paramédicaux","Cohérence de la prise en charge"],["Structures d'appui","Confidentialité pour les cas complexes"]],""))
+ ]},
+ {id:"ds13c",t:"Pro Santé Connect",s:"Fiches 5 à 7 · e-CPS, optimisation, méthodes",items:[
+  "Fiche 5 · Pro Santé Connect et e-CPS",
+  N(Q("Pro Santé Connect repose sur…",["L'identité RPPS et le principe du SSO : une seule connexion pour tous les services","Un mot de passe différent par service","Le numéro de sécurité sociale du patient"],""),
+    S("Comment appelle-t-on le principe « une seule connexion pour tous les services » ?",["sso","single sign on","single sign-on"],"")),
+  N(A("Carte CPS ou e-CPS : relie.",[["Carte CPS","Carte physique lue par un lecteur"],["e-CPS","Appli mobile, code confidentiel choisi à l'activation"]],""),
+    F("L'e-CPS est obligatoire depuis le 1er janvier {2023}.",""),
+    A("Activer son e-CPS : relie chaque voie.",[["Avec sa carte","Appli + carte dans le lecteur + activation en ligne"],["Sans carte","Connu de l'annuaire national avec mail et portable"]],"")),
+  N(A("L'écosystème accessible : relie.",[["DMP et MSSanté","Consulter, alimenter, échanger"],["Ameli Pro","Démarches avec l'Assurance Maladie"],["Services des ARS","Déclarations, autorisations, veille"],["Formation","Crédits DPC reportés automatiquement"]],""),
+    E(["Mon logiciel me demande encore l'ancienne connexion :"," c'est forcément un piratage,"," je ne me connecte plus."],1,"Pendant les transitions, l'ancienne authentification peut coexister avec la nouvelle : suis les communications de ton éditeur.","Piège d'examen.")),
+  "Fiche 6 · Optimiser et anticiper",
+  N(O("Optimiser avec Pro Santé Connect : remets les 6 étapes dans l'ordre.",["Inventaire des services compatibles","Migration progressive","Formation des équipes","Double facteur","Intégration aux logiciels métiers","Veille technologique"],""),
+    F("En se connectant une seule fois le matin, Leïla gagne {30} minutes par jour.",""),
+    W("Qu'est-ce que la « fatigue technologique » et comment l'éviter ?","C'est l'épuisement face à la multiplication des outils et des changements : on dose son adoption selon ses besoins réels, sans chercher à tout intégrer.",["Trop d'outils","Doser selon ses besoins","Ne pas tout intégrer"])),
+  N(Q("Quel est l'axe prioritaire d'évolution des services socles ?",["L'interopérabilité : standards harmonisés, APIs ouvertes","La publicité","La suppression du DMP"],""),
+    A("Bénéfices de l'usage coordonné : relie.",[["Temps","Moins de tâches répétitives, plus de soin"],["Traçabilité","Justifications d'activité facilitées"],["Rapidité","Délais de prise en charge réduits"],["Sécurité","Niveau professionnel mutualisé"]],"")),
+  "Fiche 7 · Méthodes",
+  N(A("Relie chaque situation au réflexe.",[["Intégrer le DMP","État des lieux, patients chroniques, templates, indicateurs"],["MSSanté","Groupes, objets, modèles, archivage"],["e-CPS au cabinet","Activation, double facteur, référent, contrôles"],["Mesurer l'impact","Délais de réponse, doublons, retours"]],""),
+    O("Le fil commun des méthodes : remets dans l'ordre.",["Organiser","Standardiser","Sécuriser","Mesurer"],""))
+ ]}
+ ],
+ mission:{id:"ds13m",t:"Une matinée connectée à la MSP",items:[
+  CH("leila","8 h. Je dois ouvrir l'agenda, les DMP du jour, MSSanté et Ameli Pro.",[
+    ["Une seule connexion Pro Santé Connect avec mon e-CPS et la double authentification",2,[2,4,12],"SSO : 30 minutes gagnées par jour."],
+    ["Je retrouve mes 4 mots de passe dans le carnet du bureau",0,[0,0,-12],"Mots de passe exposés, temps perdu."]],
+   "Fiche 5."),
+  CH("pecunia","« Le cardiologue m'a dit de manger sans sel, mais je ne me souviens plus pourquoi. »",[
+    ["Je consulte son DMP (avec son accord) : insuffisance cardiaque, metformine, restriction sodée ; mes conseils seront cohérents",2,[10,8,10],"Évaluation enrichie, pas de contradiction."],
+    ["Je lui donne mon plan habituel pour diabétique",0,[-10,-4,-8],"Risque de recommandations contradictoires."]],
+   "Fiche 2."),
+  BY("leila",O("Remets dans l'ordre le compte-rendu de Pécunia pour le DMP.",["Motif","Anamnèse","Évaluation clinique","Diagnostic","Objectifs négociés","Recommandations","Suivi"],"")),
+  CH("martin","Romain : « Je t'envoie le bilan de ma patiente commune sur ton Gmail, c'est plus simple. »",[
+    ["« Passe par MSSanté : chiffré, HDS, et l'identité est vérifiée par le RPPS. »",2,[2,6,12],"Échange légal et sécurisé."],
+    ["« OK, juste pour cette fois. »",0,[0,-2,-14],"Non conforme, même une fois."]],
+   "Fiche 3."),
+  BY("leila",T(B_MSS,"Grâce au RPPS, Leïla sait que le message vient bien du Dr Faure",1,"Authenticité.")),
+  BY("leila",W("Comment Leïla intègre-t-elle le DMP dans toute la MSP ?","État des lieux des pratiques et des logiciels ; priorité aux patients chroniques ; templates standardisés de CR diététiques ; indicateurs d'adoption, de délais de réponse et de doublons évités ; formation et ajustements selon les retours des professionnels et des patients.",["État des lieux","Patients chroniques","Templates de CR","Indicateurs, ajustements"]))
+ ]}
+};
+
 /* ---------- COMPLÉMENTS (audit de couverture des fiches « À savoir par cœur ») ----------
    Ajoutés UNIQUEMENT à la fin des niveaux existants : les identifiants des notions déjà vues ne bougent pas. */
 function ADD(lv,arr){var c=COURS[lv.replace(/[abc]$/,"")],l=c.levels.filter(function(x){return x.id===lv})[0];Array.prototype.push.apply(l.items,arr);}
@@ -3676,6 +3759,72 @@ ADD("sp15c",["Compléments · fiches 10 et 11",
  N(Q("Pourquoi une charte graphique simple ?",["Productions reconnaissables et plus mémorisables","Pour faire joli","Pour cacher les limites"],"Couleurs, typographies, style des graphiques."),
    null,
    W("Comment présenter ton travail à une fondation pour un prix ?","Une mise en récit qui souligne l'innovation, la rigueur méthodologique et les implications pratiques, adaptée à un jury pluridisciplinaire.",["Mise en récit","Innovation, rigueur","Implications pratiques, jury pluridisciplinaire"]))]);
+
+/* ---------- ÉPREUVE BLANCHE E3 · DÉMARCHE DE SOIN ---------- */
+/* Trame E3 (fiche méthode) : bilan → diagnostic (PES) → plan de soin → suivi et évaluation. */
+var B_BILAN=[["Anamnèse",""],["Anthropométrie",""],["Clinique et biologie",""],["Contexte",""]];
+var B_PES=[["P · Problème",""],["E · Étiologie",""],["S · Signes",""]];
+var B_OBJ3=[["Objectif général",""],["Objectif opérationnel",""],["Action",""]];
+var EXAM_E3={id:"e3blanc",t:"Épreuve blanche E3",need:3,
+ sujet:"M. Georges Dubois, 78 ans, ancien ajusteur, veuf depuis un an, vit seul au 2e étage sans ascenseur. Diabète de type 2 sous metformine. Il mange surtout des conserves (raviolis, cassoulet) « parce que c'est pratique », saute souvent le dîner et dit avoir « moins faim depuis que Josette est partie ». Poids : 61 kg (68 kg il y a 6 mois), taille 1,72 m. Albuminémie 33 g/L, HbA1c 8,4 %. Petite retraite, pas de mixeur, son fils passe le dimanche. Il acquiesce poliment quand on lui parle d'index glycémique… et ne change rien.",
+ C:{id:"e3",n:"E3",t:"Épreuve blanche",
+  P:{renaud:{n:"Mme Hélène Renaud",r:"Présidente du jury, diététicienne hospitalière",av:{bg:"#13303a",skin:"#f0c8a8",hair:"#9a9a9a",hs:"bun",shirt:"#ff9476",glasses:1}},
+     berger:{n:"Dr Paul Berger",r:"Membre du jury, gériatre",av:{bg:"#5bb8f5",skin:"#d9a587",hair:"#2b1b14",hs:"short",shirt:"#ffffff"}},
+     dubois:{n:"M. Georges Dubois",r:"Le patient du sujet",av:{bg:"#ffc94a",skin:"#e8b896",hair:"#d9d9d9",hs:"short",shirt:"#5bb8f5"}}}},
+ stages:[
+  {t:"1 · Bilan diététique et nutritionnel",ok:"Anamnèse, anthropométrie, clinique, biologie et contexte : votre bilan est complet.",mid:"Bilan correct, mais une dimension (contexte, évolution pondérale ou biologie) est incomplète.",ko:"Le bilan est la base : anamnèse, anthropométrie avec l'évolution du poids, clinique et biologie, contexte de vie."},
+  {t:"2 · Diagnostic (PES)",ok:"Un problème prioritaire, une étiologie, des signes issus du bilan : diagnostic bien formulé.",mid:"Diagnostic présent, mais la structure PES n'est pas complète ou le problème n'est pas prioritaire.",ko:"Un seul problème prioritaire, avec la phrase PES : « présente… lié à… mis en évidence par… »."},
+  {t:"3 · Plan de soin",ok:"Objectif général, objectifs opérationnels mesurables et datés, actions reliées au diagnostic.",mid:"Plan plausible, mais les objectifs ne sont pas tous mesurables ou reliés au diagnostic.",ko:"Chaque action doit servir un objectif, chaque objectif le diagnostic ; objectifs mesurables avec échéance."},
+  {t:"4 · Suivi et évaluation",ok:"Indicateurs pertinents, réajustement et coordination : la démarche est un vrai cycle.",mid:"Suivi esquissé : précisez les indicateurs ou le réajustement.",ko:"La démarche est un cycle : indicateurs, réajustement, retour au bilan si la situation change."}],
+ items:[
+  "1 · Bilan diététique et nutritionnel",
+  CH("renaud","Vous découvrez le sujet. Par quoi commence votre copie ?",[
+    ["Par le bilan : anamnèse, anthropométrie, clinique et biologie, contexte de vie",2,[0,0,0],"Étape 1 de la trame E3."],
+    ["Par un menu type pour diabétique",0,[0,0,0],"On ne propose pas d'actions avant d'avoir compris la situation."],
+    ["Par le diagnostic",1,[0,0,0],"Il vient juste après le bilan, qui en fournit les signes."]],
+   "Méthode E3, étape 1.",{t:"Poids de M. Dubois (kg)",rows:[["Il y a 6 mois",68],["Aujourd'hui",61]]}),
+  BY("renaud",N([T(B_BILAN,"Conserves, dîner souvent sauté",0,""),T(B_BILAN,"61 kg, 68 kg il y a 6 mois",1,""),T(B_BILAN,"Albuminémie 33 g/L, HbA1c 8,4 %",2,""),T(B_BILAN,"Veuf, 2e étage sans ascenseur, petite retraite",3,"")])),
+  BY("berger",C("Calculez la perte de poids de M. Dubois en 6 mois, en % (arrondi à l'entier).",10,"(68 − 61) / 68 × 100 ≈ 10,3 % : critère de dénutrition chez la personne âgée (≥ 10 % en 6 mois).","%",0.5)),
+  BY("berger",C("Calculez son IMC (arrondi à l'entier).",21,"61 / 1,72² ≈ 20,6 kg/m² : inférieur à 22, seuil de la personne de 70 ans et plus.","kg/m²",0.5)),
+  CH("berger","Que vous manque-t-il encore pour compléter le bilan ?",[
+    ["Un rappel des 24 h ou un carnet alimentaire, l'appétit, la déglutition et l'état bucco-dentaire, ses capacités à faire les courses et cuisiner",2,[0,0,0],"On quantifie les apports et on évalue l'autonomie."],
+    ["Rien, les chiffres suffisent",0,[0,0,0],"Sans évaluation des apports ni de l'autonomie, l'étiologie reste floue."],
+    ["Uniquement une nouvelle HbA1c",1,[0,0,0],"Utile, mais le problème principal n'est pas que glycémique."]],
+   "Bilan complet."),
+  "2 · Diagnostic (PES)",
+  CH("renaud","Quel est le problème prioritaire de M. Dubois ?",[
+    ["Une dénutrition protéino-énergétique modérée",2,[0,0,0],"Perte ≥ 10 % en 6 mois, IMC < 22, albumine entre 30 et 35 g/L : c'est le problème prioritaire."],
+    ["Un diabète mal équilibré",1,[0,0,0],"Réel (HbA1c 8,4 %), mais la dénutrition menace davantage : on ne restreint pas un patient âgé dénutri."],
+    ["Une liste : diabète, dénutrition, isolement, budget",0,[0,0,0],"Le diagnostic PES pose UN problème prioritaire, pas une liste."]],
+   "Méthode E3, étape 2."),
+  BY("renaud",N([T(B_PES,"Dénutrition protéino-énergétique modérée",0,""),T(B_PES,"Apports insuffisants liés à l'isolement après le veuvage et à une alimentation de conserves",1,""),T(B_PES,"Perte de 10 % en 6 mois, IMC 20,6, albumine 33 g/L",2,"")])),
+  BY("renaud",W("Rédigez le diagnostic diététique selon la structure PES.","Le patient présente une dénutrition protéino-énergétique modérée liée à des apports alimentaires insuffisants (perte d'appétit et isolement depuis son veuvage, alimentation de conserves, dîner sauté, difficultés à cuisiner), mise en évidence par une perte de poids de 10 % en 6 mois, un IMC à 20,6 kg/m² et une albuminémie à 33 g/L.",["Présente une dénutrition modérée","Liée à des apports insuffisants (isolement, conserves)","Mise en évidence par −10 % en 6 mois","IMC 20,6, albumine 33"])),
+  CH("berger","Faut-il restreindre les glucides pour faire baisser l'HbA1c ?",[
+    ["Non : chez ce patient âgé dénutri, la priorité est de couvrir les besoins ; on répartit les glucides sans restriction et on en parle au médecin",2,[0,0,0],"Le diagnostic prioritaire guide le plan."],
+    ["Oui, un régime strict sans sucre",0,[0,0,0],"Une restriction aggraverait la dénutrition."]],
+   "Cohérence diagnostic → plan."),
+  "3 · Plan de soin",
+  BY("renaud",N([T(B_OBJ3,"Restaurer un état nutritionnel satisfaisant",0,""),T(B_OBJ3,"Reprendre 2 kg d'ici 2 mois",1,""),T(B_OBJ3,"Enrichir les plats en protéines (œuf, fromage, poudre de lait)",2,""),T(B_OBJ3,"Prendre 3 repas et 1 collation par jour d'ici 1 mois",1,""),T(B_OBJ3,"Mettre en place le portage de repas",2,"")])),
+  CH("dubois","« Vos histoires d'index glycémique, j'y comprends rien. Moi je mange mes boîtes. »",[
+    ["« Votre corps, c'est un moteur : il lui faut du bon carburant. On choisit ensemble des boîtes et des plats simples à enrichir ? »",2,[0,0,0],"Langage adapté, métaphore, co-construction (cours 4)."],
+    ["Je lui réexplique l'index glycémique plus lentement",0,[0,0,0],"Même mur d'incompréhension : résistance passive."],
+    ["Je lui remets une brochure de la HAS",1,[0,0,0],"Sans adapter ni vérifier sa compréhension."]],
+   "Éducation adaptée au patient."),
+  CH("renaud","Quelles actions concrètes retenez-vous ?",[
+    ["Alimentation enrichie et fractionnée, plats simples et conserves de meilleure qualité, portage de repas et aide aux courses avec l'assistante sociale, CNO si les apports restent insuffisants",2,[0,0,0],"Des actions reliées aux objectifs et au contexte."],
+    ["Un plan alimentaire détaillé à cuisiner chaque jour",0,[0,0,0],"Irréaliste : il cuisine peu et n'a pas de mixeur."],
+    ["Des CNO seuls, sans changer le reste",1,[0,0,0],"Possibles, mais l'alimentation enrichie vient d'abord."]],
+   "Actions concrètes."),
+  BY("berger",W("Comment vérifiez-vous que M. Dubois a compris le plan ?","Par le teach-back : je lui demande de me réexpliquer avec ses mots ce qu'il va manger demain et pourquoi, plutôt que « vous avez compris ? ». Je me limite à 2 ou 3 messages clés et je valorise ce qu'il sait déjà.",["Teach-back : il réexplique","2-3 messages clés","Valoriser ses savoirs"])),
+  "4 · Suivi et évaluation",
+  BY("renaud",O("Remettez dans l'ordre le suivi de M. Dubois.",["Pesée hebdomadaire au domicile","Consultation de suivi à 1 mois","Albuminémie de contrôle à 3 mois","Réajuster le plan si les objectifs ne sont pas atteints"],"")),
+  CH("berger","Un mois plus tard, il a encore perdu 1 kg.",[
+    ["Je retourne au bilan : apports réels, portage bien utilisé ? Je réajuste (CNO, enrichissement) et j'alerte le médecin traitant",2,[0,0,0],"La démarche est un cycle : retour au bilan."],
+    ["Je maintiens le plan, il faut du temps",0,[0,0,0],"Une perte qui continue impose de réajuster."]],
+   "Méthode E3, étape 4."),
+  BY("renaud",A("Relie chaque indicateur à ce qu'il suit.",[["Poids","Évolution de l'état nutritionnel"],["Albuminémie","Statut protéique"],["Carnet alimentaire","Observance"],["Ressenti, appétit","Vécu du patient"]],"")),
+  BY("berger",W("Comment organisez-vous la coordination autour de M. Dubois ?","Compte-rendu structuré au médecin traitant (MSSanté, une page : diagnostic, priorités, signes d'alerte, calendrier), lien avec l'assistante sociale (portage, aide aux courses, budget), information du fils avec l'accord de M. Dubois, et traçabilité dans le dossier.",["CR au médecin traitant","Assistante sociale : portage, aides","Fils avec accord","Traçabilité"]))
+ ]};
 
 /* ---------- ÉPREUVE BLANCHE E5 · SALLE D'EXAMEN ---------- */
 /* Trame E5 (fiche méthode) : diagnostic → objectifs → stratégies et actions → mise en œuvre → évaluation. */
@@ -3887,7 +4036,11 @@ renderQuartier=function(){if(cur.q!=="soin"){_rqSoin();return;}
   h+='<div class="secs">'+SOIN_SECS.map(function(s,i){var open=s.cours.filter(function(c){return COURS[c[0]]}).length,ns=secNotions(s);
     return '<button class="sec wide" type="button" data-sec="'+s.id+'" style="background:'+s.col+'"><small>Secteur '+(i+1)+'</small><b>'+esc(s.t)+'</b><small>'+s.cours.length+' cours · '+(open?open+' ouvert'+(open>1?"s":"")+' · mémoire '+memPct(ns)+' %':'bientôt')+'</small><span class="bl">'+s.cours.map(function(c){return '<i class="'+(COURS[c[0]]&&S.stars[COURS[c[0]].mission.id]?"on":"")+'"></i>'}).join("")+'</span></button>'}).join("")+
    '<button class="sec wide" type="button" style="background:#13303a;color:#fff" data-exam3><small style="color:#ff9476">Salle d\'examen</small><b>Épreuve blanche E3</b><small>M. Dubois · bilan → diagnostic (PES) → plan de soin → suivi · arrive à la fin des cours du Soin</small></button></div>';
-  $("#quartier").innerHTML=h;var b=$("[data-exam3]");if(b)b.onclick=function(){toast("L'épreuve blanche E3 arrive quand tous les cours du Soin seront en place.")};};
+  $("#quartier").innerHTML=h;var b=$("[data-exam3]");if(!b)return;
+  if(!EX3){b.onclick=function(){toast("L'épreuve blanche E3 arrive bientôt.")};return;}
+  var d=exam3Done(),best=S.best[EX3.id];
+  b.innerHTML='<small style="color:#ff9476">Salle d\'examen</small><b>Épreuve blanche E3</b><small>'+(exam3Open()?"Ouverte · M. Dubois devant le jury"+(best?" · meilleure note "+fr(best[0])+"/20":""):"Bilan → diagnostic (PES) → plan de soin → suivi · ouvre après "+EXAM_E3.need+" missions du Soin réussies ("+Math.min(d,EXAM_E3.need)+"/"+EXAM_E3.need+")")+'</small>';
+  b.onclick=startExam3;};
 /* secteur : valable pour les deux quartiers */
 renderSecteur=function(){var Q=QUARTIERS.filter(function(q){return q.id===cur.q})[0]||QUARTIERS[0],s=Q.secs.filter(function(x){return x.id===cur.s})[0];
   if(!s){QUARTIERS.forEach(function(q){q.secs.forEach(function(x){if(x.id===cur.s){s=x;Q=q;}})});}var ns=secNotions(s);
@@ -3909,6 +4062,49 @@ var _renderBrain=renderBrain;
 renderBrain=function(){_renderBrain();var e5=$("#exE5");if(!e5)return;var card=e5.closest(".card");
   card.insertAdjacentHTML("afterend",'<div class="card"><div class="lbl">Date de l\'épreuve E3</div><p class="small mut" style="margin:4px 0 8px">Même principe pour le quartier du Soin : 45 jours avant, les révisions visent 85 % de mémoire le jour J.</p><div class="row"><input type="date" id="exE3" value="'+esc(S.exams.soin||"")+'" aria-label="Date de l\'épreuve E3"><button class="btn small" type="button" id="exSave3">Enregistrer</button></div></div>');
   $("#exSave3").onclick=function(){S.exams.soin=$("#exE3").value||"";save();toast(S.exams.soin?"Date de l'E3 enregistrée.":"Date effacée.");renderBrain();};};
+
+/* =============== SALLE D'EXAMEN · ÉPREUVE BLANCHE E3 =============== */
+/* Niveau "e3blanc", notions "e3blanc#i" (quartier du Soin) ; ouvre quand EXAM_E3.need missions du Soin sont réussies. */
+var EX3=null;
+(function(){
+ if(typeof EXAM_E3==="undefined")return;
+ var X=EXAM_E3,L={id:X.id,t:X.t,s:"Épreuve blanche",isMission:true,isExam:true,course:X.C,items:X.items};
+ var sec="",stage=-1,ns=[],seq=[],stg=[];
+ X.items.forEach(function(it){
+   if(typeof it==="string"){sec=it;stage=X.stages.map(function(s){return s.t}).indexOf(it);return;}
+   if(it.k==="choix"){seq.push({ch:it});stg.push(stage);return;}
+   var n=it;if(!it.nt){var tf=[null,null,null,null];tf[kindTier(it)]=[it];n={nt:true,f:tf};}
+   n.sec=sec;ns.push(n);seq.push(n);stg.push(stage);});
+ ns.forEach(function(n,i){n.id=L.id+"#"+i;n.level=L;n.world="sp";n.q="soin";n.course=X.C;n.ref="Épreuve blanche E3 · "+n.sec;
+   n.tiers=[1,2,3].filter(function(t){return n.f[t]&&n.f[t].length});n.label=labelOf(n.f[n.tiers[0]][0]);NOTIONS[n.id]=n;WORLD_NOTIONS.sp.push(n);});
+ L.notions=ns;L.seq=seq;L.stg=stg;LEVELS[L.id]=L;EX3=L;
+})();
+function exam3Done(){return qCours("soin").filter(function(k){return (S.stars[COURS[k].mission.id]||0)>0}).length}
+function exam3Open(){return EX3&&exam3Done()>=EXAM_E3.need}
+function startExam3(){
+  if(!EX3)return;
+  if(!exam3Open()){toast("La salle d'examen E3 ouvre quand "+EXAM_E3.need+" missions du Soin sont réussies ("+exam3Done()+"/"+EXAM_E3.need+").");return;}
+  cur.q="soin";backTo="quartier";begin("Épreuve blanche E3",EX3);G.course=EXAM_E3.C;G.gauges=null;G.onEnd=exam3End;
+  $("#gStage").innerHTML='<div class="qcard pop"><div class="eyebrow">Salle d\'examen · sujet</div><h3>'+esc(EXAM_E3.t)+'</h3><div class="ctx">'+esc(EXAM_E3.sujet)+'</div>'+
+    '<div class="cast" style="padding:0">'+Object.keys(EXAM_E3.C.P).map(function(k){var p=EXAM_E3.C.P[k];return '<div class="p">'+avatar(p.av,52)+'<span>'+esc(p.n)+'</span><span class="mut" style="font-weight:600">'+esc(p.r)+'</span></div>'}).join("")+'</div>'+
+    '<p class="small mut" style="margin:0">Le jury suit la trame E3 : bilan → diagnostic (PES) → plan de soin → suivi et évaluation. Chaque étape est notée sur 5 points.</p>'+
+    '<div class="row"><button class="btn teal" type="button" id="exGo">Commencer l\'épreuve</button></div></div>';
+  $("#exGo").onclick=function(){Session(EX3.seq,false)};}
+function exam3End(res){
+  var X=EXAM_E3,per=20/X.stages.length,pts=X.stages.map(function(){return [0,0]});
+  EX3.stg.forEach(function(s,i){if(s<0)return;pts[s][1]++;if(res[i])pts[s][0]++;});
+  var notes=pts.map(function(p){return p[1]?Math.round(per*p[0]/p[1]*2)/2:0}),note=notes.reduce(function(a,b){return a+b},0);
+  var st=note>=16?3:note>=12?2:note>=10?1:0,was=S.stars[EX3.id]||0;S.stars[EX3.id]=Math.max(was,st);qd().lv++;
+  var b=S.best[EX3.id],first=!b;if(!b||note>b[0])S.best[EX3.id]=[note];
+  if(first&&note>=10){S.xp+=150;G.score+=150;}save();
+  var mention=note>=16?"Très bien":note>=14?"Bien":note>=12?"Assez bien":note>=10?"Passable":"Insuffisant";
+  var rows=X.stages.map(function(s,k){var r=notes[k]/per;return '<div class="secrow" style="flex-direction:column;align-items:stretch;gap:2px"><span style="display:flex;justify-content:space-between"><b>'+esc(s.t)+'</b><b class="'+(r>=0.75?"g":"r")+'">'+fr(notes[k])+' / '+fr(per)+'</b></span><span class="small mut">'+esc(r>=0.75?s.ok:r>=0.5?s.mid:s.ko)+'</span></div>'}).join("");
+  var pres=X.C.P[Object.keys(X.C.P)[0]];
+  $("#gStage").innerHTML='<div class="qcard end pop"><div class="stars-big">'+stars(st,3)+'</div><div class="eyebrow">Délibération du jury</div><h3 style="font-size:30px">'+fr(note)+' / 20</h3><span class="pill'+(note>=10?"":" coral")+'" style="font-size:13px">'+mention+'</span>'+
+    '<div class="spk" style="text-align:left;width:100%">'+avatar(pres.av,44)+'<div class="bub"><small>'+esc(pres.n)+'</small>'+(note>=14?"Une démarche de soin claire, du bilan au suivi : vous êtes prête pour l'E3.":note>=10?"La trame est là ; retravaillez les étapes en rouge, surtout la phrase PES.":"Reprenez la trame en 4 étapes : bilan, diagnostic PES, plan de soin, suivi.")+'</div></div>'+
+    '<div class="sectab" style="width:100%">'+rows+'</div>'+(first&&note>=10?'<div class="pill" style="font-size:13px">Première réussite · +150 XP</div>':'')+
+    '<div class="row" style="justify-content:center"><button class="btn ghost" type="button" id="again">Repasser l\'épreuve</button><button class="btn" type="button" data-go="quartier">Retour au quartier</button></div></div>';
+  $("#again").onclick=startExam3;}
 
 S.carnet=(S.carnet||[]).filter(function(c){return c&&c.key&&NOTIONS[c.key]});
 
