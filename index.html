@@ -3351,6 +3351,277 @@ COURS.ds9={id:"ds9",n:"Soin 9",t:"Outils numériques du diététicien",lieu:"Mai
  ]}
 };
 
+/* ---------- SOIN 10 · ORGANISER UNE TÉLÉCONSULTATION ---------- */
+var B_TEMPS=[["Avant","je me prépare"],["Pendant","je mène"],["Après","j'assure le suivi"]];
+var B_BASCUL=[["Basculer en présentiel",""],["Rester à distance",""]];
+COURS.ds10={id:"ds10",n:"Soin 10",t:"Organiser une téléconsultation",lieu:"Cabinet de téléconsultation · Clermont-Ferrand",
+ pitch:"La téléconsultation s'est développée depuis 2018, mais elle ne s'improvise pas. Élodie Marchand suit à distance Bernard, retraité dans le Cantal, et la famille Kaya, bruyante et pressée. Avant, pendant, après : anticiper la technique pour pouvoir se concentrer sur le patient.",
+ P:{marchand:{n:"Élodie Marchand",r:"Diététicienne en téléconsultation",av:{bg:"#5bb8f5",skin:"#f0c8a8",hair:"#c26a2e",hs:"long",shirt:"#13303a"}},
+    bernard:{n:"Bernard Vidal",r:"Patient, 71 ans, Cantal",av:{bg:"#ffc94a",skin:"#e8b896",hair:"#d9d9d9",hs:"short",shirt:"#55d6cf",glasses:1}},
+    kaya:{n:"Selin Kaya",r:"Mère de famille, 39 ans",av:{bg:"#ff9476",skin:"#c99067",hair:"#1f1410",hs:"bun",shirt:"#ae8dff"}}},
+ conseil:{who:"marchand",t:"Avant : tester 30 minutes avant (webcam 1080p, micro-casque, 8 Mbps, filaire si possible) et réserver 15 minutes de préparation. Pendant : regarder la caméra, ralentir, amplifier ses gestes, récapituler, nommer le patient. Après : un compte-rendu qui précise la modalité et la qualité technique, le DMP, la messagerie sécurisée. Et basculer en présentiel si besoin."},
+ levels:[
+ {id:"ds10a",t:"Avant : se préparer",s:"Fiches 0 à 2 · équipement, espace, cadre",items:[
+  "Fiche 0 · Le contexte",
+  N(Q("En 2018, l'Assurance Maladie a reconnu et remboursé la téléconsultation…",["Pour les médecins uniquement","Pour tous les professionnels de santé","Pour les diététiciens uniquement"],"Piège d'examen."),
+    O("Remets dans l'ordre les 3 temps d'une téléconsultation.",["Avant : je me prépare","Pendant : je mène la consultation","Après : j'assure le suivi"],""),
+    W("Quel est l'enjeu principal de la téléconsultation ?","Elle répond à l'accessibilité territoriale et aux nouveaux modes de vie, mais demande des compétences spécifiques : préserver la qualité de la relation thérapeutique et l'efficacité des interventions malgré la distance.",["Accessibilité, modes de vie","Compétences spécifiques","Relation préservée malgré la distance"])),
+  "Fiche 1 · Équipement et vérifications",
+  N(A("Équipement : relie chaque élément à son exigence.",[["Connexion","8 Mbps minimum, filaire si possible"],["Webcam","1080p minimum"],["Audio","Micro-casque professionnel"],["Éclairage","Frontal, sans contre-jour"],["Plateforme","Certifiée HDS"]],""),
+    F("Débit minimum : {8} Mbps ; webcam : {1080}p minimum.",""),
+    W("Pourquoi une connexion instable est-elle un vrai problème clinique ?","Elle compromet l'échange et peut nuire à l'évaluation nutritionnelle ; un incident en début de séance peut ruiner tout l'échange et la confiance du patient dans la téléconsultation.",["Échange compromis","Évaluation faussée","Confiance perdue"])),
+  N(O("Checklist de l'équipement : remets dans l'ordre.",["Tester la vidéo en conditions réelles","Contrôler l'audio avec et sans casque","Évaluer la stabilité de la connexion","Valider les raccourcis logiciels"],""),
+    F("La routine de vérification commence {30} minutes avant ; le planning réserve {15} minutes de préparation par séance.",""),
+    E(["Je réserve 30 minutes de préparation dans mon planning"," et je commence mes vérifications"," 15 minutes avant la séance."],0,"C'est l'inverse : vérifications dès 30 min avant, 15 min de préparation réservées au planning.","Piège d'examen.")),
+  N(A("Planifier ses créneaux : relie.",[["Préparation","15 minutes avant chaque séance"],["Durée","Plus longue pour certaines évaluations"],["Marges","Entre les créneaux"],["Patient","Informé des modalités dès la prise de RDV"]],"")),
+  "Fiche 2 · Espace, supports et cadre",
+  N(Q("L'environnement professionnel numérique, c'est…",["Tout ce que le patient voit et entend à l'écran : la première impression","Le logiciel de facturation","Le bureau du cabinet physique"],""),
+    O("Aménager son espace numérique : remets dans l'ordre.",["Arrière-plan neutre et soigné","Caméra au niveau du regard","Éclairage frontal","Aucune distraction sonore ou visuelle"],""),
+    E(["Mon ordinateur portable est posé bas sur le bureau :"," la caméra en contre-plongée"," me donne un air plus imposant et rassurant."],1,"Une caméra trop basse crée un effet « plongée » qui dévalorise le professionnel.","Piège d'examen.")),
+  N(A("Adapter ses supports : relie.",[["Format","PDF optimisés, infographies"],["Lisibilité","Polices plus grandes, contrastes renforcés"],["Interactivité","Calculateurs en direct"],["Rangement","Par pathologie, objectif, profil"]],""),
+    S("Comment appelle-t-on l'ensemble réglettes de portions, guides illustrés et plans modifiables en direct ?",["trousse numerique","trousse numérique","la trousse numerique"],"")),
+  N(O("Cadre réglementaire : remets dans l'ordre.",["Mêmes exigences déontologiques qu'en présentiel","Plateforme HDS et RGPD","Informer : technique, limites, secours","Recueillir et documenter le consentement à ce mode"],""))
+ ]},
+ {id:"ds10b",t:"Pendant : mener",s:"Fiches 3 et 4 · communication, évaluation à distance",items:[
+  "Fiche 3 · Communiquer et engager",
+  N(Q("Pour donner l'impression de regarder le patient, on regarde…",["La caméra","Son visage à l'écran","Ses notes"],"Technique contre-intuitive, à entraîner."),
+    A("Adapter sa communication : relie.",[["Regard","Vers la caméra"],["Voix","Articuler, ralentir, faire des pauses"],["Gestuelle","Amplifiée et expressive"],["Silences","Stratégiques"]],""),
+    W("Pourquoi amplifier sa gestuelle à l'écran ?","Le champ visuel est réduit : le visage et les mains deviennent essentiels. La gestuelle amplifiée compense ce que le patient ne voit pas et maintient l'attention.",["Champ visuel réduit","Visage et mains","Maintenir l'attention"])),
+  N(O("Structure d'engagement à distance : remets dans l'ordre.",["Accueil personnalisé renforcé","Vérification technique partagée","Récapitulations fréquentes","Solliciter le patient par son nom"],""),
+    Q("Pourquoi récapituler souvent ?",["Pour compenser les pertes d'information dues aux incidents techniques","Pour remplir le temps","Parce que le patient oublie tout"],""),
+    CAS("Chez les Kaya, les enfants crient, la télé est allumée et Selin regarde son téléphone.",Q("Que fait Élodie ?",["Elle pose des questions directes régulières, en nommant Selin, et adapte le rythme","Elle parle plus vite pour finir plus tôt","Elle coupe la séance"],"Les écrans favorisent la distraction, surtout en famille."))),
+  "Fiche 4 · Évaluer à distance",
+  N(A("Évaluer sans examen physique : relie.",[["Auto-mesures guidées","Poids, tour de taille vérifiés par webcam"],["Observation visuelle","Carrure, posture, gestuelle"],["Questionnaires digitaux","Analyse en temps réel"],["Photos standardisées","Alternative au carnet papier"]],""),
+    E(["La balance connectée de Bernard indique 32 % de masse grasse :"," je base mon diagnostic"," sur ce chiffre."],1,"La composition corporelle des balances connectées a une fiabilité contestée : on ne la surinterprète pas.","Piège d'examen.")),
+  N(O("Compenser les limites : remets dans l'ordre.",["Observation indirecte des non-dits","Repères visuels pour les portions","Évaluer faim, satiété, plaisir, émotions","Faire appel aux proches, avec accord"],""),
+    S("Quel repère corporel sert d'étalon pour estimer les portions ?",["la main","main","les mains"],"Avec cuillères, louche, aliments montrés à l'écran."),
+    CAS("Élodie veut connaître le tour de taille de Bernard, qui vit seul.",W("Comment procède-t-elle ?","Elle guide pas à pas l'auto-mesure (où placer le mètre, comment le tenir) en vérifiant la technique par webcam ; si c'est trop difficile, elle peut faire appel à un proche avec son accord, ou prévoir la mesure en présentiel.",["Auto-mesure guidée","Vérifier par webcam","Proche avec accord ou présentiel"])))
+ ]},
+ {id:"ds10c",t:"Après : suivre",s:"Fiches 5 à 7 · traçabilité, suivi, méthodes",items:[
+  "Fiche 5 · Documentation et traçabilité",
+  N(Q("Pour prendre des notes à distance sans perdre le contact visuel…",["Abréviations, modèles pré-structurés, saisie rapide, sans figer la consultation","Couper la caméra","Tout noter après la séance de mémoire"],""),
+    O("Compte-rendu de téléconsultation : remets dans l'ordre.",["Modalité de consultation","Qualité technique globale","Évaluation spécifique à distance","Recommandations adaptées au suivi numérique","Planification des échanges"],""),
+    E(["Mon compte-rendu de téléconsultation"," est identique à celui d'une consultation au cabinet :"," inutile de préciser la modalité."],1,"Il doit préciser la modalité à distance et la qualité technique de l'échange.","Piège d'examen.")),
+  N(A("Archivage et système d'information : relie.",[["Normes","HDS"],["Traces","Logs, fichiers partagés, captures autorisées"],["DMP","En précisant la modalité à distance"],["Coordination","Messagerie sécurisée de santé"]],""),
+    W("Pourquoi noter aussi la qualité de connexion et les incidents ?","Ces informations techniques expliquent certaines difficultés d'évaluation, guident les consultations suivantes et assurent une traçabilité complète qui protège le professionnel.",["Expliquer les difficultés","Guider la suite","Protection professionnelle"])),
+  "Fiche 6 · Suivi et amélioration",
+  N(A("Entre les séances : relie.",[["Messagerie sécurisée","Questions non urgentes"],["Carnets partagés","Réactivité impossible avec le papier"],["Rappels automatisés","Motivation, à personnaliser"],["Suivi hebdomadaire","Questionnaires courts, alertes de dérive"]],""),
+    E(["Bernard a des malaises depuis ce matin :"," je lui dis de m'écrire sur la messagerie sécurisée,"," je répondrai ce soir."],1,"La messagerie sert aux questions non urgentes : ce n'est pas un service d'urgence.","Piège d'examen.")),
+  N([T(B_BASCUL,"Besoin d'un examen physique",0,""),T(B_BASCUL,"Difficultés techniques récurrentes",0,""),T(B_BASCUL,"Le patient demande à venir au cabinet",0,""),T(B_BASCUL,"Patient chronique stable, bien équipé",1,"")],
+    O("Remets dans l'ordre les 3 critères de basculement vers le présentiel.",["Besoin d'un examen physique","Difficultés techniques récurrentes","Demande du patient"],""),
+    Q("Organiser le parcours à distance :",["Consultations initiales rapprochées, puis espacement avec suivi renforcé","Une seule consultation par an","Toujours le même rythme"],"")),
+  N(A("Patients peu adaptés à la téléconsultation : relie.",[["Cognitif","Troubles cognitifs"],["Technique","Difficultés techniques majeures"],["Clinique","Besoin d'examen physique régulier"]],""),
+    Q("Soutenir les publics fragiles :",["Former les proches, orienter vers des lieux équipés (pharmacies, maisons de santé)","Les exclure de la téléconsultation","Leur envoyer un tutoriel PDF"],"")),
+  "Fiche 7 · Méthodes",
+  N([T(B_TEMPS,"Tester vidéo et audio 30 minutes avant",0,""),T(B_TEMPS,"Regarder la caméra et nommer le patient",1,""),T(B_TEMPS,"Synchroniser le compte-rendu avec le DMP",2,""),T(B_TEMPS,"Guider les auto-mesures par webcam",1,""),T(B_TEMPS,"Préparer la trousse numérique",0,""),T(B_TEMPS,"Archiver logs et autorisations",2,"")],
+    S("Quel est le fil commun des méthodes ? Anticiper la technique pour…",["se concentrer sur le patient","pouvoir se concentrer sur le patient","le patient"],""))
+ ]}
+ ],
+ mission:{id:"ds10m",t:"Une journée de téléconsultations",items:[
+  CH("marchand","8 h 30, première séance à 9 h. Que fais-tu ?",[
+    ["Je teste vidéo, audio, débit et partage d'écran, je prépare la trousse numérique",2,[2,6,12],"La routine commence 30 minutes avant."],
+    ["Je lance la plateforme à 9 h pile",0,[-2,-6,-10],"Un incident en début de séance ruine la confiance."]],
+   "Fiche 1."),
+  CH("bernard","« Allô ? Je vous vois tout en haut de l'écran, et vous ne me regardez pas. »",[
+    ["Je remonte la caméra au niveau de mes yeux et je regarde l'objectif en lui parlant, plus lentement",2,[2,12,6],"Regard caméra, pas d'effet plongée."],
+    ["Je continue, ce n'est qu'un détail",0,[0,-10,-4],"La première impression compte."]],
+   "Fiches 2 et 3."),
+  BY("marchand",O("Remets dans l'ordre la mesure du tour de taille de Bernard.",["Lui expliquer où placer le mètre","Vérifier sa position par webcam","Lire la mesure ensemble","Noter la modalité « auto-mesure guidée »"],"")),
+  CH("kaya","« Désolée, les enfants… Vous disiez quoi sur le goûter ? »",[
+    ["« Selin, je récapitule les deux points clés : … Vous me redites ce que vous en retenez ? »",2,[6,10,6],"Récapitulation, nom, vérification."],
+    ["Je passe au point suivant pour tenir le temps",0,[-4,-8,-4],"L'information est perdue."]],
+   "Fiche 3."),
+  CH("bernard","« Je ne sais pas si j'ai maigri : ma balance est cassée, et je me sens faible. »",[
+    ["Je lui propose une consultation au cabinet pour un examen physique et je trace la décision",2,[12,8,8],"Critère de basculement : examen physique nécessaire."],
+    ["On estime son poids d'après la photo",0,[-12,-2,-8],"Signes de dénutrition possibles : l'examen est nécessaire."]],
+   "Fiche 6."),
+  BY("marchand",W("Rédige les rubriques du compte-rendu de la séance de Bernard.","Modalité : téléconsultation vidéo. Qualité technique : bonne après réglage de la caméra. Évaluation à distance : auto-mesure guidée du tour de taille, observation, ressentis, signes de fatigue. Recommandations adaptées au suivi numérique. Planification : consultation en présentiel pour examen physique, messages via la messagerie sécurisée ; synchronisé avec le DMP.",["Modalité","Qualité technique","Évaluation à distance","Recommandations","Planification, DMP"]))
+ ]}
+};
+
+/* ---------- SOIN 11 · TÉLÉSANTÉ : CADRE ET ENJEUX ---------- */
+var B_MOD=[["Téléconsultation",""],["Télé-expertise",""],["Télésurveillance",""],["Téléassistance",""]];
+var B_PREF=[["Télésanté adaptée",""],["Préférer le présentiel",""]];
+var B_PILIERT=[["Sécurité","HDS"],["Audiovisuel","2 Mbps"],["Interopérabilité","MSSanté, DMP"]];
+COURS.ds11={id:"ds11",n:"Soin 11",t:"Télésanté : cadre et enjeux",lieu:"Réseau de télésanté nutritionnelle · Cévennes et Lozère",
+ pitch:"7,4 millions de Français ont un accès limité à un généraliste, et il n'y a que 15 495 diététiciens en France. Hugo Pradel suit Camille, diabétique dans un village des Cévennes, et Patrice, à 60 km de son cabinet. La télésanté est un levier d'équité… à condition de n'exclure personne.",
+ P:{pradel:{n:"Hugo Pradel",r:"Diététicien en télésanté · Mende",av:{bg:"#55d6cf",skin:"#e8b896",hair:"#6b3b1f",hs:"short",shirt:"#13303a"}},
+    camille:{n:"Camille Rouvière",r:"Patiente, diabétique, Cévennes",av:{bg:"#ff9476",skin:"#f0c8a8",hair:"#c26a2e",hs:"long",shirt:"#ffc94a"}},
+    patrice:{n:"Patrice Allègre",r:"Patient, diabétique de type 2",av:{bg:"#ffc94a",skin:"#c99067",hair:"#8a8a8a",hs:"short",shirt:"#5bb8f5",glasses:1}}},
+ conseil:{who:"pradel",t:"Bien choisir, sécuriser, n'exclure personne. 4 modalités : téléconsultation, télé-expertise (avis entre pros), télésurveillance, téléassistance (aider un confrère en direct). Idéale pour les chroniques stables ; le présentiel reste pour l'examen physique, les TCA, la pédiatrie. Et toujours une alternative pour les patients éloignés du numérique."},
+ levels:[
+ {id:"ds11a",t:"Définir et organiser",s:"Fiches 0 à 2 · constat, 4 modalités, organisation, DMP",items:[
+  "Fiche 0 · Le constat",
+  N(A("Chiffres de départ : relie.",[["7,4 millions (11,1 %)","Accès limité à un généraliste"],["15 495","Diététiciens en France"],["2018","Financement de l'Assurance Maladie, médecins uniquement"]],""),
+    Q("La télésanté est…",["Une modalité complémentaire au présentiel, jamais un substitut universel","Le futur remplaçant des consultations","Réservée aux médecins"],""),
+    Q("Quel événement a accéléré le développement de la télésanté ?",["La crise sanitaire","La loi de 2016 sur les GHT","Le RGPD"],"Financée depuis 2018 pour les médecins, elle s'est accélérée pendant la crise sanitaire.")),
+  "Fiche 1 · Définition et 4 modalités",
+  N(Q("La télésanté, c'est…",["L'ensemble des activités sanitaires, sociales ou médico-sociales à distance grâce aux TIC","La télémédecine des médecins","Une application de santé"],"Plus large que la télémédecine : elle inclut les diététiciens."),
+    E(["La télésanté et la télémédecine sont synonymes :"," elles concernent les médecins,"," pas les diététiciens."],1,"La télésanté est plus large et inclut les professionnels non médecins comme les diététiciens.","Piège d'examen.")),
+  N([T(B_MOD,"Bilan complet à distance avec Camille",0,""),T(B_MOD,"Le médecin de Camille demande comment adapter son alimentation à un nouveau traitement",1,""),T(B_MOD,"Glycémies et carnet alimentaire reçus chaque jour",2,""),T(B_MOD,"Aider en direct une jeune collègue pendant sa consultation",3,"")],
+    E(["Quand j'accompagne en direct une collègue débutante pendant sa consultation,"," je fais de la télé-expertise,"," c'est un avis entre professionnels."],1,"Aider un confrère en temps réel pendant sa consultation, c'est la téléassistance.","Piège d'examen.")),
+  N(A("Spécificités de la télésanté nutritionnelle : relie.",[["Mesures","Auto-mesure guidée, photos de portions"],["ETP","Étiquettes en partage d'écran, ateliers culinaires virtuels"],["Suivi","Plus rapproché : diabète, dyslipidémies, TCA"]],""),
+    F("Grâce à la téléconsultation, Camille évite {80} km aller-retour chaque mois.","")),
+  "Fiche 2 · Organisation et DMP",
+  N(A("Pourquoi c'est un enjeu (UFC Que Choisir, 2023) : relie.",[["25,3 millions","Usagers avec une offre libérale insuffisante"],["1/4","Femmes en désert gynécologique"],["28,9 %","Enfants en désert pédiatrique"],["19 %","À plus de 45 min d'un ophtalmologue"]],"")),
+  N([T(B_PILIERT,"Plateforme certifiée",0,""),T(B_PILIERT,"Connexion stable en montant et descendant",1,""),T(B_PILIERT,"Logiciel métier connecté, pas de double saisie",2,"")],
+    F("Selon ce cours, le débit minimum est de {2} Mbps en montant et descendant.",""),
+    E(["Pour la télésanté, le débit minimum"," est toujours de 8 Mbps,"," quel que soit le cours."],1,"Ce cours donne 2 Mbps ; le cours sur la téléconsultation donnait 8 Mbps : réponds selon le cours de la question.","Piège d'examen.")),
+  N(O("Remets dans l'ordre les 6 étapes d'une téléconsultation.",["Évaluation préalable","Planification","Préparation","Déroulement","Documentation","Suivi"],""),
+    Q("À l'étape de planification, on envoie…",["Un lien sécurisé, un numéro de secours et la liste des documents à préparer","Uniquement la facture","Rien, le patient se connecte seul"],"")),
+  N(A("Règles du DMP : relie.",[["Accès","Carte CPS ou e-CPS"],["Contenu","Données strictement nécessaires, si pas d'opposition"],["Contrôle","Accès tracés et visibles par le patient"],["Abus","Accès inapproprié sanctionnable"]],""),
+    W("Qu'apporte le DMP à la continuité des soins ?","Il permet de consulter l'historique du patient, d'ajouter ses comptes-rendus et de partager ses recommandations avec les autres professionnels.",["Historique","Comptes-rendus","Recommandations partagées"]))
+ ]},
+ {id:"ds11b",t:"Pour qui ?",s:"Fiches 3 et 4 · pathologies, territoires, publics",items:[
+  "Fiche 3 · Pathologies chroniques",
+  N(F("Patrice : HbA1c de {8,2|8.2} % à {7,1|7.1} % en {6} mois de téléconsultations mensuelles.",""),
+    Q("Avant la télésanté, Patrice (à 60 km du cabinet) venait…",["Une fois par semestre","Une fois par semaine","Jamais"],"Avec la télésanté : consultations mensuelles + télésurveillance quotidienne.")),
+  N(A("Ce que permet la télésanté : relie.",[["Diabète de type 2","Analyser l'autosurveillance glycémique"],["Hypertension","Repérer le sel caché en partage d'écran"],["Dyslipidémies","Analyser les photos de repas"],["Obésité","Séances courtes et fréquentes, 20 min par semaine"]],""),
+    Q("Quels patients sont les plus adaptés à la télésanté ?",["Les patients chroniques et stables qui ont besoin d'un suivi régulier","Les patients en première consultation","Les enfants avec un TCA"],"Piège d'examen.")),
+  N(A("Éducation enrichie : relie.",[["Groupes","Patients de territoires différents"],["Ateliers culinaires virtuels","Depuis la cuisine du patient, enregistrables"],["Programmes ciblés","Diabète gestationnel, ménopause, adolescents"],["Carnets numériques","Feedback, objectifs, récompenses"]],"")),
+  "Fiche 4 · Territoires et publics",
+  N(A("Inégalités territoriales : relie.",[["87 %","Du territoire en désert médical"],["6,73","Diététiciens / 100 000 hab. en Creuse"],["25,34","Diététiciens / 100 000 hab. en Haute-Garonne"],["≈ 20 %","Des diététiciens en Île-de-France"]],""),
+    E(["Proposer la télésanté aux patients ruraux"," est surtout une démarche commerciale"," pour élargir sa patientèle."],1,"Le cours parle d'une mission de service public d'équité territoriale.","Piège d'examen.")),
+  N(A("Publics qui en bénéficient : relie à l'adaptation.",[["Personnes âgées","Questionnaires simplifiés, aidant impliqué"],["Patients chroniques","20 min toutes les 2 semaines plutôt qu'1 h par mois"],["Précarité","Plus de coûts de transport ni de garde d'enfants"]],""),
+    O("Bénéfices pour l'accès : remets dans l'ordre.",["Moins de renoncements liés à la distance","Accès pour les personnes à mobilité réduite","Cadre parfois plus rassurant","Continuité en situation exceptionnelle"],""),
+    W("Comment la télésanté aide-t-elle la continuité ville-hôpital ?","Elle maintient le suivi pendant une hospitalisation prolongée, facilite la coordination avec l'équipe, prépare le retour à domicile et permet de transmettre ses comptes-rendus instantanément.",["Suivi pendant l'hospitalisation","Coordination","Retour à domicile"]))
+ ]},
+ {id:"ds11c",t:"Limites et avenir",s:"Fiches 5 à 8 · bénéfices, fracture, perspectives, méthodes",items:[
+  "Fiche 5 · Bénéfices et limites",
+  N(A("Bénéfices : relie.",[["Organisation","Créneaux flexibles, file active plus grande"],["Observance","Contacts fréquents, ajustements réactifs"],["Satisfaction","Plus de 85 % en suivi chronique stabilisé"]],""),
+    E(["Plus de 85 % des patients sont satisfaits :"," la télésanté convient donc"," à toutes les situations."],1,"Ce chiffre concerne le suivi de pathologies chroniques stabilisées, pas toutes les situations.","Piège d'examen.")),
+  N(Q("La principale limite de la télésanté est…",["L'impossibilité d'un examen physique complet","Le coût","Le manque de plateformes"],"Pas de plis cutanés, d'évaluation de l'hydratation ni de la fonte musculaire."),
+    [T(B_PREF,"Suivi d'un diabétique stable bien équipé",0,""),T(B_PREF,"Première consultation avec bilan anthropométrique",1,""),T(B_PREF,"Recherche de signes de dénutrition",1,""),T(B_PREF,"Adolescente avec un TCA",1,""),T(B_PREF,"Patient sans connexion",1,"")]),
+  "Fiche 6 · Fracture numérique et équité",
+  N(F("L'illectronisme touche {15,4|15.4} % de la population et {62} % des plus de 75 ans (INSEE 2023).",""),
+    Q("Pourquoi parle-t-on de « double peine » pour les zones blanches ?",["Loin des professionnels et sans accès à la télésanté","Deux fois plus de diabétiques","Deux fois plus de sanctions"],""),
+    W("Quel est le paradoxe de la télésanté ?","Conçue pour améliorer l'équité d'accès, elle peut exclure les plus vulnérables (âgés, précaires, zones blanches, complexité technique) si on ne prévoit pas d'inclusion numérique.",["Conçue pour l'équité","Peut exclure","Âgés, précaires, zones blanches"])),
+  N(O("Solutions d'inclusion : remets dans l'ordre.",["Consultations hybrides et créneaux d'initiation","Partenariats avec médiathèques et centres sociaux","Téléconsultation par simple appel téléphonique","Évaluer les compétences numériques dès la 1re consultation"],""),
+    E(["M. Faure préfère venir au cabinet :"," je lui impose la téléconsultation,"," c'est plus efficace."],1,"Le respect du choix du patient est un principe éthique fondamental : on propose sans imposer.","Piège d'examen.")),
+  "Fiche 7 · Transformation et perspectives",
+  N(O("Remets dans l'ordre les 5 outils d'évaluation à distance.",["Auto-mesure guidée","Photographies standardisées","Questionnaires numériques validés","Calcul en temps réel","Carnets connectés"],""),
+    A("Innovations : relie.",[["Intelligence artificielle","Analyse automatique des photos de repas"],["Réalité virtuelle","Supermarché virtuel"],["Applications","Rappels, défis : le diététicien les prescrit"],["Objets connectés","Glucomètres, tensiomètres"]],""),
+    E(["L'IA analyse les photos de repas mieux que moi :"," je peux lui confier"," mes recommandations."],1,"L'IA est un outil d'aide à la décision : elle ne remplace pas l'expertise du diététicien.","Piège d'examen.")),
+  N(A("Viabilité économique : relie.",[["Économies","Moins de frais de structure et de déplacement"],["Coûts","Investissements et formation à amortir"],["Financements","Mutuelles, entreprises, associations"],["Médico-économique","Moins d'hospitalisations évitables"]],""),
+    O("Nouvelles compétences du diététicien : remets dans l'ordre.",["Outils de communication numérique","Évaluation adaptée à la distance","Écoute renforcée","Intégration à l'équipe"],"")),
+  "Fiche 8 · Méthodes",
+  N(A("Relie chaque situation au réflexe.",[["Préparer","Éligibilité, lien, numéro de secours, créneau tampon"],["Choisir les patients","Stables, suivi régulier"],["Sécuriser","HDS, MSSanté, DMP si nécessaire"],["Inclure","Hybride, médiathèques, téléphone"]],""),
+    F("On évalue un programme de télésanté à {6}, {12} et {18} mois.",""),
+    S("Quel est le fil commun ? Bien choisir, sécuriser, …",["n exclure personne","n'exclure personne","nexclure personne"],""))
+ ]}
+ ],
+ mission:{id:"ds11m",t:"Le réseau des Cévennes",items:[
+  BY("pradel",T(B_MOD,"Le médecin de Camille vous écrit : nouveau traitement, quelle alimentation ?",1,"Avis entre professionnels : télé-expertise.")),
+  CH("camille","« Je fais 80 km pour 30 minutes de consultation. Je vais arrêter le suivi. »",[
+    ["Je lui propose une téléconsultation mensuelle avec télésurveillance de ses glycémies, après avoir vérifié sa connexion et son aisance",2,[10,12,8],"Levier d'équité, éligibilité vérifiée."],
+    ["« C'est dommage, mais c'est votre choix. »",0,[-10,-4,-4],"Renoncement aux soins évitable."]],
+   "Fiches 1 et 4."),
+  CH("pradel","Patrice demande à commencer directement à distance, pour sa toute première consultation.",[
+    ["Première consultation au cabinet pour le bilan anthropométrique, puis téléconsultations mensuelles",2,[10,6,10],"Alternance présentiel-distanciel."],
+    ["Pas de souci, tout à distance",1,[-4,4,-6],"Pas d'examen physique pour le bilan initial."]],
+   "Fiche 5."),
+  CH("pradel","Mme Bonnet, 81 ans, vit en zone blanche et n'a pas d'ordinateur.",[
+    ["Suivi hybride : présentiel, appels téléphoniques, et créneau à la médiathèque avec un médiateur si elle le souhaite",2,[8,10,6],"Inclusion, choix de la patiente."],
+    ["Elle ne peut pas bénéficier de la télésanté, tant pis",0,[-10,-8,-6],"Double peine."]],
+   "Fiche 6."),
+  BY("pradel",O("Remets dans l'ordre l'organisation de la téléconsultation de Camille.",["Évaluer son éligibilité","Envoyer lien, numéro de secours, documents","Tester le matériel","Dérouler la séance","Documenter","Planifier le suivi"],"")),
+  BY("pradel",W("Après 6 mois, comment évaluer le programme de télésanté du réseau ?","Indicateurs quantitatifs (nombre de patients, HbA1c, hospitalisations évitées) et retours qualitatifs (satisfaction, barrières techniques), puis ajustement à 6, 12 et 18 mois.",["Quantitatif : patients, HbA1c, hospitalisations","Qualitatif : satisfaction, barrières","Ajuster à 6, 12, 18 mois"]))
+ ]}
+};
+
+/* ---------- SOIN 12 · RISQUES, LIMITES ET RESPONSABILITÉS DANS LE NUMÉRIQUE ---------- */
+var B_MENACE=[["Ransomware",""],["Phishing",""],["Logiciel malveillant",""],["Déni de service",""]];
+var B_ORIG=[["Erreur humaine",""],["Défaillance technique",""],["Vol ou perte",""],["Accès non autorisé",""]];
+var B_NOTIF=[["Registre seulement",""],["Registre + CNIL",""],["Registre + CNIL + patients",""]];
+COURS.ds12={id:"ds12",n:"Soin 12",t:"Risques, limites et responsabilités",lieu:"Cabinet libéral de Lisa Morel · Nantes",
+ pitch:"La santé est la cible préférée des cybercriminels, libéraux compris : un seul clic sur un lien frauduleux peut tout bloquer. Lisa Morel a sécurisé son cabinet pas à pas ; son confrère Yann Le Goff vient de recevoir un message de rançon. Prévenir, tracer, être prêt.",
+ P:{morel:{n:"Lisa Morel",r:"Diététicienne libérale · Nantes",av:{bg:"#ae8dff",skin:"#f0c8a8",hair:"#2b1b14",hs:"bun",shirt:"#55d6cf"}},
+    legoff:{n:"Yann Le Goff",r:"Diététicien libéral · Saint-Nazaire",av:{bg:"#5bb8f5",skin:"#e8b896",hair:"#c26a2e",hs:"short",shirt:"#ffc94a"}},
+    sarah:{n:"Sarah Benoît",r:"Secrétaire du cabinet",av:{bg:"#ffc94a",skin:"#c99067",hair:"#1f1410",hs:"long",shirt:"#ff7a59",glasses:1}}},
+ conseil:{who:"morel",t:"Prévenir, tracer, être prêt. 6 mesures : mises à jour, antivirus pro, pare-feu, chiffrement, gestionnaire de mots de passe, double facteur ; et la règle 3-2-1. Violation : registre toujours, CNIL sous 72 h si risque, patients si risque élevé. Moindre privilège. RCP indispensable, assurance cyber fortement recommandée."},
+ levels:[
+ {id:"ds12a",t:"Menaces et protection",s:"Fiches 0 à 2 · cybermenaces, approche multicouche",items:[
+  "Fiche 0 · Pourquoi la santé ?",
+  N(Q("Pourquoi la santé est-elle la cible privilégiée des cybercriminels ?",["Les données de santé valent cher sur le marché noir, les systèmes ont des failles, et l'urgence médicale pousse à céder au chantage","Les soignants sont riches","Les hôpitaux n'ont pas d'informatique"],""),
+    W("En quoi la responsabilité du diététicien s'étend-elle avec le numérique ?","Dossiers dématérialisés, téléconsultations, applis multiplient les points d'exposition : un simple clic peut tout compromettre. Le diététicien est désormais responsable de la protection numérique des données qui lui sont confiées.",["Points d'exposition multiples","Un clic suffit","Protection numérique des données"])),
+  "Fiche 1 · Les cybermenaces",
+  N([T(B_MENACE,"Toutes les données chiffrées, rançon exigée",0,""),T(B_MENACE,"Faux e-mail du logiciel métier, fausse page de connexion",1,""),T(B_MENACE,"Clé USB infectée qui enregistre les frappes",2,""),T(B_MENACE,"Prise de RDV en ligne saturée et inaccessible",3,"")],
+    A("Relie chaque menace à sa particularité.",[["Ransomware","La plus redoutable : paralysie"],["Phishing","Plus de 80 % des cyberattaques"],["Logiciel malveillant","Détecté parfois des mois après"],["Déni de service","Réputation abîmée"]],"")),
+  N(A("Vulnérabilités propres aux diététiciens : relie.",[["BYOD","Smartphone personnel peu sécurisé"],["Cloud grand public","Google Drive, Dropbox : non HDS"],["Mots de passe","Réutilisés ou trop simples"],["Formation","Limitée en cybersécurité"]],""),
+    E(["Je partage mes bilans patients avec ma collègue via Google Drive :"," c'est sécurisé"," grâce au mot de passe."],1,"Google Drive et Dropbox ne sont pas certifiés HDS : y stocker des données patients est interdit.","Piège d'examen."),
+    W("Quel est l'impact d'une cyberattaque sur un cabinet ?","Paralysie de l'activité pendant des jours ou des semaines (perte de revenus, patients qui partent), perte irremplaçable de l'historique nutritionnel, et coûts : expertise, équipements, restauration, mise en conformité, pertes d'exploitation.",["Paralysie","Perte de données","Coûts"])),
+  "Fiche 2 · L'approche multicouche",
+  N(O("Remets dans l'ordre les 6 mesures de sécurisation technique.",["Mises à jour automatiques","Antivirus professionnel","Pare-feu","Chiffrement du disque","Gestionnaire de mots de passe","Double facteur"],""),
+    Q("Quelle est la protection la plus efficace contre les attaques automatisées ?",["Les mises à jour, souvent jugées contraignantes","Un fond d'écran sécurisé","Changer d'ordinateur chaque année"],"Piège d'examen."),
+    S("Quel est le dernier rempart si tout le reste échoue ?",["chiffrement","le chiffrement","chiffrement des donnees","chiffrement des données"],"")),
+  N(F("Règle {3}-{2}-{1} : 3 copies, 2 supports, 1 hors site certifié HDS ; sauvegarde automatisée {quotidienne}.",""),
+    E(["Mes sauvegardes tournent toutes seules chaque nuit :"," je suis donc protégée,"," pas besoin de tester."],1,"Une sauvegarde non testée est une fausse sécurité : on teste régulièrement la restauration.","")),
+  N(O("Remets dans l'ordre les 4 signaux d'alarme du phishing.",["Expéditeur inhabituel","Urgence artificielle","Demande d'informations confidentielles","Lien ou pièce jointe suspects"],""),
+    CAS("Sarah reçoit : « URGENT : votre compte Doctolib sera suspendu dans 1 h. Reconnectez-vous ici. »",Q("Que doit-elle faire ?",["Ne pas cliquer, vérifier par le site officiel, signaler à Lisa","Cliquer vite pour éviter la suspension","Transférer à toute l'équipe"],"Urgence artificielle + lien suspect.")))
+ ]},
+ {id:"ds12b",t:"Violations et traçabilité",s:"Fiches 3 à 5 · origines, notification, accès",items:[
+  "Fiche 3 · Les violations de confidentialité",
+  N([T(B_ORIG,"Pièce jointe avec les données d'un autre patient",0,""),T(B_ORIG,"Faille du logiciel métier",1,""),T(B_ORIG,"Smartphone non chiffré oublié dans le train",2,""),T(B_ORIG,"Collaborateur curieux qui consulte un dossier",3,"")],
+    E(["Mon erreur d'envoi était involontaire :"," ma responsabilité n'est donc"," pas engagée."],1,"Même involontaire, une violation engage la responsabilité : disciplinaire, civile, voire pénale.","Piège d'examen.")),
+  N(A("Violations d'intégrité ou de disponibilité : relie.",[["Intégrité","Modification non autorisée ou accidentelle"],["Disponibilité","Perte, destruction, accès impossible"]],""),
+    A("Données exposées : relie au risque.",[["Identification","Usurpation d'identité"],["Santé nutritionnelle","Discrimination par employeurs, assureurs"],["Correspondances","Appréciations cliniques non destinées au patient"]],""),
+    CAS("Yann ajoute par erreur un patient dans le groupe de messagerie personnelle qu'il partage avec ses confrères.",W("Qu'en retenir ?","Le patient a reçu des informations sur d'autres patients : violation massive, déclaration à la CNIL et excuses individuelles. L'usage d'outils personnels non sécurisés multiplie les risques d'erreur : il faut une messagerie sécurisée de santé.",["Violation massive","CNIL, excuses","Outils personnels = risque"]))),
+  "Fiche 4 · Évaluer et notifier",
+  N(A("Évaluer le risque : relie.",[["Nature","Santé, financières, sensibles"],["Volume","Quantité de données, nombre de personnes"],["Identification","Facilité à retrouver les personnes"],["Gravité","Discrimination, usurpation, préjudice financier"]],""),
+    [T(B_NOTIF,"Fichier sans données patients supprimé puis restauré, aucun risque",0,""),T(B_NOTIF,"Accès limité à quelques coordonnées, risque modéré",1,""),T(B_NOTIF,"Dossiers de santé de 300 patients volés",2,"")]),
+  N(F("Notification à la CNIL : sous {72} heures ; registre des violations : article {33.5|33,5} du RGPD.",""),
+    E(["La violation n'est pas notifiée à la CNIL car il n'y a pas de risque :"," je n'ai donc rien à consigner"," dans mon registre."],1,"Le registre est obligatoire pour toutes les violations, même non notifiées.","Piège d'examen."),
+    W("Pourquoi une violation abîme-t-elle la relation thérapeutique ?","Préjudice moral (intimité violée, détresse), usurpation d'identité, et perte de confiance : le patient peut arrêter son suivi, moins bien observer ses conseils ou ne plus partager d'informations importantes.",["Préjudice moral","Usurpation","Perte de confiance, arrêt du suivi"])),
+  "Fiche 5 · Traçabilité et accès",
+  N(O("Remets dans l'ordre les 6 éléments de traçabilité.",["Qui ? l'utilisateur","Quand ? l'horodatage","Quoi ? la nature de l'action","Sur quoi ? les données","Avec quel résultat ?","Depuis où ? IP et poste"],""),
+    Q("Les historiques de connexion doivent être…",["Conservés de façon sécurisée, protégés contre la modification et la suppression","Effacés chaque semaine","Accessibles à tous"],"Ils servent de preuve.")),
+  N(Q("Le principe du moindre privilège :",["Chacun n'a que les droits strictement nécessaires à sa fonction","Tout le monde a les mêmes droits","Le titulaire n'a aucun droit"],""),
+    E(["Notre stagiaire est partie il y a 3 mois :"," on garde son compte actif,"," elle reviendra peut-être."],1,"On supprime tout de suite les comptes inactifs : c'est une vulnérabilité souvent négligée.","Piège d'examen."),
+    CAS("Sarah, la secrétaire, peut ouvrir tous les bilans cliniques des patients.",Q("Que corrige Lisa ?",["Elle limite ses droits à l'agenda et aux coordonnées : pas besoin des données cliniques","Rien, c'est pratique","Elle lui retire tout accès"],""))),
+  N(A("Audit des logs : relie au signal.",[["Horaire","Connexion à 3 h du matin"],["Volume","Accès massif à des dossiers"],["Lien","Dossier consulté sans rapport avec l'activité"]],""))
+ ]},
+ {id:"ds12c",t:"Image, assurance, crise",s:"Fiches 6 à 9 · e-réputation, responsabilité, crise, méthodes",items:[
+  "Fiche 6 · E-réputation",
+  N(O("Construire son e-réputation : remets dans l'ordre.",["Cohérence avec son expertise réelle","Profils à jour (LinkedIn, annuaires, site)","Créer du contenu","Chercher son nom régulièrement"],""),
+    A("Les 4 risques de la communication en ligne : relie.",[["Déformation","Pas de ton ni de contexte à l'écrit"],["Permanence","Le message ressort des années après"],["Amalgame","Opinion perso associée à l'activité"],["Viralité","Petit incident devenu crise"]],""),
+    CAS("Un avis Google accuse Lisa d'avoir « affamé » une patiente.",Q("Comment réagit-elle ?",["Avec retenue et courtoisie, sans données de santé, en proposant d'échanger en privé","En racontant le dossier pour se justifier","En insultant l'auteur"],"On engage l'image de toute la profession."))),
+  "Fiche 7 · Responsabilités et assurance",
+  N(Q("Une réponse donnée en commentaire sur un réseau social…",["Engage la responsabilité civile comme un conseil en consultation","N'engage à rien, c'est informel","N'engage que le réseau social"],""),
+    E(["Je n'ai jamais voulu nuire :"," sans intention, aucune faute"," ne peut m'être reprochée."],1,"La négligence peut être retenue sans intention de nuire : outils non sécurisés, pas de sauvegarde, pas de formation.","Piège d'examen.")),
+  N(O("Vérifier sa couverture : remets les 6 points dans l'ordre.",["Extension téléconsultation","Cyber-risques","E-réputation","Assistance juridique","Territorialité","Montants adaptés"],""),
+    A("Les deux assurances clés : relie.",[["RCP","Indispensable, couverture numérique souvent partielle"],["Assurance cyber","Fortement recommandée : fuites, rançongiciels, notification"]],""),
+    W("Pourquoi sécuriser selon « l'état de l'art » ?","Les menaces et les techniques évoluent : ce qui suffisait hier peut ne plus suffire aujourd'hui. Le professionnel doit mettre à jour ses protections et se former en continu.",["Menaces évolutives","Hier ≠ aujourd'hui","Formation continue"])),
+  "Fiche 8 · Prévention et crise",
+  N(A("Prévenir : relie.",[["Formation continue","Les techniques des pirates changent"],["Procédures écrites","Prouvent la diligence en cas de procès"],["Équipe","Secrétaires, stagiaires, remplaçants, prestataires"],["Veille","Technologique et réglementaire"]],""),
+    O("Gérer un incident : remets dans l'ordre.",["Isoler les systèmes compromis","Notifier la CNIL sous 72 h","Informer les patients si risque élevé","Mobiliser prestataires et assurance"],"")),
+  N(Q("Que contient le « kit de crise » ?",["Dossiers papier simplifiés, contacts d'urgence imprimés, téléphone de secours, ordinateur de backup hors site","Un antivirus gratuit","Une lettre d'excuses type"],"Résultat : activité maintenue une semaine après un ransomware."),
+    S("Comment appelle-t-on le plan qui définit fonctions critiques et modes alternatifs ?",["plan de continuite d activite","plan de continuité d'activité","pca"],""),
+    W("Pourquoi la sécurité est-elle un effort collectif ?","En partageant les retours d'expérience anonymisés, en mutualisant outils, procédures et formations et en alertant ensemble sur les nouvelles menaces, les professionnels protègent toute la profession.",["Retours d'expérience","Mutualiser","Alerter ensemble"])),
+  "Fiche 9 · Méthodes",
+  N(A("Relie chaque situation au réflexe.",[["Protéger","Mises à jour, antivirus, chiffrement, formation"],["Incident","Isoler, CNIL, patients, assurance"],["Traçabilité","Logs horodatés, habilitations révisées"],["E-réputation","Profils, veille, réponses professionnelles"]],""),
+    S("Quel est le fil commun ? Prévenir, tracer, …",["etre pret","être prêt","etre prete","être prête"],""))
+ ]}
+ ],
+ mission:{id:"ds12m",t:"Lundi noir chez Yann",items:[
+  CH("legoff","8 h : « Vos fichiers sont chiffrés. Payez 3 000 € en bitcoins. » Mon écran est bloqué.",[
+    ["J'isole le poste (débranché du réseau), j'appelle mon prestataire et mon assurance, je documente",2,[4,6,12],"Isoler d'abord, puis mobiliser."],
+    ["Je paie, mes patients attendent",0,[-4,-4,-14],"Aucune garantie de récupération, et l'incident n'est pas traité."],
+    ["J'éteins et je rallume en espérant que ça passe",0,[-6,-2,-10],"Sans isolement ni documentation."]],
+   "Fiche 8."),
+  CH("morel","Yann m'appelle : « Je dois prévenir quelqu'un ? »",[
+    ["Registre des violations, CNIL sous 72 h car des données de santé sont touchées, et ses patients car le risque est élevé",2,[4,10,10],"Évaluation du risque → obligations."],
+    ["Seulement s'il ne récupère pas ses données",0,[-4,-8,-12],"Indisponibilité de données de santé : risque à notifier."]],
+   "Fiche 4."),
+  BY("morel",T(B_ORIG,"Yann avait ouvert la veille un faux e-mail de sa banque",0,"Erreur humaine via le phishing.")),
+  CH("legoff","Heureusement, il me reste une sauvegarde… sur le disque branché au même ordinateur. Chiffrée aussi.",[
+    ["Leçon : règle 3-2-1 avec une copie hors site HDS, sauvegarde quotidienne automatisée et restauration testée",2,[2,4,12],"Une seule copie locale ne protège pas."],
+    ["Je rachèterai un deuxième disque à brancher au même endroit",0,[0,0,-10],"Toujours pas de copie hors site."]],
+   "Fiche 2."),
+  BY("morel",O("Remets dans l'ordre les mesures que Yann met en place après la crise.",["Mises à jour automatiques","Antivirus professionnel et pare-feu","Chiffrement et gestionnaire de mots de passe","Double facteur partout"],"")),
+  BY("morel",W("Que Yann doit-il vérifier dans son assurance ?","L'extension téléconsultation, la couverture cyber-risques (violations, rançongiciels, frais de notification et de crise), la garantie e-réputation, l'assistance juridique, la territorialité et des montants adaptés ; la RCP seule couvre souvent mal le numérique.",["Téléconsultation, cyber","E-réputation, juridique","Territorialité, montants","RCP souvent partielle"]))
+ ]}
+};
+
 /* ---------- COMPLÉMENTS (audit de couverture des fiches « À savoir par cœur ») ----------
    Ajoutés UNIQUEMENT à la fin des niveaux existants : les identifiants des notions déjà vues ne bougent pas. */
 function ADD(lv,arr){var c=COURS[lv.replace(/[abc]$/,"")],l=c.levels.filter(function(x){return x.id===lv})[0];Array.prototype.push.apply(l.items,arr);}
