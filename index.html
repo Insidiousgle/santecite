@@ -3095,6 +3095,262 @@ COURS.ds6={id:"ds6",n:"Soin 6",t:"Lecture critique et données probantes",lieu:"
  ]}
 };
 
+/* ---------- SOIN 7 · ÉVALUATION ET AMÉLIORATION DES PRATIQUES ---------- */
+var B_IND=[["Structure","les moyens"],["Processus","la prise en charge"],["Résultats","l'impact"]];
+var B_FACT=[["Formation",""],["Protocole",""],["Communication",""]];
+COURS.ds7={id:"ds7",n:"Soin 7",t:"Évaluation et amélioration des pratiques",lieu:"Réseau « Nutrition Santé Bretagne » · CHU de Rennes",
+ pitch:"Plus on a d'expérience, plus on risque d'avoir des angles morts. Corinne Bertrand, coordinatrice qualité, accompagne Thierry (15 ans d'exercice, des résultats sous la moyenne), Marie-Claire (un patient hospitalisé après ses conseils) et Vicente (qui veut prouver l'impact de son travail en EHPAD). Objectiver, sans juger, puis améliorer ensemble.",
+ P:{bertrand:{n:"Corinne Bertrand",r:"Coordinatrice qualité · CHU de Rennes",av:{bg:"#ff9476",skin:"#f0c8a8",hair:"#6b3b1f",hs:"bun",shirt:"#13303a",glasses:1}},
+    lebrun:{n:"Thierry Lebrun",r:"Diététicien en clinique · Saint-Malo",av:{bg:"#5bb8f5",skin:"#e8b896",hair:"#8a8a8a",hs:"short",shirt:"#ffffff"}},
+    jouan:{n:"Marie-Claire Jouan",r:"Diététicienne libérale · Quimper",av:{bg:"#ae8dff",skin:"#f0c8a8",hair:"#c26a2e",hs:"long",shirt:"#ffc94a"}}},
+ conseil:{who:"bertrand",t:"Objectiver, sans juger, puis améliorer ensemble. Audit : critères mesurables, au moins 6 mois de données, références validées, démarche bienveillante. Événement indésirable : les faits d'abord, les causes du système, jamais de coupable. Indicateurs : structure, processus, résultats ; 5 à 8 au tableau de bord, avec des seuils d'alerte."},
+ levels:[
+ {id:"ds7a",t:"Vérifier ses pratiques",s:"Fiches 0 à 2 · illusion de compétence, audit, benchmarking",items:[
+  "Fiche 0 · L'illusion de compétence",
+  N(Q("L'illusion de compétence, c'est…",["Une perception faussée de ses compétences, fréquente chez les professionnels expérimentés confiants dans leurs routines","Le manque de confiance des débutants","Une faute professionnelle"],"Évaluer ses pratiques est un levier, pas une remise en cause personnelle."),
+    S("Comment appelle-t-on les angles morts que développent les professionnels expérimentés ?",["illusion de competence","illusion de compétence","l illusion de competence"],"")),
+  "Fiche 1 · L'audit externe de Thierry",
+  N(F("Thierry atteint les objectifs glycémiques dans {60} % des cas, contre {78} % pour la moyenne du réseau.",""),
+    Q("D'où venaient les écarts de Thierry ?",["De causes identifiables : formation insuffisante sur les recommandations récentes, pas d'outils de suivi structuré","D'une faute personnelle","De patients moins motivés"],"Il se fiait à des impressions subjectives."),
+    E(["L'audit a montré les mauvais résultats de Thierry :"," il doit être sanctionné"," pour protéger les patients."],1,"L'audit est bienveillant : il révèle des potentiels d'amélioration, il ne sanctionne pas.","Piège d'examen.")),
+  N(O("Remets dans l'ordre le cycle d'audit.",["Définir les critères qualité","Collecter les données","Comparer aux références","Identifier les écarts","Élaborer un plan d'amélioration"],""),
+    F("On collecte les données sur au moins {6} mois.",""),
+    W("Pourquoi collecter au moins 6 mois de données ?","Pour lisser les variations saisonnières et les biais ponctuels : l'audit transforme l'intuition en analyse factuelle et protège des biais de l'autoévaluation spontanée.",["Variations saisonnières","Biais ponctuels","Intuition → faits"])),
+  N(A("Audit : relie chaque élément à son exemple.",[["Critère objectif","Taux d'atteinte des objectifs glycémiques"],["Référence","Recommandations HAS, benchmarks"],["Étape la plus riche","Analyse des écarts : les vraies causes"]],"")),
+  "Fiche 2 · Autoévaluation et benchmarking",
+  N(O("Remets dans l'ordre les 5 dimensions d'une grille d'autoévaluation.",["Évaluation nutritionnelle initiale","Pertinence des objectifs","Adaptation des recommandations","Efficacité de l'ETP","Qualité du suivi longitudinal"],""),
+    Q("Une autoévaluation efficace repose sur des outils…",["Objectifs, standardisés, utilisés régulièrement","Choisis au feeling à chaque fois","Utilisés une fois par carrière"],"Elle devient une habitude professionnelle.")),
+  N(A("Check-list de consultation : relie.",[["Objectifs","Personnalisés selon les recommandations"],["Compréhension","Évaluée chez le patient"],["Suivi","Planifié et adapté"]],""),
+    Q("Le benchmarking consiste à…",["Comparer les processus entre professionnels pour diffuser les meilleures pratiques","Classer les diététiciens du meilleur au moins bon","Copier le logiciel d'un collègue"],""),
+    E(["Le benchmarking du réseau"," sert à classer les diététiciens"," pour récompenser les meilleurs."],1,"On compare des processus, pas des personnes : la compétition devient coopération.","Piège d'examen."))
+ ]},
+ {id:"ds7b",t:"Gérer une erreur",s:"Fiche 3 · l'événement indésirable de Marie-Claire",items:[
+  "Fiche 3 · L'événement indésirable",
+  N(Q("Le patient insuffisant rénal de Marie-Claire est hospitalisé pour…",["Une hyperkaliémie sévère : ses conseils manquaient de précision sur les aliments riches en potassium","Une hypoglycémie","Une déshydratation"],""),
+    S("Quel minéral était en cause chez le patient de Marie-Claire ?",["potassium","le potassium","k"],""),
+    S("Comment appelle-t-on un événement qui cause ou aurait pu causer un dommage au patient ?",["evenement indesirable","événement indésirable","un evenement indesirable"],"")),
+  N(A("L'impact émotionnel sur Marie-Claire : relie.",[["Culpabilité","« C'est ma faute »"],["Doute","Remise en question de ses compétences"],["Peur","De reproduire l'erreur"]],""),
+    W("Quel est le double rôle de Corinne auprès de Marie-Claire ?","Elle l'accompagne émotionnellement (culpabilité, doute, peur) tout en structurant l'analyse de l'événement : on ne laisse pas la professionnelle seule, et on garde une démarche rigoureuse.",["Soutien émotionnel","Structurer l'analyse"])),
+  N(O("Remets dans l'ordre l'analyse d'un événement indésirable.",["Description factuelle","Causes racines","Facteurs contributifs","Actions préventives","Partage des enseignements"],""),
+    E(["Pour commencer l'analyse,"," on identifie qui a commis l'erreur,"," puis on décrit les faits."],1,"La 1re étape est factuelle, sans recherche de responsabilité, pour éviter les biais émotionnels.","Piège d'examen.")),
+  N([T(B_FACT,"Connaissances insuffisantes en néphrologie nutritionnelle",0,""),T(B_FACT,"Pas de protocole standardisé pour les insuffisants rénaux",1,""),T(B_FACT,"Échanges imparfaits avec l'équipe médicale sur la fonction rénale",2,"")],
+    S("Comment appelle-t-on une cause profonde, souvent liée à l'organisation ?",["cause racine","causes racines","une cause racine"],""),
+    W("Pourquoi chercher une combinaison de facteurs plutôt qu'un coupable ?","L'événement vient d'une combinaison de facteurs (formation, protocole, communication), pas d'une faute isolée : l'analyse systémique favorise l'acceptation et l'engagement dans les actions correctives, et permet d'éviter la récurrence.",["Combinaison de facteurs","Analyse systémique","Acceptation, actions"]))
+ ]},
+ {id:"ds7c",t:"Améliorer durablement",s:"Fiches 4 à 6 · indicateurs, tableau de bord, méthodes",items:[
+  "Fiche 4 · Les indicateurs de Vicente",
+  N([T(B_IND,"Qualification du personnel",0,""),T(B_IND,"Respect des protocoles",1,""),T(B_IND,"Délais d'intervention",1,""),T(B_IND,"Fausses routes",2,""),T(B_IND,"Satisfaction des familles",2,""),T(B_IND,"Matériel disponible",0,"")],
+    E(["Le délai de prise en charge d'une dénutrition"," est un indicateur de résultats"," de la qualité en EHPAD."],1,"Les délais d'intervention sont un indicateur de processus ; les fausses routes, un résultat.","Piège d'examen.")),
+  N(O("Remets dans l'ordre les 4 qualités d'un bon indicateur.",["Spécifique","Mesurable","Atteignable","Défini dans le temps"],""),
+    W("Pourquoi mesurer la qualité en nutrition est-il complexe ?","Les résultats sont souvent multifactoriels et à long terme : le poids se mesure facilement, mais l'état général, la satisfaction ou le bien-être alimentaire demandent des indicateurs variés (structure, processus, résultats).",["Multifactoriel","Long terme","Indicateurs variés"])),
+  N(A("Ce que Vicente veut mesurer : relie à l'exemple.",[["Évolution pondérale","Résidents dénutris"],["Refus","Taux de refus aux repas"],["Événements","Fausses routes, hypoglycémies"],["Délais","Prise en charge des situations à risque"]],"")),
+  "Fiche 5 · Tableau de bord et harmonisation",
+  N(O("Concevoir un tableau de bord : remets dans l'ordre.",["5 à 8 indicateurs clés","Seuils d'alerte et objectifs cibles","Suivi mensuel des tendances","Partager les résultats avec l'équipe"],""),
+    F("Un tableau de bord efficace compte {5} à {8} indicateurs, suivis chaque {mois}.","")),
+  N(A("Protocoles communs du réseau : relie.",[["Diabète","Prise en charge standardisée du DT2"],["Dénutrition","Prévention selon la HAS"],["Éducation","Structurée par pathologie"]],""),
+    Q("La « flexibilité contrôlée » des protocoles, c'est…",["Standardiser les éléments clés en gardant l'adaptation locale et au patient","Tout uniformiser","Laisser chacun faire comme il veut"],""),
+    E(["Harmoniser les pratiques du réseau,"," c'est appliquer exactement le même plan"," à tous les patients."],1,"Harmoniser n'est pas uniformiser : on garde l'adaptation au contexte et au patient.","Piège d'examen.")),
+  N(O("Formation qui accompagne les protocoles : remets dans l'ordre.",["Sessions de présentation","Ateliers pratiques","Audits ciblés de l'appropriation"],""),
+    Q("Dans le réseau, Thierry, Marie-Claire et Vicente deviennent…",["Tour à tour formateurs et apprenants","Les contrôleurs des autres","Des cas d'école à éviter"],"Le réseau devient un laboratoire d'amélioration continue.")),
+  "Fiche 6 · Méthodes",
+  N(A("Relie chaque situation au réflexe.",[["Audit","Critères, période représentative, références, bienveillance"],["Événement indésirable","Faits, causes sans coupable, actions, soutien"],["Indicateurs","3 catégories, 5 à 8, seuils d'alerte"],["Équipe hétérogène","Confiance, non-jugement, participation"]],""),
+    W("Quel est le fil commun de toute la démarche d'amélioration ?","Objectiver (critères, données, indicateurs), sans juger (bienveillance, analyse systémique), puis améliorer ensemble (protocoles, formation, partage en réseau).",["Objectiver","Sans juger","Améliorer ensemble"]))
+ ]}
+ ],
+ mission:{id:"ds7m",t:"Un an de qualité en Bretagne",items:[
+  CH("lebrun","« 60 % contre 78 % ? Impossible, mes patients sont ravis de moi. »",[
+    ["« Ces chiffres ne te jugent pas : cherchons ensemble les causes, formation, outils de suivi, et construisons un plan. »",2,[6,12,10],"Audit bienveillant : le choc devient motivation."],
+    ["« Les chiffres sont là, il va falloir te remettre en question sérieusement. »",0,[0,-12,-2],"Démarche vécue comme une sanction : résistance."],
+    ["« Bon, laissons tomber l'audit. »",0,[-6,2,-12],"L'illusion de compétence continue."]],
+   "Fiches 0 et 1."),
+  BY("bertrand",O("Remets le cycle d'audit de Thierry dans l'ordre.",["Critère : taux d'objectifs glycémiques atteints","6 mois de données","Comparaison aux 78 % du réseau","Écarts : formation, outils","Plan d'amélioration"],"")),
+  CH("jouan","« Mon patient est en réanimation à cause de moi. Je devrais arrêter. »",[
+    ["Je l'écoute, puis on décrit les faits sans chercher de coupable, avant d'analyser les causes ensemble",2,[4,14,10],"Soutien émotionnel et analyse structurée."],
+    ["« Effectivement, c'est une grave erreur. »",0,[0,-14,-4],"Culpabiliser bloque l'analyse."],
+    ["« Ce n'est rien, oublie. »",0,[-6,2,-12],"Sans analyse, l'erreur risque de se reproduire."]],
+   "Fiche 3."),
+  BY("bertrand",T(B_FACT,"Aucun document de référence sur le potassium pour les patients dialysés",1,"Absence de protocole standardisé.")),
+  CH("bertrand","Vicente veut suivre 25 indicateurs chaque semaine dans son EHPAD.",[
+    ["On garde 5 à 8 indicateurs (structure, processus, résultats), avec des seuils d'alerte et un suivi mensuel partagé",2,[4,6,12],"Un tableau de bord lisible et utile."],
+    ["Parfait, plus on mesure, mieux c'est",0,[0,-2,-10],"Trop d'indicateurs : personne ne les suit."]],
+   "Fiche 5."),
+  BY("bertrand",W("Quelles actions préventives pour Marie-Claire ?","Formation en néphrologie nutritionnelle ; protocole standardisé pour les insuffisants rénaux (liste d'aliments riches en potassium, conseils précis) ; meilleure communication avec l'équipe médicale sur l'évolution de la fonction rénale ; partage des enseignements avec le réseau pour éviter la récurrence.",["Formation","Protocole","Communication","Partage au réseau"]))
+ ]}
+};
+
+/* ---------- SOIN 8 · CADRE RÉGLEMENTAIRE DU NUMÉRIQUE EN SANTÉ ---------- */
+var B_BASE=[["Base « soins » (9.2.h)","pas de consentement"],["Consentement explicite","obligatoire"]];
+var B_HDS=[["Certification HDS obligatoire",""],["Pas de certification HDS",""]];
+var B_DROIT=[["Accès",""],["Rectification",""],["Portabilité",""],["Effacement",""]];
+COURS.ds8={id:"ds8",n:"Soin 8",t:"Cadre réglementaire du numérique en santé",lieu:"Cabinet de diététique connecté · Bordeaux",
+ pitch:"90 % des Français ont déjà utilisé un service numérique de santé, et la CNIL n'a jamais autant sanctionné. Claire Vasseur ouvre la téléconsultation dans son cabinet, avec Karim Haddad, consultant en protection des données. Base légale, hébergement HDS, droits des patients, violations : le numérique étend tes responsabilités, pas seulement tes outils.",
+ P:{vasseur:{n:"Claire Vasseur",r:"Diététicienne libérale · Bordeaux",av:{bg:"#5bb8f5",skin:"#f0c8a8",hair:"#2b1b14",hs:"long",shirt:"#ff9476"}},
+    haddad:{n:"Karim Haddad",r:"Consultant en protection des données",av:{bg:"#13303a",skin:"#c99067",hair:"#1f1410",hs:"short",shirt:"#55d6cf",glasses:1}},
+    leroy:{n:"Monique Leroy",r:"Patiente, 61 ans",av:{bg:"#ffc94a",skin:"#e8b896",hair:"#d9d9d9",hs:"bun",shirt:"#ae8dff"}}},
+ conseil:{who:"haddad",t:"Vérifier, sécuriser, documenter. Base « soins » (art. 9.2.h) pour le suivi, mais information toujours obligatoire. Dès qu'un tiers héberge : certification HDS, en Europe. Règle 3-2-1 et restaurations testées chaque trimestre. Droit d'accès : accusé de réception sous 48 h, réponse sous 1 mois. Violation : CNIL sous 72 h."},
+ levels:[
+ {id:"ds8a",t:"Traiter les données",s:"Fiches 0 à 3 · données de santé, principes, information, AIPD",items:[
+  "Fiche 0 · Le constat",
+  N(A("Chiffres de départ : relie.",[["90 %","Français ayant utilisé un service numérique de santé"],["168","Mises en demeure de la CNIL en 2023"],["42","Sanctions de la CNIL en 2023"],["1/3","Des sanctions liées à la sécurité des données"]],""),
+    A("Sigles du numérique en santé : relie.",[["RGPD","Règlement général sur la protection des données"],["HDS","Hébergement des données de santé"],["CNIL","Contrôle et sanctionne"],["AIPD","Analyse d'impact"],["COFRAC","Accrédite les certificateurs"]],"")),
+  "Fiche 1 · Données de santé et bases légales",
+  N(Q("Un journal alimentaire est-il une donnée de santé ?",["Oui : il peut révéler des troubles ou des pathologies","Non, ce n'est que de l'alimentation","Seulement s'il contient un poids"],"Définition à l'article 4 du RGPD."),
+    S("Quel article du RGPD définit les données de santé ?",["4","article 4","art 4","l article 4"],""),
+    W("Pourquoi les données diététiques sont-elles sensibles ?","Habitudes alimentaires, mesures, pathologies, traitements, biologie, objectifs nutritionnels révèlent l'état de santé : elles sont protégées contre les risques de discrimination et d'atteinte à la vie privée.",["Révèlent l'état de santé","Discrimination","Vie privée"])),
+  N([T(B_BASE,"Bilan et suivi diététique",0,""),T(B_BASE,"Newsletter du cabinet",1,""),T(B_BASE,"Étude de recherche",1,""),T(B_BASE,"Conseils de suivi spécifique",0,""),T(B_BASE,"Application non thérapeutique",1,"")],
+    F("La base légale « soins de santé » est l'article {9.2.h|9-2-h|9 2 h} du RGPD.",""),
+    E(["Pour suivre Mme Leroy en consultation,"," je dois recueillir son consentement écrit"," au traitement de ses données."],1,"Base « soins » : pas de consentement nécessaire, mais l'information reste obligatoire.","Piège d'examen.")),
+  N(Q("Consulter un dossier patient, c'est…",["Déjà un traitement de données","Neutre tant qu'on ne modifie rien","Interdit sans consentement"],"Collecte, stockage, consultation, modification, transmission, suppression.")),
+  "Fiche 2 · Les 6 principes et la conservation",
+  N(O("Remets dans l'ordre les 6 principes du responsable de traitement.",["Licéité","Loyauté","Transparence","Minimisation","Exactitude","Limitation de conservation"],""),
+    E(["Selon le principe de minimisation,"," je collecte le plus d'informations possible"," au cas où elles serviraient."],1,"Minimisation = seulement les données strictement nécessaires à l'objectif thérapeutique.","Piège d'examen.")),
+  N(F("Dossiers patients : {20} ans après la dernière consultation, dont {5} ans en base active ; données comptables : {10} ans.",""),
+    O("Organiser la conservation : remets dans l'ordre.",["Registre des durées","Alertes de destruction","Révision annuelle des archives","Documenter chaque destruction"],""),
+    CAS("Claire range ses dossiers papier, mais oublie ses e-mails et les sauvegardes de son application.",Q("Quel est le problème ?",["Les données numériques dispersées sont aussi soumises aux durées de conservation","Aucun, seuls les dossiers comptent","Les e-mails se suppriment seuls"],""))),
+  "Fiche 3 · Information, consentement, AIPD",
+  N(A("Information ou consentement : relie.",[["Information","Toujours obligatoire"],["Consentement","Seulement pour certains traitements"],["AIPD","Avant un traitement à risque élevé"]],""),
+    O("Le consentement doit être : remets dans l'ordre.",["Libre","Spécifique","Éclairé","Univoque"],"Et retirable aussi facilement qu'il a été donné."),
+    W("Que contient l'information du patient ?","Identité du responsable, finalités, base légale, destinataires, durées de conservation et droits du patient (accès, rectification, portabilité), documentée dans le dossier.",["Identité, finalités","Base légale, destinataires","Durées, droits"])),
+  N(A("Quand faire une AIPD ? Relie.",[["Intelligence artificielle","Analyse automatique des repas"],["Croisement de données","Appli + objets connectés + dossier"],["Surveillance automatisée","Alertes automatiques sur le poids"]],""),
+    O("AIPD d'une application nutritionnelle : remets dans l'ordre.",["Cartographier données, flux, finalités","Réduire les risques (pseudonymisation, minimisation)","Documenter, consulter la CNIL si risque élevé","Suivre après déploiement"],""))
+ ]},
+ {id:"ds8b",t:"Héberger et sécuriser",s:"Fiches 4 et 5 · HDS, sécurité, sauvegardes",items:[
+  "Fiche 4 · L'hébergement des données de santé",
+  N([T(B_HDS,"Logiciel de dossier patient dans le cloud",0,""),T(B_HDS,"Plateforme de téléconsultation",0,""),T(B_HDS,"Sauvegarde distante chez un prestataire",0,""),T(B_HDS,"Serveur personnel dans mon cabinet",1,"")],
+    F("L'HDS est défini par l'article {L.1111-8|L1111-8|L 1111-8} du Code de la santé publique.",""),
+    E(["Mon prestataire se dit « conforme RGPD » :"," il peut donc héberger mes dossiers patients"," sans autre vérification."],1,"« Conforme RGPD » ne veut pas dire « certifié HDS » : on vérifie la certification.","Piège d'examen.")),
+  N(O("Remets dans l'ordre la procédure de certification HDS.",["Dossier auprès d'un organisme accrédité (COFRAC)","Audit documentaire et audit sur site","Certificat de 3 ans, audit de surveillance annuel"],""),
+    F("En cas de non-conformité, l'hébergeur a {3} mois pour corriger ; le certificat vaut {3} ans.",""),
+    A("Sanctions pour un hébergeur non certifié (L1115-1) : relie.",[["Personne physique","3 ans de prison, 45 000 €"],["Personne morale","Jusqu'à 225 000 €"]],"")),
+  "Fiche 5 · Critères HDS et sécurité",
+  N(O("Remets dans l'ordre les 4 critères de certification HDS.",["Localisation dans l'Union européenne","Sécurité physique","Sécurité logique","Continuité d'activité"],""),
+    E(["Cet hébergeur américain est très sécurisé :"," il peut être certifié HDS"," pour mes données."],1,"Un hébergeur hors Union européenne ne peut pas être certifié HDS.","Piège d'examen.")),
+  N(A("Mesures de sécurité : relie.",[["Chiffrement","AES-256, RSA-2048 minimum"],["Authentification","Multi-facteurs (MFA)"],["Accès","Besoin d'en connaître"],["Journalisation","Conservée au moins 1 an"]],""),
+    Q("Où ranger les clés de chiffrement ?",["Jamais avec les données chiffrées : la gestion des clés est souvent le point faible","Dans le même dossier, pour les retrouver","Sur une clé USB attachée à l'ordinateur"],"")),
+  N(F("Règle de sauvegarde {3}-{2}-{1} : 3 copies, 2 supports différents, 1 site distant certifié.",""),
+    S("À quelle fréquence tester la restauration des sauvegardes ?",["chaque trimestre","tous les trimestres","trimestrielle","trimestriel","tous les 3 mois"],"Une sauvegarde non testée est potentiellement inutile."),
+    CAS("Claire sauvegarde tout sur un disque dur posé à côté de son ordinateur.",W("Pourquoi n'est-ce pas suffisant ?","Une seule copie, un seul support, au même endroit : un vol, un incendie ou une panne détruisent tout. La règle 3-2-1 impose 3 copies sur 2 supports dont 1 sur un site distant certifié, chiffrées, avec des restaurations testées chaque trimestre.",["Une copie, même lieu","3-2-1","Chiffrer, tester"])))
+ ]},
+ {id:"ds8c",t:"Patients et incidents",s:"Fiches 6 à 8 · droits, violations, méthodes",items:[
+  "Fiche 6 · Les droits des patients",
+  N([T(B_DROIT,"Obtenir une copie de son dossier",0,""),T(B_DROIT,"Corriger un poids mal saisi",1,""),T(B_DROIT,"Récupérer ses données au format CSV ou HL7 FHIR",2,""),T(B_DROIT,"Demander la suppression de son dossier",3,"")],
+    F("Droit d'accès : accusé de réception sous {48} h, réponse sous {1} mois (+{2} si complexe).",""),
+    O("Traiter une demande d'accès : remets dans l'ordre.",["Accuser réception","Vérifier l'identité","Rassembler toutes les données","Répondre en langage clair","Documenter la demande"],"")),
+  N(Q("Mme Leroy conteste une observation clinique de Claire.",["On privilégie le dialogue et on propose d'ajouter un commentaire de la patiente","On efface l'observation","On refuse toute discussion"],"On corrige ce qui est inexact, avec traçabilité."),
+    E(["Mme Leroy change de diététicienne et me demande d'effacer son dossier :"," je le supprime immédiatement,"," c'est son droit."],1,"Le droit à l'effacement est très limité en santé : la conservation de 20 ans prime.","Piège d'examen.")),
+  "Fiche 7 · Violations et assurance",
+  N(Q("Une violation de données, c'est…",["Destruction, perte, altération, divulgation ou accès non autorisé à des données personnelles","Uniquement un piratage","Une erreur de facturation"],"Article 4 du RGPD."),
+    O("Violation de données : remets dans l'ordre.",["Détecter tôt","Confiner l'incident","Documenter les actions","Notifier la CNIL","Informer les patients si risque élevé"],""),
+    F("On notifie la CNIL sous {72} heures.","")),
+  N(A("Principales causes de violation : relie.",[["E-mail","Mal adressé"],["Mot de passe","Trop faible"],["Clé USB","Perdue, non chiffrée"]],""),
+    E(["Après une fuite de données,"," j'informe directement tous mes patients dans tous les cas,"," puis la CNIL."],1,"On notifie la CNIL sous 72 h ; on informe directement les patients seulement si le risque est élevé.","Piège d'examen."),
+    W("Pourquoi négocier une extension de son assurance ?","Le numérique étend la responsabilité : il faut couvrir les frais de notification, la reconstruction des données, les pertes d'exploitation et la défense juridique. Les sanctions RGPD (jusqu'à 4 % du CA) et HDS ne sont généralement pas couvertes par les assurances classiques.",["Responsabilité étendue","Notification, reconstruction, défense","Sanctions non couvertes"])),
+  "Fiche 8 · Méthodes",
+  N(A("Relie chaque situation au réflexe.",[["Téléconsultation","Base soins, HDS, chiffrement, MFA"],["Prestataire cloud","Certificat, périmètre, SLA, contrat"],["Sauvegardes","3-2-1, tests trimestriels, clés séparées"],["Demande d'accès","48 h, 1 mois, traçabilité"]],""),
+    S("Quel est le fil commun des méthodes ? (trois verbes)",["verifier securiser documenter","vérifier, sécuriser, documenter","verifier, securiser, documenter"],""))
+ ]}
+ ],
+ mission:{id:"ds8m",t:"Le cabinet connecté de Claire",items:[
+  CH("vasseur","Je choisis ma plateforme de téléconsultation. Celle-ci est gratuite et « conforme RGPD », hébergée aux États-Unis.",[
+    ["Je vérifie la certification HDS (en cours de validité), le périmètre, la localisation en Europe, le contrat",2,[4,6,12],"Un hébergeur hors UE ne peut pas être certifié HDS."],
+    ["Gratuit et conforme RGPD, ça me suffit",0,[-4,-6,-14],"Risque pénal et fuite possible."]],
+   "Fiches 4, 5 et 8."),
+  CH("leroy","« Vous m'avez fait signer un consentement pour mes données ? Je n'ai rien signé. »",[
+    ["« Pour votre suivi, la base légale est les soins : pas besoin de consentement, mais voici l'information sur vos données et vos droits. »",2,[2,10,8],"Base « soins » et information obligatoire."],
+    ["« Il faut absolument signer, sinon je ne peux pas vous suivre. »",0,[-4,-8,-4],"Le consentement n'est pas la base légale du suivi."]],
+   "Fiches 1 et 3."),
+  BY("haddad",T(B_BASE,"Claire veut envoyer une newsletter mensuelle à ses patients",1,"Usage non thérapeutique : consentement explicite.")),
+  CH("vasseur","Lundi matin : j'ai perdu ma clé USB non chiffrée avec 300 dossiers patients.",[
+    ["Je confine, je documente, je notifie la CNIL sous 72 h et j'informe les patients car le risque est élevé",2,[4,6,12],"Réaction rapide et documentée."],
+    ["Je ne dis rien, elle sera peut-être retrouvée",0,[-6,-14,-14],"Manquement grave : notification obligatoire."]],
+   "Fiche 7."),
+  BY("haddad",O("Remets dans l'ordre la réponse à la demande d'accès de Mme Leroy.",["Accusé de réception sous 48 h","Vérifier son identité","Rassembler données, notes, factures","Répondre clairement sous 1 mois","Documenter"],"")),
+  BY("haddad",W("Pourquoi Claire doit-elle faire une AIPD avant de lancer son appli d'analyse des repas par photo ?","C'est un traitement à risque élevé (intelligence artificielle, croisement de données de santé). L'AIPD cartographie données et flux, évalue les risques, définit des mesures (pseudonymisation, minimisation, sécurité), se documente, impose de consulter la CNIL si le risque résiduel reste élevé, et prévoit un suivi après lancement.",["IA, croisements : risque élevé","Cartographier, réduire","CNIL si risque résiduel","Suivi"]))
+ ]}
+};
+
+/* ---------- SOIN 9 · OUTILS NUMÉRIQUES AU SERVICE DU DIÉTÉTICIEN ---------- */
+var B_LOG=[["Solution intégrée","tout-en-un"],["Logiciel nutrition","calculs"],["Téléconsultation","à distance"],["Suivi patient","entre les consultations"]];
+var B_BIAISN=[["Sous-déclaration",""],["Tyrannie des données",""],["Comparaisons sociales",""]];
+var B_OBJ=[["Balance connectée",""],["Capteur de glucose",""],["Appli de journal alimentaire",""],["Capteur d'activité",""]];
+COURS.ds9={id:"ds9",n:"Soin 9",t:"Outils numériques du diététicien",lieu:"Maison de santé pluriprofessionnelle · Grenoble",
+ pitch:"Logiciels métiers, balances et capteurs connectés, applis de journal alimentaire : la diététique se transforme à grande vitesse. Antoine Garnier veut équiper son cabinet sans tomber dans les gadgets ni perdre l'humain ; sa patiente Nadia ne mange plus sans vérifier son appli. Les données sont des indicateurs, pas des vérités.",
+ P:{garnier:{n:"Antoine Garnier",r:"Diététicien en MSP · Grenoble",av:{bg:"#55d6cf",skin:"#e8b896",hair:"#6b3b1f",hs:"short",shirt:"#13303a"}},
+    nadia:{n:"Nadia Ferhat",r:"Patiente, 34 ans",av:{bg:"#ff9476",skin:"#c99067",hair:"#1f1410",hs:"long",shirt:"#ffc94a"}},
+    roux:{n:"Lucien Roux",r:"Patient, 74 ans, diabétique",av:{bg:"#ffc94a",skin:"#f0c8a8",hair:"#d9d9d9",hs:"short",shirt:"#5bb8f5",glasses:1}}},
+ conseil:{who:"garnier",t:"Tester, adapter, garder l'humain. Logiciel : besoins, essai sur cas réels chronométré, HDS et interopérabilité, export négocié. Objet connecté : preuves, reproductibilité, compétences du patient, alternative non technologique. Contre les biais : éduquer, les sensations avant les chiffres, des plages sans suivi."},
+ levels:[
+ {id:"ds9a",t:"Choisir ses outils",s:"Fiches 1 à 3 · logiciels, choix, automatisation",items:[
+  "Fiche 1 · Les 4 catégories de logiciels",
+  N([T(B_LOG,"Agenda, dossier patient, facturation, messagerie",0,""),T(B_LOG,"Bases alimentaires et calculs nutritionnels",1,""),T(B_LOG,"Visioconférence sécurisée",2,""),T(B_LOG,"Accompagnement entre deux rendez-vous",3,"")],
+    Q("Le numérique en diététique : quel est l'enjeu ?",["Choisir les outils validés, pas les gadgets, sans perdre l'humain","Tout adopter le plus vite possible","Remplacer les consultations"],"")),
+  N(A("Prix des téléconsultations (09/2025) : relie.",[["Doctolib","À partir de 139 €/mois"],["Qare","75 €/mois"],["Alivio","30 à 104 €/mois"],["Nutrium, Madietenligne","À partir de 29 €/mois"],["Medaviz","Gratuit + 3 % par acte"]],""),
+    E(["Medaviz est gratuit pour les indépendants :"," il ne me coûtera donc rien,"," même avec beaucoup de patients."],1,"Gratuit ne veut pas dire sans coût : 3 % de commission sur chaque acte encaissé.","Piège d'examen.")),
+  "Fiche 2 · Choisir un logiciel métier",
+  N(Q("Quel critère prime pour choisir un logiciel ?",["L'ergonomie : un outil puissant mais compliqué fait perdre du temps","Le prix le plus bas","La notoriété"],"Puis bases alimentaires, calculs, planification, interopérabilité."),
+    O("Tester un logiciel : remets dans l'ordre.",["L'essayer sur des cas réels","Chronométrer un plan alimentaire standard","Vérifier la cohérence des calculs"],""),
+    S("Comment appelle-t-on la capacité des logiciels à échanger des données sans ressaisie ?",["interoperabilite","interopérabilité","l interoperabilite"],"")),
+  N(A("Bien intégrer un logiciel : relie.",[["Technique","Pas de double saisie"],["Normes","HDS et RGPD"],["Services socles","DMP et MSSanté"],["Contexte","Hôpital, libéral, collectivité"]],""),
+    W("Pourquoi privilégier une solution modulaire ?","Elle évolue avec sa pratique : on commence par les modules utiles, on en ajoute ensuite, sans changer tout le système ni créer de silos informatiques.",["Évolue avec la pratique","Modules progressifs","Pas de silos"])),
+  "Fiche 3 · Automatisation et traçabilité",
+  N(F("Un logiciel métier est rentabilisé en {12} à {18} mois et fait gagner {30} % de temps administratif.",""),
+    E(["Le logiciel a calculé le plan alimentaire selon l'ANSES :"," je peux le remettre au patient"," sans le relire."],1,"Les algorithmes sont des aides à la décision : le diététicien valide toujours.","Piège d'examen.")),
+  N(A("Automatisation et traçabilité : relie.",[["Versioning","Historique des modifications"],["Archivage","Recherche rapide de l'historique"],["Modèles","Comptes-rendus standardisés"],["Import/export","Pas de ressaisie source d'erreurs"]],""),
+    Q("Pourquoi négocier les modalités d'export avec l'éditeur ?",["Pour garder la liberté de changer de solution","Pour payer moins cher","Pour supprimer ses données"],""))
+ ]},
+ {id:"ds9b",t:"Objets connectés",s:"Fiches 4 et 5 · typologie, évaluation, observance",items:[
+  "Fiche 4 · Typologie et évaluation",
+  N(Q("Un objet connecté de santé…",["Est un dispositif à capteurs qui collecte, traite et transmet des données de santé via internet","Est une application gratuite","Remplace le diététicien"],""),
+    [T(B_OBJ,"Poids et composition corporelle, fiabilité contestée",0,""),T(B_OBJ,"Glycémie en temps réel",1,""),T(B_OBJ,"Photo du repas et calcul des apports",2,""),T(B_OBJ,"Dépense énergétique",3,"")],
+    E(["Cette balance est connectée et donne ma masse grasse :"," ses mesures sont donc fiables"," pour suivre mes patients."],1,"Connecté ne veut pas dire fiable : la fiabilité des balances à impédance est très contestée.","Piège d'examen.")),
+  N(O("Évaluer la fiabilité d'un objet connecté : remets dans l'ordre.",["Consulter les publications","Tester la reproductibilité","Comparer avec ses méthodes","Analyser les avis sur la durabilité"],""),
+    A("Critères d'évaluation : relie.",[["Métrologie","Précision des capteurs"],["Algorithmes","Validés et transparents"],["Certification","Marquage CE médical"],["Preuves","Études à comité de lecture"]],""),
+    W("Quelle est la plus-value du diététicien face à MyFitnessPal ou Yazio ?","L'analyse thérapeutique personnalisée, l'adaptation aux pathologies et le suivi professionnel : l'appli calcule, le diététicien interprète et accompagne.",["Analyse personnalisée","Pathologies","Suivi professionnel"])),
+  "Fiche 5 · Intégrer les outils au suivi",
+  N(A("Bénéfices des outils connectés : relie.",[["Objectivation","Données horodatées au lieu de souvenirs"],["Feedback","Alertes et encouragements en temps réel"],["Visualisation","Graphiques de progrès"],["Personnalisation","Recommandations plus fines"]],""),
+    S("Comment appelle-t-on la concordance entre le comportement du patient et les prescriptions ?",["observance","l observance","l'observance","observance therapeutique"],"")),
+  N(A("Améliorer l'observance : relie.",[["Rappels","Mesures, objectifs, médicaments"],["Gamification","Points, badges, défis"],["Partage","Données transmises au diététicien"]],""),
+    E(["Je recommande le capteur de glucose à tous mes patients diabétiques,"," sans exception,"," car il améliore l'autonomie."],1,"On évalue d'abord compétences numériques et motivation, et on prévoit une alternative non technologique.","Piège d'examen."),
+    CAS("M. Roux, 74 ans, n'a pas de smartphone et se méfie « des machines ».",Q("Que fait Antoine ?",["Il propose une alternative non technologique, ou une solution très simple avec formation progressive","Il lui impose l'appli","Il arrête le suivi"],"C'est une question d'équité d'accès aux soins.")))
+ ]},
+ {id:"ds9c",t:"Garder l'humain",s:"Fiches 6 à 8 · biais, dépendance, éthique, méthodes",items:[
+  "Fiche 6 · Biais et dépendance",
+  N([T(B_BIAISN,"Il « oublie » de noter le chocolat",0,""),T(B_BIAISN,"Elle ne parle plus que de calories et s'angoisse",1,""),T(B_BIAISN,"Il se décourage en voyant les résultats de ses amis",2,"")],
+    E(["Le journal alimentaire numérique de Nadia"," est forcément exact :"," l'appli enregistre tout."],1,"La sous-déclaration est fréquente : le patient oublie inconsciemment les aliments jugés « interdits ».","Piège d'examen.")),
+  N(A("Dépendance technologique : relie.",[["Autonomie","Ne plus décider sans l'appli"],["Pannes","Stress si batterie vide ou bug"],["Sensations","Perte de confiance dans la faim et la satiété"]],""),
+    W("Pourquoi la dépendance à l'appli est-elle dangereuse ?","Elle fait perdre l'autonomie (contraire à l'éducation nutritionnelle) et coupe le patient de ses sensations de faim, de satiété et d'envie ; cette déconnexion nuit à l'équilibre à long terme et peut mener à des troubles du comportement alimentaire.",["Perte d'autonomie","Perte des sensations","Risque de TCA"]),
+    CAS("Nadia : « Je ne peux plus manger sans vérifier l'appli, et si la batterie lâche, je panique. »",Q("Qu'en pense Antoine ?",["Ce sont des signes de dépendance : éduquer, revaloriser les sensations, fixer des plages sans suivi","C'est une excellente observance","Il faut une appli plus précise"],""))),
+  "Fiche 7 · Prévenir, inclure, rester humain",
+  N(Q("Les données d'un objet connecté sont…",["Des indicateurs, pas des vérités absolues : un support de dialogue","Plus fiables que le ressenti du patient","Un substitut à l'échange"],""),
+    A("Fracture numérique : relie.",[["Repérer","Seniors, précarité, handicap"],["Former","De façon renforcée et progressive"],["Alternative","Non technologique"],["Soutien","Support technique continu"]],""),
+    E(["Avec les graphiques de l'appli,"," je peux raccourcir mes consultations"," et supprimer le temps d'écoute."],1,"L'efficacité technologique ne remplace pas l'écoute : c'est l'humain qui fait la différence avec le 100 % virtuel.","Piège d'examen.")),
+  N(A("Éthique du numérique : relie.",[["Transparence","Déclarer liens et conflits d'intérêts, rester indépendant"],["Vulnérables","Protéger des outils addictifs"],["Veille","Innovations validées"],["Évaluation","Mesurer l'impact des outils"]],""),
+    O("Séance d'éducation aux bons usages : remets dans l'ordre.",["Démonstration","Explication","Mise en garde","Exercices d'interprétation"],"")),
+  "Fiche 8 · Méthodes",
+  N(A("Relie chaque situation au réflexe.",[["Logiciel","Besoins, essai, conformité, contrat"],["Objet connecté","Preuves, test, formation, alternative"],["Biais","Éduquer, sensations, règles d'usage"],["Cabinet","Numériser par étapes"]],""),
+    O("Numériser son cabinet : remets dans l'ordre.",["Besoins à fort impact (agenda, dossier)","Investir par étapes","Former l'équipe et des patients pilotes","Mesurer et ajuster"],""),
+    S("Quel est le fil commun des méthodes ? (tester, adapter, …)",["garder l humain","garder l'humain","l humain"],""))
+ ]}
+ ],
+ mission:{id:"ds9m",t:"Le cabinet numérique d'Antoine",items:[
+  CH("garnier","Je choisis mon logiciel. Le plus puissant du marché est aussi le plus compliqué.",[
+    ["J'essaie les deux sur mes cas réels, je chronomètre un plan, je vérifie HDS, DMP, MSSanté et l'export",2,[2,4,12],"L'ergonomie prime, et on teste sur le réel."],
+    ["Je prends le plus puissant, je m'y ferai",0,[0,-2,-10],"Courbe d'apprentissage longue : perte de temps et résistances."]],
+   "Fiche 2."),
+  BY("garnier",T(B_LOG,"Un module de messagerie et de défis entre deux rendez-vous",3,"Outil de suivi patient.")),
+  CH("nadia","« Mon appli dit que j'ai dépassé de 80 kcal. J'ai sauté le dîner. »",[
+    ["Je valorise son implication, puis on revient à ses sensations de faim et on fixe des plages sans suivi",2,[10,10,8],"Lutter contre la tyrannie des données."],
+    ["Bravo pour votre rigueur !",0,[-12,2,-8],"On renforce une dépendance à risque de TCA."]],
+   "Fiche 6."),
+  CH("roux","« Votre capteur machin, je ne saurai jamais m'en servir. »",[
+    ["On garde le carnet papier, et je lui montre pas à pas une solution simple s'il le souhaite",2,[6,12,6],"Alternative non technologique, équité."],
+    ["Sans capteur, je ne peux pas vous suivre correctement",0,[-6,-14,-4],"Exclusion par la fracture numérique."]],
+   "Fiche 5."),
+  BY("garnier",T(B_BIAISN,"Il ne note jamais les apéritifs du week-end",0,"Sous-déclaration inconsciente.")),
+  BY("garnier",W("Pourquoi l'humain reste-t-il central dans un cabinet numérique ?","Les données sont des indicateurs à interpréter, pas des vérités : le diététicien garde le jugement clinique, le temps d'écoute et d'empathie, et utilise les données comme support de dialogue. C'est ce qui le distingue des plateformes 100 % virtuelles.",["Données = indicateurs","Jugement clinique","Écoute, empathie","≠ 100 % virtuel"]))
+ ]}
+};
+
 /* ---------- COMPLÉMENTS (audit de couverture des fiches « À savoir par cœur ») ----------
    Ajoutés UNIQUEMENT à la fin des niveaux existants : les identifiants des notions déjà vues ne bougent pas. */
 function ADD(lv,arr){var c=COURS[lv.replace(/[abc]$/,"")],l=c.levels.filter(function(x){return x.id===lv})[0];Array.prototype.push.apply(l.items,arr);}
