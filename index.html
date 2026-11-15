@@ -2475,6 +2475,343 @@ COURS.sp19={id:"sp19",n:19,t:"Bonnes pratiques numériques",lieu:"Maison de sant
  ]}
 };
 
+/* ---------- SOIN 1 · ORGANISATION DES STRUCTURES DE SOINS ---------- */
+var B_STRUCT=[["CHU","plateau technique"],["Libéral","relation longue"],["EHPAD","histoire de vie"],["HAD","soins au domicile"]];
+var B_FIN=[["ONDAM","enveloppe globale"],["T2A","selon l'activité"],["MIGAC","missions non marchandes"],["ARS","régulation régionale"]];
+var B_EXTRA=[["HAD",""],["SSR / SMR",""],["Centre de jour",""],["Équipe mobile",""]];
+COURS.ds1={id:"ds1",n:"Soin 1",t:"Organisation des structures de soins",lieu:"CHU de Nantes → Saint-Nazaire → EHPAD",
+ pitch:"Mme Jeanne Delmart, 78 ans, diabétique sous insuline, dénutrie après un AVC, passe par trois diététiciennes : au CHU, en libéral, puis en EHPAD. L'efficacité dépend autant de l'expertise de chacune que de la façon dont les structures se passent le relais.",
+ P:{martineau:{n:"Sophie Martineau",r:"Diététicienne · CHU de Nantes",av:{bg:"#ff9476",skin:"#f0c8a8",hair:"#2b1b14",hs:"bun",shirt:"#55d6cf"}},
+    renard:{n:"Julia Renard",r:"Diététicienne libérale · Saint-Nazaire",av:{bg:"#5bb8f5",skin:"#e8b896",hair:"#c26a2e",hs:"long",shirt:"#ffc94a"}},
+    lemoine:{n:"Martha Lemoine",r:"Diététicienne · EHPAD Les Jardins de l'Erdre",av:{bg:"#ae8dff",skin:"#c99067",hair:"#8a8a8a",hs:"short",shirt:"#ff7a59",glasses:1}}},
+ conseil:{who:"martineau",t:"Pour chaque structure, pose-toi 4 questions : quel rythme, quelles ressources, quelles contraintes, quel rôle pour moi ? À l'hôpital, prioriser (É-P-P-D) ; à la sortie, ne jamais laisser de rupture (F-T-R-J : fiche, téléphone, RDV à 7-14 jours, justificatifs) ; pour la télémédecine, d'abord une plateforme sécurisée (P-C-S-C)."},
+ levels:[
+ {id:"ds1a",t:"L'hôpital",s:"Fiches 1 et 2 · organisation, SPH, GHT",items:[
+  "Fiche 1 · Organisation, temps, ressources",
+  N(Q("À l'hôpital, l'organisation dans laquelle travaille le diététicien est…",["Matricielle (pyramidale) : chef de service, équipe paramédicale, staffs, protocoles de la CME","Totalement libre : il choisit ses horaires et ses méthodes","Uniquement rattachée au chef de cuisine"],"Il garde sa spécificité d'expert tout en travaillant avec des métiers différents."),
+    S("Quel sigle désigne la commission qui valide les protocoles à l'hôpital ?",["cme"],"Commission médicale d'établissement."),
+    E(["À l'hôpital,"," le diététicien choisit librement ses horaires et la durée de ses consultations,"," tout en participant aux staffs."],1,"C'est une caractéristique du libéral. À l'hôpital : 15 minutes maximum par consultation et un rythme imposé.","Piège d'examen.")),
+  N(A("Journée type de Sophie au CHU : relie.",[["Patients suivis","25 en même temps"],["Consultation","15 minutes maximum"],["Imprévus","Décompensations, syndrome de renutrition"],["Transmissions","Informatisées et obligatoires"]],""),
+    F("Au CHU, Sophie suit {25} patients en même temps, en consultations de {15} minutes maximum.",""),
+    W("Face à 25 patients et des urgences imprévues, comment Sophie doit-elle s'organiser ?","Elle priorise selon la gravité nutritionnelle (les urgences d'abord), s'organise et synthétise ; elle s'appuie sur les protocoles et transmet tout de façon informatisée.",["Prioriser selon la gravité","S'organiser","Synthétiser, transmettre"])),
+  N(Q("Quelle ressource fait l'avantage de l'hôpital pour les situations aiguës ?",["Le plateau technique : laboratoire sur site, cuisine centrale, équipe complète, impédancemétrie","Le temps long de consultation","La liberté de tarification"],"Ex. : bilans rapides d'albumine, de préalbumine, de vitamines."),
+    S("Comment appelle-t-on l'ensemble des moyens techniques de l'hôpital (labo, cuisine centrale, matériel) ?",["plateau technique","le plateau technique"],""),
+    CAS("Mme Delmart arrive aux urgences après un AVC, avec des troubles de la déglutition.",Q("Pourquoi le CHU est-il le bon lieu à cette étape ?",["Bilans biologiques rapides, textures modifiées en cuisine centrale, orthophoniste et équipe sur place","Parce qu'elle y aura des consultations d'une heure","Parce que le CHU n'a pas de contrainte budgétaire"],""))),
+  N(Q("Quel est l'effet de la T2A sur la prise en charge diététique ?",["Elle réduit mécaniquement la durée de séjour, donc le temps de prise en charge","Elle allonge les séjours","Elle supprime les prescriptions de CNO"],"La prescription de CNO doit aussi être précisément justifiée."),
+    S("Quel sigle désigne la tarification à l'activité ?",["t2a"],""),
+    W("Pourquoi le diététicien hospitalier doit-il justifier chaque prescription ?","Sous T2A et pression de rentabilité, la prescription de CNO exige une justification médicale précise : il doit optimiser le rapport coût/efficacité.",["T2A, rentabilité","Justification médicale des CNO","Rapport coût/efficacité"])),
+  "Fiche 2 · Service public hospitalier et GHT",
+  N(Q("Qu'est-ce qui distingue le service public hospitalier (SPH) des cliniques privées ?",["Il soigne tout le monde, tout le temps, sans but lucratif","Il choisit ses patients","Il ne fait que des soins curatifs"],"Il regroupe CHU, CH, hôpitaux locaux et les ESPIC (anciens PSPH)."),
+    F("Le SPH est défini par l'article {L6112-1|L. 6112-1|L 6112-1} du Code de la santé publique.",""),
+    E(["Les missions du SPH : accueillir tous les patients 24 h/24,"," dégager des bénéfices pour l'établissement,"," former et faire de la recherche."],1,"L'objectif lucratif n'est jamais une mission du SPH : les excédents sont réinvestis.","Piège d'examen.")),
+  N(O("Remets dans l'ordre les 4 principes du SPH (mnémo É-C-A-N).",["Égalité d'accès","Continuité des soins","Adaptabilité","Neutralité"],""),
+    S("Quel mnémo résume les 4 principes du SPH ?",["ecan","e-c-a-n","é-c-a-n"],"Égalité, Continuité, Adaptabilité, Neutralité."),
+    CAS("Un patient sans couverture sociale se présente de nuit au CH.",Q("Quel principe oblige à le prendre en charge ?",["L'égalité d'accès, avec la continuité des soins 24 h/24","La neutralité","L'adaptabilité"],""))),
+  N([T(B_FIN,"Enveloppe budgétaire nationale votée chaque année",0,""),T(B_FIN,"Ressources selon l'activité médicale réalisée",1,""),T(B_FIN,"Financement des missions non marchandes",2,""),T(B_FIN,"Régulation par l'État en région",3,"")],
+    S("Que signifie ONDAM ?",["objectif national des depenses d assurance maladie","objectif national des dépenses d'assurance maladie"],"")),
+  N(Q("Un GHT (groupement hospitalier de territoire)…",["Mutualise informatique, achats, formation, qualité autour d'un projet médical partagé ; chaque établissement garde son autonomie juridique","Fusionne tous les hôpitaux en un seul établissement","Regroupe des cliniques privées"],"Un établissement support (souvent le CHU) gère les fonctions mutualisées."),
+    F("Les GHT ont été créés par la loi de modernisation du système de santé de {2016}.",""),
+    E(["Depuis son entrée dans un GHT,"," l'hôpital local a perdu son autonomie juridique"," et partage ses achats avec le CHU."],1,"Le GHT ne supprime pas l'autonomie juridique : chaque établissement travaille en réseau.","Piège d'examen."))
+ ]},
+ {id:"ds1b",t:"Libéral et médico-social",s:"Fiches 3 à 5 · libéral, EHPAD, hors hôpital",items:[
+  "Fiche 3 · Le libéral",
+  N(Q("Ce que permet le libéral, selon Julia :",["Une heure complète par patient : écoute approfondie, relation durable, dimensions psychosociales, suivi sur plusieurs mois","Des bilans biologiques immédiats","Une équipe pluridisciplinaire sur place"],"La qualité relationnelle plutôt que l'efficacité rapide."),
+    F("En libéral, Julia consacre {1} heure à chaque patient, contre {15} minutes à l'hôpital.",""),
+    W("Pourquoi Julia peut-elle explorer ce que Sophie n'a pas pu voir à l'hôpital ?","Avec une heure par patient et un suivi longitudinal sur plusieurs mois, elle dispose d'un temps d'écoute approfondie : elle peut explorer les dimensions psychosociales de l'alimentation et construire une relation durable.",["Une heure par patient","Suivi sur plusieurs mois","Dimensions psychosociales"])),
+  N(O("Remets dans l'ordre les 4 dimensions de l'autonomie du libéral.",["Organisation du planning","Choix des méthodes thérapeutiques","Gestion directe de la relation avec le patient","Responsabilité économique complète"],""),
+    A("Libéral : relie chaque contrainte à son contenu.",[["Gestion administrative","Comptabilité, déclarations, assurances"],["Patientèle","Prospection et fidélisation"],["Isolement","Réseau et formation continue indispensables"]],""),
+    E(["En libéral, j'ai une autonomie totale"," et aucune responsabilité économique :"," c'est la grande différence avec l'hôpital."],1,"Il assume toute la responsabilité économique : tarification, gestion, développement.","Piège d'examen.")),
+  N(O("Remets dans l'ordre les 5 défis de la coordination ville-hôpital.",["Compte-rendu d'hospitalisation en retard ou incomplet","Adapter les recommandations au domicile","Liaison avec le médecin traitant","Communication avec les autres paramédicaux","Articulation avec les services sociaux"],""),
+    S("Quel est le premier défi de Julia quand Mme Delmart sort du CHU ?",["compte rendu en retard","compte-rendu en retard","compte rendu incomplet","compte-rendu d'hospitalisation en retard","compte rendu d hospitalisation en retard"],"Il arrive tard et parle peu de nutrition."),
+    CAS("Mme Delmart rentre chez elle : petite cuisine, pas de mixeur, son fils passe une fois par semaine.",Q("Quel défi de la coordination ville-hôpital Julia rencontre-t-elle ?",["Adapter les recommandations aux réalités du domicile (équipement, habitudes, entourage)","Le compte-rendu en retard","L'articulation avec la CME"],""))),
+  "Fiche 4 · L'EHPAD",
+  N(Q("En EHPAD, le rôle de Martha dépasse la nutrition médicale : il s'agit de…",["Respecter l'histoire de vie, gérer les troubles cognitifs, rassurer les familles, maintenir le plaisir de manger","Appliquer strictement les régimes sans tenir compte des goûts","Faire des consultations de 15 minutes"],"L'approche est médico-sociale, globale."),
+    S("Quelle dimension du repas Martha veut-elle préserver malgré les contraintes médicales ?",["plaisir alimentaire","le plaisir alimentaire","plaisir","plaisir de manger","dimension hedonique"],""),
+    W("Pourquoi l'approche en EHPAD est-elle « globale » ?","Le résident y vit : il faut tenir compte de ses habitudes, de son histoire de vie, de sa culture, de ses troubles cognitifs et de sa famille, pas seulement de sa pathologie ; le plaisir de manger reste une priorité.",["Lieu de vie","Histoire de vie, culture","Plaisir, famille, cognition"])),
+  N(A("EHPAD : relie chaque contrainte réglementaire.",[["HACCP","Plan de nettoyage, traçabilité, formation"],["Régimes","Traçabilité informatisée et horodatée"],["Évaluation externe","Tous les 5 ans"],["Référentiels","HAS du secteur médico-social"]],""),
+    F("En EHPAD, l'évaluation externe a lieu tous les {5} ans ; la certification HAS des établissements de santé, tous les {4} ans.",""),
+    E(["L'EHPAD est évalué tous les 4 ans,"," et la traçabilité des régimes y est obligatoire"," avec horodatage."],0,"Évaluation externe EHPAD : tous les 5 ans. 4 ans = certification HAS.","Piège d'examen.")),
+  N(O("Remets dans l'ordre l'adaptation de la prise en charge en EHPAD.",["Construire le plan selon habitudes et capacités cognitives","Impliquer famille et équipe dès la prescription de textures modifiées","Respecter l'HACCP et documenter chaque changement","Former le personnel à la dénutrition et à l'aide au repas"],"")),
+  "Fiche 5 · Hors de l'hôpital",
+  N([T(B_EXTRA,"Soins techniques complexes au domicile",0,""),T(B_EXTRA,"Transition entre soins aigus et retour à l'autonomie",1,""),T(B_EXTRA,"Prise en charge partielle, le patient garde son domicile",2,""),T(B_EXTRA,"Intervient en établissement ou à domicile",3,"")],
+    F("Les SSR sont devenus les {SMR} (soins médicaux et de réadaptation) en {2023}.",""),
+    E(["Une nutrition entérale par pompe à domicile, avec soins techniques,"," relève du diététicien libéral"," en lien avec le prestataire."],1,"Les soins techniques au domicile, c'est l'HAD, pas le libéral.","Piège d'examen.")),
+  N(A("Prestataires de santé à domicile : relie.",[["Matériel","Pompes de nutrition entérale, CNO"],["Formation","Patients et aidants"],["Coordination","Avec les professionnels de santé"]],""),
+    Q("Que font les PTA depuis 2022 ?",["Elles ont fusionné dans les DAC (dispositifs d'appui à la coordination)","Elles ont été remplacées par les GHT","Elles gèrent les urgences vitales"],"Elles coordonnent les parcours complexes.")),
+  N(A("Structures innovantes : relie.",[["MSP","Médecins et paramédicaux autour d'un projet de santé"],["Centre de soins non programmés","Urgences non vitales"],["DAC (ex-PTA)","Coordination des parcours complexes"],["Télémédecine","Suivi à distance des patients chroniques"]],""),
+    S("Que signifie MSP ?",["maison de sante pluriprofessionnelle","maison de santé pluriprofessionnelle","maisons de sante pluriprofessionnelles"],""))
+ ]},
+ {id:"ds1c",t:"Coordonner",s:"Fiches 6 à 8 · parcours, évolutions, méthodes",items:[
+  "Fiche 6 · Parcours de soins et coordination",
+  N(Q("La permanence des soins, c'est…",["Garantir la continuité et l'égalité d'accès aux soins urgents en dehors des heures habituelles, 24 h/24 et 7 j/7","Garder le même diététicien toute sa vie","Un parcours de soins coordonné"],"C'est une obligation de service public."),
+    S("Comment appelle-t-on l'enchaînement coordonné d'actes et de professionnels autour du patient ?",["parcours de soins","le parcours de soins","parcours de soin"],"")),
+  N(O("Remets dans l'ordre les 4 casquettes du diététicien pivot.",["Interface entre équipe médicale et paramédicale","Référent nutritionnel des décisions complexes","Coordinateur des aspects nutritionnels du parcours","Expert conseil selon l'évolution clinique"],""),
+    A("Relie chaque outil de coordination à sa fonction.",[["DMI","Partager poids, bilans, prescriptions"],["Fiche de liaison","Synthèse pour le transfert"],["Réunion pluridisciplinaire","Discuter les cas complexes"],["Téléphone","Ajustements urgents"],["Télémédecine","Suivi à distance"]],""),
+    E(["Parmi les outils de coordination,"," seul le DMI est vraiment efficace ;"," les réunions et le téléphone sont secondaires."],1,"Piège : les 4 (DMI, fiches de liaison, réunions, téléphone) facilitent la coordination.","Piège d'examen.")),
+  N(A("Réseaux territoriaux : relie.",[["Réseau gérontologique","EHPAD, gériatrie, services à domicile"],["Associations de patients diabétiques","Éducation thérapeutique, pairs"],["Pharmaciens","CNO, éducation"],["Services sociaux","Adaptation des aides"]],""),
+    W("Pourquoi la coordination conditionne-t-elle l'efficacité thérapeutique ?","Les outils et réseaux assurent la traçabilité, évitent les pertes d'information entre structures et gardent la cohérence thérapeutique : la meilleure expertise est perdue si l'information ne suit pas le patient.",["Traçabilité","Pas de perte d'information","Cohérence thérapeutique"])),
+  "Fiche 7 · Évolutions du système",
+  N(A("Chiffres des évolutions : relie.",[["Durée moyenne de séjour","−20 % en 10 ans"],["HAD","+15 % par an"],["Plus de 85 ans","×2 d'ici 2050"],["Certification HAS","Tous les 4 ans"]],""),
+    F("La durée moyenne de séjour a baissé de {20} % en 10 ans ; l'HAD progresse de {15} % par an.",""),
+    W("Quelles compétences le virage ambulatoire impose-t-il au diététicien ?","Moins d'hospitalisation complète, plus de libéral, d'HAD et de structures intermédiaires : il faut savoir coordonner les parcours, utiliser la télémédecine et rendre le patient autonome.",["Coordination de parcours","Télémédecine","Autonomisation du patient"])),
+  N(O("Remets dans l'ordre les 5 nouvelles fonctions du diététicien.",["Coordinateur de parcours","Référent nutrition institutionnel","Expert en nutrition clinique","Consultant en santé publique","Diététicien en télémédecine"],""),
+    Q("Les démarches qualité imposent…",["Certification HAS tous les 4 ans, EPP, indicateurs de qualité nutritionnelle, audits externes","Une évaluation tous les 10 ans","Uniquement une auto-évaluation"],"Une culture de l'évaluation permanente."),
+    CAS("Le nombre de plus de 85 ans va doubler d'ici 2050.",Q("Quel besoin en découle pour la diététique ?",["Diététique gériatrique massive : dénutrition, déglutition, polypathologies, prévention de la dépendance","Moins de besoins car les seniors mangent moins","Uniquement plus de lits d'hôpital"],""))),
+  "Fiche 8 · Méthodes",
+  N(O("Prioriser à l'hôpital (É-P-P-D) : remets dans l'ordre.",["Évaluer rapidement la gravité nutritionnelle","Prioriser selon la sévérité","S'appuyer sur les protocoles","Déléguer, coordonner, noter dans le DMI"],""),
+    S("Quel mnémo résume la priorisation à l'hôpital ?",["eppd","e-p-p-d","é-p-p-d"],"")),
+  N(O("Continuité hôpital → domicile (F-T-R-J) : remets dans l'ordre.",["Fiche de liaison standardisée","Téléphoner au libéral ou au médecin traitant","RDV de suivi planifié avant la sortie","Justificatifs et protocoles des compléments"],""),
+    F("Le RDV de suivi se planifie avant la sortie, dans les {7} à {14} jours.",""),
+    CAS("Mme Delmart sort du CHU vendredi. Sophie n'a rempli que le DMI.",W("Que manque-t-il pour éviter une rupture de soins ?","La méthode F-T-R-J : une fiche de liaison standardisée, un appel à Julia ou au médecin traitant, un RDV de suivi planifié dans les 7 à 14 jours avant la sortie, et les justificatifs et protocoles des compléments.",["Fiche de liaison","Appel","RDV à 7-14 jours","Justificatifs"]))),
+  N(Q("Pour intégrer la télémédecine (P-C-S-C), quelle est la 1re étape ?",["Une plateforme sécurisée et conforme aux données de santé","Former le patient","Structurer les séances"],"Puis consentement et formation, séances structurées, bilans en présentiel si besoin."),
+    O("Coordonner en territoire rural : remets dans l'ordre.",["Cartographier les ressources locales","Mobiliser réseaux gérontologiques et partenaires","Déployer télémédecine et prestataires","Fiches de liaison simples, contacts centralisés"],""),
+    CAS("M. Martin vit seul dans la Creuse, à 60 km de l'hôpital, sans diététicien à proximité.",W("Cite 3 obstacles et 3 ressources mobilisables.","Obstacles : distance et isolement, peu de professionnels, transmissions difficiles. Ressources : IDE libérale et pharmacie locale, réseau gérontologique ou DAC, téléconsultation et prestataire à domicile, avec une fiche de liaison simple et un contact centralisé.",["Distance, isolement, peu de pros","IDE, pharmacie, réseau, DAC","Téléconsultation, prestataire"]))),
+  N([T(B_STRUCT,"Bilans rapides, contrainte T2A et rythme",0,""),T(B_STRUCT,"Relation longue, contrainte de gestion et d'isolement",1,""),T(B_STRUCT,"Plaisir alimentaire, contrainte HACCP et traçabilité",2,""),T(B_STRUCT,"Soins techniques, coordination avec les prestataires",3,"")])
+ ]}
+ ],
+ mission:{id:"ds1m",t:"Le parcours de Mme Delmart",items:[
+  CH("martineau","Lundi, CHU : 25 patients, dont Mme Delmart (AVC, fausses routes, glycémies instables) et 3 patients stables. Par où commencer ?",[
+    ["Mme Delmart : évaluation rapide de la gravité, protocole dysphagie, orthophoniste prévenue, tout dans le DMI",2,[10,4,8],"É-P-P-D : la sévérité d'abord."],
+    ["Les patients stables d'abord, ils sont plus rapides",0,[-12,0,-6],"Le risque de fausse route et de déséquilibre glycémique passe avant."],
+    ["Je fais tout moi-même sans déléguer",1,[2,0,-4],"Impossible à tenir : déléguer et coordonner fait partie de la méthode."]],
+   "Fiche 8 · É-P-P-D."),
+  BY("martineau",T(B_FIN,"Le séjour de Mme Delmart est raccourci : l'établissement est payé selon l'activité",1,"La T2A réduit la durée de séjour.")),
+  CH("martineau","Mme Delmart sort vendredi. Que prépares-tu ?",[
+    ["Fiche de liaison, appel à Julia, RDV dans 10 jours, justificatifs des CNO",2,[8,6,10],"F-T-R-J : aucune rupture."],
+    ["Le compte-rendu partira avec le courrier habituel",0,[-8,-4,-10],"Le compte-rendu arrive souvent en retard et parle peu de nutrition."],
+    ["Je note tout dans le DMI, ça suffit",1,[0,0,-2],"Le DMI hospitalier n'est pas forcément accessible en ville."]],
+   "Fiche 8 · F-T-R-J."),
+  CH("renard","Première consultation à Saint-Nazaire. Mme Delmart : « Mixer mes repas ? Je n'ai même pas de mixeur, et je mange seule. »",[
+    ["Je prends l'heure qu'il faut : habitudes, cuisine, entourage, puis des solutions réalistes avec elle",2,[6,12,4],"Le temps long du libéral sert à adapter au domicile."],
+    ["Je lui redonne le plan du CHU tel quel",0,[-6,-10,-4],"Il faut adapter les recommandations aux réalités du domicile."],
+    ["Je l'oriente vers le portage de repas sans en parler davantage",1,[2,-2,0],"Une piste, mais sans écoute ni lien avec l'entourage."]],
+   "Fiche 3 · les 5 défis."),
+  BY("renard",O("Avant le passage en EHPAD, remets dans l'ordre ce que Julia coordonne.",["Appeler le médecin traitant","Informer l'infirmière et l'orthophoniste","Contacter les services sociaux","Transmettre une fiche de liaison à l'EHPAD"],"Médecin traitant, paramédicaux, social, puis transfert.")),
+  CH("lemoine","EHPAD : Mme Delmart refuse les purées. « Chez moi, le dimanche, c'était le pot-au-feu. »",[
+    ["Je reconstruis le plan avec son histoire de vie : pot-au-feu en texture adaptée, avec sa fille et l'équipe ; je trace chaque changement",2,[8,12,8],"Plaisir alimentaire, famille impliquée, traçabilité."],
+    ["La texture est prescrite, elle doit s'y faire",0,[-6,-14,-2],"En EHPAD, le plaisir alimentaire reste une priorité."],
+    ["Je lui sers du pot-au-feu normal pour lui faire plaisir",0,[-14,4,-12],"Risque de fausse route et changement non tracé."]],
+   "Fiche 4."),
+  BY("lemoine",W("Pourquoi Mme Delmart a-t-elle eu besoin des trois structures ?","Le CHU a apporté le plateau technique et la prise en charge aiguë ; le libéral, le temps long et l'adaptation au domicile ; l'EHPAD, une approche globale avec le plaisir de manger et la sécurité (HACCP, traçabilité). L'efficacité dépend autant de l'expertise de chacune que de la qualité des relais entre structures.",["CHU : technique, aigu","Libéral : temps, domicile","EHPAD : histoire de vie, sécurité","La qualité des relais"]))
+ ]}
+};
+
+/* ---------- SOIN 2 · ACTEURS DU SYSTÈME DE SANTÉ ET DU SOCIAL ---------- */
+var B_CSP=[["Profession médicale",""],["Pharmacie / physique médicale",""],["Auxiliaire médical",""],["Hors CSP",""]];
+var B_DOM=[["SSIAD","soins infirmiers"],["SAAD","vie quotidienne, repas"],["Portage de repas","alimentation"],["Téléassistance","sécurité, lien social"]];
+var B_DEN=[["E43",""],["E44.0",""],["Z71.3",""],["E46",""]];
+COURS.ds2={id:"ds2",n:"Soin 2",t:"Acteurs du système de santé et du social",lieu:"Hôpital de jour gériatrique « Bien Vivre » · Clermont-Ferrand",
+ pitch:"Mathieu Dupré coordonne la nutrition dans un hôpital de jour gériatrique. Gériatre, infirmière, kiné, ergothérapeute, psychologue, assistante sociale : chacun apporte une expertise qui complète la sienne. À toi de savoir qui fait quoi, comment travailler ensemble et comment tracer ton travail.",
+ P:{dupre:{n:"Mathieu Dupré",r:"Diététicien coordinateur",av:{bg:"#ff9476",skin:"#e8b896",hair:"#2b1b14",hs:"short",shirt:"#55d6cf"}},
+    moreau:{n:"Dr Sylvie Moreau",r:"Gériatre",av:{bg:"#13303a",skin:"#f0c8a8",hair:"#8a8a8a",hs:"bun",shirt:"#ffffff",glasses:1}},
+    valais:{n:"Nathalie Valais",r:"Assistante sociale",av:{bg:"#ffc94a",skin:"#c99067",hair:"#1f1410",hs:"long",shirt:"#ae8dff"}}},
+ conseil:{who:"dupre",t:"Pour chaque acteur : que fait-il, que m'apporte-t-il, que lui apporte la nutrition ? Les soignants observent, j'interprète et j'adapte. Pour le généraliste, une synthèse d'une page. Pour la continuité : évaluer le budget avec l'AS, mettre les relais (SSIAD, SAAD, portage, téléassistance), transmettre, suivre. Et tout écrire : ce qui n'est pas dans le dossier n'existe pas pour le codage."},
+ levels:[
+ {id:"ds2a",t:"Qui est qui ?",s:"Fiches 1 et 2 · CSP, équipe médicale",items:[
+  "Fiche 1 · Les 3 catégories du Code de la santé publique",
+  N(O("Remets dans l'ordre les 3 catégories de professionnels de santé du CSP.",["Professions médicales","Pharmacie et physique médicale","Auxiliaires médicaux"],""),
+    [T(B_CSP,"Sage-femme",0,""),T(B_CSP,"Pharmacien",1,""),T(B_CSP,"Diététicien",2,""),T(B_CSP,"Ergothérapeute",2,""),T(B_CSP,"Psychologue",3,""),T(B_CSP,"Assistant de service social",3,"")],
+    E(["Le diététicien est une profession médicale"," au sens du Code de la santé publique,"," comme le médecin."],0,"Le diététicien est un auxiliaire médical (paramédical).","")),
+  N(A("Relie chaque profession au texte qui la régit.",[["Psychologue","Loi du 25 juillet 1985 (art. 44)"],["Assistant de service social","Code de l'action sociale et des familles"],["Diététicien","Code de la santé publique"]],""),
+    E(["Le psychologue n'est pas professionnel de santé au sens du CSP :"," il ne peut donc rien échanger"," avec l'équipe soignante."],1,"Psychologue et AS ne sont pas dans le CSP, mais font partie de l'équipe médico-sociale et peuvent échanger des informations.","Piège d'examen.")),
+  N(Q("Le modèle actuel de travail en équipe est…",["Une médecine collaborative : chacun est reconnu expert dans son domaine","Un modèle hiérarchique où le médecin décide et les autres exécutent","Un exercice isolé de chaque profession"],"C'est la complémentarité des savoirs."),
+    S("Comment appelle-t-on le modèle où chacun est reconnu expert de son domaine ?",["medecine collaborative","médecine collaborative","la medecine collaborative"],"")),
+  "Fiche 2 · L'équipe médicale",
+  N(O("Remets dans l'ordre les 3 missions du gériatre.",["Établir le diagnostic de certitude","Définir la stratégie thérapeutique globale","Coordonner les spécialistes"],""),
+    W("Pourquoi le Dr Moreau s'appuie-t-elle sur Mathieu ?","Elle le reconnaît comme expert de référence en nutrition : ses analyses l'aident à adapter ses prescriptions médicamenteuses et ses objectifs thérapeutiques. C'est une reconnaissance mutuelle des expertises.",["Expert de référence en nutrition","Adapter prescriptions et objectifs","Reconnaissance mutuelle"])),
+  N(A("Relie chaque spécialiste à la contrainte nutritionnelle à intégrer.",[["Cardiologue","Restriction sodée stricte"],["Endocrinologue","Contrôle glycémique précis"],["Néphrologue","Limiter protéines et potassium"],["Psychiatre","Troubles alimentaires liés aux démences"]],""),
+    S("Quel spécialiste demande de limiter les protéines et le potassium ?",["nephrologue","néphrologue","le nephrologue"],""),
+    CAS("Mme Rey, 84 ans : insuffisance cardiaque, diabète et insuffisance rénale.",W("Comment Mathieu construit-il des recommandations cohérentes ?","Il développe une expertise transversale : il croise la restriction sodée (cardio), le contrôle glycémique (endocrino) et la limitation des protéines et du potassium (néphro) pour des recommandations applicables, sans compromettre l'objectif de chaque spécialité.",["Sel, glycémie, protéines et potassium","Expertise transversale","Applicable, sans trahir chaque spécialité"]))),
+  N(A("Fiche de synthèse pour le généraliste : relie.",[["Longueur","1 page maximum"],["Diagnostic","Nutritionnel, rapide"],["Recommandations","Hiérarchisées : urgent, important, secondaire"],["Alerte","Signes faciles à repérer"],["Calendrier","Suivi avec objectifs mesurables"]],""),
+    F("Le généraliste consulte {15} à {20} minutes : la synthèse diététique tient sur {1} page.",""),
+    E(["Pour le médecin traitant, je joins"," l'historique alimentaire des dix dernières années"," à ma synthèse d'une page."],1,"La synthèse doit être concise et opérationnelle : pas d'historique de 10 ans.","Piège d'examen.")),
+  "L'équipe de « Bien Vivre »",
+  N(A("Qui apporte quoi à Mathieu ? Relie.",[["Dr Moreau, gériatre","Diagnostic, stratégie globale"],["Isabelle Petit, IDE","Observation des repas, ETP"],["Pedro Marquez, kiné","Lien mobilité-nutrition"],["Marie Rousseau, ergo","Environnement du repas"],["Thomas Bernard, psy","Dimensions psychologiques"],["Nathalie Valais, AS","Budget, aides, domicile"]],"L'efficacité dépend de la qualité des interactions entre cultures métiers différentes."))
+ ]},
+ {id:"ds2b",t:"L'équipe de soins",s:"Fiches 3 à 5 · IDE, AS, ASH, kiné, ergo, ortho, psy",items:[
+  "Fiche 3 · L'équipe soignante",
+  N(Q("Entre l'infirmière coordinatrice et le diététicien, la transmission est…",["Bidirectionnelle : les soignants observent, le diététicien interprète et adapte","Descendante : le diététicien donne des consignes","Inutile : le diététicien voit le patient au repas"],"Isabelle Petit est l'interface quotidienne."),
+    S("Que signifie ASH ?",["agent de service hospitalier","agents de service hospitalier"],"Présents au moment des repas.")),
+  N(A("Relie chaque observation des AS et ASH à ce qu'elle peut révéler.",[["Difficulté à tenir les couverts","Troubles moteurs"],["Repas anormalement longs","Troubles de la déglutition"],["Préférences spontanées","Pistes pour personnaliser"],["Appétit variable dans la journée","Meilleurs moments pour enrichir"]],""),
+    W("Pourquoi Mathieu forme-t-il chaque trimestre les aides-soignants et les ASH ?","Ils sont présents aux repas mais leur observation est sous-exploitée : formés à l'observation ciblée, ils deviennent un réseau d'observation qui permet de détecter tôt les troubles alimentaires et d'adapter plus vite.",["Présents aux repas","Réseau sous-exploité","Détection précoce"]),
+    E(["Les aides-soignants et les ASH"," ont un rôle secondaire en nutrition :"," seule l'infirmière observe les repas."],1,"Ils sont un réseau d'observation sous-exploité alors qu'ils sont présents aux repas.","Piège d'examen.")),
+  N(O("Éducation thérapeutique avec l'équipe infirmière : remets dans l'ordre.",["Protocoles éducatifs partagés, séances co-animées","Supports pédagogiques validés ensemble","Évaluation partagée des acquis","Renforcement des messages pendant les soins"],"")),
+  "Fiche 4 · Kinésithérapie et ergothérapie",
+  N(Q("Le lien mobilité-nutrition est…",["Bidirectionnel : la dénutrition fait perdre la mobilité, l'immobilité aggrave la dénutrition","À sens unique : la dénutrition fait perdre la mobilité","Sans rapport"],"L'immobilité baisse l'appétit et accélère la fonte musculaire."),
+    E(["Le lien kiné-nutrition :"," la dénutrition entraîne une perte de mobilité,"," et c'est tout."],2,"Il marche dans les deux sens : l'immobilité prolongée baisse l'appétit, accélère la fonte musculaire et aggrave la dénutrition.","Piège d'examen."),
+    CAS("M. Faure fait sa séance de kiné à 10 h et mange peu le matin.",W("Que coordonnent Mathieu et Pedro ?","Une collation enrichie avant l'effort, un apport protéique adapté pour la récupération musculaire, une évaluation partagée de l'évolution fonctionnelle et l'ajustement mutuel des objectifs selon les progrès.",["Collation pré-effort","Protéines pour récupérer","Évaluer et ajuster ensemble"]))),
+  N(Q("Objectif de l'ergothérapeute pour le repas :",["Maintenir l'autonomie alimentaire le plus longtemps possible grâce à l'environnement","Choisir les textures","Prescrire les CNO"],"Couverts, cuisine, réfrigérateur, ergonomie de l'espace repas."),
+    S("Cite une aide technique proposée par l'ergothérapeute pour boire.",["verre a decoupe nasale","verre à découpe nasale","verres a decoupe nasale"],"Avec couverts adaptés et assiettes à rebords."),
+    W("Pourquoi la meilleure recommandation peut-elle rester inapplicable ?","Si l'environnement matériel ne permet pas de la mettre en œuvre (couverts, plans de travail, placards, réfrigérateur), le patient ne peut pas la suivre : l'ergothérapeute rend la nutrition applicable.",["Environnement matériel","Aides techniques, cuisine","Rendre applicable"])),
+  "Fiche 5 · Orthophonie et psychologie",
+  N(Q("La dysphagie, c'est…",["L'ensemble des troubles de la déglutition, avec risque de complications respiratoires et nutritionnelles","Un trouble du goût","Une perte d'appétit"],"Aliments, liquides ou salive."),
+    S("Quelle classification internationale sert à choisir les textures ?",["iddsi"],"International Dysphagia Diet Standardisation Initiative."),
+    E(["Pour Mme Roche, dysphagique,"," je choisis les textures selon ses goûts,"," puis l'orthophoniste valide."],1,"Les textures se choisissent selon l'évaluation orthophonique (IDDSI), pas seulement selon les goûts.","Piège d'examen.")),
+  N(A("Relie chaque composante psychologique à son effet.",[["Dépression masquée","Réduit l'appétit"],["Anxiété","Troubles du comportement alimentaire"],["Troubles cognitifs","Perturbent la relation à la nourriture"]],""),
+    O("Troubles cognitifs : remets dans l'ordre les stratégies psy + diététicien.",["Consignes courtes et répétitives","Ritualisation des repas","Gestion des refus, méfiance, agitation","Formation des aidants à la stimulation"],""),
+    CAS("M. Blanc, atteint de démence, refuse son plateau un jour sur deux et s'agite à table.",Q("Quelle stratégie ?",["Heures fixes et environnement stable, messages courts, avec le psychologue et les aidants","Changer le menu chaque jour pour le surprendre","Lui expliquer longuement les risques de la dénutrition"],"")))
+ ]},
+ {id:"ds2c",t:"Domicile et cadre légal",s:"Fiches 6 à 9 · social, décret d'actes, codage",items:[
+  "Fiche 6 · Le social et le domicile",
+  N(A("Assistante sociale : relie chaque action.",[["Budget","Budget alimentaire, reste à vivre"],["Urgence","Lien avec le CCAS"],["Démarches","APA, aides au logement"],["Avenir","Anticiper l'entrée en institution"]],""),
+    S("Que signifie APA ?",["allocation personnalisee d autonomie","allocation personnalisée d'autonomie"],""),
+    W("Pourquoi Mathieu travaille-t-il avec Nathalie avant de rédiger ses conseils ?","Une recommandation ne sert à rien si le patient ne peut pas se la payer ou la préparer : l'AS évalue les ressources réelles (budget alimentaire, reste à vivre) et les aides mobilisables, pour que les conseils restent réalistes.",["Budget réel, reste à vivre","Aides mobilisables","Conseils réalistes"])),
+  N([T(B_DOM,"Surveillance clinique et aide aux traitements",0,""),T(B_DOM,"Aide aux courses et à la préparation des repas",1,""),T(B_DOM,"Livraison quotidienne de repas",2,""),T(B_DOM,"Bouton d'alerte et lien social",3,"")],
+    E(["Pour l'aider à préparer ses repas,"," je demande un SSIAD,"," en plus du portage."],1,"SSIAD = soins infirmiers ; l'aide à la vie quotidienne et aux repas, c'est le SAAD.","Piège d'examen.")),
+  N(O("Ce que le diététicien enseigne aux intervenants du domicile : remets dans l'ordre.",["Observer : signes de dénutrition","Aider aux repas en respectant l'autonomie","Reconnaître les urgences","Transmettre à l'équipe"],"")),
+  "Fiches 7 et 8 · Décret d'actes et codification",
+  N(Q("Le décret d'actes…",["Fixe ce qu'un professionnel peut légalement faire, seul ou sur prescription, et les conditions d'accès","Liste les tarifs des consultations","Est le code de déontologie"],"Il délimite les compétences et sécurise la pratique."),
+    F("Les actes du diététicien sont fixés par l'arrêté du {11} août {1993}, modifié en {2007}.",""),
+    E(["Le diététicien exerce librement,"," ou sous supervision médicale à chaque acte,"," selon l'arrêté de 1993."],0,"Il exerce sur prescription médicale OU dans le cadre d'actions de santé publique : ni exercice libre, ni supervision à chaque acte.","Piège d'examen.")),
+  N(A("Relie chaque classification à son usage.",[["CFAM","Actes médicaux techniques"],["CCAM","Tarification"],["Supplément PMSI","Actes paramédicaux hors CCAM"],["CAP","Actes de rééducation"],["NGAP","Secteur libéral"]],""),
+    Q("Pourquoi code-t-on les actes ?",["Pour alimenter le PMSI, tracer, justifier auprès des financeurs, financer l'établissement (T2A, GHS), évaluer","Pour facturer directement le patient","Ce n'est pas utile en diététique"],""),
+    E(["Le diététicien code ses consultations"," avec un acte de la CCAM,"," comme les médecins."],1,"Ses actes ne sont PAS dans la CCAM : en MCO, on code le diagnostic Z71.3 ; en SSR, des actes CSARR (HSQ).","Piège d'examen.")),
+  N(A("Relie le contexte au codage de l'activité diététique.",[["MCO","Diagnostic CIM-10 Z71.3"],["SSR / SMR","Actes CSARR, codes HSQ"],["Libéral","NGAP"]],""),
+    A("Codes HSQ en SSR : relie.",[["HSQ+289","Évaluation qualitative initiale"],["HSQ+014","Évaluation qualitative et quantitative initiale"],["HSQ+145","Alimentation artificielle"],["HSQ+222","Conseils nutritionnels en fin de séjour"],["HSM+297","Composer un repas avec le patient, 1 fois/jour max"]],""),
+    S("Combien de fois par jour au maximum peut-on coder HSM+297 ?",["1","une","1 fois","une fois"],"Et jamais pour valider un repas choisi au restaurant de l'établissement.")),
+  N([T(B_DEN,"Dénutrition sévère",0,""),T(B_DEN,"Dénutrition modérée",1,""),T(B_DEN,"Surveillance et conseils diététiques",2,""),T(B_DEN,"Malnutrition sans précision : à éviter",3,"")],
+    F("Dénutrition sévère : {E43} ; modérée : {E44.0|E44,0|E440}.",""),
+    CAS("Mathieu dépiste une dénutrition sévère chez M. Faure, hospitalisé pour une chute.",Q("Que fait-il ?",["Il documente « dénutrition sévère », poids, taille, IMC ; le DIM code E43 en comorbidité associée","Il facture lui-même le dépistage","Il code Z71.3, c'est le code de la dénutrition"],"Le diététicien documente, le DIM code."))),
+  "Fiche 9 · Méthodes",
+  N(O("Continuité au domicile : remets les 4 étapes dans l'ordre.",["Évaluer ressources sociales et budget avec l'AS","Mettre en place les relais (SSIAD, SAAD, portage, téléassistance)","Transmettre la synthèse d'une page","Programmer le suivi, vérifier le codage, former"],""),
+    W("Pourquoi faut-il tout écrire dans le dossier ?","Ce qui n'est pas écrit n'existe pas pour le codage : sans poids, IMC, albumine et diagnostic « modérée » ou « sévère », le DIM ne peut pas coder la dénutrition ; l'activité devient invisible (financement, postes, reconnaissance).",["Pas écrit = pas codé","Poids, IMC, sévérité","Visibilité, financement"])),
+  N(A("Enjeux du codage pour la profession : relie.",[["Reconnaissance","Le travail du diététicien devient visible"],["Statistiques","Visibilité dans les données"],["Économie","Financement via les GHS"],["Postes","Justification des effectifs"]],""),
+    Q("Comment intégrer la dimension culturelle dès l'admission ?",["Évaluer préférences culturelles, supports dans sa langue, recettes adaptées culturellement et économiquement","Donner le même menu à tous","Attendre que le patient en parle"],""))
+ ]}
+ ],
+ mission:{id:"ds2m",t:"Le retour à domicile de M. Faure",items:[
+  CH("moreau","M. Faure, 82 ans, sort dans 5 jours : dénutrition sévère, diabète, insuffisance cardiaque. Que proposes-tu pour son dossier ?",[
+    ["Je note poids, taille, IMC, albumine et « dénutrition sévère », et je préviens le DIM",2,[4,2,12],"Le DIM pourra coder E43."],
+    ["Je mets « dénutrition » sans préciser",1,[0,0,-6],"Sans sévérité, le codage tombe en E46, à éviter."],
+    ["Je code moi-même la consultation en CCAM",0,[0,-2,-12],"Les actes du diététicien ne sont pas dans la CCAM."]],
+   "Fiche 8."),
+  BY("moreau",A("Pour M. Faure, relie chaque spécialiste à sa contrainte.",[["Cardiologue","Peu de sel"],["Endocrinologue","Glycémie stable"]],"Une expertise transversale.")),
+  CH("dupre","Isabelle (IDE) signale : « Il met 45 minutes à finir son assiette et tousse. »",[
+    ["J'interprète : suspicion de dysphagie ; je demande l'évaluation de l'orthophoniste et j'adapte les textures selon l'IDDSI",2,[12,4,8],"Les soignants observent, le diététicien interprète."],
+    ["Je mixe tout dès ce midi",1,[2,-4,-4],"Trop rapide : la texture se choisit selon l'évaluation orthophonique."],
+    ["C'est normal à son âge",0,[-12,-2,-8],"Un repas anormalement long peut révéler un trouble de la déglutition."]],
+   "Fiches 3 et 5."),
+  CH("valais","« M. Faure a 9 € par jour pour manger et vit au 3e sans ascenseur. »",[
+    ["On adapte : recettes simples à petit budget, portage de repas, SAAD pour les courses, CCAS si besoin",2,[8,10,6],"Une recommandation doit tenir dans le budget réel."],
+    ["Je maintiens mon plan riche en poisson frais",0,[-6,-12,-4],"Irréaliste : il ne pourra pas le suivre."],
+    ["Je demande un SSIAD pour lui faire ses courses",1,[0,0,-4],"Le SSIAD fait des soins ; les courses et repas, c'est le SAAD."]],
+   "Fiche 6."),
+  BY("dupre",O("Remets dans l'ordre la continuité au domicile de M. Faure.",["Évaluer son budget avec Nathalie","Mettre en place SAAD, portage et téléassistance","Envoyer la synthèse d'une page au médecin traitant","Programmer le suivi et former les intervenants"],"")),
+  CH("dupre","Que mets-tu dans la synthèse pour son médecin traitant ?",[
+    ["Une page : diagnostic, priorités urgent/important/secondaire, signes d'alerte, calendrier de suivi",2,[6,6,8],"Concise et opérationnelle."],
+    ["Quatre pages avec tout l'historique alimentaire",0,[0,-6,-6],"Le généraliste a 15 à 20 minutes : il ne la lira pas."]],
+   "Fiche 2.")
+ ]}
+};
+
+/* ---------- SOIN 3 · ÉTHIQUE, DÉONTOLOGIE ET CADRE RÉGLEMENTAIRE ---------- */
+var B_ETH=[["Éthique","réflexion sur les valeurs"],["Déontologie","règles et devoirs"]];
+var B_RESP=[["Civile","réparer"],["Pénale","sanctionner une infraction"],["Disciplinaire","manquement déontologique"]];
+var B_PERIM=[["Dans mon périmètre",""],["Hors périmètre",""]];
+var B_ROSE=[["Individuel",""],["Collectif",""]];
+COURS.ds3={id:"ds3",n:"Soin 3",t:"Éthique, déontologie et cadre réglementaire",lieu:"Centre hospitalier régional d'Orléans",
+ pitch:"Valérie Chassagne, diététicienne depuis 15 ans, affronte chaque jour des dilemmes : M. Mansouri veut jeûner pendant le Ramadan malgré son diabète, Mme Dutoit exige un secret absolu, Kevin, 16 ans, n'est pas d'accord avec ses parents. La technique ne suffit pas : il faut un cadre.",
+ P:{chassagne:{n:"Valérie Chassagne",r:"Diététicienne · CHR d'Orléans",av:{bg:"#ff9476",skin:"#f0c8a8",hair:"#6b3b1f",hs:"long",shirt:"#13303a"}},
+    mansouri:{n:"Ahmed Mansouri",r:"Patient, 68 ans, diabétique",av:{bg:"#55d6cf",skin:"#b47a52",hair:"#d9d9d9",hs:"short",shirt:"#ffffff",glasses:1}},
+    dutoit:{n:"Françoise Dutoit",r:"Patiente, 45 ans",av:{bg:"#ae8dff",skin:"#f0c8a8",hair:"#1f1410",hs:"bun",shirt:"#ff7a59"}}},
+ conseil:{who:"chassagne",t:"Retiens le patient, tu retrouveras la règle : Mansouri = autonomie (informer, vérifier par teach-back, respecter le choix, continuer à suivre) ; Dutoit = secret (strict nécessaire, cercle minimum, jamais confirmer une présence) ; Kevin = mineur (séances alternées, intérêt supérieur). Et le réflexe commun : documenter."},
+ levels:[
+ {id:"ds3a",t:"Les bases",s:"Fiches 1 et 2 · éthique, responsabilité, secret",items:[
+  "Fiche 1 · Éthique, déontologie, responsabilité",
+  N([T(B_ETH,"« Ai-je le droit d'imposer mes recommandations à un patient qui les refuse ? »",0,""),T(B_ETH,"« Je n'ai pas le droit de prescrire un médicament. »",1,""),T(B_ETH,"Pas toujours une réponse unique",0,""),T(B_ETH,"Dit ce que le professionnel a le droit ou l'obligation de faire",1,"")],
+    S("Comment appelle-t-on les règles et devoirs fixés pour encadrer une profession ?",["deontologie","déontologie","la deontologie"],""),
+    W("Face à M. Mansouri, comment Valérie articule-t-elle éthique et déontologie ?","D'abord la réflexion éthique pour comprendre les enjeux moraux (conviction, santé, autonomie), puis les règles déontologiques : informer des risques et respecter le choix final. Cette articulation protège contre l'arbitraire.",["Éthique d'abord : comprendre","Déontologie : informer, respecter","Contre l'arbitraire"])),
+  N(O("Remets dans l'ordre les 3 piliers de la responsabilité.",["Obligation de moyens","Reconnaissance de ses limites","Adaptation à chaque patient"],""),
+    Q("Le diététicien a une obligation…",["De moyens : tout mettre en œuvre selon les connaissances, sans garantir le résultat","De résultat : le patient doit perdre du poids","De moyens et de résultat"],""),
+    E(["Si mon patient ne maigrit pas,"," j'ai manqué à mon obligation de résultat"," envers lui."],1,"Le diététicien a une obligation de moyens, pas de résultat.","Piège d'examen.")),
+  N(CAS("Une patiente décrit des palpitations et des malaises répétés pendant la consultation.",Q("Que fait Valérie ?",["Elle l'oriente vers le médecin : c'est un acte responsable, pas un aveu d'échec","Elle adapte seule son régime pour corriger les malaises","Elle attend la prochaine consultation"],"Reconnaître ses limites protège le patient."))),
+  "Fiche 2 · Le secret : ce que dit la loi",
+  N(F("Le secret professionnel relève de l'article {226-13} du Code pénal : tout ce qui est « dit, vu, entendu ou compris ».",""),
+    F("Violer le secret : {1} an d'emprisonnement et {15000|15 000} € d'amende.",""),
+    E(["Le secret couvre ce que le patient me dit"," mais pas ce que j'observe"," ni mon attitude non verbale."],1,"Il couvre tout : dit, vu, entendu ou compris, quels que soient le canal et l'attitude.","")),
+  N(Q("L'article 226-14 du Code pénal permet de lever le secret…",["En cas de danger grave et immédiat pour la vie ou l'intégrité d'une personne","Dès qu'un proche le demande","Si l'employeur le demande"],"Autres exceptions : maltraitances, maladies déclarables, témoignage judiciaire."),
+    A("Relie chaque exception légale au secret.",[["226-14","Danger grave et immédiat"],["Signalement","Maltraitances"],["Santé publique","Maladies infectieuses déclarables"],["Justice","Témoignage sur commission"]],""),
+    W("Pourquoi chaque levée du secret demande-t-elle une réflexion éthique ?","Le secret n'est pas absolu, mais il fonde la relation de confiance : il faut peser le devoir de confidentialité et le devoir de protection avant toute révélation.",["Secret non absolu","Confidentialité contre protection","Confiance"])),
+  N(O("Remets dans l'ordre les 3 conditions cumulatives du secret partagé.",["Information strictement nécessaire aux soins","Professionnels directement impliqués","Patient informé et non opposé"],""),
+    E(["Grâce au secret partagé,"," je transmets tout le dossier à toute l'équipe du service,"," puisque le patient est informé."],1,"Seulement le strict nécessaire, aux seuls professionnels impliqués.","Piège d'examen.")),
+  N(Q("La discrétion professionnelle interdit de parler de ses patients…",["Dans les lieux publics, sur les réseaux sociaux et même en famille","Seulement sur les réseaux sociaux","Seulement aux journalistes"],"Ces règles engagent la responsabilité pénale, professionnelle et éthique."))
+ ]},
+ {id:"ds3b",t:"Mansouri, Dutoit, Kevin",s:"Fiches 3 à 5 · autonomie, confidentialité, mineur",items:[
+  "Fiche 3 · M. Mansouri : autonomie et consentement",
+  N(Q("Le principe d'autonomie signifie…",["Le patient peut décider, même contre l'avis du diététicien ; la décision doit être éclairée","Le diététicien décide pour le bien du patient","Le patient doit suivre les recommandations"],"C'est la pierre angulaire de l'éthique médicale."),
+    CAS("M. Mansouri : « Pendant le Ramadan, je dois jeûner. C'est plus important que ma santé. »",W("Quelle posture adopte Valérie ?","Elle reconnaît l'importance du Ramadan, explore les adaptations possibles, contacte l'imam (avec son accord) pour connaître les aménagements autorisés et explique clairement les risques (hypoglycémies, décompensation). C'est une compétence culturelle, sans devenir expert en théologie.",["Reconnaître la conviction","Explorer les adaptations, l'imam","Expliquer les risques"]))),
+  N(O("Remets dans l'ordre les 6 étapes du consentement éclairé.",["Expliquer les risques simplement","Présenter les alternatives","Vérifier la compréhension","Respecter le temps de réflexion","Documenter l'information","Accepter la décision finale"],""),
+    S("Comment s'appelle la technique où le patient réexplique ce qu'il a compris ?",["teach back","teach-back","le teach-back"],""),
+    E(["Pour vérifier qu'il a compris,"," je lui demande « Vous avez bien compris ? »,"," et il dit oui."],1,"Le teach-back : le patient réexplique avec ses mots, ce qui révèle les incompréhensions.","")),
+  N(Q("M. Mansouri maintient son jeûne. Respecter son refus, c'est…",["Accepter sans juger et continuer l'accompagnement dans les limites acceptées, en documentant","Arrêter le suivi puisqu'il refuse","Le signaler à son médecin pour qu'il le convainque"],""),
+    E(["M. Mansouri refuse mes conseils :"," par respect pour son choix, j'arrête le suivi"," et je le documente."],1,"Respecter un refus ne veut pas dire arrêter : on continue dans les limites acceptées.","Piège d'examen."),
+    W("Quel protocole Valérie met-elle en place pendant le jeûne ?","Des appels réguliers, une surveillance glycémique renforcée et des critères d'interruption en cas de décompensation : elle respecte l'autonomie tout en maintenant la sécurité.",["Appels réguliers","Glycémies renforcées","Critères d'interruption"])),
+  "Fiche 4 · Mme Dutoit : la confidentialité",
+  N(CAS("Mme Dutoit : « Rien ne doit sortir, même pas dans mon dossier. »",Q("Valérie peut-elle promettre « rien dans le dossier » ?",["Non : elle doit documenter, mais en protégeant l'information (dossier séparé, codage, accès limité)","Oui, si la patiente le demande","Oui, pour une boulimie"],"Piège d'examen.")),
+    A("Le protocole de Valérie pour Mme Dutoit : relie.",[["Dossier","Séparé pour les informations sensibles"],["Codage","Spécifique"],["Accès","Seuls les professionnels impliqués"],["Droits","L'employeur ne peut pas accéder au dossier"]],"")),
+  N(Q("Le « cercle minimum » du secret partagé pour Mme Dutoit :",["Médecin traitant et psychologue, chacun ne reçoit que ce qui relève de sa compétence","Toute l'équipe du service","Son employeur et la médecine du travail"],""),
+    O("Respecter le secret au quotidien : remets dans l'ordre.",["Ne jamais confirmer la présence d'un patient","Éviter ascenseurs, cafétérias, transports","Sécuriser les échanges électroniques","Prudence absolue sur les réseaux sociaux","Propos mesurés hors temps de travail"],""),
+    CAS("Le frère de Mme Dutoit appelle : « Ma sœur est bien suivie chez vous ? »",Q("Que répond-on ?",["On ne confirme ni n'infirme sa présence sans son accord explicite","On confirme, c'est un proche","On donne la date du prochain RDV"],""))),
+  "Fiche 5 · Kevin : la minorité",
+  N(Q("Comment Valérie organise-t-elle le suivi de Kevin, 16 ans ?",["Séances alternées : en famille pour l'adhésion des parents, seul pour son expression libre","Uniquement avec les parents, qui ont l'autorité","Uniquement avec Kevin, sans les parents"],"Autorité parentale et autonomie émergente."),
+    A("Intérêt supérieur du mineur : relie chaque dimension à évaluer.",[["Psychologique","Impact des restrictions"],["Alimentaire","Risque de TCA"],["Familiale","Équilibre familial"]],""),
+    W("Pourquoi l'intérêt supérieur de Kevin peut-il primer sur ses parents ?","Il guide toutes les décisions en cas de conflit : si la stratégie restrictive des parents menace sa santé (impact psychologique, risque de troubles alimentaires), il prime sur leurs demandes, jusqu'au signalement si nécessaire, tout en respectant leur légitimité et leurs inquiétudes.",["Guide en cas de conflit","Restrictions, TCA","Signalement possible"])),
+  N(Q("L'obligation de signalement s'active…",["En cas de suspicion de maltraitance grave ; elle protège l'enfant et le professionnel","Dès que les parents sont en désaccord","Jamais pour un diététicien"],""),
+    E(["Valérie repère des signes de dépression chez Kevin :"," elle l'oriente vers un psychologue"," et arrête son suivi diététique."],2,"Orienter ne veut pas dire arrêter : elle oriente vers le psychologue et le médecin traitant et continue son suivi.","Piège d'examen."))
+ ]},
+ {id:"ds3c",t:"Responsabilités et outils",s:"Fiches 6 à 9 · périmètre, AFDN, outils éthiques, méthodes",items:[
+  "Fiche 6 · Périmètre, responsabilités, code",
+  N([T(B_PERIM,"Évaluer les besoins nutritionnels",0,""),T(B_PERIM,"Construire un plan alimentaire personnalisé",0,""),T(B_PERIM,"Éducation thérapeutique",0,""),T(B_PERIM,"Prescrire un médicament",1,""),T(B_PERIM,"Poser un diagnostic médical",1,"")],
+    S("Cite un acte exclu du périmètre du diététicien.",["prescription medicamenteuse","prescription médicamenteuse","diagnostic medical","diagnostic médical","prescrire un medicament"],"")),
+  N([T(B_RESP,"Réparer le préjudice causé, avec l'assurance professionnelle",0,""),T(B_RESP,"Violation du secret, exercice illégal",1,""),T(B_RESP,"Sanction par l'employeur",2,"")],
+    Q("Les 3 responsabilités sont…",["Cumulables : une même faute peut engager les trois","Exclusives : une seule à la fois","Réservées aux médecins"],""),
+    E(["Le diététicien salarié qui manque à la déontologie"," est sanctionné par l'Ordre des diététiciens,"," comme un médecin par le sien."],1,"Il n'existe pas d'Ordre des diététiciens : la sanction disciplinaire vient de l'employeur.","Piège d'examen.")),
+  N(O("Prévenir les risques : remets dans l'ordre.",["Respecter son périmètre","Documenter","Mettre ses connaissances à jour","Souscrire une assurance","Demander une supervision si complexe"],"")),
+  N(Q("Le code de déontologie du diététicien…",["A été élaboré par l'AFDN : référence reconnue, sans valeur légale stricte","Est inscrit dans le Code de la santé publique","N'existe pas"],"Contrairement aux médecins ou infirmiers."),
+    A("Les 4 principes du code AFDN : relie.",[["Objectivité","Information fondée et impartiale"],["Promotion de la santé","Au cœur de l'action"],["Développement professionnel","Faire progresser la profession"],["Collaboration","Pluridisciplinaire"]],""),
+    E(["Le diététicien a un code de déontologie"," inscrit dans le Code de la santé publique,"," rédigé par l'AFDN."],1,"Pas de code dans le CSP : le code AFDN est une référence professionnelle, sans valeur légale stricte.","Piège d'examen.")),
+  "Fiche 7 · Faire évoluer sa pratique",
+  N(O("Démarche de Bolly et Grandjean : remets les 4 étapes dans l'ordre.",["Écoute du récit","Accueil de ses émotions et jugements","Prise de distance","Partage avec d'autres professionnels"],""),
+    A("Faire évoluer sa pratique éthique : relie.",[["Analyse de pratiques","Présenter ses dilemmes aux pairs"],["Culture d'établissement","Former, formaliser des protocoles"],["Veille réglementaire","Par thèmes : droits, secret, responsabilité, évolutions sociales"]],""),
+    W("Pourquoi la réflexion éthique ne se fait-elle pas seul ?","La mutualisation des expériences (groupes de pairs, revues de pratiques, accompagnement institutionnel, formation) améliore la qualité des prises en charge ; les protocoles harmonisent les décisions récurrentes et la veille permet d'anticiper les changements.",["Mutualiser les expériences","Protocoles, harmonisation","Anticiper par la veille"])),
+  "Fiche 8 · Rose des vents et triangle",
+  N([T(B_ROSE,"Réflexion philosophique : valeurs, sens de l'action",0,""),T(B_ROSE,"Contexte relationnel : soignants, soignés, proches",0,""),T(B_ROSE,"Vécu personnel : émotions, histoire de vie",0,""),T(B_ROSE,"Règles juridiques, déontologiques, institutionnelles",1,""),T(B_ROSE,"Connaissances scientifiques",1,""),T(B_ROSE,"Enjeux socio-culturels et économiques",1,"")],
+    C("Combien de thématiques compte la rose des vents de l'éthique ?",6,"3 individuelles et 3 collectives.")),
+  N(A("Triangle de l'éthique : relie chaque pôle.",[["Je","Vivre une vie bonne"],["Tu","Avec et pour autrui"],["Il","Dans des institutions justes"]],""),
+    S("Que place-t-on au centre du triangle de l'éthique ?",["le soin","soin","la relation a l autre","relation à l'autre"],""),
+    A("Les 3 facteurs à prendre en compte : relie.",[["Patient","Autodétermination"],["Clinique","Adéquation avec le bénéfice attendu"],["Sens","Valeurs et symboles du soin"]],"")),
+  "Fiche 9 · Méthodes",
+  N(O("Patient qui refuse pour raisons religieuses : remets dans l'ordre.",["Écouter sans jugement","Expliquer risques et alternatives, teach-back","Proposer un suivi adapté et documenté","Consulter des ressources culturelles avec accord"],""),
+    W("Quel est le réflexe commun à toutes les situations éthiques ?","Documenter : faits, informations fournies, compréhension du patient, décisions, orientations hors périmètre, preuves du consentement et du suivi, en limitant les détails sensibles dans le dossier général.",["Faits, informations, décisions","Consentement et suivi","Protéger les détails sensibles"]),
+    CAS("Les parents de Kevin exigent de connaître tout ce qu'il dit en séance individuelle.",Q("Que fait Valérie ?",["Elle explique aux parents les limites de la confidentialité, évalue l'intérêt de Kevin et documente","Elle leur répète tout, ils ont l'autorité parentale","Elle arrête les séances individuelles"],"")))
+ ]}
+ ],
+ mission:{id:"ds3m",t:"Une semaine de dilemmes",items:[
+  CH("mansouri","« Docteur, je jeûnerai pendant le Ramadan, quoi que vous disiez. »",[
+    ["« Je respecte votre choix. Parlons des risques et de ce qu'on peut adapter ensemble. Vous pouvez me réexpliquer ? »",2,[6,12,8],"Autonomie, information, teach-back."],
+    ["« C'est dangereux, je vous l'interdis. »",0,[-4,-14,-6],"Le patient décide ; le rôle est d'éclairer sa décision."],
+    ["« D'accord, faites comme vous voulez. »",1,[-8,2,-6],"Respect sans information : la décision n'est pas éclairée."]],
+   "Fiche 3."),
+  BY("chassagne",O("Remets dans l'ordre le consentement de M. Mansouri.",["Expliquer les risques","Présenter les alternatives","Vérifier la compréhension","Laisser le temps","Documenter","Accepter la décision"],"")),
+  CH("chassagne","Le jeûne commence. Comment le suivre ?",[
+    ["Appels réguliers, glycémies renforcées, critères d'interruption clairs, le tout documenté",2,[12,8,8],"Autonomie et sécurité."],
+    ["J'arrête le suivi jusqu'à la fin du Ramadan",0,[-12,-6,-8],"Respecter un refus ne veut pas dire arrêter."]],
+   "Fiche 3."),
+  CH("dutoit","« Mon DRH m'a croisée dans le couloir. Il va appeler pour savoir si je suis suivie ici. »",[
+    ["Personne ne confirmera votre présence ; votre employeur n'a pas accès à votre dossier, qui est protégé",2,[4,12,8],"Ne jamais confirmer une présence ; droits de la patiente."],
+    ["Je lui conseille de dire la vérité à son DRH",0,[0,-12,-2],"Ce n'est pas le rôle du diététicien, et cela trahit sa demande."],
+    ["Je lui promets de ne rien écrire dans son dossier",0,[-2,4,-12],"Impossible : on documente en protégeant l'information."]],
+   "Fiche 4."),
+  BY("chassagne",T(B_RESP,"Un collègue raconte le cas de Mme Dutoit à la cafétéria : il commet une infraction",1,"Violation du secret : responsabilité pénale (art. 226-13).")),
+  CH("chassagne","Les parents de Kevin : « Mettez-le à 1 200 kcal, il doit apprendre la discipline. » Kevin se ferme.",[
+    ["Séances alternées : famille pour l'adhésion, Kevin seul pour s'exprimer ; j'évalue le risque de TCA et je respecte leurs inquiétudes",2,[10,12,8],"Autorité parentale, autonomie émergente, intérêt supérieur."],
+    ["J'applique la demande des parents, ils ont l'autorité",0,[-10,-12,-6],"L'intérêt supérieur de l'enfant prime sur une stratégie qui menace sa santé."],
+    ["Je ne vois plus que Kevin, sans les parents",1,[2,-4,-2],"Il faut aussi l'adhésion parentale."]],
+   "Fiche 5."),
+  BY("chassagne",W("Analyse le cas de Kevin avec le triangle de l'éthique.","Je : ce que Valérie juge bon pour vivre une vie bonne (sa conscience professionnelle). Tu : Kevin et ses parents, avec et pour qui elle agit (relation, autonomie émergente, inquiétudes des parents). Il : les institutions justes (autorité parentale, intérêt supérieur de l'enfant, signalement si besoin). Le soin est au centre ; on cherche l'équilibre des trois pôles.",["Je : vie bonne","Tu : avec et pour Kevin et sa famille","Il : règles et institutions","Soin au centre, équilibre"]))
+ ]}
+};
+
 /* ---------- COMPLÉMENTS (audit de couverture des fiches « À savoir par cœur ») ----------
    Ajoutés UNIQUEMENT à la fin des niveaux existants : les identifiants des notions déjà vues ne bougent pas. */
 function ADD(lv,arr){var c=COURS[lv.replace(/[abc]$/,"")],l=c.levels.filter(function(x){return x.id===lv})[0];Array.prototype.push.apply(l.items,arr);}
@@ -2706,6 +3043,62 @@ var _renderQuartier=renderQuartier;
 renderQuartier=function(){_renderQuartier();var b=$("[data-exam]");if(!b||!EXL)return;var d=examDone(),best=S.best[EXL.id];
   b.innerHTML='<small style="color:#ffc94a">Salle d\'examen</small><b>Épreuve blanche E5</b><small>'+(examOpen()?"Ouverte · un sujet complet devant le jury"+(best?" · meilleure note "+fr(best[0])+"/20":""):"Diagnostic → objectifs → stratégies → mise en œuvre → évaluation · ouvre après les missions des cours 10 à 12 ("+d+"/3)")+'</small>';
   b.onclick=startExam;};
+
+/* =============== QUARTIER DU SOIN (E3) =============== */
+/* Cours ds1 à ds13 (identifiants propres au quartier) ; notions repérées par n.q = "soin". */
+var SOIN_SECS=[
+ {id:"amelio",t:"Amélioration continue",col:"#ff9476",cours:[["ds1","Organisation des structures de soin"],["ds2","Acteurs du système de santé et du social"],["ds3","Éthique, déontologie, cadre réglementaire"],["ds4","Communication ciblée en soin nutritionnel"],["ds5","Pratique fondée sur les preuves"],["ds6","Lecture critique et données probantes"],["ds7","Évaluation et amélioration des pratiques"]]},
+ {id:"num",t:"Numérique et télésanté",col:"#5bb8f5",cours:[["ds8","Cadre réglementaire du numérique"],["ds9","Outils numériques du diététicien"],["ds10","Organiser une téléconsultation"],["ds11","Télésanté : cadre et enjeux"],["ds12","Risques, limites, responsabilités"],["ds13","Outils et services socles"]]}];
+QUARTIERS[1].secs=SOIN_SECS;QUARTIERS[1].soon=false;
+SOIN_SECS.forEach(function(s){s.cours.forEach(function(c){SEC_OF[c[0]]=s;});});
+function quartierOf(cid){return /^ds/.test(cid||"")?"soin":"sp"}
+Object.keys(NOTIONS).forEach(function(k){var n=NOTIONS[k];n.q=quartierOf(n.course&&n.course.id);});
+function qCours(q){return Object.keys(COURS).filter(function(k){return quartierOf(k)===q})}
+function qNotions(q){return WORLD_NOTIONS.sp.filter(function(n){return n.q===q})}
+/* la date d'examen visée dépend du quartier de la notion (E5 ou E3) */
+isDue=function(n){var m=memOf(n.id);if(!m)return false;var r=R(n.id);if(r<0.9)return true;
+  var ex=examAt(n.q||"sp"),now=Date.now();if(ex&&ex>now&&ex-now<45*DAY&&(now-m.last)>DAY*0.9&&R(n.id,ex)<0.85)return true;return false};
+/* navigation : le quartier et le secteur suivent le cours ouvert */
+document.addEventListener("click",function(e){var t=e.target.closest("[data-course],[data-sec]");if(!t)return;
+  if(t.dataset.course&&SEC_OF[t.dataset.course]){cur.s=SEC_OF[t.dataset.course].id;cur.q=quartierOf(t.dataset.course);}
+  else if(t.dataset.sec){QUARTIERS.forEach(function(q){q.secs.forEach(function(s){if(s.id===t.dataset.sec)cur.q=q.id;});});}},true);
+/* accueil : deux quartiers ouverts */
+var _renderHome=renderHome;
+renderHome=function(){_renderHome();var z=$("#home .qz");if(!z)return;
+  function card(q,art,pill,name,nbSec,total){var ks=qCours(q),done=ks.filter(function(k){return S.stars[COURS[k].mission.id]}).length;
+    return '<button class="qzc" type="button" data-quartier="'+q+'">'+art+'<div class="t"><span class="pill'+(q==="soin"?" coral":"")+'">'+pill+'</span><b>'+name+'</b><span class="small mut">'+nbSec+' secteurs · '+total+' cours · '+ks.length+' ouverts · '+done+' mission'+(done>1?"s":"")+' réussie'+(done>1?"s":"")+'</span>'+memline(qNotions(q))+'</div></button>'}
+  z.innerHTML=card("sp",cityArt(),"E5","Quartier Santé publique",4,19)+card("soin",soinArt(),"E3","Quartier du Soin",2,13);};
+/* quartier du Soin */
+var _rqSoin=renderQuartier;
+renderQuartier=function(){if(cur.q!=="soin"){_rqSoin();return;}
+  var ex=examAt("soin"),j=ex?Math.ceil((ex-Date.now())/DAY):null;
+  var h='<div class="row" style="justify-content:space-between"><button class="back" type="button" data-go="home">← Ville</button>'+(j!==null&&j>=0?'<span class="pill coral">E3 · J-'+j+'</span>':'<button class="pill coral" type="button" data-brain style="border:0">Fixer la date de l\'E3</button>')+'</div>'+
+   '<div><div class="eyebrow">Quartier</div><h1 style="font-size:26px">Démarche de soin</h1><p class="mut small" style="margin:4px 0 0">Les lieux du soin nutritionnel : hôpital, cabinet, EHPAD, téléconsultation. Chaque cours a son équipe et sa mission ; l\'alliance thérapeutique compte autant que la technique.</p></div>';
+  h+='<div class="secs">'+SOIN_SECS.map(function(s,i){var open=s.cours.filter(function(c){return COURS[c[0]]}).length,ns=secNotions(s);
+    return '<button class="sec wide" type="button" data-sec="'+s.id+'" style="background:'+s.col+'"><small>Secteur '+(i+1)+'</small><b>'+esc(s.t)+'</b><small>'+s.cours.length+' cours · '+(open?open+' ouvert'+(open>1?"s":"")+' · mémoire '+memPct(ns)+' %':'bientôt')+'</small><span class="bl">'+s.cours.map(function(c){return '<i class="'+(COURS[c[0]]&&S.stars[COURS[c[0]].mission.id]?"on":"")+'"></i>'}).join("")+'</span></button>'}).join("")+
+   '<button class="sec wide" type="button" style="background:#13303a;color:#fff" data-exam3><small style="color:#ff9476">Salle d\'examen</small><b>Épreuve blanche E3</b><small>M. Dubois · bilan → diagnostic (PES) → plan de soin → suivi · arrive à la fin des cours du Soin</small></button></div>';
+  $("#quartier").innerHTML=h;var b=$("[data-exam3]");if(b)b.onclick=function(){toast("L'épreuve blanche E3 arrive quand tous les cours du Soin seront en place.")};};
+/* secteur : valable pour les deux quartiers */
+renderSecteur=function(){var Q=QUARTIERS.filter(function(q){return q.id===cur.q})[0]||QUARTIERS[0],s=Q.secs.filter(function(x){return x.id===cur.s})[0];
+  if(!s){QUARTIERS.forEach(function(q){q.secs.forEach(function(x){if(x.id===cur.s){s=x;Q=q;}})});}var ns=secNotions(s);
+  var h='<button class="back" type="button" data-go="quartier">← Quartier</button><div><div class="eyebrow">'+esc(Q.t)+' · secteur</div><h1 style="font-size:26px">'+esc(s.t)+'</h1></div>'+(ns.length?memline(ns):'');
+  h+='<div class="clist">'+s.cours.map(function(cc){var c=COURS[cc[0]],num=cc[0].replace(/^\D+/,"");
+    if(!c)return '<button class="crow soon" type="button" data-course="'+cc[0]+'"><span class="n">'+num+'</span><span class="tx"><b>'+esc(cc[1])+'</b><small>Arrive dans une prochaine vague</small></span></button>';
+    var k=Object.keys(c.P)[0],stn=courseStars(c),started=c.notions.some(function(n){return memOf(n.id)});
+    return '<button class="crow" type="button" data-course="'+c.id+'">'+avatar(c.P[k].av,46)+'<span class="tx"><b>'+num+' · '+esc(c.t)+'</b><small>'+esc(c.lieu)+'</small>'+(started?stbar(c.notions):'')+'</span>'+stars(Math.round(stn/courseMax(c)*3),3)+'</button>'}).join("")+'</div>';
+  $("#secteur").innerHTML=h;};
+/* missions du Soin : jauges propres */
+var GN_SP=null,GN_DS=["Santé du patient","Alliance thérapeutique","Qualité des soins"];
+var _startLevel=startLevel;
+startLevel=function(id){var l=LEVELS[id];if(!GN_SP)GN_SP=GN.slice();GN=(l&&l.course&&quartierOf(l.course.id)==="soin")?GN_DS:GN_SP;_startLevel(id);};
+var _missionEnd=missionEnd;
+missionEnd=function(res){_missionEnd(res);if(!G||!G.course||quartierOf(G.course.id)!=="soin")return;var g=G.gauges,p=$("#gStage .qcard.end p");
+  if(p)p.textContent=g[0]>=75&&g[1]>=75?"Ton patient progresse et te fait confiance : l'alliance thérapeutique est solide.":g[1]<45?"L'alliance thérapeutique est fragile : rejoue en misant sur l'écoute, l'explication et la co-construction.":"Bonne prise en charge ; quelques choix peuvent encore être améliorés.";};
+/* Mon cerveau : date de l'E3 */
+var _renderBrain=renderBrain;
+renderBrain=function(){_renderBrain();var e5=$("#exE5");if(!e5)return;var card=e5.closest(".card");
+  card.insertAdjacentHTML("afterend",'<div class="card"><div class="lbl">Date de l\'épreuve E3</div><p class="small mut" style="margin:4px 0 8px">Même principe pour le quartier du Soin : 45 jours avant, les révisions visent 85 % de mémoire le jour J.</p><div class="row"><input type="date" id="exE3" value="'+esc(S.exams.soin||"")+'" aria-label="Date de l\'épreuve E3"><button class="btn small" type="button" id="exSave3">Enregistrer</button></div></div>');
+  $("#exSave3").onclick=function(){S.exams.soin=$("#exE3").value||"";save();toast(S.exams.soin?"Date de l'E3 enregistrée.":"Date effacée.");renderBrain();};};
 
 S.carnet=(S.carnet||[]).filter(function(c){return c&&c.key&&NOTIONS[c.key]});
 
