@@ -2812,6 +2812,289 @@ COURS.ds3={id:"ds3",n:"Soin 3",t:"Éthique, déontologie et cadre réglementaire
  ]}
 };
 
+/* ---------- SOIN 4 · COMMUNICATION CIBLÉE EN SOIN NUTRITIONNEL ---------- */
+var B_PROFIL=[["Faible littératie","M. Dubois"],["Patient expert","Dr Benali"],["Adolescent en souffrance","Léa"]];
+var B_EM=[["Principe",""],["Technique",""]];
+var B_TRANS=[["Médecin",""],["Infirmière",""],["Aide-soignant",""]];
+COURS.ds4={id:"ds4",n:"Soin 4",t:"Communication ciblée en soin nutritionnel",lieu:"Service de nutrition clinique · CHU de Toulouse",
+ pitch:"Céline Laroche l'a appris avec les années : chaque patient a besoin d'un langage différent. M. Dubois, ancien ajusteur, décroche dès qu'on parle d'index glycémique ; le Dr Benali, urgentiste, veut des références ; Léa, 17 ans, ne veut plus rien entendre. Bien communiquer, ce n'est pas simplifier pour tous, c'est ajuster à chacun.",
+ P:{laroche:{n:"Céline Laroche",r:"Diététicienne · CHU de Toulouse",av:{bg:"#ff9476",skin:"#f0c8a8",hair:"#c26a2e",hs:"bun",shirt:"#13303a"}},
+    dubois:{n:"Georges Dubois",r:"Patient, 78 ans, diabétique",av:{bg:"#ffc94a",skin:"#e8b896",hair:"#d9d9d9",hs:"short",shirt:"#5bb8f5"}},
+    benali:{n:"Dr Sarah Benali",r:"Urgentiste, diabétique",av:{bg:"#55d6cf",skin:"#b47a52",hair:"#1f1410",hs:"long",shirt:"#ffffff",glasses:1}}},
+ conseil:{who:"laroche",t:"Adapter, puis vérifier la compréhension. Faible littératie : mots familiers, métaphores, 2 ou 3 messages, faire reformuler. Patient expert : reconnaître son expertise, références, co-construire. Adolescent en souffrance : valider l'émotion, ne pas juger ni ordonner. Barrière de langue : interprète professionnel. Support écrit : public cible, 2-3 points, tester."},
+ levels:[
+ {id:"ds4a",t:"Ajuster son langage",s:"Fiches 1 à 3 · M. Dubois, Dr Benali, Léa",items:[
+  "Fiche 1 · M. Dubois : l'adaptation socioculturelle",
+  N(Q("M. Dubois acquiesce poliment mais ne change rien. C'est…",["Une résistance passive, signe d'une communication inadaptée","Un manque de volonté","Une bonne compréhension"],"Index glycémique et équivalences glucidiques ont créé un mur d'incompréhension."),
+    S("Comment appelle-t-on le fait d'acquiescer sans rien changer ?",["resistance passive","résistance passive","la resistance passive"],"")),
+  N(A("Ce que Céline dit à M. Dubois : relie.",[["Glycémie","Sucre dans le sang"],["Index glycémique","Rapidité d'absorption des sucres"],["Explication technique","Le corps, un moteur qui a besoin du bon carburant"]],""),
+    O("Remets dans l'ordre les 5 techniques d'adaptation du langage.",["Identifier l'univers de référence","Remplacer les termes techniques","Utiliser des métaphores concrètes","Se référer à ses savoirs","Valoriser ses connaissances"],""),
+    E(["Adapter mon langage à M. Dubois,"," c'est appauvrir mon expertise"," pour me mettre à son niveau."],1,"C'est une sophistication de la transmission, pas un appauvrissement de l'expertise.","Piège d'examen.")),
+  N(A("L'alliance thérapeutique repose sur : relie.",[["Respect","Le patient dans sa singularité"],["Savoirs","Valoriser son expérience"],["Objectifs","Co-construits"],["Rythme","Adapté à ses capacités d'assimilation"]],""),
+    W("Pourquoi Céline dit-elle « Votre grand-mère avait raison : les légumes du jardin sont meilleurs que les conserves » ?","Elle fait un décodage culturel : M. Dubois vient d'une génération où les savoirs se transmettaient par l'expérience. En valorisant ses connaissances, elle crée l'alliance : il se sent compris et respecté, donc il accepte les recommandations.",["Décodage culturel","Valoriser ses savoirs","Compris, respecté : il adhère"])),
+  "Fiche 2 · Le Dr Benali : le patient expert",
+  N(Q("Avec le Dr Benali, urgentiste, une pédagogie simplifiée serait…",["Infantilisante : elle attend une discussion scientifique argumentée","Idéale pour la rassurer","Obligatoire pour tous les patients"],"Il faut évaluer tôt le niveau d'expertise et les attentes."),
+    O("Remets dans l'ordre les conseils avec un patient expert.",["Reconnaître son expertise","Discussion scientifique argumentée","Références actualisées","Co-construire les objectifs","Garder son expertise diététique"],""),
+    E(["Le Dr Benali connaît la physiopathologie mieux que moi :"," je la laisse décider seule de son alimentation"," et je m'efface."],1,"Reconnaître son expertise ne veut pas dire abandonner la sienne : on garde son expertise nutritionnelle et on co-construit.","Piège d'examen.")),
+  N(S("La posture évolue de « sachante » à…",["facilitatrice experte","facilitatrice","facilitateur expert"],"Face à des patients de plus en plus informés."),
+    W("Qu'exige un patient expert de la part du diététicien ?","Une mise à jour scientifique rigoureuse (dernières publications, débats actuels) et la capacité à justifier ses choix thérapeutiques, avec des références.",["Mise à jour scientifique","Justifier ses choix","Références"])),
+  "Fiche 3 · Léa : l'adolescent en souffrance",
+  N(A("Les 3 barrières chez Léa : relie.",[["Autorité","Méfiance envers les adultes"],["Identité","Quête identitaire de l'adolescence"],["Souffrance","Souffrance psychique de l'anorexie"]],""),
+    Q("Pourquoi les conseils classiques échouent-ils avec Léa ?",["Ils sont vécus comme des injonctions et créent des résistances actives","Elle ne sait pas lire","Ils sont trop courts"],"")),
+  N(O("Remets dans l'ordre les 6 techniques de communication non-violente.",["Valider les émotions","Éviter interprétations et jugements","Reformulation empathique","Respecter les silences","Créer un cadre sécurisant","Impliquer l'adolescent dans les objectifs"],""),
+    S("Quelle technique consiste à redire l'émotion entendue pour ouvrir le dialogue ?",["reformulation empathique","la reformulation empathique"],""),
+    CAS("Léa : « Vous comprenez rien ! Vous êtes payée pour être là, moi je subis ! »",Q("Quelle réponse ?",["« Je sens beaucoup de colère, et j'entends que tu te sens incomprise. Tu peux m'aider à comprendre ? »","« Je suis là pour ton bien, il faut manger. »","« Si tu continues, on va devoir t'hospitaliser. »"],"On valide l'émotion avant tout."))),
+  N(E(["Léa se tait depuis deux minutes :"," je comble le silence en lui expliquant"," les risques de la dénutrition."],1,"Il faut respecter les silences et ne pas argumenter : on valide d'abord l'émotion.","Piège d'examen."),
+    W("Pourquoi Céline travaille-t-elle avec un psychologue pour Léa ?","La communication avec un adolescent en souffrance demande des compétences en psychologie : le rôle du diététicien s'articule avec un accompagnement psychologique global, parfois avec une formation complémentaire.",["Compétences en psychologie","Accompagnement global","Collaboration étroite"]))
+ ]},
+ {id:"ds4b",t:"Profils et méthodes",s:"Fiches 4 à 6 · interculturel, troubles cognitifs, EM, ETP",items:[
+  "Fiche 4 · Interculturel et langues",
+  N(Q("Respecter la culture du patient (interdits, traditions, représentations de la santé), c'est…",["Une optimisation de l'efficacité : meilleure adhésion, meilleurs résultats","Une concession thérapeutique","Facultatif"],""),
+    O("Barrière linguistique : remets les 5 étapes dans l'ordre.",["Interprète professionnel","Supports visuels universels","Vérifier par des questions ouvertes","Pas de traduction familiale pour le sensible","Adapter le débit et la complexité"],""),
+    E(["Pour lui annoncer son diabète,"," je demande à sa fille de traduire,"," c'est plus simple."],1,"Pour des informations sensibles, on privilégie un interprète professionnel plutôt que la famille.","Piège d'examen.")),
+  N(CAS("Une patiente réfugiée refuse certains aliments associés à ce qu'elle a vécu.",Q("Que fait Céline ?",["Elle respecte ces représentations et propose des alternatives compatibles","Elle explique que ces aliments sont sains","Elle note un refus de soins"],"")),
+    null,
+    W("Pourquoi gérer la barrière linguistique est-il une question d'équité ?","Sans interprète ni supports adaptés, le patient qui maîtrise mal le français reçoit des soins de moindre qualité : ces moyens organisationnels et humains garantissent l'équité d'accès aux soins.",["Moins bien soigné sinon","Moyens organisationnels","Équité d'accès"])),
+  "Fiche 5 · Troubles cognitifs, psychiatriques, urgence",
+  N(O("Troubles cognitifs : remets les 5 conseils dans l'ordre.",["Simplifier vocabulaire et phrases","Répéter les informations clés","Supports visuels simples","Vérifier la compréhension","Séances adaptées à l'attention"],""),
+    E(["Avec un patient atteint de troubles cognitifs,"," je baisse mon exigence thérapeutique"," pour qu'il retienne quelque chose."],1,"Adapter la communication ne veut pas dire baisser l'exigence : c'est la flexibilité communicationnelle.","Piège d'examen.")),
+  N(A("Situation de crise : relie.",[["Informations","Prioriser l'essentiel"],["Émotions","Gérer l'anxiété du patient et de la famille"],["Équipe","Coordonner avec l'équipe médicale"]],""),
+    S("Avec quels spécialistes collabore-t-on souvent pour les troubles cognitifs ? (un exemple)",["neuropsychologue","neuropsychologues","psychiatre","psychiatres"],"")),
+  "Fiche 6 · Entretien motivationnel et ETP",
+  N(Q("L'entretien motivationnel est…",["Une méthode collaborative et directive qui renforce la motivation intrinsèque en explorant l'ambivalence","Une méthode pour convaincre le patient par des arguments","Un questionnaire alimentaire"],"Développé d'abord pour les addictions."),
+    S("Comment appelle-t-on le fait de vouloir et de ne pas vouloir changer en même temps ?",["ambivalence","l ambivalence","l'ambivalence"],"")),
+  N([T(B_EM,"Exprimer l'empathie",0,""),T(B_EM,"Développer les discordances",0,""),T(B_EM,"Éviter l'argumentation directe",0,""),T(B_EM,"Renforcer l'efficacité personnelle",0,""),T(B_EM,"Questions ouvertes",1,""),T(B_EM,"Écoute réflective",1,""),T(B_EM,"Résumés périodiques",1,""),T(B_EM,"Valoriser les capacités de changement",1,"")],
+    E(["En entretien motivationnel,"," j'argumente fermement"," pour convaincre le patient de changer."],1,"On évite l'argumentation directe : on aide le patient à trouver sa propre motivation.","Piège d'examen."),
+    CAS("M. Dubois : « Les boîtes, c'est pratique… mais je voudrais revoir mes petits-enfants grandir. »",Q("Quel principe Céline peut-elle utiliser ?",["Développer la discordance entre son comportement et ce qui compte pour lui","Lui démontrer que les conserves sont trop salées","Changer de sujet"],""))),
+  N(O("Animer un atelier d'ETP : remets dans l'ordre.",["Cadre sécurisant","Techniques variées (brainstorming, jeux de rôle)","Échanges d'expérience entre participants","Contenu adapté aux besoins exprimés","Évaluer la compréhension collective"],""),
+    S("Le diététicien passe de « donneur de conseils » à…",["facilitateur de changement","facilitateur du changement","facilitateur"],""))
+ ]},
+ {id:"ds4c",t:"Écrits et équipe",s:"Fiches 7 à 9 · littératie, comptes-rendus, familles",items:[
+  "Fiche 7 · Supports et littératie",
+  N(Q("La littératie en santé, c'est…",["La capacité à accéder à l'information de santé, la comprendre et l'utiliser pour décider","Savoir lire","Connaître le vocabulaire médical"],""),
+    E(["M. Lopez sait lire couramment :"," il comprendra forcément ma brochure"," sur l'insuffisance rénale."],1,"Savoir lire ne suffit pas : on peut savoir lire et avoir une faible littératie en santé.","Piège d'examen.")),
+  N(O("Remets dans l'ordre les 3 questions avant de créer un support.",["À qui s'adresse-t-on, avec qui le construit-on ?","Quel est le contenu essentiel ?","Comment le transmettre clairement ?"],""),
+    F("Un bon support porte {2} ou {3} messages principaux et se teste avant diffusion.",""),
+    S("Quel guide de Santé publique France sert de référence pour une information accessible ?",["communiquer pour tous","« communiquer pour tous »"],"")),
+  "Fiche 8 · L'équipe et les familles",
+  N([T(B_TRANS,"Synthèse biologique et thérapeutique",0,""),T(B_TRANS,"Conseils pratiques de surveillance",1,""),T(B_TRANS,"Adaptations concrètes des repas",2,"")],
+    O("Compte-rendu : remets dans l'ordre sa structure.",["Situation","Analyse","Recommandations","Actions"],"Puis dater, signer, assurer la confidentialité.")),
+  N(A("Le compte-rendu sert à : relie.",[["Continuité","Les soins se poursuivent sans perte"],["Asynchrone","On communique sans être là en même temps"],["Médico-légal","Il laisse une trace"]],""),
+    E(["Mon compte-rendu est clair :"," inutile de le dater et de le signer,"," l'équipe me connaît."],1,"On date et on signe systématiquement : c'est aussi une trace médico-légale.","")),
+  N(A("Familles et aidants : relie.",[["Information","Adaptée au niveau de compréhension familial"],["Anxiété","Gérer celle des proches"],["Messages","Coordonnés entre professionnels et famille"],["Stratégie","Intégrer les aidants"]],""),
+    Q("Comment Céline entretient-elle ses compétences de communication ?",["Analyse de pratiques, jeux de rôle, supervision : c'est une obligation professionnelle","Elle n'en a plus besoin après 10 ans","Uniquement par la lecture"],"")),
+  "Fiche 9 · Méthodes",
+  N([T(B_PROFIL,"2 ou 3 messages clés et faire reformuler",0,""),T(B_PROFIL,"Références et raisonnement clinique concis",1,""),T(B_PROFIL,"Éviter ordres et menaces, avancer par étapes",2,""),T(B_PROFIL,"Métaphores tirées de son expérience",0,""),T(B_PROFIL,"Se mettre à jour avant la consultation",1,""),T(B_PROFIL,"Respecter silences et rythme",2,"")],
+    W("Quel est le réflexe commun à tous les profils de patients ?","Adapter la communication au patient, puis vérifier sa compréhension (questions ouvertes, reformulation, teach-back).",["Adapter","Vérifier la compréhension"])),
+  N(O("Concevoir un support écrit accessible : remets dans l'ordre.",["Définir le public cible et 2-3 points","Phrases courtes, vocabulaire simple, illustrations","Tester auprès d'un patient ou d'un collègue","Proposer plusieurs formats"],""))
+ ]}
+ ],
+ mission:{id:"ds4m",t:"Une journée, trois langages",items:[
+  CH("dubois","« Votre index glycémique, j'y comprends rien. Moi je mange mes boîtes, c'est tout. »",[
+    ["« Votre corps, c'est un moteur : certains sucres brûlent d'un coup, d'autres tiennent la route. On regarde vos boîtes ensemble ? »",2,[6,12,6],"Univers de référence, métaphore, co-construction."],
+    ["Je lui réexplique l'index glycémique plus lentement",0,[0,-8,-2],"Même mur d'incompréhension : la résistance passive continue."],
+    ["Je lui donne la brochure du service",1,[0,-2,-2],"Sans adapter ni vérifier la compréhension."]],
+   "Fiche 1."),
+  BY("laroche",O("Remets dans l'ordre ce que fait Céline avec M. Dubois.",["Identifier son univers d'ancien ajusteur","Remplacer « glycémie » par « sucre dans le sang »","La métaphore du moteur","Valoriser ce qu'il sait du jardin"],"")),
+  CH("benali","« Expliquez-moi pourquoi 55 % de glucides plutôt que 45 %. Et donnez-moi les recommandations HAS. »",[
+    ["Je reconnais son expertise, j'argumente avec les références actuelles et on co-construit ses objectifs",2,[4,12,8],"Discussion scientifique argumentée."],
+    ["« Ne vous inquiétez pas, faites-moi confiance. »",0,[0,-12,-4],"Argument d'autorité infantilisant pour une patiente experte."],
+    ["« Vous êtes médecin, décidez vous-même. »",0,[-4,-4,-6],"Le diététicien garde son expertise nutritionnelle."]],
+   "Fiche 2."),
+  CH("laroche","Léa croise les bras et ne dit plus rien depuis le début de la séance.",[
+    ["Je respecte son silence, puis : « Tu as l'air en colère d'être ici. Tu veux m'en parler ? »",2,[4,14,4],"Respect des silences, validation de l'émotion."],
+    ["Je lui rappelle que son poids est dangereux et qu'elle doit manger",0,[-4,-14,-4],"Vécu comme une injonction : résistance active."]],
+   "Fiche 3."),
+  BY("laroche",T(B_TRANS,"« Mme Arnaud mange mieux en début de repas : servir le plat protidique en premier. »",2,"Une adaptation concrète du repas, pour l'aide-soignant.")),
+  BY("laroche",W("Rédige la trame du compte-rendu de M. Dubois pour l'équipe.","Situation : 78 ans, diabétique, vit seul, mange surtout des conserves. Analyse : faible littératie en santé, résistance passive aux explications techniques. Recommandations : 2-3 messages simples, conserves moins salées et légumes, suivi régulier. Actions : médecin (adapter le traitement), IDE (surveiller glycémies et compréhension), AS (adaptations des repas). Daté, signé, confidentiel.",["Situation","Analyse","Recommandations","Actions par intervenant","Daté, signé"]))
+ ]}
+};
+
+/* ---------- SOIN 5 · PRATIQUE FONDÉE SUR LES PREUVES (EBP) ---------- */
+var B_PILIER=[["Preuves scientifiques","fiabilité"],["Expertise clinique","contextualisation"],["Préférences du patient","adhésion"]];
+var B_METH=[["Méthode traditionnelle",""],["Méthode EBP",""]];
+var B_PICO=[["P · Population","pour qui ?"],["I · Intervention","quoi ?"],["C · Comparaison","par rapport à quoi ?"],["O · Outcome","quel résultat ?"]];
+COURS.ds5={id:"ds5",n:"Soin 5",t:"Pratique fondée sur les preuves",lieu:"Polyclinique Saint-Roch · Montpellier",
+ pitch:"« Nos patients sont plus informés que jamais, mais pas forcément mieux informés. » Julien Moreau doit répondre à Mme Durand, séduite par le régime cétogène, à M. Silva qui exige des méta-analyses, et au Dr Lefebvre qui brandit une étude danoise. Sa boussole : les preuves, son expertise et ce que veut le patient.",
+ P:{moreau:{n:"Julien Moreau",r:"Diététicien · Polyclinique Saint-Roch",av:{bg:"#ff9476",skin:"#e8b896",hair:"#2b1b14",hs:"short",shirt:"#55d6cf",glasses:1}},
+    silva:{n:"David Silva",r:"Patient, 45 ans, ingénieur",av:{bg:"#5bb8f5",skin:"#c99067",hair:"#1f1410",hs:"short",shirt:"#ffc94a"}},
+    lefebvre:{n:"Dr Marie Lefebvre",r:"Endocrinologue",av:{bg:"#13303a",skin:"#f0c8a8",hair:"#c26a2e",hs:"bun",shirt:"#ffffff"}}},
+ conseil:{who:"moreau",t:"Toute décision croise 3 piliers : les meilleures preuves, ton expertise clinique, les valeurs et préférences du patient. Avant de chercher, une question PICO. Une étude isolée ne renverse pas une méta-analyse ; face aux contradictions, regarde méthodes, populations, dates et conflits d'intérêts. Et quand on ne sait pas, on le dit : c'est ce qui rend crédible."},
+ levels:[
+ {id:"ds5a",t:"L'EBP",s:"Fiches 1 à 3 · définition, méthode, M. Silva",items:[
+  "Fiche 1 · Définition et 3 piliers",
+  N(Q("L'EBP (Evidence-Based Practice) intègre…",["Les meilleures preuves disponibles, l'expertise clinique et les valeurs et préférences du patient","Uniquement les études scientifiques les plus récentes","L'expérience du professionnel et les habitudes du service"],""),
+    F("L'EBP est née en {1990}.",""),
+    E(["La pratique fondée sur les preuves,"," c'est appliquer la science seule,"," sans se laisser influencer par le patient."],1,"Sans l'expertise clinique et les préférences du patient, ce n'est pas de l'EBP.","Piège d'examen.")),
+  N([T(B_PILIER,"Méta-analyses et essais randomisés",0,""),T(B_PILIER,"Adapter à l'âge, aux comorbidités du patient",1,""),T(B_PILIER,"Ce que le patient accepte et peut faire",2,"")],
+    O("Remets dans l'ordre les 3 piliers de l'EBP.",["Meilleures preuves scientifiques disponibles","Expertise clinique du professionnel","Valeurs et préférences du patient"],""),
+    CAS("Mme Durand, 72 ans, diabétique sous insuline : « Le régime cétogène guérit le diabète, je l'ai vu dans un documentaire ! »",W("Comment Julien répond-il sans la braquer ni cautionner un danger ?","Sa question est légitime : il ne la balaie pas, mais ne cautionne pas une approche dangereuse pour une diabétique insulino-dépendante. Il répond en 3 temps : ce que disent les études, ce que son expérience lui dit de sa situation, ce qui correspond à ses attentes et possibilités.",["Question légitime","Pas de caution au danger","Études, expertise, attentes"]))),
+  "Fiche 2 · Méthode traditionnelle ou EBP",
+  N([T(B_METH,"Expérience, intuition, autorité, routine",0,""),T(B_METH,"Question clinique puis recherche d'articles",1,""),T(B_METH,"Lecture critique des articles",1,"")],
+    O("Remets dans l'ordre la méthode EBP.",["Problème clinique","Question clinique","Chercher les articles pertinents","Lecture critique","Croiser avec le patient et le contexte","Décision clinique"],""),
+    E(["La différence avec la méthode traditionnelle :"," l'EBP tient compte des préférences du patient,"," la méthode traditionnelle non."],1,"Les préférences sont dans les deux méthodes : ce qui change, c'est l'étape recherche + lecture critique.","Piège d'examen.")),
+  N(O("Remets dans l'ordre les 4 compétences de l'EBP.",["Recherche documentaire","Analyse critique des publications","Synthèse des preuves","Communication pédagogique"],""),
+    A("Ce que l'EBP apporte au diététicien : relie.",[["Justifier","Ses recommandations scientifiquement"],["Adapter","Son expertise à chaque patient"],["Respecter","Les choix éclairés des patients"],["Se protéger","Des modes et pressions commerciales"]],"")),
+  "Fiche 3 · M. Silva : la demande de scientificité",
+  N(Q("M. Silva : « La nutrition, c'est plus un art qu'une science. Montrez-moi les preuves. » Julien…",["Ne peut pas se contenter d'arguments d'autorité ou d'expérience personnelle","Doit lui répondre de lui faire confiance","Doit refuser de discuter"],"La relation évolue vers le partenariat et la transparence."),
+    A("Les 3 piliers appliqués à M. Silva : relie.",[["Preuves","Méta-analyses sur le régime méditerranéen"],["Expertise","Âge, comorbidités, contraintes professionnelles"],["Préférences","Déjeuners d'affaires, pas de poisson, peur de l'infarctus"]],""),
+    W("Pourquoi le diététicien reste-t-il utile face à internet ?","L'information en ligne est abondante mais souvent décontextualisée, contradictoire ou biaisée par des intérêts commerciaux : le diététicien apporte la synthèse critique et la contextualisation au patient.",["Information décontextualisée, biaisée","Synthèse critique","Contextualisation"])),
+  N(S("Le diététicien passe de « donneur de conseils » à « facilitateur de… »",["decisions eclairees","décisions éclairées","decision eclairee"],""))
+ ]},
+ {id:"ds5b",t:"Juger les preuves",s:"Fiches 4 et 5 · pyramide, contradictions",items:[
+  "Fiche 4 · Le Dr Lefebvre et la pyramide",
+  N(O("Remets la pyramide des preuves dans l'ordre, du plus au moins fiable.",["Méta-analyses et revues systématiques","Essais randomisés contrôlés","Études de cohorte","Études cas-témoins","Opinions d'experts"],""),
+    S("Quel type d'étude est au sommet de la pyramide des preuves ?",["meta-analyse","méta-analyse","meta analyse","meta-analyses","revue systematique","revues systematiques"],""),
+    E(["Cette étude publiée hier fait la une des journaux :"," elle est donc plus fiable"," que la méta-analyse de 2019."],1,"Récente ou médiatique ne veut pas dire fiable : c'est le niveau de preuve et la qualité qui comptent.","Piège d'examen.")),
+  N(A("Étude danoise contre méta-analyse Cochrane 2019 : relie.",[["1 étude isolée","2 000 patients, 3 ans"],["47 études","120 000 patients, 5 ans en moyenne"]],""),
+    F("La méta-analyse Cochrane 2019 regroupe {47} études et {120000|120 000} patients.",""),
+    CAS("Dr Lefebvre : « Cette étude danoise sur les oméga-3 contredit nos recommandations. On change le protocole ? »",W("Que lui répond Julien ?","Une étude isolée (2 000 patients, 3 ans) ne peut pas contredire une synthèse robuste (47 études, 120 000 patients) : on évite une révision prématurée. On la situe dans l'ensemble des preuves, on reste en veille et on en discute avec l'équipe.",["Étude isolée contre synthèse","Pas de révision prématurée","Veille collaborative"]))),
+  N(A("Les 3 nuances de la pyramide : relie.",[["Pas absolue","Une étude modeste peut éclairer une population jamais étudiée"],["Qualité","Une méta-analyse d'études médiocres vaut moins qu'un bon essai"],["Applicabilité","Des résultats nord-américains à adapter aux Français"]],""),
+    Q("Une méta-analyse d'études de mauvaise qualité…",["Peut être moins fiable qu'un essai randomisé bien conduit","Est toujours la plus fiable","N'existe pas"],"")),
+  "Fiche 5 · Contradictions et incertitude",
+  N(A("Pourquoi les recommandations divergent : relie.",[["Méthodes","Méthodologies distinctes"],["Populations","Participants différents"],["Lectures","Interprétations variables des mêmes données"]],""),
+    O("Face à des recommandations contradictoires : remets les 5 réflexes dans l'ordre.",["Analyser les méthodologies","Identifier les populations","Vérifier les dates","Rechercher les conflits d'intérêts","Privilégier les synthèses récentes et rigoureuses"],"")),
+  N(Q("Toutes les questions n'ont pas de réponse définitive. Le diététicien…",["Présente honnêtement les limites des connaissances : cela renforce sa crédibilité","Choisit l'avis le plus rassurant","Évite d'en parler pour ne pas inquiéter"],""),
+    E(["Si je dis à M. Silva « on ne sait pas encore »,"," je perds toute crédibilité"," à ses yeux."],1,"Reconnaître les limites renforce la crédibilité et évite les promesses excessives.","Piège d'examen."))
+ ]},
+ {id:"ds5c",t:"Appliquer",s:"Fiches 6 à 7 bis · protocoles, PICO, méthodes",items:[
+  "Fiche 6 · Intégrer les preuves dans les protocoles",
+  N(O("Remets dans l'ordre les 7 étapes d'intégration des preuves dans un protocole.",["Questions cliniques prioritaires","Recherche documentaire systématique","Évaluer la qualité des preuves","Synthétiser","Adapter à sa population","Formaliser en recommandations","Évaluer l'impact clinique"],""),
+    E(["Le protocole est rédigé et validé :"," le travail est terminé"," jusqu'à la prochaine étude."],1,"La dernière étape est d'évaluer son impact clinique : elle boucle l'amélioration continue.","Piège d'examen.")),
+  N(Q("Mettre à jour un protocole demande d'équilibrer…",["L'intégration des nouvelles preuves et la stabilité des pratiques, grâce à une veille structurée","La mode et l'habitude","Le budget et le temps"],""),
+    A("Former l'équipe et les patients : relie.",[["Fondements","Expliquer la science"],["Changements","Les justifier"],["Collègues","Accompagner l'appropriation"],["Patients","Renforcer confiance et adhésion"]],"")),
+  "Fiches 7 et 7 bis · PICO",
+  N(A("PICO : relie chaque lettre.",[["P","Population : pour qui ?"],["I","Intervention : quoi ?"],["C","Comparaison : par rapport à quoi ?"],["O","Outcome : quel résultat mesurable ?"]],""),
+    S("Que veut dire « Outcome » ?",["resultat","résultat","le resultat"],""),
+    E(["Pour le O de ma question PICO,"," j'écris « que la patiente aille mieux »,"," c'est l'essentiel."],1,"Le O doit être mesurable : HbA1c, poids, hypoglycémies, qualité de vie…","Piège d'examen.")),
+  N([T(B_PICO,"Personnes âgées diabétiques sous insuline",0,""),T(B_PICO,"Régime cétogène",1,""),T(B_PICO,"Alimentation équilibrée habituelle",2,""),T(B_PICO,"HbA1c et nombre d'hypoglycémies",3,"")],
+    O("Remets dans l'ordre la méthode PICO.",["Partir de la situation du patient","Remplir les 4 cases","Écrire la question en une phrase","Transformer chaque case en mots-clés"],""),
+    CAS("Ton service se demande si des ateliers d'ETP en groupe font davantage baisser l'IMC des adolescents en obésité que les consultations individuelles seules.",W("Formule la question PICO.","P : adolescents en obésité. I : ateliers d'ETP en groupe. C : consultations individuelles seules. O : évolution de l'IMC. Question : chez les adolescents en obésité, les ateliers d'ETP en groupe, comparés aux consultations individuelles seules, font-ils davantage baisser l'IMC ?",["P : adolescents en obésité","I : ateliers d'ETP","C : consultations seules","O : IMC"]))),
+  N(Q("PICO sert à…",["Formuler une question précise avant de chercher les études","Donner la réponse à la question","Classer les études"],"Le C peut être « la prise en charge habituelle » ou « rien »."),
+    E(["Dans une question PICO,"," la comparaison est obligatoirement un autre régime,"," jamais « rien »."],1,"Le C peut être une autre intervention, la prise en charge habituelle, ou rien.","Piège d'examen.")),
+  "Fiche 7 · Méthodes",
+  N(O("Patient qui veut un régime à la mode : remets dans l'ordre.",["Écouter ses motivations","Présenter l'état des preuves et les risques","Évaluation personnalisée, plan sécurisé si adapté","Donner des ressources fiables"],""),
+    A("Relie chaque situation au réflexe.",[["Patient scientifique","Synthèses, forces et limites, chiffres concrets"],["Publication contradictoire","Comparer aux synthèses, consulter l'équipe"],["Peu de temps pour la veille","2 ou 3 sources fiables, alertes"],["Former l'équipe","Ateliers PICO, binômes novice/expérimenté"]],""),
+    CAS("Une nouvelle étude remet en cause votre protocole de CNO.",Q("Que faire ?",["La comparer aux synthèses, consulter l'équipe, tester sur un petit échantillon si utile, planifier une réévaluation","Changer le protocole dès demain","L'ignorer"],"")))
+ ]}
+ ],
+ mission:{id:"ds5m",t:"Les preuves de Julien",items:[
+  CH("moreau","Mme Durand veut commencer le régime cétogène dès lundi, « comme ma voisine ».",[
+    ["J'écoute ses motivations, je présente ce que disent les études et ses risques (hypoglycémies sous insuline), puis on construit un plan sûr avec elle",2,[12,10,8],"Les 3 piliers, sans balayer sa question."],
+    ["« C'est n'importe quoi, ces documentaires. »",0,[0,-14,-4],"Sa question est légitime : on la perd."],
+    ["« Essayez, on verra bien. »",0,[-14,4,-10],"Dangereux pour une diabétique insulino-dépendante."]],
+   "Fiche 1."),
+  BY("moreau",O("Remets dans l'ordre la question PICO de Mme Durand.",["Personnes âgées diabétiques sous insuline","Régime cétogène","Alimentation équilibrée habituelle","HbA1c et hypoglycémies"],"P, I, C, O.")),
+  CH("silva","« Prouvez-moi que votre régime méditerranéen sert à quelque chose. »",[
+    ["Je cite les méta-analyses avec des chiffres, je l'adapte à ses déjeuners d'affaires et à son aversion pour le poisson, et on fixe des indicateurs de suivi",2,[8,12,8],"Preuves, expertise, préférences."],
+    ["« J'ai 15 ans d'expérience, croyez-moi. »",0,[0,-12,-2],"L'argument d'autorité ne suffit plus."]],
+   "Fiche 3."),
+  CH("lefebvre","« Avec cette étude danoise sur les oméga-3, on modifie le protocole dès demain ? »",[
+    ["Une étude de 2 000 patients ne pèse pas contre 47 études et 120 000 patients : on la garde en veille et on réévaluera",2,[4,6,12],"Pas de révision prématurée."],
+    ["Oui, elle est plus récente",0,[-4,-2,-12],"Récente ne veut pas dire plus fiable."]],
+   "Fiche 4."),
+  BY("lefebvre",T(B_METH,"« On fait comme ça depuis toujours dans le service. »",0,"Routine et autorité : méthode traditionnelle.")),
+  CH("silva","« Et le jeûne intermittent, ça marche pour moi ? »",[
+    ["« Les preuves sont encore limitées pour votre situation ; voilà ce qu'on sait, ce qu'on ignore, et ce que je vous propose. »",2,[4,12,6],"Honnêteté sur l'incertitude : crédibilité renforcée."],
+    ["« Oui, c'est prouvé. »",0,[-4,-6,-8],"Promesse excessive."]],
+   "Fiche 5.")
+ ]}
+};
+
+/* ---------- SOIN 6 · LECTURE CRITIQUE ET RECHERCHE DE DONNÉES PROBANTES ---------- */
+var B_SRC=[["1 · Organisme public",""],["2 · Société savante",""],["3 · Revue à comité de lecture",""],["4 · Prudence",""]];
+var B_ETUDE=[["Essai randomisé",""],["Cohorte",""],["Cas-témoins",""],["Transversale",""],["In vitro / animal",""]];
+var B_BIAIS=[["Sélection",""],["Mesure",""],["Confusion",""],["Publication",""],["Financement",""]];
+var B_PUBLIC=[["Patients","simple, rassurant"],["Médecins","technique"],["Direction","décisionnel"]];
+COURS.ds6={id:"ds6",n:"Soin 6",t:"Lecture critique et données probantes",lieu:"Centre de documentation en nutrition · Université Lyon 1",
+ pitch:"Chaque minute, plus de 2 000 publications scientifiques sortent dans le monde. Le Dr Amélie Brochier aide trois diététiciens à trier : Patricia en EHPAD, noyée sous des études contradictoires sur les CNO ; Marc en libéral, face aux « superaliments » ; Sandrine en clinique, qui doit juger une étude avant de changer ses protocoles.",
+ P:{brochier:{n:"Dr Amélie Brochier",r:"Enseignante-chercheuse en méthodologie",av:{bg:"#13303a",skin:"#f0c8a8",hair:"#8a8a8a",hs:"bun",shirt:"#ffc94a",glasses:1}},
+    lemoine:{n:"Patricia Lemoine",r:"Diététicienne en EHPAD",av:{bg:"#ae8dff",skin:"#e8b896",hair:"#c26a2e",hs:"long",shirt:"#55d6cf"}},
+    guilbert:{n:"Marc Guilbert",r:"Diététicien libéral · Bourg-en-Bresse",av:{bg:"#5bb8f5",skin:"#c99067",hair:"#2b1b14",hs:"short",shirt:"#ff7a59"}}},
+ conseil:{who:"brochier",t:"Trier une étude : d'abord qui finance, puis le type d'étude, la taille, la durée, la revue. Chaque type d'étude répond à sa question : in vitro = hypothèse, observationnel = association, essai randomisé = efficacité. p < 0,05 ne dit pas si c'est utile au patient : regarde la taille d'effet et l'intervalle de confiance. Veille : 2-3 thèmes, 20 minutes deux fois par semaine."},
+ levels:[
+ {id:"ds6a",t:"Où chercher ?",s:"Fiches 1 à 3 · sources, ANSES/HAS, pseudo-études",items:[
+  "Fiche 1 · La hiérarchie des sources",
+  N(O("Classe les 3 publications de Patricia, de la plus à la moins fiable.",["Méta-analyse Cochrane de 15 essais randomisés","Étude observationnelle sur 200 patients","« Étude » d'un laboratoire sur 30 volontaires"],""),
+    E(["Le document de mon fournisseur de CNO"," a l'air scientifique :"," il vaut une méta-analyse Cochrane."],1,"Une « étude » de fournisseur n'a pas la valeur d'une méta-analyse, même si elle en a l'apparence.","Piège d'examen.")),
+  N([T(B_SRC,"Santé publique France, ANSES, HAS",0,""),T(B_SRC,"SFNCM, SFD, ESPEN, AFDN",1,""),T(B_SRC,"The Lancet, AJCN, BMJ",2,""),T(B_SRC,"Influenceurs, publications commerciales",3,"")],
+    A("Les 4 niveaux de sources : relie à leur usage.",[["Organismes publics","Recommandations officielles, épidémiologie"],["Sociétés savantes","Référentiels d'expertise clinique"],["Revues à comité de lecture","Données primaires de la recherche"],["Médias, influenceurs","À manier avec prudence"]],""),
+    W("Pourquoi la hiérarchie des sources ne dispense-t-elle pas d'analyse critique ?","C'est un guide initial, pas une règle absolue : une bonne étude peut paraître dans une revue modeste, et une revue réputée peut publier des travaux contestables.",["Guide initial","Bonne étude, petite revue","Revue réputée, travail contestable"])),
+  "Fiche 2 · ANSES, HAS, sociétés savantes, revues",
+  N(A("ANSES ou HAS : relie.",[["ANSES","RNP, risques sanitaires, allégations : fondements scientifiques"],["HAS","Bonnes pratiques cliniques, guides : application clinique"]],""),
+    S("Quel organisme produit les RNP (références nutritionnelles pour la population) ?",["anses","l anses","l'anses"],""),
+    E(["Pour mes recommandations de bonnes pratiques cliniques,"," je consulte les RNP de la HAS"," publiées chaque année."],1,"Les RNP viennent de l'ANSES ; les recommandations de bonnes pratiques viennent de la HAS.","Piège d'examen.")),
+  N(A("Sociétés savantes : relie.",[["SFNCM","Nutrition clinique et métabolisme"],["AFDN","Diététiciens nutritionnistes"],["SFD","Diabète"],["ESPEN","Nutrition clinique, Europe"],["ASPEN","Nutrition parentérale et entérale, États-Unis"]],""),
+    Q("Le CNOUS est…",["Un organisme public (alimentation étudiante), pas une société savante","Une société savante de nutrition clinique","Une revue scientifique"],""),
+    Q("Comment éviter la surcharge d'information ?",["Choisir 2 ou 3 organisations prioritaires, s'abonner, participer sélectivement","Suivre toutes les sociétés savantes","Ne lire que les médias"],"Et adapter les recommandations internationales au contexte français.")),
+  "Fiche 3 · Pièges du grand public",
+  N(A("Comment l'information grand public est « contaminée » : relie.",[["Sélection","Études isolées favorables"],["Médias","Amplification des résultats prometteurs"],["Oubli","Des limites méthodologiques"],["Glissement","Corrélation présentée comme cause"]],""),
+    E(["Les mangeurs de myrtilles vivent plus longtemps :"," c'est donc la myrtille"," qui allonge la vie."],1,"Une corrélation n'est pas une cause : c'est un piège fréquent des articles grand public.","Piège d'examen.")),
+  N(O("Remets dans l'ordre les 5 signaux d'alarme d'une pseudo-étude.",["Financement par le fabricant","Petit échantillon, durée courte","Conclusions disproportionnées","Pas de comité de lecture","Extrapolation de données in vitro"],""),
+    F("Une pseudo-étude porte souvent sur moins de {50} sujets.",""),
+    CAS("Un patient de Marc arrive avec un flyer : « Baie de goji, cliniquement prouvée, brevetée, recommandée par des professionnels ».",W("Que repère Marc ?","Des stratégies marketing : vocabulaire pseudo-scientifique (« cliniquement prouvé », « breveté »), professionnels non identifiés, études probablement non publiées et résultats sélectionnés. Il applique la grille : qui finance, combien de participants, quelle durée, conclusions proportionnées, publiée où ?",["Vocabulaire pseudo-scientifique","Professionnels non identifiés","Grille : qui, combien, durée, où"])))
+ ]},
+ {id:"ds6b",t:"Juger une étude",s:"Fiches 4 à 6 · types d'études, biais, statistiques",items:[
+  "Fiche 4 · Les types d'études",
+  N([T(B_ETUDE,"Prouver l'efficacité d'une intervention",0,""),T(B_ETUDE,"Facteurs de risque sur des années",1,""),T(B_ETUDE,"Maladie rare, malades comparés à des sains",2,""),T(B_ETUDE,"Prévalence à un instant T",3,""),T(B_ETUDE,"Explorer un mécanisme biologique",4,"")],
+    A("Relie chaque type d'étude à sa limite.",[["Cohorte","Pas de causalité directe"],["Cas-témoins","Biais de mémorisation"],["Transversale","Pas de lien de causalité"],["In vitro","Pas transposable à l'humain"]],""),
+    E(["Une étude sur des cellules montre que ce brocoli détruit le cancer :"," je le recommande donc"," à mes patients."],1,"Une étude in vitro ne prouve rien chez l'humain : elle donne des hypothèses.","Piège d'examen.")),
+  N(A("Je cherche… je privilégie : relie.",[["Une synthèse","Méta-analyses, revues systématiques"],["L'efficacité d'une intervention","Essais randomisés"],["Des facteurs de risque","Cohortes"]],""),
+    W("Pourquoi vérifier la cohérence entre question et méthode ?","Chaque type d'étude répond à une question : une étude in vitro ne prouve pas une efficacité humaine, une étude observationnelle n'établit pas une cause, un essai court ne prédit pas le long terme.",["In vitro ≠ humain","Observationnel ≠ cause","Court ≠ long terme"])),
+  "Fiche 5 · Lecture critique et biais",
+  N(A("L'étude de Sandrine : relie.",[["Design","Essai randomisé de 6 mois"],["Comparaison","Cétogène contre méditerranéen"],["Population","180 diabétiques de type 2"]],""),
+    O("Remets dans l'ordre les 7 points de la lecture critique structurée.",["Question claire et pertinente","Design adapté","Population représentative","Randomisation et aveugle","Critères de jugement pertinents","Statistiques appropriées","Conclusions cohérentes"],"")),
+  N([T(B_BIAIS,"Échantillon non représentatif de la population cible",0,""),T(B_BIAIS,"Outils d'évaluation inadéquats",1,""),T(B_BIAIS,"Facteurs non contrôlés qui influencent les résultats",2,""),T(B_BIAIS,"Les études négatives sont moins publiées",3,""),T(B_BIAIS,"Le sponsor influence l'interprétation",4,"")],
+    S("Quel biais fait « disparaître » les résultats négatifs de la littérature ?",["biais de publication","publication","le biais de publication"],""),
+    CAS("Une étude sur le régime méditerranéen ne recrute que des cadres sportifs de 30 ans.",Q("Quel biais ?",["Biais de sélection : échantillon non représentatif","Biais de publication","Biais de mesure"],""))),
+  N(A("Lexique de l'essai : relie.",[["Randomisation","Répartition au hasard entre les groupes"],["Aveugle","On ne sait pas qui reçoit quoi"],["Perdus de vue","Participants qui quittent l'étude"],["Critère de jugement","Résultat mesuré, ex. HbA1c"]],"")),
+  "Fiche 6 · Statistiques et conflits d'intérêts",
+  N(Q("Une baisse de 0,1 % d'HbA1c avec p < 0,05…",["Est statistiquement significative mais cliniquement insignifiante","Prouve un bénéfice important","N'est pas significative"],""),
+    E(["Le résultat est significatif (p < 0,05) :"," il est donc utile pour mes patients,"," je change ma pratique."],1,"Significatif ne veut pas dire pertinent cliniquement : il faut regarder la taille d'effet.","Piège d'examen."),
+    W("Pourquoi une différence importante peut-elle ne pas être significative ?","Dans une étude de faible puissance (trop peu de patients), même un effet important peut ne pas atteindre p < 0,05. D'où l'intérêt des intervalles de confiance, qui renseignent sur la précision de l'estimation.",["Faible puissance","Peu de patients","Intervalle de confiance"])),
+  N(O("Pertinence clinique : remets les 4 réflexes dans l'ordre.",["Taille d'effet, au-delà du p","Intervalles de confiance","Applicabilité à ses patients","Rapport bénéfice/risque réel"],""),
+    Q("Une étude financée par l'industrie…",["N'est pas invalide, mais demande une vigilance accrue et une confirmation indépendante","Est forcément fausse","Est plus fiable car mieux financée"],"On regarde liens des auteurs, conseils scientifiques, brevets ou royalties."))
+ ]},
+ {id:"ds6c",t:"Au quotidien",s:"Fiches 7 à 9 · veille, synthèse, méthodes",items:[
+  "Fiche 7 · Construire sa veille",
+  N(A("Outils de veille : relie.",[["PubMed (My NCBI)","Alertes personnalisées par mots-clés"],["Flux RSS (Feedly)","Sommaires des revues"],["Newsletters","Sociétés savantes"],["ResearchGate","Suivre des chercheurs"]],""),
+    O("La méthode de Patricia : remets les 4 étapes dans l'ordre.",["Définir ses thèmes prioritaires","Créer des alertes PubMed","S'abonner aux flux RSS et newsletters","Planifier des créneaux fixes"],""),
+    E(["Une bonne veille,"," c'est tout lire chaque jour"," sur tous les sujets de nutrition."],1,"On choisit peu de thèmes et on garde seulement l'utile : la spécialisation évite la dispersion.","Piège d'examen.")),
+  N(F("Patricia consacre {20} minutes à sa veille, {2|deux} fois par semaine.",""),
+    Q("Pourquoi privilégier les études françaises ou européennes ?",["Habitudes alimentaires, systèmes de soins et populations proches","Elles sont toujours meilleures","Elles sont gratuites"],"")),
+  "Fiche 8 · Synthétiser et partager",
+  N(O("Remets dans l'ordre la fiche de lecture standardisée.",["Objectif","Méthodologie","Résultats principaux","Limites","Applicabilité pratique"],""),
+    A("Outils de synthèse de Marc : relie.",[["Fiche de lecture","Résumer une étude"],["Tableau comparatif","Confronter des données contradictoires"],["Résumé patient","Langage accessible en ETP"]],"")),
+  N(A("Le partage d'expertise : relie.",[["Enrichir","L'analyse critique individuelle"],["Valider","Les interprétations"],["Diffuser","Les bonnes pratiques plus vite"],["Harmoniser","Les pratiques collectives"]],""),
+    W("Pourquoi la formation continue est-elle indispensable en lecture critique ?","Les méthodes statistiques, les standards de publication et les types d'études évoluent : congrès, formations en ligne, webinaires et lectures ciblées permettent de rester capable de juger.",["Nouvelles statistiques","Standards de publication","Congrès, webinaires"])),
+  "Fiche 9 · Méthodes",
+  N(Q("Une étude te parvient d'un fournisseur. Que vérifies-tu en premier ?",["Le financement et les conflits d'intérêts","La couleur des graphiques","Le nombre de pages"],"Puis type, taille, durée, revue, intervalles de confiance."),
+    A("Synthétiser des résultats contradictoires : relie.",[["Priorité","Revues systématiques et essais randomisés"],["Tableau","Population, design, résultats, limites"],["Contexte","Applicabilité locale"],["Gradation","Préférer, envisager, éviter"]],"")),
+  N([T(B_PUBLIC,"« Ces compléments peuvent vous aider ; on surveillera votre poids ensemble. »",0,""),T(B_PUBLIC,"Taille d'effet et intervalle de confiance de la méta-analyse",1,""),T(B_PUBLIC,"Coût, bénéfice attendu, décision à prendre sur le protocole",2,"")],
+    W("Comment communiquer une conclusion complexe ?","Adapter au public (patients : simple et rassurant ; médecins : technique ; direction : décisionnel), donner les conclusions clés, le degré d'incertitude et les actions recommandées, sur des supports courts (one-pager, fiches, FAQ).",["Selon le public","Conclusions, incertitude, actions","Supports courts"]))
+ ]}
+ ],
+ mission:{id:"ds6m",t:"Le tri du Dr Brochier",items:[
+  CH("lemoine","Mon fournisseur m'envoie une « étude » : ses CNO font reprendre 3 kg en 15 jours, sur 30 volontaires.",[
+    ["Je regarde d'abord le financement, puis la taille, la durée, la revue, et je compare aux méta-analyses",2,[4,4,12],"Le financement d'abord, puis la grille."],
+    ["Je change de marque de CNO pour l'EHPAD",0,[-4,0,-12],"Petit échantillon, durée courte, financement du fabricant : signaux d'alarme."],
+    ["Je la jette sans la lire",1,[0,0,-2],"On ne rejette pas sans analyser : vigilance, pas rejet automatique."]],
+   "Fiches 3 et 9."),
+  BY("brochier",O("Classe ces sources de la plus à la moins fiable.",["HAS","SFNCM","Article du BMJ","Vidéo d'influenceur"],"Organisme public, société savante, revue, prudence.")),
+  CH("guilbert","Un patient : « J'ai lu qu'une étude sur des souris prouve que le curcuma guérit le cancer. »",[
+    ["« Une étude sur des souris ouvre une piste, mais ne prouve rien chez l'humain. Voilà ce qu'on sait vraiment. »",2,[6,12,6],"Déconstruction respectueuse : in vitro et animal = hypothèses."],
+    ["« C'est n'importe quoi. »",0,[0,-12,0],"Il faut démêler sans vexer."],
+    ["« Alors prenez-en tous les jours. »",0,[-10,2,-8],"Extrapolation abusive."]],
+   "Fiches 3 et 4."),
+  BY("brochier",T(B_BIAIS,"Les fumeurs mangent moins de légumes : l'effet attribué aux légumes est peut-être celui du tabac",2,"Biais de confusion : un facteur non contrôlé.")),
+  CH("brochier","Sandrine : « L'étude cétogène montre −0,1 % d'HbA1c, p = 0,03. On change le protocole ? »",[
+    ["Significatif mais cliniquement insignifiant : je regarde la taille d'effet, l'intervalle de confiance et le rapport bénéfice/risque",2,[6,6,12],"Pertinence clinique au-delà du p."],
+    ["Oui, p < 0,05 : c'est prouvé",0,[-6,0,-12],"Significatif ne veut pas dire utile."]],
+   "Fiche 6."),
+  BY("lemoine",W("Décris la veille de Patricia sur la dénutrition.","Thèmes prioritaires : nutrition gériatrique, dénutrition, CNO, textures. Alertes PubMed via My NCBI (« oral nutritional supplements » AND elderly), hebdomadaires ; flux RSS dans Feedly et newsletters SFNCM, ESPEN ; 20 minutes le mardi et le vendredi ; dossier par thème avec les seuls articles utiles, résumés et partagés.",["Thèmes prioritaires","Alertes PubMed","RSS, newsletters","20 min × 2, dossier par thème"]))
+ ]}
+};
+
 /* ---------- COMPLÉMENTS (audit de couverture des fiches « À savoir par cœur ») ----------
    Ajoutés UNIQUEMENT à la fin des niveaux existants : les identifiants des notions déjà vues ne bougent pas. */
 function ADD(lv,arr){var c=COURS[lv.replace(/[abc]$/,"")],l=c.levels.filter(function(x){return x.id===lv})[0];Array.prototype.push.apply(l.items,arr);}
