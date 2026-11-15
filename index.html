@@ -2060,6 +2060,476 @@ COURS.sp15={id:"sp15",n:15,t:"Analyse et communication des résultats",lieu:"Lab
  ]}
 };
 
+/* ---------- COURS 16 · RECHERCHE DOCUMENTAIRE ET VEILLE SCIENTIFIQUE ---------- */
+var B_SRC=[["Source primaire","étude originale"],["Source secondaire","synthèse, commentaire"]];
+var B_BOOL=[["AND","resserre"],["OR","élargit"],["NOT","exclut"]];
+var B_PRIO=[["Urgent",""],["Important",""],["Intéressant",""]];
+var B_BASE=[["PubMed","biomédical"],["Cochrane","revues systématiques"],["Cairn / Érudit","SHS francophone"]];
+COURS.sp16={id:"sp16",n:16,t:"Recherche documentaire et veille",lieu:"Bibliothèque universitaire de santé · Montpellier",
+ pitch:"Environ 15 000 articles de nutrition par an sur PubMed, des recommandations qui changent, des patients qui arrivent avec ce qu'ils ont lu en ligne : il ne s'agit pas d'accumuler, mais d'identifier, d'évaluer et d'exploiter.",
+ P:{morel:{n:"Agathe Morel",r:"Documentaliste en santé",av:{bg:"#ffc94a",skin:"#f0c8a8",hair:"#8a5a2b",hs:"bun",shirt:"#13303a",glasses:1}},
+    masson:{n:"Dr Julien Masson",r:"Médecin nutritionniste",av:{bg:"#5bb8f5",skin:"#e8b896",hair:"#3a2a1e",hs:"short",shirt:"#ffc94a"}},
+    garcia:{n:"Léna Garcia",r:"Diététicienne du sport",av:{bg:"#ff7a59",skin:"#c99067",hair:"#1f1410",hs:"long",shirt:"#3ee6b0"}}},
+ conseil:{who:"morel",t:"Toujours : chercher juste, vérifier, classer, partager. Requête : question PICO, MeSH + mots-clés libres, AND/OR, tester sur 6 mois. Évaluer : randomisation, aveugle, effectif, durée, financements. Veille : 5-15 articles/semaine, RSS par thème, 2-3 newsletters. Archiver : taxonomie stable, Zotero, règle 3-2-1. Valoriser : synthèses de 200-300 mots et mesurer l'impact."},
+ levels:[
+ {id:"sp16a",t:"Chercher",s:"Fiches 1 à 3 · sources, requêtes, évaluation",items:[
+  "Fiche 0 · Le fil rouge",
+  N(Q("Face au flot de publications, quelle approche ?",["Stratégique : identifier, évaluer, exploiter, au service de l'evidence-based practice","Tout lire","Ne lire que les résumés des réseaux sociaux"],"Chercher → veiller → exploiter."),
+    S("Que signifie EBP en français ?",["pratique fondee sur les preuves","pratique fondée sur les preuves","evidence-based practice","evidence based practice"],"")),
+  "Fiche 1 · Sources et hiérarchie des preuves",
+  N(O("Classe du plus fiable au moins fiable.",["Méta-analyses et revues systématiques","Essais contrôlés randomisés","Études de cohorte","Études cas-témoins","Séries de cas","Opinions d'experts"],""),
+    null,
+    E(["Une opinion d'expert reconnu"," a plus de poids"," qu'un essai contrôlé randomisé."],1,"L'opinion d'expert est en bas de la pyramide ; l'ECR est au-dessus des études observationnelles.","Piège d'examen.")),
+  N([T(B_BASE,"Études cliniques sur le jeûne intermittent et le DT2",0,""),T(B_BASE,"Méta-analyse sur les fibres",1,""),T(B_BASE,"Dimensions psychosociales du jeûne dans une communauté",2,"")],
+    C("Combien de millions de citations PubMed contient-il environ ?",36,"Plus de 36 millions.","millions"),
+    A("Relie chaque source institutionnelle à son rôle.",[["ANSES","Expertises collectives de référence en France"],["EFSA","Avis qui influencent la réglementation européenne"],["Cahiers de Nutrition et de Diététique","Synthèses et mises à jour pratiques"]],"")),
+  N([T(B_SRC,"Un essai randomisé publié dans l'AJCN",0,""),T(B_SRC,"Une revue de synthèse sur les oméga-3",1,""),T(B_SRC,"Un commentaire d'éditorial",1,"")],
+    W("Pourquoi remonter à la source primaire ?","Les recommandations s'appuient sur des synthèses, mais lire les études originales permet de nuancer et de voir les populations réellement étudiées : un résultat obtenu chez de jeunes sportifs ne s'applique pas forcément à des seniors.",["Synthèse ≠ étude originale","Nuancer","Populations étudiées"])),
+  "Fiche 2 · MeSH, booléens, filtres",
+  N(Q("Le MeSH, c'est…",["Le vocabulaire contrôlé qui indexe PubMed (plus de 30 000 descripteurs)","Un moteur de recherche","Une revue scientifique"],"Medical Subject Headings."),
+    O("Remets dans l'ordre la recherche des bons descripteurs.",["Explorer la MeSH Database","Tester les variantes et synonymes","Regarder les descripteurs d'articles pertinents","Utiliser les sous-rubriques","Combiner MeSH et mots-clés libres"],"")),
+  N([T(B_BOOL,"Tous les termes doivent être présents",0,""),T(B_BOOL,"Au moins un des termes",1,""),T(B_BOOL,"Exclure un concept",2,"")],
+    A("Relie chaque outil à son effet.",[["Troncature *","nutri* → nutrition, nutritional, nutritionist"],["Guillemets","\"Mediterranean diet\" : expression exacte"],["Filtre type d'étude","Méta-analyses, ECR…"],["Boule de neige","Exploiter les références des articles"]],""),
+    E(["Pour obtenir plus de résultats,"," je remplace OR par AND"," entre les synonymes."],1,"AND diminue le nombre de résultats ; OR l'augmente.","Piège d'examen.")),
+  N(CAS("TCA chez l'adolescent sportif.",Q("Quelle requête ?",["(Eating Disorders OR Anorexia Nervosa OR Bulimia Nervosa) AND (Adolescent OR Teenage*) AND (Athletes OR Sports OR Exercise)","Eating Disorders AND Anorexia AND Bulimia AND Adolescent","TCA ado sport"],"OR entre synonymes, AND entre concepts."))),
+  "Fiche 3 · L'évaluation critique",
+  N(A("Critères d'autorité : relie.",[["Auteurs","Réputation, affiliation"],["Revue","Facteur d'impact, révision par les pairs"],["Financements","Transparence, conflits d'intérêts"]],""),
+    O("Remets dans l'ordre les 6 étapes de l'évaluation critique.",["Auteurs","Revue","Méthode","Financement","Confronter à d'autres études","Généraliser à ma pratique"],""),
+    CAS("Étude d'un complément minceur : 30 personnes, 4 semaines, pas de groupe contrôle, financée par le fabricant, revue sans comité de lecture.",Q("Ton verdict ?",["Non crédible malgré des résultats « positifs »","Crédible, les résultats sont positifs","À recommander aux patients"],"Piège d'examen."))),
+  N(A("Biais cognitifs du lecteur : relie.",[["Biais de confirmation","Privilégier ce qui confirme ses croyances"],["Biais de disponibilité","Surévaluer l'information récente ou marquante"]],""),
+    S("Que faut-il toujours lire dans un article financé par l'industrie ?",["funding","conflicts of interest","financement","conflits d'interets","conflits d'intérêts","funding et conflicts of interest"],""))
+ ]},
+ {id:"sp16b",t:"Veiller",s:"Fiches 4 à 6 · alertes, curation, profil de veille",items:[
+  "Fiche 4 · La veille automatisée",
+  N(O("Remets dans l'ordre la configuration d'une alerte PubMed.",["Équation précise mais pas trop restrictive","Tester sur les 6 derniers mois","Ajuster pour 5 à 15 articles pertinents par semaine","Choisir la fréquence","Organiser les alertes par thème"],""),
+    F("Une bonne alerte PubMed donne {5} à {15} articles pertinents par semaine.","")),
+  N(A("Relie chaque outil à son atout.",[["Google Scholar","Citations, auteurs, littérature grise et thèses"],["Feedly, Inoreader","Flux RSS agrégés"],["Newsletter ANSES","Synthèses pré-digérées"],["ResearchGate, X","Tendances avant publication"]],""),
+    E(["Une étude très partagée sur les réseaux"," est forcément validée"," par les pairs."],1,"Ce qui circule sur les réseaux n'est souvent pas encore validé par les pairs.","Piège d'examen.")),
+  "Fiche 5 · Curation et outils",
+  N(Q("Zotero, Mendeley, EndNote servent à…",["Collecter, organiser et citer les sources","Publier des articles","Faire des statistiques"],"Zotero : extraction automatique des métadonnées, citations dans le traitement de texte."),
+    S("Cite un gestionnaire de références.",["zotero","mendeley","endnote"],""),
+    E(["ChatGPT m'a résumé 10 articles :"," je peux utiliser ce résumé sans relire les sources,"," il est fiable."],1,"L'IA générative peut produire des erreurs ou des biais : validation humaine obligatoire, lecture critique des sources.","Piège d'examen.")),
+  N(A("Relie chaque outil à son usage.",[["Scoop.it, Wakelet","Curation collaborative"],["Semantic Scholar","Résumés, publications influentes"],["XMind, MindMeister","Cartes conceptuelles"]],""),
+    S("Comment appelle-t-on le fait de transformer un flux en collection organisée et commentée ?",["curation","la curation"],"")),
+  "Fiche 6 · Personnaliser sa veille",
+  N([T(B_PRIO,"Rappel d'un produit",0,""),T(B_PRIO,"Nouvelle réglementation",0,""),T(B_PRIO,"Nouvelle recommandation officielle",1,""),T(B_PRIO,"Étude majeure",1,""),T(B_PRIO,"Tendance émergente",2,"")],
+    S("Que précise un profil de veille ? (un élément)",["domaines prioritaires","domaines","niveau d'expertise","contraintes de temps","objectifs d'utilisation"],"")),
+  N(A("La routine de veille : relie.",[["Matin, 10 min","Alertes urgentes, actualités réglementaires"],["Midi, 15 min","Résumés d'études"],["Soir, 20 min","Approfondir 2-3 articles"],["Vendredi, 1 h","Synthèse hebdomadaire"]],""),
+    C("Combien de minutes de veille par jour (matin + midi + soir) ?",45,"10 + 15 + 20 = 45 min.","min"),
+    W("Comment évaluer et améliorer sa veille ?","Mesurer le taux d'utilisation des informations, garder les sources productives et supprimer les flux redondants ; tenir un journal de veille (source, date, info clé, application) ; échanger dans des communautés de pratique (AFDN, LinkedIn).",["Taux d'utilisation","Journal de veille","Communautés de pratique"]))
+ ]},
+ {id:"sp16c",t:"Exploiter",s:"Fiches 7 à 10 · classer, synthétiser, diffuser",items:[
+  "Fiche 7 · Structurer et archiver",
+  N(O("Remets la taxonomie dans l'ordre, du plus large au plus précis.",["Grandes catégories (nutrition clinique)","Sous-domaines (diabète)","Spécifications (diabète de type 2)"],"Plus des tags transversaux et des indicateurs de priorité et de statut."),
+    S("Quelle métadonnée enrichie ajouter en plus des auteurs et de la revue ?",["niveau de preuve","pertinence pratique","note de synthese","mots-cles personnels","mots-clés personnels"],"")),
+  N(F("Règle 3-2-1 : {3} copies, sur {2} supports, dont {1} hors site.",""),
+    E(["Pour garder les articles sous copyright,"," je stocke et partage les PDF complets"," sur le serveur de l'équipe."],1,"Sous copyright : stocker seulement ses résumés et notes + la référence complète ; archiver en entier les articles en accès libre.","Piège d'examen.")),
+  "Fiche 8 · Analyser et synthétiser",
+  N(O("Remets dans l'ordre la synthèse thématique.",["Collecte exhaustive","Classement par niveau de preuve","Tableau comparatif","Convergences, divergences, lacunes","Contexte français","Recommandations pratiques"],""),
+    A("Grille d'analyse critique : relie.",[["Applicabilité","Au contexte français"],["Faisabilité","Pour mes patients"],["Cohérence","Avec les recommandations officielles"],["Impact","Sur les résultats cliniques"]],""),
+    E(["Une recommandation américaine récente"," s'applique telle quelle"," à mes patients en France."],1,"Une recommandation étrangère doit être contextualisée avant d'être appliquée en France.","Piège d'examen.")),
+  N(Q("La veille concurrentielle sert à…",["Connaître les pratiques des confrères et les attentes des patients pour se positionner","Copier ses confrères","Critiquer les autres"],"Et l'analyse comparative ANSES / EFSA / OMS : consensus et divergences.")),
+  "Fiche 9 · Diffuser et valoriser",
+  N(F("Partager : repérer {3} à {5} découvertes par mois, en synthèses de {200} à 300 mots.",""),
+    A("Relie chaque usage de la veille à son application.",[["Éducation thérapeutique","Messages accessibles et supports adaptés"],["Formation continue","Les articles mal compris révèlent tes besoins"],["Innovation","Nouvelles approches, populations sous-servies"]],""),
+    W("Comment mesurer le retour sur investissement de ta veille ?","Par ses effets concrets : protocoles modifiés, outils intégrés, améliorations chez les patients. Valoriser sa veille, ce n'est pas seulement partager : c'est aussi modifier ses propres pratiques.",["Protocoles modifiés","Outils intégrés","Améliorations chez les patients"])),
+  "Fiche 10 · Méthodes",
+  N(A("Question PICO : relie.",[["P","Population"],["I","Intervention"],["C","Comparateur"],["O","Outcome (critère de jugement)"]],""),
+    Q("Le fil commun des conseils pro ?",["Chercher juste, vérifier, classer, partager","Tout lire, tout garder","Faire confiance aux réseaux"],""))
+ ]}
+ ],
+ mission:{id:"sp16m",t:"La veille de Léna",items:[
+  CH("garcia","Un athlète me demande si le jeûne intermittent améliore la performance. Par où commencer ?",[
+    ["Une recherche Google et les vidéos d'influenceurs",0,[0,-6,0],"Sources non validées, biais de disponibilité."],
+    ["Une question PICO, puis PubMed (MeSH + mots-clés) et Cochrane pour les synthèses",2,[6,8,0],"Question claire, bonnes bases."],
+    ["Demander à un collègue",1,[1,2,0],"Un avis d'expert : en bas de la pyramide des preuves."]],
+   "Fiches 1, 2 et 10."),
+  BY("morel",T(B_BOOL,"Entre « Intermittent Fasting » et « Athletic Performance »",0,"Deux concepts qui doivent être présents : AND.")),
+  CH("masson","Tu trouves une étude très positive sur une poudre « booster ». 25 sportifs, 3 semaines, financée par la marque.",[
+    ["Je la recommande, elle est publiée",0,[-4,-10,0],"Méthode faible et conflit d'intérêts."],
+    ["Je vérifie méthode, financement, je cherche d'autres études indépendantes avant de conclure",2,[5,8,0],"Évaluation critique et triangulation."]],
+   "Fiche 3."),
+  CH("morel","Ton alerte PubMed t'envoie 120 articles par semaine. Que fais-tu ?",[
+    ["Je les lis tous le week-end",0,[0,-2,0],"Intenable : surcharge."],
+    ["Je resserre l'équation (AND, filtres) pour viser 5 à 15 articles pertinents",2,[3,4,0],"Alerte gérable."],
+    ["Je supprime l'alerte",1,[-2,0,0],"Tu perds ta veille."]],
+   "Fiche 4."),
+  BY("garcia",T(B_PRIO,"L'agence antidopage ajoute une substance à la liste des interdits",0,"Réglementation qui touche tes sportifs : urgent.")),
+  CH("garcia","Pour classer mes trouvailles, je mets tout dans un dossier « Divers ».",[
+    ["Ça suffit",0,[0,-3,0],"Une veille en vrac est perdue."],
+    ["Taxonomie stable, tags (population, type d'étude), priorité et statut, dans Zotero, sauvegarde 3-2-1",2,[3,4,-1],"Une base de connaissances réutilisable."]],
+   "Fiche 7."),
+  BY("masson",W("Rédige pour l'équipe une synthèse de veille sur le jeûne intermittent et la performance.","En 200-300 mots : la question, les sources principales classées par niveau de preuve (méta-analyses, ECR), les convergences et divergences, les limites (petits effectifs, populations étudiées), la contextualisation pour nos sportifs, des recommandations pratiques prudentes et les références clés.",["Question, sources, niveau de preuve","Convergences, limites","Contexte et recommandations","Références"]))
+ ]}
+};
+
+/* ---------- COURS 17 · VEILLE RÉGLEMENTAIRE ET ADAPTATION AUX ÉVOLUTIONS ---------- */
+var B_UE=[["Règlement UE","applicable directement"],["Directive UE","à transposer"]];
+var B_AG=[["ANSES",""],["HAS",""],["ANSM",""],["EFSA",""],["OMS",""]];
+var B_SCORE=[["0 à 3","archiver"],["4 à 6","surveiller"],["7 à 10","analyser en priorité"]];
+var B_CLASS=[["Chronologique",""],["Thématique",""],["Statutaire",""],["Hiérarchique",""]];
+var B_STRA=[["Conformité minimale",""],["Anticipation proactive",""],["Adaptation différenciante",""],["Mutualisation",""]];
+COURS.sp17={id:"sp17",n:17,t:"Veille réglementaire",lieu:"Réseau des diététiciens libéraux · Clermont-Ferrand",
+ pitch:"Décrets, règlements européens, recommandations : les textes qui encadrent la diététique changent sans cesse. Céline, diététicienne libérale, veut une veille qui protège sa pratique et devienne un atout.",
+ P:{fabre:{n:"Céline Fabre",r:"Diététicienne libérale",av:{bg:"#ffc94a",skin:"#f0c8a8",hair:"#2b1b14",hs:"long",shirt:"#0e9f8e"}},
+    picard:{n:"Me Arnaud Picard",r:"Avocat en droit de la santé",av:{bg:"#13303a",skin:"#e8b896",hair:"#9a9a9a",hs:"short",shirt:"#5bb8f5",glasses:1}},
+    brun:{n:"Valérie Brun",r:"Responsable qualité en EHPAD",av:{bg:"#ae8dff",skin:"#c99067",hair:"#6b3f24",hs:"bun",shirt:"#ffc94a"}}},
+ conseil:{who:"picard",t:"Toujours : surveiller, évaluer, planifier, vérifier. Planifier selon la fréquence des sources, mots-clés métier, classer et dater ; analyser l'impact (obligations, délais, risques, formation, outils), noter sur 10 ; adapter en mode projet ; alertes, revue annuelle, groupes professionnels. « Je ne savais pas » n'est pas une défense."},
+ levels:[
+ {id:"sp17a",t:"Repérer",s:"Fiches 1 à 3 · sources, agences, territoires",items:[
+  "Fiche 0 · Le fil rouge",
+  N(Q("La veille réglementaire, c'est…",["Une surveillance organisée des textes pour anticiper, analyser et intégrer les évolutions","Lire le journal","Attendre un contrôle"],"Enjeux : sécurité juridique, crédibilité, adaptation.")),
+  "Fiche 1 · Sources nationales et européennes",
+  N(Q("Quelle est la source authentique des textes français ?",["Le Journal officiel (JORF)","Légifrance","Le site du ministère"],"Légifrance donne l'accès gratuit et structuré."),
+    S("Quand un texte entre-t-il en vigueur, sauf date prévue ?",["le lendemain de sa publication","lendemain","le lendemain","lendemain de la publication"],""),
+    E(["Légifrance"," est la source authentique des textes,"," le JORF n'en est qu'une copie."],1,"C'est l'inverse : le JORF fait foi, Légifrance permet d'y accéder.","")),
+  N([T(B_UE,"S'applique immédiatement dans tous les États",0,""),T(B_UE,"Doit être intégrée au droit français dans un délai",1,"")],
+    S("Quel portail donne accès au droit européen ?",["eur-lex","eurlex","eur lex"],""),
+    E(["Le nouveau règlement européen sur l'étiquetage"," ne me concerne pas encore :"," il faut attendre la loi française."],1,"Un règlement s'applique directement, sans texte français ; c'est la directive qui doit être transposée.","Piège d'examen.")),
+  N(O("Remets la hiérarchie des normes dans l'ordre.",["Constitution","Traités et droit de l'UE","Lois","Décrets","Arrêtés","Circulaires"],""),
+    A("Relie chaque ministère à ses domaines.",[["Santé","Exercice professionnel, ETP, établissements"],["Agriculture","Sécurité sanitaire des aliments, restauration collective"],["Éducation","Restauration scolaire"]],"")),
+  "Fiche 2 · Agences sanitaires",
+  N([T(B_AG,"Évalue les risques sanitaires et nutritionnels",0,""),T(B_AG,"Recommandations de bonne pratique",1,""),T(B_AG,"Médicaments et dispositifs médicaux : retraits, alertes",2,""),T(B_AG,"Évalue les allégations nutritionnelles et de santé",3,""),T(B_AG,"Normes sanitaires mondiales",4,"")],
+    E(["Une recommandation de la HAS"," est une loi :"," ne pas la suivre est un délit."],1,"Ce n'est pas une loi, mais elle sert de référence en cas de contrôle ou de litige.","Piège d'examen.")),
+  N(O("Remets dans l'ordre la surveillance des avis de l'ANSES.",["S'abonner à « Avis et rapports »","Consulter chaque mois « Nutrition humaine »","Analyser les auto-saisines","Suivre les saisines gouvernementales","Archiver les avis utiles"],""),
+    null,
+    W("Pourquoi suivre les avis des agences, qui ne sont pas des textes de loi ?","Ils préparent souvent les futurs textes (saisines gouvernementales) : les suivre, c'est anticiper. Les allégations EFSA s'imposent à tes supports, et recommander un dispositif retiré par l'ANSM engage ta responsabilité.",["Préparent les textes","Allégations EFSA","Alertes ANSM, responsabilité"])),
+  "Fiche 3 · Échelon territorial",
+  N(Q("Que font les ARS ?",["Elles déclinent les politiques nationales : schémas régionaux, programmes, procédures","Elles votent les lois","Elles délivrent les diplômes"],"Une pratique conforme dans une région peut demander des adaptations ailleurs."),
+    A("Relie chaque acteur à son apport.",[["Collectivités","Règlements de restauration collective, cahiers des charges"],["Organisations professionnelles","Déontologie, publicité, formation continue"],["Institut Pasteur","Recherche, épidémiologie, sécurité sanitaire"]],""),
+    E(["Pour la déontologie,"," je me réfère à l'Ordre des diététiciens,"," comme les médecins."],1,"Il n'existe pas d'Ordre des diététiciens : la déontologie relève des organisations professionnelles (ex. AFDN).","Piège d'examen.")),
+  N(Q("Les règles professionnelles s'appliquent…",["Quel que soit le mode d'exercice, et peuvent engager ta responsabilité même salarié","Seulement en libéral","Seulement à l'hôpital"],"")),
+  "Compléments · fiches 1 et 2",
+  N(Q("Que permet la recherche avancée de Légifrance ?",["Filtrer par domaine, date et statut (en vigueur, abrogé, modifié), avec l'historique des versions","Publier un texte","Voter une loi"],"Ex. « diététicien » + « exercice libéral », textes en vigueur des 2 dernières années.")),
+  N(Q("Pourquoi suivre les évolutions du PNNS dans sa veille ?",["Nouvelles orientations et objectifs chiffrés, avec des conséquences selon le mode d'exercice","Le PNNS ne change jamais","Seulement pour les médecins"],"Et des alertes sur les dispositifs médicaux : recommander un produit retiré engage ta responsabilité."))
+ ]},
+ {id:"sp17b",t:"Organiser",s:"Fiches 4 à 6 · fréquences, scoring, traçabilité",items:[
+  "Fiche 4 · Planifier la veille",
+  N(A("Relie chaque rythme à sa durée et sa cible.",[["Quotidien","5 min : JO, alertes ARS"],["Hebdomadaire","20 min : ministères, agences"],["Bimensuel","30 min : analyse des textes"],["Mensuel","45 min : Europe, synthèse"],["Trimestriel","2 h : bilan, ajustements"]],""),
+    S("Cite un cycle de production des textes.",["rentree parlementaire","rentrée parlementaire","preparation budgetaire","budget","calendrier europeen","echeances electorales","élections"],"")),
+  N(O("Classe du plus urgent au moins urgent.",["Texte d'effet immédiat","Texte à échéance fixe","Texte qui attend des décrets d'application","Projet de loi en première lecture"],""),
+    E(["La loi est publiée :"," elle s'applique pleinement dès demain,"," même si elle renvoie à des décrets d'application."],1,"Un texte qui renvoie à des décrets ne s'applique pleinement qu'une fois ces décrets publiés.","Piège d'examen."),
+    O("Rétroplanning d'un texte publié en janvier, applicable un an après : remets dans l'ordre.",["Analyse d'impact","Adaptation des outils","Formation","Tests","Mise en œuvre"],"")),
+  "Fiche 5 · Filtrer et noter",
+  N(A("Les 3 questions de l'analyse préliminaire : relie.",[["Champ d'application","Me concerne-t-il ?"],["Contrainte nouvelle","Modifie-t-il mes obligations ?"],["Délai d'application","Quelle urgence ?"]],""),
+    S("Cite un mot-clé récent à ajouter à ton dictionnaire de veille.",["nutri-score","flexitarisme","circuits courts","gaspillage alimentaire"],"")),
+  N([T(B_SCORE,"Score 2/10",0,""),T(B_SCORE,"Score 5/10",1,""),T(B_SCORE,"Score 8/10",2,"")],
+    F("Score sur 10 : impact direct sur {4}, urgence sur {3}, complexité sur {3}.",""),
+    CAS("Nouveau texte : modification majeure de l'exercice (4), applicable immédiatement (3), simple à mettre en œuvre (0).",C("Quel score sur 10 ?",7,"4 + 3 + 0 = 7 : analyse prioritaire."))),
+  N(A("Filtres sectoriels : relie.",[["Libéral","Réglementation des professions, fiscalité"],["Hospitalier","Fonction publique hospitalière, marchés publics"],["Restauration collective","Hygiène alimentaire, marchés publics"]],"")),
+  "Fiche 6 · Documenter et tracer",
+  N([T(B_CLASS,"Par date de publication",0,""),T(B_CLASS,"Par domaine d'application",1,""),T(B_CLASS,"En vigueur, abrogé, en préparation",2,""),T(B_CLASS,"Lois, règlements, recommandations",3,"")],
+    S("Que faut-il noter pour chaque source afin de prouver sa diligence ?",["date de consultation","la date de derniere consultation","date de la derniere consultation","la date"],"Sans date, tu ne peux pas prouver que ta veille était à jour.")),
+  N(A("Archivage d'un libéral : relie chaque dossier à son contenu.",[["Exercice professionnel","Statut, déontologie, responsabilité"],["Pratiques cliniques","Recommandations HAS, avis ANSES"],["Communication","Allégations, publicité, réseaux sociaux"],["Fiscal / social","TVA, cotisations"]],""),
+    null,
+    W("Que révèle l'historique de ta veille ?","Des tendances de fond (traçabilité renforcée, compétences élargies, harmonisation européenne). Avec des synthèses périodiques (bilans trimestriels, analyses d'impact), la veille devient une expertise.",["Tendances de fond","Bilans trimestriels","Expertise"]))
+ ]},
+ {id:"sp17c",t:"S'adapter",s:"Fiches 7 à 10 · impact, mise en conformité, suivi",items:[
+  "Fiche 7 · Analyse d'impact",
+  N(O("Remets dans l'ordre les 6 points de l'analyse d'impact.",["Champ d'application","Obligations nouvelles","Moyens nécessaires","Délais contraints","Risques de non-conformité","Opportunités"],""),
+    E(["Mon analyse d'impact liste les obligations, les coûts et les sanctions :"," elle est complète,"," pas besoin d'aller plus loin."],1,"Il manque les opportunités : un texte peut ouvrir de nouveaux services.","Piège d'examen.")),
+  N(S("Cite un type de risque de non-conformité.",["sanctions administratives","administratif","responsabilite civile","civile","responsabilite penale","pénale","perte de credibilite","impact economique"],""),
+    [T(B_STRA,"Faire le strict nécessaire",0,""),T(B_STRA,"S'adapter avant l'échéance",1,""),T(B_STRA,"En faire un atout",2,""),T(B_STRA,"S'adapter avec des confrères",3,"")],
+    CAS("Un confrère dit : « Je ne savais pas que la règle avait changé. »",Q("Est-ce une défense ?",["Non : certaines évolutions engagent la responsabilité, même pénale, salarié ou libéral","Oui, s'il est de bonne foi","Oui, si le texte est récent"],""))),
+  N(S("Cite un retour d'expérience réglementaire marquant.",["rgpd","egalim","loi egalim","referentiels has"],"RGPD (données patients), EGalim (restauration collective).")),
+  "Fiche 8 · Mettre en œuvre",
+  N(O("Remets dans l'ordre l'approche projet.",["État des lieux","Objectifs de conformité","Écarts","Plan d'actions","Ressources","Pilotage et contrôle"],""),
+    O("Planning de mise en conformité sur 12 mois : remets dans l'ordre.",["Audit des pratiques, formation","Adapter outils et documents","Former l'équipe, tester","Déployer, communiquer","Ajuster, évaluer"],"")),
+  N(F("Groupe de travail collaboratif : {8} à {12} professionnels, {4} à 6 réunions de 2 h.",""),
+    S("Cite un outil opérationnel de conformité.",["check-list","check-lists","checklist","procedures","procédures","modeles de documents","tableau de bord","tableaux de bord","systeme de tracabilite"],""),
+    W("Pourquoi anticiper la formation continue quand un texte paraît ?","Un nouveau texte peut saturer les calendriers des organismes habilités et faire monter les prix : repérer tôt les formations (spécialisées, certifications) évite retards et surcoûts.",["Calendriers saturés","Prix en hausse","Organismes habilités"])),
+  "Fiche 9 · Suivre la conformité",
+  N(Q("Pourquoi une veille jurisprudentielle ?",["L'interprétation d'un texte par les juges peut changer tes obligations sans que le texte change","Pour devenir avocat","Ce n'est pas utile"],"Conseil d'État, cours d'appel."),
+    S("Cite un indicateur de suivi de conformité.",["respect des procedures","respect des procédures","delais de traitement","qualite documentaire","resultats des controles externes","contrôles externes"],""),
+    CAS("Tableau de bord d'un diététicien en EHPAD.",Q("Lequel est un indicateur de conformité ?",["98 % des interventions tracées sous 48 h","Nombre de likes sur la page","Couleur des menus"],"Aussi : formations DPC, résidents évalués selon protocole HAS, audits internes."))),
+  N(Q("La revue de conformité annuelle permet…",["Bilan, efficacité, axes d'amélioration et plan","Un contrôle de police","De supprimer la veille"],"La maîtrise réglementaire ouvre des opportunités : conseil, formation, groupes institutionnels."),
+    null,
+    W("Comment transformer la contrainte réglementaire en avantage ?","Capitaliser (méthodes, outils, réseaux et compétences réutilisables) et anticiper en connaissant les cycles de production des textes : on s'adapte avant les autres, et la maîtrise réglementaire ouvre des activités de conseil, de formation ou de participation à des groupes institutionnels.",["Capitaliser","Anticiper les cycles","Opportunités : conseil, formation"])),
+  "Fiche 10 · Méthodes",
+  N(Q("Le fil commun des conseils pro ?",["Surveiller, évaluer, planifier, vérifier","Attendre, réagir, oublier","Copier les confrères"],""),
+    A("Relie chaque situation au réflexe.",[["Organiser la veille","Planifier selon la fréquence des sources"],["Nouveau texte","Prioriser selon urgence et complexité"],["Adapter sa pratique","Plan d'action structuré et piloté"],["Rester conforme","Revues périodiques, groupes professionnels"]],""))
+ ]}
+ ],
+ mission:{id:"sp17m",t:"Le cabinet de Céline",items:[
+  CH("fabre","Je découvre par hasard un décret qui change l'exercice libéral, publié il y a 3 mois.",[
+    ["Je l'applique à partir de maintenant, sans rien dire",1,[1,0,0],"Tu te mets en conformité, mais ta veille a un trou."],
+    ["Je me mets en conformité et j'organise une vraie veille : JORF quotidien, alertes, mots-clés, dates de consultation",2,[4,8,-1],"Corriger et prévenir."],
+    ["Je l'ignore, personne ne contrôle",0,[0,-12,0],"« Je ne savais pas » n'est pas une défense."]],
+   "Fiches 1, 4 et 6."),
+  BY("picard",T(B_UE,"Le règlement INCO sur l'information des consommateurs",0,"Un règlement s'applique directement en France.")),
+  BY("fabre",C("Nouveau texte : impact modéré (2), urgence moyenne (2), complexité forte (3). Quel score ?",7,"2 + 2 + 3 = 7 : analyse prioritaire.","/10")),
+  CH("picard","Ce texte impose une nouvelle formation dans 12 mois. Ta stratégie ?",[
+    ["J'attendrai le dernier mois",0,[0,-4,-3],"Calendriers saturés, prix en hausse, risque de non-conformité."],
+    ["Analyse d'impact en 6 points, puis inscription anticipée et rétroplanning",2,[4,6,-2],"Anticipation proactive."],
+    ["Je monte un groupe avec 8 confrères pour mutualiser",2,[4,8,-1],"Mutualisation : coûts partagés, solutions enrichies."]],
+   "Fiches 7 et 8."),
+  CH("brun","À l'EHPAD, l'ARS ajoute ses propres exigences sur les interventions. Tu interviens aussi dans un autre département.",[
+    ["Une seule procédure pour les deux",0,[0,-4,0],"Chaque territoire peut avoir ses règles."],
+    ["Je vérifie les exigences de chaque ARS et j'adapte mes procédures",2,[4,6,-1],"Décentralisation : plusieurs territoires, plusieurs règles."]],
+   "Fiche 3."),
+  CH("brun","Un contrôle arrive. Comment prouver que ta veille était à jour ?",[
+    ["Je dirai que je lis souvent les actualités",0,[0,-8,0],"Rien n'est prouvable."],
+    ["Dossiers classés, chaque source datée, tableau de bord de conformité et revue annuelle",2,[3,10,0],"Traçabilité : preuve de diligence."]],
+   "Fiches 6 et 9."),
+  BY("picard",W("Présente à Céline le plan de veille réglementaire de son cabinet.","Sources : JORF/Légifrance, EUR-Lex, ministères, agences (ANSES, HAS, ANSM, EFSA), ARS et collectivités. Organisation : 5 min/jour, 20 min/semaine, 45 min/mois, 2 h/trimestre ; mots-clés métier ; 3 questions et score sur 10. Traçabilité : classement, dates de consultation. Adaptation : analyse d'impact en 6 points, stratégie, mode projet, formation anticipée. Suivi : indicateurs, jurisprudence, revue annuelle, groupes professionnels.",["Sources","Rythmes et scoring","Traçabilité","Analyse d'impact, projet","Suivi"]))
+ ]}
+};
+
+/* ---------- COURS 18 · GESTION DE L'IDENTITÉ NUMÉRIQUE EN SANTÉ ---------- */
+var B_IDN=[["Déclarative","ce que je publie"],["Agissante","ce que je fais"],["Calculée","ce que les algorithmes déduisent"]];
+var B_PUBL=[["Contenu approprié",""],["À éviter",""]];
+var B_R5=[["Déontologique",""],["Juridique",""],["Réputationnel",""],["Technique",""],["Temporel",""]];
+COURS.sp18={id:"sp18",n:18,t:"Identité numérique",lieu:"Cabinet de diététique · Nice",
+ pitch:"Beaucoup de patients cherchent leur praticien en ligne avant de consulter, et une publication maladroite peut coûter cher. Chloé ouvre son cabinet : elle veut une présence en ligne crédible, sans jamais exposer ses patients.",
+ P:{renard:{n:"Chloé Renard",r:"Diététicienne libérale",av:{bg:"#ae8dff",skin:"#f0c8a8",hair:"#c26a2e",hs:"long",shirt:"#ffc94a"}},
+    perrin:{n:"Nicolas Perrin",r:"Consultant en communication santé",av:{bg:"#5bb8f5",skin:"#e8b896",hair:"#2b1b14",hs:"short",shirt:"#ff7a59"}},
+    chevalier:{n:"Me Laura Chevalier",r:"Juriste, droit du numérique",av:{bg:"#13303a",skin:"#c99067",hair:"#1f1410",hs:"bun",shirt:"#3ee6b0",glasses:1}}},
+ conseil:{who:"chevalier",t:"Toujours : séparer, protéger le secret, surveiller, rester rigoureuse. Comptes perso et pro séparés, double authentification, alertes sur ton nom ; jamais de promesse de guérison, aucune information patient, pas de publicité comparative ; en ligne, pas de conseil personnalisé : rediriger vers une consultation ; en cas de doute, s'abstenir."},
+ levels:[
+ {id:"sp18a",t:"Comprendre",s:"Fiches 1 et 2 · dimensions, e-réputation",items:[
+  "Fiche 1 · Définition et dimensions",
+  N(Q("L'identité numérique professionnelle, c'est…",["L'ensemble des traces numériques laissées volontairement ou non : une extension de l'identité professionnelle","Seulement son profil LinkedIn","Son numéro RPPS"],"Profils, sites, annuaires, commentaires, publications, photos."),
+    [T(B_IDN,"Mon CV en ligne et mes publications",0,""),T(B_IDN,"Mes commentaires, partages et likes",1,""),T(B_IDN,"Le profil que la plateforme déduit de mes clics",2,"")],
+    E(["L'identité calculée,"," c'est ce que je choisis de publier"," sur mes réseaux."],1,"Elle ne vient pas de toi : ce sont les algorithmes qui la construisent à partir de tes comportements.","Piège d'examen.")),
+  N(CAS("Une diététicienne publie sur Instagram la photo d'une patiente : « 3 mois de suivi, −15 kg garantis avec ma méthode ».",W("Pourquoi est-ce triplement fautif ?","Violation du secret professionnel (patiente reconnaissable), promesse de résultat interdite par le Code de déontologie de l'AFDN (pas d'avant/après, pas de garantie), et promotion commerciale inappropriée.",["Secret professionnel","Promesse de guérison","Promotion commerciale"])),
+    S("Que faut-il taper régulièrement dans un moteur de recherche pour vérifier son image ?",["son nom complet entre guillemets","nom complet","son nom","nom et prenom"],"")),
+  "Fiche 2 · E-réputation",
+  N(O("Remets dans l'ordre la surveillance de ton e-réputation.",["Alertes sur ton nom et prénom","Vérifier chaque mois tes profils","Surveiller les avis patients","Contrôler les résultats de recherche","Documenter les mentions négatives"],""),
+    Q("Pourquoi soigner son profil en ligne même en étant salariée ?",["Les employeurs vérifient les profils : un profil soigné est un atout, une présence inappropriée ferme des portes","Ce n'est utile qu'en libéral","Pour avoir des likes"],"")),
+  N(A("Responsabilité en ligne : relie.",[["Obligations","Secret, dignité, qualité de l'information"],["Manquements fréquents","Violation du secret, publicité illicite, conseils hors cadre"],["Conséquences","Sanction de l'employeur, responsabilité civile et pénale"]],""),
+    E(["Si je publie une erreur grave en ligne,"," l'Ordre des diététiciens me sanctionnera,"," comme pour les médecins."],1,"Il n'y a pas d'Ordre des diététiciens : pas de sanction ordinale, mais l'employeur et les juges peuvent sanctionner.","Piège d'examen."))
+ ]},
+ {id:"sp18b",t:"Être présente",s:"Fiches 3 à 5 · annuaires, réseaux, outils",items:[
+  "Fiche 3 · Annuaires, plateformes, site",
+  N(Q("Quel répertoire officiel remplace ADELI pour les diététiciens depuis 2023 ?",["Le RPPS (Annuaire santé)","Doctolib","Pages Jaunes"],"Avec l'annuaire de l'AFDN."),
+    S("Quel sigle désigne le répertoire officiel des professionnels de santé ?",["rpps"],""),
+    O("Remets dans l'ordre la mise à jour de ton profil d'annuaire.",["Vérifier l'exactitude des informations","Indiquer spécialisations et coordonnées","Actualiser les contacts","Ajouter formations et certifications","Photo professionnelle de qualité"],"")),
+  N(Q("Avant d'utiliser Doctolib, que faut-il lire ?",["Les clauses sur la communication commerciale et la confidentialité des données patients","Seulement les tarifs","Rien, c'est une plateforme de santé"],"Elles peuvent entrer en conflit avec tes obligations."),
+    A("Structure d'un site professionnel : relie.",[["Présentation","Formation, expérience"],["Services","Consultation, éducation thérapeutique"],["Approche","Sans promesse de guérison"],["Infos pratiques","Tarifs, accès"],["Blog","Articles scientifiques vulgarisés"]],"")),
+  "Fiche 4 · Réseaux sociaux",
+  N(A("Relie chaque plateforme à son risque principal.",[["Facebook, Instagram, Snapchat","Secret, promotion commerciale"],["YouTube","Exige une rigueur scientifique absolue"],["TikTok","Format court : simplifications dangereuses"]],""),
+    [T(B_PUBL,"Recette équilibrée avec explications",0,""),T(B_PUBL,"Décryptage d'une tendance, avec sources",0,""),T(B_PUBL,"Avant/après d'une patiente",1,""),T(B_PUBL,"Réponse personnalisée à un patient en commentaire",1,""),T(B_PUBL,"Conseils généraux de prévention",0,"")],
+    E(["Pour faire court sur TikTok,"," je dis que le sucre est « un poison » :"," une simplification n'est jamais une faute."],2,"Une simplification qui induit en erreur ou minimise un risque peut constituer une faute, même sans intention.","Piège d'examen.")),
+  N(Q("Une patiente te demande en « ami » sur ton compte personnel.",["Refuser : comptes perso et pro séparés, jamais de patients en amis","Accepter pour garder le lien","Accepter si elle est sympathique"],"Le conseil personnalisé se fait en consultation.")),
+  "Fiche 5 · Outils, crise, droit à l'oubli",
+  N(A("Relie chaque outil à son usage.",[["Google Alerts, Mention","Surveiller les mentions de ton nom"],["Hootsuite, Buffer, Later","Programmer les publications"]],""),
+    E(["Ma publication était programmée par Hootsuite :"," je ne suis pas responsable de son contenu"," au moment où elle sort."],1,"Tu restes responsable de tout ce qui est publié, même programmé.","Piège d'examen.")),
+  N(Q("Quel article du RGPD prévoit le droit à l'effacement ?",["L'article 17","L'article 9","L'article 30"],"Dans certaines conditions, avec des démarches parfois longues."),
+    W("Pourquoi « prévenir vaut mieux qu'effacer » ?","Un contenu largement diffusé ou archivé peut être impossible à supprimer ; le droit à l'oubli (art. 17 RGPD) est limité et lent. Il faut réfléchir avant de publier et préparer un protocole de crise.",["Contenu diffusé, archivé","Droit à l'oubli limité","Réfléchir avant de publier"]))
+ ]},
+ {id:"sp18c",t:"Se protéger",s:"Fiches 6 à 9 · obligations, risques, bonnes pratiques",items:[
+  "Fiche 6 · Obligations légales",
+  N(F("Art. 226-13 du Code pénal : violation du secret punie d'{1} an d'emprisonnement et de {15000|15 000} € d'amende.",""),
+    A("Violations courantes du secret en ligne : relie.",[["Photo","Publier la photo d'un patient, même avec un accord apparent"],["Cas « anonymisé »","Détails qui permettent de reconnaître la personne"],["Réponse publique","À une question personnelle d'un patient"],["Traitement","Évoquer l'évolution d'un traitement"]],""),
+    E(["J'ai retiré le prénom de ma patiente :"," je peux raconter son cas en détail"," (âge, métier, quartier)."],1,"Un cas « anonymisé » viole le secret dès que les détails permettent d'identifier la personne.","Piège d'examen.")),
+  N(A("Les 3 principes de communication : relie.",[["Véracité","Informations exactes et vérifiables"],["Dignité","Ton professionnel"],["Modération","Pas de promesse, pas de comparaison"]],""),
+    A("Relie chaque article du RGPD à son objet.",[["Art. 13","Informer sur l'usage des données"],["Art. 7 / 9","Consentement, explicite pour la santé"],["Art. 17","Droit à l'effacement"],["Art. 20","Droit à la portabilité"]],"")),
+  "Fiche 7 · Identifier les risques",
+  N([T(B_R5,"Respecte-t-elle la déontologie ?",0,""),T(B_R5,"Risque de violation du secret ou de publicité illicite ?",1,""),T(B_R5,"Peut-elle nuire à mon image ?",2,""),T(B_R5,"Les paramètres de confidentialité sont-ils bons ?",3,""),T(B_R5,"Restera-t-elle appropriée dans le temps ?",4,"")],
+    O("Remets dans l'ordre le protocole de gestion de crise.",["Détecter","Évaluer","Répondre","Suivre","Capitaliser"],"")),
+  N(S("Quelle protection activer partout contre le piratage de comptes ?",["double authentification","authentification a deux facteurs","2fa","double facteur"],"Avec des mots de passe robustes et uniques par plateforme."),
+    null,
+    CAS("Le compte Instagram pro de Chloé est piraté et publie des promotions de compléments.",Q("Quel risque ?",["Un compte piraté peut engager sa responsabilité civile et pénale : sécuriser, alerter, documenter","Aucun, elle n'a rien publié","Seulement une perte d'abonnés"],""))),
+  "Fiche 8 · Bonnes pratiques",
+  N(O("Remets dans l'ordre les éléments de la charte de communication numérique.",["Objectifs","Contenus autorisés","Ton et registre","Fréquence","Interactions","Procédures de crise"],""),
+    E(["Le livre blanc de l'Ordre des médecins"," s'impose juridiquement"," aux diététiciens."],1,"Ses recommandations sont transposables mais ne s'imposent pas juridiquement aux diététiciens.","Piège d'examen.")),
+  N(Q("Comment se tenir à jour ?",["Webinaires, formations DPC, veille réglementaire, ressources des ordres de santé et de l'AFDN","Attendre un problème","Suivre les influenceurs"],"La maîtrise de l'identité numérique est une compétence à part entière.")),
+  "Fiche 9 · Méthodes",
+  N(Q("Un patient te pose une question personnelle en commentaire. Que fais-tu ?",["Répondre sans conseil personnalisé et rediriger vers une consultation","Lui répondre en détail publiquement","Supprimer sans répondre"],"Modérer, documenter les échanges sensibles."),
+    A("Relie chaque situation au réflexe.",[["Sécuriser","Comptes séparés, double authentification"],["Déontologie","Aucune information patient"],["Interactions","Rediriger vers une consultation"],["Crise","Réponse proportionnée, analyse post-crise"],["Visibilité","Annuaires officiels, contenus rigoureux"]],""))
+ ]}
+ ],
+ mission:{id:"sp18m",t:"Le lancement en ligne de Chloé",items:[
+  CH("renard","J'ouvre mon cabinet. Par quoi commencer ma présence en ligne ?",[
+    ["Un compte TikTok avec des vidéos avant/après",0,[0,-12,0],"Promesse de résultat et risque pour le secret."],
+    ["Annuaire santé (RPPS) et AFDN à jour, profil Doctolib soigné, site sobre",2,[4,8,-2],"Des bases officielles et fiables."],
+    ["Rien, le bouche-à-oreille suffit",1,[0,0,0],"Possible, mais beaucoup de patients cherchent en ligne avant de consulter."]],
+   "Fiche 3."),
+  BY("perrin",T(B_PUBL,"Vidéo « Comment lire une étiquette », avec sources",0,"Contenu éducatif, utile et conforme.")),
+  CH("perrin","Pour le site, je propose le slogan : « −10 kg en 2 mois garantis, ou remboursé ! »",[
+    ["Super, c'est vendeur",0,[0,-14,2],"Promesse de résultat : interdite par la déontologie."],
+    ["« Un accompagnement personnalisé, fondé sur les recommandations scientifiques »",2,[3,8,0],"Véracité, dignité, modération."]],
+   "Fiches 3 et 6."),
+  CH("chevalier","Une patiente ravie veut que Chloé publie sa photo avant/après avec son accord.",[
+    ["Avec son accord écrit, c'est possible",0,[0,-10,0],"Même avec un accord apparent, la publication viole le secret et promet un résultat."],
+    ["Refuser poliment, et proposer un message général sur l'accompagnement",2,[2,6,0],"Le secret ne cède pas à un accord apparent."]],
+   "Fiche 6."),
+  BY("chevalier",T(B_R5,"Une publication sur un régime à la mode, qui pourrait être démentie dans 6 mois",4,"Risque temporel : approprié aujourd'hui, problématique demain.")),
+  CH("renard","Un avis Google très négatif et injuste apparaît sur mon cabinet.",[
+    ["Je réponds en détaillant le dossier de la patiente pour me défendre",0,[0,-14,0],"Violation du secret."],
+    ["J'évalue la gravité, je réponds de façon proportionnée et générale, sans aucune information patient, et je documente",2,[2,8,0],"Protocole de crise : évaluer, répondre, suivre."],
+    ["Je l'ignore complètement",1,[0,-2,0],"Possible si c'est mineur, mais il faut au moins le documenter et le suivre."]],
+   "Fiches 5 et 7."),
+  BY("chevalier",W("Rédige la charte de communication numérique de Chloé.","Objectifs : informer et éduquer, faire connaître le cabinet. Contenus autorisés : recettes expliquées, décryptages sourcés, prévention, vulgarisation ; jamais d'information patient, de promesse de guérison, d'avant/après ni de publicité comparative. Ton : professionnel, exact, modéré. Fréquence : régulière, programmée avec vigilance. Interactions : pas de conseil personnalisé en ligne, redirection vers une consultation, modération. Crise : alertes, évaluation, réponse proportionnée, analyse post-crise. Sécurité : comptes séparés, double authentification.",["Objectifs, contenus","Interdits","Ton, fréquence","Interactions","Crise, sécurité"]))
+ ]}
+};
+
+/* ---------- COURS 19 · BONNES PRATIQUES NUMÉRIQUES EN SANTÉ ---------- */
+var B_ATT=[["Rançongiciel",""],["Hameçonnage",""],["Usurpation d'identité",""],["Vol de données",""],["Déni de service",""]];
+var B_MSG=[["Messagerie classique",""],["MSSanté",""]];
+var B_HYG=[["Matin",""],["Pendant les consultations",""],["Fin de journée",""],["Chaque semaine",""],["Chaque mois",""]];
+var B_NOTIF=[["Notifier la CNIL sous 72 h",""],["Informer aussi les patients",""],["Registre interne seulement",""]];
+COURS.sp19={id:"sp19",n:19,t:"Bonnes pratiques numériques",lieu:"Maison de santé pluriprofessionnelle · Annecy",
+ pitch:"L'ANS et l'ANSSI alertent : les cyberattaques contre les professionnels de santé augmentent, les libéraux sont moins protégés et la CNIL multiplie les contrôles. À la maison de santé, il faut sécuriser, tracer et savoir réagir.",
+ P:{fournier:{n:"Damien Fournier",r:"Référent cybersécurité",av:{bg:"#ae8dff",skin:"#e8b896",hair:"#3a2a1e",hs:"short",shirt:"#13303a",glasses:1}},
+    roussel:{n:"Martine Roussel",r:"Secrétaire médicale",av:{bg:"#ffc94a",skin:"#f0c8a8",hair:"#9a9a9a",hs:"bun",shirt:"#ff7a59"}},
+    caron:{n:"Dr Isabelle Caron",r:"Médecin coordinatrice",av:{bg:"#3ee6b0",skin:"#c99067",hair:"#2b1b14",hs:"long",shirt:"#5bb8f5"}}},
+ conseil:{who:"fournier",t:"Toujours : protéger, tracer, sauvegarder, former. Poste : pare-feu restrictif, mises à jour hors consultation, compte standard, antivirus pro. Accès : 12 caractères minimum, double authentification, verrouillage, gestionnaire de mots de passe. Cloud : HDS vérifié, UE, contrat art. 28. RGPD : registre, information, droits sous 1 mois, journaux. Incidents : plan testé, 3-2-1, CNIL sous 72 h."},
+ levels:[
+ {id:"sp19a",t:"Sécuriser",s:"Fiches 1 à 3 · poste, accès, hébergement",items:[
+  "Fiche 0 · Le constat",
+  N(Q("Pourquoi les cabinets libéraux sont-ils des cibles ?",["Souvent moins protégés que les hôpitaux, avec des données médicales de forte valeur marchande","Parce qu'ils ont plus d'argent","Ils ne sont pas visés"],"La CNIL multiplie contrôles et sanctions.")),
+  "Fiche 1 · Le poste de travail",
+  N(O("Remets dans l'ordre les 6 étapes pour sécuriser un poste.",["Pare-feu en mode restrictif","Mises à jour automatiques sur créneaux définis","Désactiver les services non essentiels","Compte utilisateur standard au quotidien","Compte administrateur pour la maintenance","Verrouillage automatique de l'écran"],""),
+    E(["Pour ne pas être gênée,"," je travaille tous les jours avec le compte administrateur"," du cabinet."],1,"Au quotidien : un compte standard ; le compte administrateur ne sert qu'à la maintenance.","Piège d'examen.")),
+  N(A("Chiffrer les données : relie.",[["Windows","BitLocker"],["Mac","FileVault"],["Clé USB","Chiffrement matériel idéalement"]],""),
+    C("Jusqu'à combien de millions d'euros peut aller une sanction CNIL ?",20,"Ou 4 % du chiffre d'affaires (art. 83 RGPD).","M€"),
+    CAS("Martine perd une clé USB non chiffrée contenant des bilans de patients.",Q("Qu'est-ce que c'est ?",["Une violation de données, exposée aux sanctions CNIL","Un simple oubli sans conséquence","Un problème matériel"],""))),
+  N(S("Cite une fonction d'un antivirus professionnel.",["protection temps reel","temps réel","analyse heuristique","detection comportementale","protection contre les rancongiciels","rançongiciels","reporting centralise"],"")),
+  "Fiche 2 · Accès et authentification",
+  N(C("Combien de caractères minimum pour un mot de passe robuste ?",12,"Majuscules, minuscules, chiffres, caractères spéciaux.","caractères"),
+    S("Comment appelle-t-on l'astuce qui transforme une phrase en mot de passe ?",["phrase secrete","phrase secrète","phrase de passe"],"« J'ai ouvert mon cabinet à Lyon en 2023 ! » → « J'omcàLe2023 ! »"),
+    E(["Mon mot de passe Cabinet2024 est robuste :"," j'utilise le même partout"," pour ne pas l'oublier."],1,"Trop court et réutilisé : il faut au moins 12 caractères variés, uniques par service, avec un gestionnaire de mots de passe.","")),
+  N(A("Gestionnaire de mots de passe : relie chaque fonction à son intérêt.",[["Chiffrement AES-256","Données stockées protégées"],["Audit automatique","Repérer les mots de passe faibles"],["Alerte de fuite","Réagir si un service est compromis"],["Partage sécurisé","Avec la secrétaire, un remplaçant"]],""),
+    S("Cite un gestionnaire de mots de passe professionnel.",["dashlane","1password","keeper","dashlane business","1password business"],"Dashlane Business, 1Password Business, Keeper."),
+    Q("Que révèle l'analyse des journaux de connexion ?",["Une intrusion : horaires atypiques, localisations suspectes, tentatives répétées","Les préférences des patients","Rien, c'est seulement une obligation"],"La journalisation est aussi un outil de détection.")),
+  "Fiche 3 · Cloud et HDS",
+  N(Q("Qui doit être certifié HDS ?",["Tout tiers qui héberge des données de santé (art. L.1111-8 CSP)","Le diététicien qui stocke sur son propre ordinateur","L'ANSSI"],"Certificat délivré par un organisme accrédité par le COFRAC ; liste sur le site de l'ANS."),
+    E(["La certification HDS"," est délivrée par l'ANSSI"," aux professionnels de santé."],1,"Elle concerne l'hébergeur tiers et est délivrée par un organisme certificateur accrédité par le COFRAC.","Piège d'examen.")),
+  N(O("Choisir un hébergeur : remets les 6 critères dans l'ordre de la fiche.",["Certification HDS active","Serveurs dans l'UE","Disponibilité (SLA > 99,5 %)","Sauvegarde et restauration","ISO 27001, SOC 2","Clauses de responsabilité et d'audit"],""),
+    S("Quel article du RGPD encadre le contrat de sous-traitance ?",["28","article 28","art 28","art. 28"],"Instructions documentées, sécurité, notification des incidents, droit d'audit."),
+    CAS("Le Dr Caron propose de partager les dossiers via son Google Drive personnel.",Q("Ta réponse ?",["Non : solution grand public inadaptée ; il faut un hébergeur HDS, chiffrement de bout en bout, serveurs en Europe","Oui, c'est pratique","Oui si le mot de passe est long"],"")))
+ ]},
+ {id:"sp19b",t:"Communiquer et tracer",s:"Fiches 4 à 6 · MSSanté, RGPD, archivage",items:[
+  "Fiche 4 · MSSanté",
+  N([T(B_MSG,"Chiffrement automatique",1,""),T(B_MSG,"Identité non vérifiée",0,""),T(B_MSG,"Professionnel identifié par le RPPS",1,""),T(B_MSG,"Archivage non sécurisé",0,""),T(B_MSG,"Accusés de réception, signature électronique",1,"")],
+    S("Cite une solution de messagerie sécurisée de santé.",["apicrypt","medimail","mssante","mssanté"],""),
+    E(["Pour envoyer un bilan au médecin,"," mon Gmail personnel suffit"," si j'ajoute un mot de passe au PDF."],1,"Une messagerie grand public ne convient pas aux données de santé : on utilise MSSanté.","Piège d'examen.")),
+  N(Q("Qui a déployé l'espace de confiance MSSanté ?",["L'ANS, selon le CI-SIS","La CNIL","L'ANSSI"],"Réseau fermé de messageries sécurisées entre professionnels identifiés."),
+    O("Migrer vers MSSanté en 3 mois : remets dans l'ordre.",["Formation et configuration","Tests et double usage","Bascule complète, abandon de l'ancienne messagerie"],"")),
+  N(Q("Avant d'envoyer un message MSSanté, que vérifies-tu ?",["L'identité du correspondant dans l'Annuaire santé","Son adresse personnelle","Rien, le réseau est fermé"],"Aussi : classer les informations, sécuriser les pièces jointes, connaître la procédure de rappel de message.")),
+  "Fiche 5 · RGPD : registre et droits",
+  N(O("Remets dans l'ordre les rubriques du registre des traitements.",["Traitement","Finalités","Base légale","Catégories de données","Durées de conservation","Mesures de sécurité"],""),
+    E(["Le registre des traitements"," est une simple recommandation de la CNIL"," pour les petits cabinets."],1,"C'est une obligation du RGPD (art. 30), depuis mai 2018.","Piège d'examen.")),
+  N(A("Relie chaque article à son objet.",[["Art. 30","Registre des traitements"],["Art. 13 et 14","Information des patients"],["Art. 15 à 22","Droits des patients"],["Art. 12","Délai de réponse d'1 mois"]],""),
+    C("Dans quel délai répondre à une demande de droit d'accès ?",1,"Prolongeable si la demande est complexe.","mois"),
+    CAS("Un appel : « Je suis Mme D., envoyez-moi mon dossier à cette nouvelle adresse e-mail. »",Q("Que fais-tu ?",["Vérifier l'identité (justificatif, cohérence) avant de répondre, puis transmettre de façon sécurisée","Envoyer tout de suite","Refuser définitivement"],"Une demande peut cacher une usurpation d'identité."))),
+  "Fiche 6 · Traçabilité et archivage",
+  N(A("Que journaliser ?",[["Horodatage","Date et heure de l'action"],["Utilisateur","Nom, fonction"],["Type d'action","Consultation, modification, envoi"],["Objet","Dossier, message"],["Adresse IP","Origine de la connexion"]],""),
+    F("La CNIL recommande de conserver les journaux de {6} mois à {1} an.","")),
+  N(F("Dossier médical en établissement : {20} ans après le dernier passage ; patient mineur : au moins jusqu'à ses {28} ans.",""),
+    E(["Pour un patient mineur,"," le dossier se conserve 30 ans"," après sa majorité."],1,"Au moins jusqu'à ses 28 ans (20 ans + délai jusqu'à 28 ans).","Piège d'examen."),
+    W("Pourquoi documenter ses audits internes ?","Le principe de responsabilité (art. 5 RGPD) exige de démontrer sa conformité : des audits réguliers et documentés (procédures, efficacité des mesures, formation) prouvent tes efforts, et un professionnel qui peut les montrer est mieux traité lors d'un contrôle.",["Principe de responsabilité, art. 5","Démontrer la conformité","Mieux traité lors d'un contrôle"])),
+  N(Q("Pourquoi migrer les formats d'archives tous les 5 à 7 ans ?",["Pour que les archives restent lisibles dans la durée","Pour gagner de la place","C'est obligatoire chaque année"],"Intégrité, lisibilité, accessibilité ; documenter les conversions."))
+ ]},
+ {id:"sp19c",t:"Réagir",s:"Fiches 7 à 10 · menaces, prévention, incidents",items:[
+  "Fiche 7 · Les menaces",
+  N([T(B_ATT,"Les dossiers patients sont chiffrés, une rançon est exigée",0,""),T(B_ATT,"Un faux e-mail d'un laboratoire demande les identifiants",1,""),T(B_ATT,"Un faux dirigeant ordonne un virement urgent",2,"La « fraude au président »."),T(B_ATT,"Les données sont revendues sur le dark web",3,""),T(B_ATT,"Le site de prise de rendez-vous est rendu indisponible",4,"")],
+    S("Cite un signal d'alerte d'une cyberattaque.",["ralentissements","ralentissements inhabituels","messages d'erreur","modifications de fichiers","demande de rancon","demande de rançon"],"")),
+  N(Q("EBIOS Risk Manager, c'est…",["La méthode d'analyse des risques de l'ANSSI, qui croise probabilité et impact","Un antivirus","Un hébergeur HDS"],"Pour prioriser les investissements."),
+    A("Sources de veille cyber : relie.",[["ANSSI","Bulletins d'alerte, guides"],["CNIL","Sanctions et mises en demeure"],["Éditeurs de logiciels","Alertes sur leurs produits"],["Assureurs","Sinistres et tendances"]],"")),
+  "Fiche 8 · Prévenir",
+  N([T(B_HYG,"Vérifier les mises à jour et l'antivirus",0,""),T(B_HYG,"Verrouiller le poste",1,""),T(B_HYG,"Sauvegarde, déconnexion, extinction",2,""),T(B_HYG,"Contrôler les sauvegardes",3,""),T(B_HYG,"Audit des mots de passe et des accès",4,"")],
+    Q("À quelle fréquence le cours propose-t-il des tests de phishing simulés ?",["Environ un par trimestre","Chaque jour","Jamais"],"Pour former sans créer d'anxiété."),
+    W("Pourquoi la cybersécurité n'est-elle pas que technique ?","Une large part des incidents vient d'erreurs humaines (clic sur un lien piégé, virement frauduleux). Il faut investir autant dans la formation, les procédures et le double contrôle des actions critiques que dans les outils.",["Erreurs humaines","Formation, procédures","Double contrôle"])),
+  N(Q("Le double contrôle s'applique à…",["Virements, demandes inhabituelles, modifications de données","Toutes les consultations","La lecture des e-mails"],"Contraignant mais efficace contre fraudes et erreurs.")),
+  "Fiche 9 · Gérer un incident",
+  N(O("Remets dans l'ordre le plan de réponse aux incidents.",["Détecter","Évaluer","Confiner","Éradiquer","Restaurer","Apprendre"],""),
+    E(["Rançongiciel détecté :"," je commence par restaurer la sauvegarde"," puis je débranche le poste."],1,"On confine d'abord (isoler les systèmes), on éradique, puis on restaure.","")),
+  N(F("Règle 3-2-1 : {3} copies, {2} supports, {1} externalisée, avec un test de restauration chaque {trimestre}.",""),
+    A("Sauvegardes d'un cabinet : relie.",[["Copie quotidienne","Disque externe chiffré"],["Copie hebdomadaire","NAS local"],["Copie mensuelle","Hébergeur HDS externalisé"]],"")),
+  N([T(B_NOTIF,"Fuite de dossiers patients avec risque élevé",1,""),T(B_NOTIF,"Violation avec un risque pour les personnes",0,""),T(B_NOTIF,"Violation sans aucun risque pour les personnes",2,"")],
+    F("Notifier la CNIL sous {72} h (art. {33}) ; informer les patients si le risque est élevé (art. {34}).",""),
+    CAS("Doute sur la nécessité de notifier une violation.",Q("Que faire ?",["Notifier ou demander conseil (assureur cyber, juriste) : l'absence de notification peut aggraver la sanction","Ne rien faire","Attendre un mois"],"Toutes les violations vont au registre interne."))),
+  N(S("Que couvre une cyberassurance ? (un élément)",["restauration technique","assistance juridique","communication de crise","perte d'exploitation"],"")),
+  "Fiche 10 · Méthodes",
+  N(Q("Le fil commun des conseils pro ?",["Protéger, tracer, sauvegarder, former","Acheter le meilleur antivirus et oublier","Tout stocker sur le cloud"],""),
+    A("Relie chaque situation au réflexe.",[["Poste de travail","Compte standard, mises à jour hors consultation"],["Accès sensibles","12 caractères, double authentification"],["Hébergeur","HDS, UE, contrat art. 28"],["RGPD","Registre, procédure pour les droits"],["Incidents","Plan testé, 3-2-1"]],""))
+ ]}
+ ],
+ mission:{id:"sp19m",t:"La maison de santé d'Annecy",items:[
+  CH("fournier","Audit du cabinet : tout le monde travaille en administrateur, pas de verrouillage, disques non chiffrés. Ta priorité ?",[
+    ["Acheter un nouvel ordinateur",0,[0,-2,-8],"Le matériel ne règle rien sans bonnes pratiques."],
+    ["Comptes standard, verrouillage automatique, chiffrement BitLocker/FileVault, mises à jour hors consultation",2,[6,6,-2],"Sécuriser le poste, premier maillon."]],
+   "Fiche 1."),
+  BY("roussel",T(B_ATT,"Un e-mail « de l'ARS » me demande de confirmer mes identifiants via un lien",1,"Hameçonnage : ne jamais cliquer, vérifier par un autre canal.")),
+  CH("caron","Pour échanger les comptes rendus entre nous, on utilise nos messageries personnelles.",[
+    ["On continue, c'est simple",0,[0,-10,0],"Inadapté aux données de santé."],
+    ["Migration vers MSSanté en 3 mois : formation, tests, bascule",2,[4,8,-2],"Chiffrement, identité vérifiée, traçabilité."]],
+   "Fiche 4."),
+  CH("fournier","Le logiciel de dossiers patients serait hébergé chez un prestataire. Que vérifies-tu ?",[
+    ["Le prix",0,[0,-4,2],"Critère insuffisant."],
+    ["Certification HDS sur le site de l'ANS, serveurs dans l'UE, SLA, sauvegardes, contrat art. 28",2,[4,8,-2],"Les 6 critères et le contrat de sous-traitance."]],
+   "Fiche 3."),
+  BY("roussel",C("Une patiente a demandé l'accès à son dossier le 3 mars. Au plus tard dans combien de mois dois-je répondre (hors demande complexe) ?",1,"Art. 12 RGPD : 1 mois.","mois")),
+  CH("fournier","Lundi matin : les fichiers sont illisibles et un message demande une rançon.",[
+    ["Payer la rançon pour récupérer vite les dossiers",0,[-4,-8,-10],"Aucune garantie, et cela finance les attaquants."],
+    ["Confiner (isoler les postes), alerter l'équipe de crise, évaluer, puis éradiquer et restaurer depuis la sauvegarde 3-2-1",2,[6,6,-3],"Plan de réponse aux incidents."],
+    ["Redémarrer les ordinateurs en espérant que ça passe",0,[-2,-4,0],"Risque d'aggraver la situation."]],
+   "Fiche 9."),
+  CH("caron","Des données patients ont pu être consultées par l'attaquant. Que faisons-nous ?",[
+    ["Rien, tant que personne ne se plaint",0,[0,-14,0],"L'absence de notification aggrave la sanction."],
+    ["Notifier la CNIL sous 72 h, informer les patients si le risque est élevé, inscrire au registre, communiquer de façon transparente",2,[4,10,-2],"Art. 33 et 34 RGPD."]],
+   "Fiche 9."),
+  BY("fournier",W("Rédige le plan de sécurité numérique de la maison de santé.","Poste : pare-feu, mises à jour hors consultation, comptes standard, antivirus pro, chiffrement. Accès : 12 caractères, double authentification, gestionnaire, verrouillage, journaux. Données : hébergeur HDS (UE, contrat art. 28), MSSanté, registre art. 30, information et droits sous 1 mois, archivage (20 ans, mineur 28 ans). Prévention : hygiène quotidienne, phishing simulé trimestriel, double contrôle. Incidents : plan testé (détecter → apprendre), sauvegardes 3-2-1 testées, notification CNIL 72 h, cyberassurance.",["Poste et accès","Hébergement, MSSanté, RGPD","Prévention, facteur humain","Plan d'incident, sauvegardes, notification"]))
+ ]}
+};
+
+/* ---------- COMPLÉMENTS (audit de couverture des fiches « À savoir par cœur ») ----------
+   Ajoutés UNIQUEMENT à la fin des niveaux existants : les identifiants des notions déjà vues ne bougent pas. */
+function ADD(lv,arr){var c=COURS[lv.replace(/[abc]$/,"")],l=c.levels.filter(function(x){return x.id===lv})[0];Array.prototype.push.apply(l.items,arr);}
+
+/* Cours 3 · fiche 4 : stratégies populationnelles */
+ADD("sp3b",["Compléments · fiche 4",
+ N(A("Prévention primaire : relie chaque stratégie populationnelle à son principe.",[["Reformulation","Moins de sel, sucre, graisses dans les produits industriels"],["Fiscalité","Taxe soda"],["Information","Nutri-Score"],["Politique scolaire","Règles de la restauration à la cantine"]],""),
+   null,
+   W("Pourquoi les stratégies populationnelles réduisent-elles les inégalités ?","Elles modifient l'environnement sans contraindre les comportements : elles touchent même les personnes les moins sensibles aux messages. Ex. : moins de sodium dans les produits transformés profite surtout aux populations précaires, qui consomment plus d'aliments industriels.",["Modifier l'environnement","Toucher les moins sensibles aux messages","Profite surtout aux plus précaires"]))]);
+
+/* Cours 4 · fiche 4 : stéréotypes */
+ADD("sp4b",["Compléments · fiche 4",
+ N(Q("Les stéréotypes alimentaires associent les aliments à des groupes selon…",["Le genre, l'âge, la classe sociale, l'origine","Le seul goût","La saison"],"Catégories opposées : masculin/féminin, jeune/âgé, populaire/bourgeois, traditionnel/moderne."),
+   S("Cite une catégorie opposée utilisée par les stéréotypes alimentaires.",["masculin feminin","masculin/féminin","jeune age","jeune/âgé","populaire bourgeois","populaire/bourgeois","traditionnel moderne","traditionnel/moderne"],""),
+   W("Pourquoi les stéréotypes peuvent-ils freiner le changement ?","Ils créent des attentes de conformité ou de différenciation : un homme peut éviter la salade « aliment féminin », un jeune un plat « de personnes âgées ». Il faut les repérer pour adapter les messages.",["Attentes de conformité ou de différenciation","Exemple de la salade","Adapter les messages"]))]);
+
+/* Cours 11 · fiche 1 : le PNNS */
+ADD("sp11a",["Compléments · fiche 1",
+ N(Q("Le PNNS…",["Définit les orientations de la politique nutritionnelle et fixe des objectifs quantifiés","Finance automatiquement chaque projet local","Interdit de s'en écarter"],"Ex. : réduire l'obésité, plus de légumineuses, moins de sel."),
+   O("Remets dans l'ordre la démarche pour articuler PNNS et territoire.",["Analyser les objectifs quantifiés et publics prioritaires du PNNS","Les confronter au diagnostic territorial","Justifier les écarts par des données chiffrées","Éviter les doublons : compléter, pas concurrencer"],""))]);
+
+/* Cours 12 · fiches 3, 4, 6, 10 */
+ADD("sp12a",["Compléments · fiches 3 et 4",
+ N(A("Résultats à court terme : que mesure-t-on ?",[["Connaissances","Évolution des savoirs nutritionnels"],["Attitudes","Modification des attitudes alimentaires"],["Compétences","Acquisition de savoir-faire pratiques"]],"Ils préfigurent les changements de comportement durables."),
+   S("Cite une des 3 dimensions des résultats à court terme.",["connaissances","attitudes","competences","compétences"],"")),
+ N(Q("Co-construire les indicateurs de suivi avec les bénéficiaires…",["Améliore l'appropriation et l'acceptabilité des mesures","Réduit la rigueur","N'a pas d'intérêt"],"Démarche participative."))]);
+ADD("sp12b",["Compléments · fiche 6",
+ N(A("Relie chaque famille d'indicateurs à ses exemples.",[["Structure / moyens","Budget par participant, heures de formation"],["Résultats","Quiz, scores alimentaires, poids, tour de taille"],["Impact","Prévalence, consommation territoriale, recours aux soins"]],""))]);
+ADD("sp12c",["Compléments · fiche 10",
+ N(A("Restituer à 4 publics : relie.",[["Décideurs","Synthèse exécutive : impact, coût-efficacité"],["Professionnels","Rapport technique : méthodes, reproductibilité"],["Participants","Supports visuels : réussites, suite"],["Communauté scientifique","Articles : avancement des connaissances"]],""),
+   S("Cite un moyen de diffuser au-delà du territoire.",["publier","publications","revues specialisees","formations","echanges inter-territoriaux","documenter ses innovations"],"Documenter, échanger, former, publier."))]);
+
+/* Cours 13 · fiche 7 */
+ADD("sp13c",["Compléments · fiche 7",
+ N(O("Rigueur et reproductibilité : remets dans l'ordre.",["Protocole détaillé et respecté","Traçabilité complète des données","Contrôles qualité","Reproductibilité par d'autres équipes"],""),
+   null,
+   E(["Un résultat publié une fois"," par une équipe reconnue"," est définitivement établi."],2,"Un résultat non reproduit par d'autres équipes reste fragile.","Piège d'examen."))]);
+
+/* Cours 14 · fiches 2, 8, 9 */
+ADD("sp14a",["Compléments · fiche 2",
+ N(Q("Qu'apporte l'observation ethnographique des repas en famille ?",["Elle révèle négociations parent-enfant, transmission des habitudes, adaptation aux contraintes de temps","Des apports caloriques précis","Un échantillon représentatif"],"Ce que les questionnaires ne montrent pas."))]);
+ADD("sp14c",["Compléments · fiches 8 et 9",
+ N(O("Données manquantes : remets les stratégies dans l'ordre.",["Décrire les profils de données manquantes","Comparer participants avec et sans manquants","Imputation simple ou multiple","Analyse de sensibilité","Documenter les limites"],"")),
+ N(Q("L'approche mixte pragmatique d'échantillonnage, c'est…",["Stratifier sur les variables clés puis recruter par convenance dans chaque strate","Tirer au sort toute la population","Recruter uniquement des volontaires"],"Représentativité préservée sur l'essentiel, terrain simplifié ; documenter les compromis."))]);
+
+/* Cours 15 · fiches 6, 7, 10, 11 */
+ADD("sp15b",["Compléments · fiches 6 et 7",
+ N(Q("Le seuil de 0,05…",["Est une convention : il ne doit pas faire oublier la taille d'effet et la pertinence clinique","Est une loi mathématique","Garantit qu'un résultat est vrai"],""),
+   A("Grille d'analyse critique : relie.",[["Validité interne","Biais, confusion, puissance"],["Validité externe","Représentativité"],["Pertinence clinique","Importance pratique de l'effet"]],"")),
+ N(Q("Pour valider un résultat par triangulation, on croise…",["Questionnaires, journaux, biomarqueurs, observations","Trois fois le même questionnaire","Les avis de trois amis"],"Une incohérence entre sources signale un biais."))]);
+ADD("sp15c",["Compléments · fiches 10 et 11",
+ N(Q("Pourquoi une charte graphique simple ?",["Productions reconnaissables et plus mémorisables","Pour faire joli","Pour cacher les limites"],"Couleurs, typographies, style des graphiques."),
+   null,
+   W("Comment présenter ton travail à une fondation pour un prix ?","Une mise en récit qui souligne l'innovation, la rigueur méthodologique et les implications pratiques, adaptée à un jury pluridisciplinaire.",["Mise en récit","Innovation, rigueur","Implications pratiques, jury pluridisciplinaire"]))]);
+
 /* ---------- ÉPREUVE BLANCHE E5 · SALLE D'EXAMEN ---------- */
 /* Trame E5 (fiche méthode) : diagnostic → objectifs → stratégies et actions → mise en œuvre → évaluation. */
 var B_PROC=[["Indicateur de processus","fait comme prévu ?"],["Indicateur de résultat","impact réel ?"]];
